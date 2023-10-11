@@ -4,7 +4,7 @@ export const jsonParser = <TJson>(json: string): TJson | null => {
   }
 
   try {
-    return JSON.parse(json);
+    return JSON.parse(json) as TJson;
   } catch (e) {
     return null;
   }
