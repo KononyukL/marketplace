@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { IFormRegistration } from "@/shared/api/auth/types";
+import type { IFormRegistration } from "@/shared/api/auth/types";
 import { addValidationRegistrationSchema } from "@/shared/lib/validation/validation";
 import { useSignUp } from "@/shared/queries/auth";
 import { Form } from "@/shared/form/form";
@@ -25,6 +25,7 @@ const Registration = () => {
 
   const { mutate } = useSignUp();
   const onSubmit = (data: TRegistrationForm) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { confirmPassword: _, ...restData } = data;
 
     mutate(restData, {

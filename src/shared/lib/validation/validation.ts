@@ -9,9 +9,6 @@ export const addValidationLoginSchema = z
 
 export const addValidationRegistrationSchema = z
   .object({
-    first_name: z.string(),
-    last_name: z.string(),
-    phone_num: z.string(),
     email: z.string().email().min(1, { message: "Це поле є обов'язковим" }),
     password: z.string().min(1, { message: "Це поле є обов'язковим" }),
     confirmPassword: z.string().min(1, { message: "Це поле є обов'язковим" }),

@@ -1,6 +1,6 @@
 import { axiosInstance } from "../config";
 
-import { IAuth, IFormLogin, IFormRegistration } from "./types";
+import type { IAuth, IFormLogin, IFormRegistration } from "./types";
 
 export const authApi = {
   async login({ email, password }: IFormLogin) {

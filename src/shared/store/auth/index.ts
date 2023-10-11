@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store";
-import {IAuth} from "@/shared/api/auth/types";
-
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import type { RootState } from "../store";
+import type { IAuth } from "@/shared/api/auth/types";
 
 interface IAuthState {
   auth: IAuth | null;

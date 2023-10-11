@@ -1,5 +1,5 @@
-import React, { DetailedHTMLProps, ReactNode } from "react";
-
+import React from "react";
+import type { DetailedHTMLProps, ReactNode } from "react";
 interface IButton
   extends DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,

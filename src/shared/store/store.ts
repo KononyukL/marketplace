@@ -1,7 +1,7 @@
 import {
   configureStore,
-  ThunkAction,
-  Action,
+  type ThunkAction,
+  type Action,
   combineReducers,
 } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
