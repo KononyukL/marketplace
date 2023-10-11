@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { IFormLogin } from "@/shared/api/auth/types";
+import { type IFormLogin } from "@/shared/api/auth/types";
 import { addValidationLoginSchema } from "@/shared/lib/validation/validation";
 import { useSignIn } from "@/shared/queries/auth";
 import { Form } from "@/shared/form/form";
@@ -35,16 +35,14 @@ const Login = () => {
             placeholder="email"
             inputStyles={errors.email && "border-red-600"}
           />
-          {errors.email?.message && <p>{errors.email?.message as string}</p>}
+          {errors.email?.message && <p>{errors.email?.message}</p>}
           <ControlledInput
             name="password"
             placeholder="password"
             inputStyles={errors.password && "border-red-600"}
             type="password"
           />
-          {errors.password?.message && (
-            <p>{errors.password?.message as string}</p>
-          )}
+          {errors.password?.message && <p>{errors.password?.message}</p>}
           <Button type="submit">Submit</Button>
           <Link href={"/registration"}>Sign In</Link>
         </div>

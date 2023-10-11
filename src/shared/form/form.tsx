@@ -27,7 +27,9 @@ type FormProps<TFormValues extends FieldValues> = {
   ) => void;
   children: React.ReactNode | ChildrenFunc<TFormValues>;
 };
-export const Form = <TFormValues extends Record<string, unknown>>({
+
+// eslint-disable-next-line
+export const Form = <TFormValues extends Record<string, any>>({
   id,
   form: methods,
   onSubmit,
