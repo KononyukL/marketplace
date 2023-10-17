@@ -1,4 +1,3 @@
-import React from "react";
 import { FormProvider } from "react-hook-form";
 import type {
   EventType,
@@ -8,6 +7,7 @@ import type {
   FieldValues,
   DeepPartial,
 } from "react-hook-form";
+import { useEffect } from "react";
 
 type ChildrenFunc<TFormValues extends FieldValues> = (
   methods: UseFormReturn<TFormValues>,
@@ -36,7 +36,7 @@ export const Form = <TFormValues extends Record<string, any>>({
   children,
   onChange,
 }: FormProps<TFormValues>) => {
-  React.useEffect(() => {
+  useEffect(() => {
     if (!onChange) return;
     const subscription = methods.watch((value, info) => {
       if (!info.type) return;

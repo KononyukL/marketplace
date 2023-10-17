@@ -1,4 +1,3 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { IFormRegistration } from "@/shared/api/auth/types";
@@ -7,7 +6,7 @@ import { useSignUp } from "@/shared/queries/auth";
 import { Form } from "@/shared/form/form";
 import { ControlledInput } from "@/shared/form/input";
 import Link from "next/link";
-import { Button } from "@/shared/ui";
+import Button from "@/shared/ui/buttons/ui";
 
 type TRegistrationForm = IFormRegistration & {
   confirmPassword: string;

@@ -10,18 +10,9 @@ export const authApi = {
     });
     return result.data;
   },
-  async registration({
-    email,
-    first_name,
-    last_name,
-    phone_num,
-    password,
-  }: IFormRegistration) {
+  async registration({ email, password }: IFormRegistration) {
     const result = await axiosInstance.post<IAuth>("/v1/auth/register", {
       email,
-      first_name,
-      last_name,
-      phone_num,
       password,
     });
     return result.data;

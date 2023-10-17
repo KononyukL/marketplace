@@ -1,6 +1,7 @@
 export interface IAuth {
   email: string;
-  token: string;
+  accessToken: string;
+  refreshToken: string;
 }
 
 export interface IFormLogin {
@@ -10,8 +11,5 @@ export interface IFormLogin {
 
 export interface IFormRegistration {
   email: string;
-  first_name?: string;
-  last_name?: string;
-  phone_num?: string | number;
   password: string;
 }

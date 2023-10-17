@@ -2,8 +2,20 @@ import { z } from "zod";
 
 export const addValidationLoginSchema = z
   .object({
-    email: z.string().min(2, { message: "Це поле є обов'язковим" }),
-    password: z.string().min(1, { message: "Це поле є обов'язковим" }),
+    email: z
+      .string()
+      .regex(
+        new RegExp("^([^ ]+@[^ ]+\\.[a-z]{2,6}|)$"),
+        "Неправильний формат електронної адреси",
+      )
+      .min(1, { message: "Це поле є обов'язковим" }),
+    password: z
+      .string()
+      .regex(
+        new RegExp("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,})"),
+        "Неправильний формат паролю",
+      )
+      .min(1, { message: "Це поле є обов'язковим" }),
   })
   .required();
 

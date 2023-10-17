@@ -38,6 +38,7 @@ export const Input = React.forwardRef<HTMLDivElement, InputProps>(
       disabled,
       error,
       className,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       inputStyles,
       startAdornment,
       endAdornment,
@@ -75,12 +76,12 @@ export const Input = React.forwardRef<HTMLDivElement, InputProps>(
         <div
           ref={ref}
           className={clsx(
-            "relative w-full cursor-default overflow-hidden rounded-lg text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300",
+            "  relative  w-full cursor-default overflow-hidden rounded p-0.5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300",
             className,
           )}
         >
           {startAdornment && (
-            <div className="text-primary absolute inset-y-0 left-0 flex items-center pl-3">
+            <div className="absolute inset-y-0 left-0 flex items-center pl-3">
               {startAdornment}
             </div>
           )}
@@ -91,8 +92,11 @@ export const Input = React.forwardRef<HTMLDivElement, InputProps>(
             value={valueStr}
             disabled={disabled}
             className={clsx(
-              "border-primary-2 text-primary placeholder:text-primary w-full rounded-lg border-2 px-2.5 py-2 font-light placeholder:font-light focus:outline-none focus:ring-0 focus-visible:outline-none",
-              inputStyles,
+              " w-full rounded border  border-darkBlue  px-2.5 py-2 font-light text-grayText placeholder:font-light placeholder:text-grayText focus:border-2 focus:outline-none focus:ring-0  focus-visible:outline-none",
+              error &&
+                "border-2 border-error focus-visible:border-error focus-visible:shadow-lightError ",
+              type !== "checkbox" &&
+                "focus:border-strokeBlue focus:shadow-purpleFocus ",
             )}
             name={name}
             placeholder={placeholder}
@@ -102,12 +106,12 @@ export const Input = React.forwardRef<HTMLDivElement, InputProps>(
             {...rest}
           />
           {endAdornment && (
-            <div className="text-primary absolute inset-y-0 right-0 flex items-center pr-3">
+            <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-black">
               {endAdornment}
             </div>
           )}
         </div>
-        {error && <p>{error}</p>}
+        {error && <p className="text-error">{error}</p>}
       </>
     );
   },

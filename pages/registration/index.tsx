@@ -1,5 +1,4 @@
-import React from "react";
-import { Registration } from "@/pages/registration";
+import Registration from "@/pages/registration/ui";
 
 const RegistrationPage = () => {
   return <Registration />;

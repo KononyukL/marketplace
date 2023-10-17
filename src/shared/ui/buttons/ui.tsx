@@ -1,4 +1,3 @@
-import React from "react";
 import type { DetailedHTMLProps, ReactNode } from "react";
 interface IButton
   extends DetailedHTMLProps<
@@ -9,7 +8,7 @@ interface IButton
 }
 const Button = ({ children, ...rest }: React.PropsWithChildren<IButton>) => {
   return (
-    <button className="bg-teal-400" {...rest}>
+    <button className="cursor-pointer" {...rest}>
       {children}
     </button>
   );
