@@ -9,8 +9,12 @@ import Link from "next/link";
 import Image from "next/image";
 import Label from "@/shared/ui/label/ui";
 import Button from "@/shared/ui/buttons/ui";
+import { useState } from "react";
 
 const Login = () => {
+  const [iconPassword, setIconPassword] = useState(false);
+
+  const handleSwitchIconPassword = () => setIconPassword(!iconPassword);
   const form = useForm<IFormLogin>({
     mode: "all",
     resolver: zodResolver(addValidationLoginSchema),
@@ -64,8 +68,19 @@ const Login = () => {
                 <ControlledInput
                   name="password"
                   placeholder="password"
-                  type="password"
+                  type={iconPassword ? "password" : "text"}
                   error={errors.password?.message}
+                  endAdornment={
+                    <Image
+                      src={
+                        iconPassword ? "/images/eye.svg" : "/images/eye-off.svg"
+                      }
+                      alt="eye"
+                      onClick={handleSwitchIconPassword}
+                      width={28}
+                      height={28}
+                    />
+                  }
                 />
               </Label>
               <div className="flex justify-between">

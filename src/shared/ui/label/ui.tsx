@@ -11,9 +11,10 @@ const Label = ({ text, children, className, isError }: ILabel) => {
   return (
     <label
       className={clsx(
-        "cursor-pointer  text-blackText focus-within:text-strokeBlue",
+        "cursor-pointer  text-blackText ",
         className,
         isError && "text-error focus-within:text-error",
+        !isError && "focus-within:text-strokeBlue",
       )}
     >
       {text}
