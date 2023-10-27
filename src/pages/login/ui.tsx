@@ -54,7 +54,6 @@ const Login = () => {
                 className="flex flex-col gap-1.5 "
               >
                 <ControlledInput
-                  id="email"
                   name="email"
                   placeholder="Електронна адреса"
                   error={errors.email?.message}
@@ -67,7 +66,7 @@ const Login = () => {
               >
                 <ControlledInput
                   name="password"
-                  placeholder="password"
+                  placeholder="Пароль"
                   type={iconPassword ? "password" : "text"}
                   error={errors.password?.message}
                   endAdornment={

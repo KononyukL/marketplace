@@ -9,6 +9,10 @@ export const useAuth = () => {
       config.headers.Authorization = `Bearer ${auth.accessToken}`;
     }
 
+    if (config?.url?.includes("refresh") && auth?.refreshToken) {
+      config.headers.Authorization = `Bearer ${auth.refreshToken}`;
+    }
+
     return config;
   });
 };

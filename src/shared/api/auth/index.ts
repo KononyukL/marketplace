@@ -17,4 +17,8 @@ export const authApi = {
     });
     return result.data;
   },
+  async refreshToken({}: Record<string, unknown>) {
+    const result = await axiosInstance.post<IAuth>("/v1/auth/refresh", {}, {});
+    return result.data;
+  },
 };

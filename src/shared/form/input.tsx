@@ -92,7 +92,7 @@ export const Input = React.forwardRef<HTMLDivElement, InputProps>(
             value={valueStr}
             disabled={disabled}
             className={clsx(
-              " w-full rounded border  border-darkBlue  px-2.5 py-2 font-light text-grayText placeholder:font-light placeholder:text-grayText focus:border-2 focus:outline-none focus:ring-0  focus-visible:outline-none",
+              " text-lightGray w-full rounded  border  border-darkBlue px-2.5 py-2 font-light placeholder:font-light placeholder:text-grayText focus:border-2 focus:outline-none focus:ring-0  focus-visible:outline-none",
               error &&
                 "border-2 border-error focus-visible:border-error focus-visible:shadow-lightError ",
               type !== "checkbox" &&

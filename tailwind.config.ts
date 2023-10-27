@@ -5,10 +5,11 @@ module.exports = {
     extend: {
       textColor: {
         strokeBlue: "#4200FF",
-        grayText: "#CACACA",
+        lightGray: "#CACACA",
         blackText: "#1A1A1A",
         blueGray: "#64748B",
         error: "#EE0004",
+        blueGrayComment: "#CBD5E1",
       },
       color: {},
       borderColor: {
@@ -23,9 +24,16 @@ module.exports = {
       },
       backgroundColor: {
         buttonAuth: "#1E1D1D",
+        register: "rgba(30, 11, 1, 0.51)",
       },
       maxWidth: {
         auth: "426px",
+        registerTitle: "615px",
+        registerText: "430px",
+        registerComment: "424px",
+      },
+      lineHeight: {
+        titleAuth: "72px",
       },
     },
   },
