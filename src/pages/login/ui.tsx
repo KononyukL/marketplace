@@ -18,6 +18,7 @@ const Login = () => {
   const form = useForm<IFormLogin>({
     mode: "all",
     resolver: zodResolver(addValidationLoginSchema),
+    defaultValues: { rememberMe: false, email: "", password: "" },
   });
   const {
     reset,
@@ -88,7 +89,7 @@ const Login = () => {
                   text=" Запам’ятати мене"
                 >
                   <div>
-                    <ControlledInput name="reset" type="checkbox" />
+                    <ControlledInput name="rememberMe" type="checkbox" />
                   </div>
                 </Label>
                 <Link className="text-strokeBlue" href="/resetPassword">

@@ -23,7 +23,7 @@ export type InputProps = {
   endAdornment?: React.ReactNode;
   type?: HTMLInputTypeAttribute;
   inputRef?: React.LegacyRef<HTMLInputElement>;
-  onValue?: (value: string | number) => void;
+  onValue?: (value: string | number | boolean) => void;
   onBlur?: Noop;
   onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
 } & Omit<
@@ -55,6 +55,12 @@ export const Input = React.forwardRef<HTMLDivElement, InputProps>(
     const handleChange = React.useCallback(
       (e: ChangeEvent<HTMLInputElement>) => {
         let value = e.currentTarget.value;
+
+        if (type === "checkbox") {
+          onValue?.(e.currentTarget.checked);
+          return;
+        }
+
         if (!valueAsNumber) {
           return typeof onValue === "function" && onValue(value);
         }
@@ -66,9 +72,10 @@ export const Input = React.forwardRef<HTMLDivElement, InputProps>(
         if (min !== undefined && !isNaN(min) && parsedValue < min) {
           parsedValue = min;
         }
+
         typeof onValue === "function" && onValue(parsedValue);
       },
-      [onValue, valueAsNumber, min],
+      [onValue, valueAsNumber, min, type],
     );
     const valueStr = value?.toString() ?? "";
     return (
@@ -92,7 +99,7 @@ export const Input = React.forwardRef<HTMLDivElement, InputProps>(
             value={valueStr}
             disabled={disabled}
             className={clsx(
-              " text-lightGray w-full rounded  border  border-darkBlue px-2.5 py-2 font-light placeholder:font-light placeholder:text-grayText focus:border-2 focus:outline-none focus:ring-0  focus-visible:outline-none",
+              " placeholder:text-grayText w-full rounded  border  border-darkBlue px-2.5 py-2 font-light text-lightGray placeholder:font-light focus:border-2 focus:outline-none focus:ring-0  focus-visible:outline-none",
               error &&
                 "border-2 border-error focus-visible:border-error focus-visible:shadow-lightError ",
               type !== "checkbox" &&
@@ -134,7 +141,7 @@ export const ControlledInput = (props: ControlledInputProps) => {
     onBlur: controlOnBlur,
     ...restField
   } = field;
-  const handleOnChange = (value: string | number) => {
+  const handleOnChange = (value: string | number | boolean) => {
     controlOnChange(value);
   };
   return (

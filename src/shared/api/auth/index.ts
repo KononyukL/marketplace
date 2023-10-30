@@ -3,18 +3,12 @@ import { axiosInstance } from "../config";
 import type { IAuth, IFormLogin, IFormRegistration } from "./types";
 
 export const authApi = {
-  async login({ email, password }: IFormLogin) {
-    const result = await axiosInstance.post<IAuth>("/v1/auth/login", {
-      email,
-      password,
-    });
+  async login(form: IFormLogin) {
+    const result = await axiosInstance.post<IAuth>("/v1/auth/login", form);
     return result.data;
   },
-  async registration({ email, password }: IFormRegistration) {
-    const result = await axiosInstance.post<IAuth>("/v1/auth/register", {
-      email,
-      password,
-    });
+  async registration(form: IFormRegistration) {
+    const result = await axiosInstance.post<IAuth>("/v1/auth/register", form);
     return result.data;
   },
   async refreshToken({}: Record<string, unknown>) {

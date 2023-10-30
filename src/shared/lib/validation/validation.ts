@@ -13,6 +13,7 @@ export const addValidationLoginSchema = z
         "Неправильний формат паролю",
       )
       .min(1, { message: "Це поле є обов'язковим" }),
+    rememberMe: z.boolean(),
   })
   .required();
 
