@@ -9,6 +9,7 @@ export const addValidationLoginSchema = z
       .min(1, { message: "Це поле є обов'язковим" }),
     password: z
       .string()
+      .min(1, { message: "Це поле є обов'язковим" })
       .regex(
         new RegExp("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,})"),
         "Неправильний формат паролю",
@@ -25,6 +26,7 @@ export const addValidationRegistrationSchema = z
       .min(1, { message: "Це поле є обов'язковим" }),
     password: z
       .string()
+      .min(1, { message: "Це поле є обов'язковим" })
       .regex(
         new RegExp("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,})"),
         "Неправильний формат паролю",
