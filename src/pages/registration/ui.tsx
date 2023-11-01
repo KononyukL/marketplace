@@ -33,10 +33,10 @@ const Registration = () => {
   };
 
   return (
-    <div className=" flex min-h-screen w-full">
+    <div className=" flex min-h-screen w-full text-white">
       <div className="relative  shrink grow basis-2/4">
         <div className="relative z-10 flex  min-h-screen flex-col gap-y-60 bg-register pb-36 pl-12 pt-24">
-          <h2 className=" max-w-registerTitle  text-6xl font-bold leading-titleAuth">
+          <h2 className=" max-w-registerTitle  text-6xl  font-bold leading-titleAuth">
             Вітаємо на нашому майданчику!
           </h2>
           <div className="flex flex-col gap-y-24">
