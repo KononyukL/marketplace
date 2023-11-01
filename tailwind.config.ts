@@ -10,12 +10,17 @@ module.exports = {
         blueGray: "#64748B",
         error: "#EE0004",
         blueGrayComment: "#CBD5E1",
+        textAnimalShelter: "#333333",
       },
-      color: {},
+      color: {
+        primaryColor: "#F8800E",
+        secondaryColor: "#2A907F",
+      },
       borderColor: {
         darkBlue: "#20056D",
         error: "#EE0004",
         strokeBlue: "#4200FF",
+        borderHome: "#C4C4C4",
       },
 
       boxShadow: {
@@ -23,17 +28,24 @@ module.exports = {
         purpleFocus: "0px 2px 2px #C8B4FF, 0px 0px 0px 4px #C8B4FF",
       },
       backgroundColor: {
+        primary: "#F9F4EE",
         buttonAuth: "#1E1D1D",
         register: "rgba(30, 11, 1, 0.51)",
+        button: "#F8800E",
       },
       maxWidth: {
         auth: "426px",
         registerTitle: "615px",
         registerText: "430px",
         registerComment: "424px",
+        buttonAnimalShelter: "184px",
       },
       lineHeight: {
         titleAuth: "72px",
+        titleAnimalShelter: "56px",
+      },
+      fontSize: {
+        titleAnimalShelter: "40px",
       },
     },
   },
