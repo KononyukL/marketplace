@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import clsx from "clsx";
+import { cn } from "@/shared/lib/cn";
 
 interface ILabel {
   text: string;
@@ -10,7 +10,7 @@ interface ILabel {
 const Label = ({ text, children, className, isError }: ILabel) => {
   return (
     <label
-      className={clsx(
+      className={cn(
         "cursor-pointer  text-blackText ",
         className,
         isError && "text-error focus-within:text-error",

@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import React, {
   type HTMLInputTypeAttribute,
   type ChangeEvent,
@@ -6,6 +5,7 @@ import React, {
   type InputHTMLAttributes,
 } from "react";
 import { type Noop, useFormContext, useController } from "react-hook-form";
+import { cn } from "../lib/cn";
 export type InputProps = {
   name: string;
   title?: string;
@@ -38,8 +38,6 @@ export const Input = React.forwardRef<HTMLDivElement, InputProps>(
       disabled,
       error,
       className,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      inputStyles,
       startAdornment,
       endAdornment,
       value = "",
@@ -82,7 +80,7 @@ export const Input = React.forwardRef<HTMLDivElement, InputProps>(
       <>
         <div
           ref={ref}
-          className={clsx(
+          className={cn(
             "  relative  w-full cursor-default overflow-hidden rounded p-0.5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300",
             className,
           )}
@@ -98,7 +96,7 @@ export const Input = React.forwardRef<HTMLDivElement, InputProps>(
             type={type}
             value={valueStr}
             disabled={disabled}
-            className={clsx(
+            className={cn(
               " placeholder:text-grayText w-full rounded  border  border-darkBlue px-2.5 py-2 font-light text-lightGray placeholder:font-light focus:border-2 focus:outline-none focus:ring-0  focus-visible:outline-none",
               error &&
                 "border-2 border-error focus-visible:border-error focus-visible:shadow-lightError ",

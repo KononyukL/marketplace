@@ -9,6 +9,7 @@ export const jsonParser = <TJson>(json: string): TJson | null => {
     return null;
   }
 };
+
 export const readJWTData = <TData>(jwt?: string): TData | undefined => {
   if (!jwt) return;
 
@@ -21,7 +22,10 @@ export const readJWTData = <TData>(jwt?: string): TData | undefined => {
     const decoded = window.atob(encodedData);
     return jsonParser<TData>(decoded) || undefined;
   } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error(e);
+    if (e instanceof Error) {
+      throw new Error(e.message);
+    } else {
+      console.error(e);
+    }
   }
 };

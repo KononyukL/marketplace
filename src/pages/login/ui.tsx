@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type IFormLogin } from "@/shared/api/auth/types";
-import { addValidationLoginSchema } from "@/shared/lib/validation/validation";
+import { addValidationLoginSchema } from "@/shared/lib/validation";
 import { useSignIn } from "@/shared/queries/auth";
 import { Form } from "@/shared/form/form";
 import { ControlledInput } from "@/shared/form/input";

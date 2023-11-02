@@ -5,15 +5,16 @@ import type {
   IFormRegistration,
 } from "@/shared/api/auth/types";
 import { useAppDispatch } from "@/shared/store/hooks";
-import { authApi } from "@/shared/api";
+
 import { authActions } from "@/shared/store/auth";
 import { useRouter } from "next/router";
+import AuthService from "@/shared/api/auth";
 
 export function useSignIn(): UseMutationResult<IAuth, unknown, IFormLogin> {
   const dispatch = useAppDispatch();
   const router = useRouter();
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  return useMutation(authApi.login, {
+
+  return useMutation(AuthService.login.bind(AuthService), {
     onSuccess: (data) => {
       dispatch(authActions.addAuth(data));
       void router.push("/");
@@ -32,8 +33,7 @@ export function useSignUp(): UseMutationResult<
   const dispatch = useAppDispatch();
   const router = useRouter();
 
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  return useMutation(authApi.registration, {
+  return useMutation(AuthService.signup.bind(AuthService), {
     onSuccess: (data) => {
       dispatch(authActions.addAuth(data));
       void router.push("/");
@@ -51,8 +51,7 @@ export function useRefresh(): UseMutationResult<
 > {
   const dispatch = useAppDispatch();
 
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  return useMutation(authApi.refreshToken, {
+  return useMutation(AuthService.refreshToken.bind(AuthService), {
     onSuccess: (data) => {
       dispatch(authActions.addAuth(data));
     },
