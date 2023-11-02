@@ -2,6 +2,8 @@ import { QueryClient } from "react-query";
 
 const MAX_RETRY_COUNT = 3;
 
+const ONE_MINUTE_IN_MS = 60 * 1000; // 60 секунд * 1000 мілісекунд
+const TWENTY_MINUTES_IN_MS = 20 * ONE_MINUTE_IN_MS;
 interface IRequestError {
   response?: {
     status?: number;
@@ -14,8 +16,8 @@ const queryClient = new QueryClient({
       useErrorBoundary: (error) => {
         return (error as { code: number }).code !== 401;
       },
-      staleTime: 1 * 1000 * 60,
-      cacheTime: 20 * 60 * 1000,
+      staleTime: ONE_MINUTE_IN_MS,
+      cacheTime: TWENTY_MINUTES_IN_MS,
       refetchOnWindowFocus: false,
       retry: (failureCount, error) => {
         const isMaxRetry = failureCount === MAX_RETRY_COUNT;

@@ -30,9 +30,29 @@ export function useSignUp(): UseMutationResult<
   IFormRegistration
 > {
   const dispatch = useAppDispatch();
+  const router = useRouter();
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   return useMutation(authApi.registration, {
+    onSuccess: (data) => {
+      dispatch(authActions.addAuth(data));
+      void router.push("/");
+    },
+    onError: (error: Error) => {
+      console.log(error.message);
+    },
+  });
+}
+
+export function useRefresh(): UseMutationResult<
+  IAuth,
+  unknown,
+  Record<string, unknown>
+> {
+  const dispatch = useAppDispatch();
+
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  return useMutation(authApi.refreshToken, {
     onSuccess: (data) => {
       dispatch(authActions.addAuth(data));
     },

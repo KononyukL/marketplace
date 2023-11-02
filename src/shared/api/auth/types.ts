@@ -7,6 +7,7 @@ export interface IAuth {
 export interface IFormLogin {
   email: string;
   password: string;
+  rememberMe: boolean;
 }
 
 export interface IFormRegistration {
