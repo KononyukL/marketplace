@@ -11,6 +11,7 @@ module.exports = {
         error: "#EE0004",
         blueGrayComment: "#CBD5E1",
         textAnimalShelter: "#333333",
+        primaryColor: "#F8800E",
       },
       color: {
         primaryColor: "#F8800E",
@@ -39,13 +40,18 @@ module.exports = {
         registerText: "430px",
         registerComment: "424px",
         buttonAnimalShelter: "184px",
+        buttonMain: "240px",
+        mainText: "645px",
+        primary: "1440px",
       },
       lineHeight: {
         titleAuth: "72px",
         titleAnimalShelter: "56px",
+        textMain: "60px",
       },
       fontSize: {
         titleAnimalShelter: "40px",
+        textMain: "45px",
       },
     },
   },

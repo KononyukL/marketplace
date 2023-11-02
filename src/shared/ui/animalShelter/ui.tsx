@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const AnimalShelter = () => {
   return (
-    <div className="border-borederHome flex justify-between rounded-lg border-2 border-solid bg-white pb-12 pl-14 pr-14 pt-12 text-black">
+    <div className="border-borederHome max-w-primary m-auto flex justify-between rounded-lg border-2 border-solid bg-white pb-12 pl-14 pr-14 pt-12 text-black">
       <div className=" flex flex-col justify-center gap-10">
         <div>
           <h3 className="leading-titleAnimalShelter text-titleAnimalShelter mb-4 font-bold">
