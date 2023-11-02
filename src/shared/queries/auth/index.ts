@@ -39,6 +39,7 @@ export function useSignUp(): UseMutationResult<
       void router.push("/");
     },
     onError: (error: Error) => {
+      // TODO: replace console.log with a user-friendly notification using notistack
       console.log(error.message);
     },
   });

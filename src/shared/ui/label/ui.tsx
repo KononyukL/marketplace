@@ -7,14 +7,15 @@ interface ILabel {
   children: ReactNode;
   isError?: boolean;
 }
-const Label = ({ text, children, className, isError }: ILabel) => {
+
+export const Label = ({ text, children, className, isError }: ILabel) => {
   return (
     <label
       className={cn(
-        "cursor-pointer  text-blackText ",
+        "text-label cursor-pointer",
         className,
         isError && "text-error focus-within:text-error",
-        !isError && "focus-within:text-strokeBlue",
+        !isError && "focus-within:text-tertiary",
       )}
     >
       {text}
@@ -22,5 +23,3 @@ const Label = ({ text, children, className, isError }: ILabel) => {
     </label>
   );
 };
-
-export default Label;
