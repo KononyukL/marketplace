@@ -1,59 +1,33 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+import { type Config } from "tailwindcss";
+
+export default {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      textColor: {
-        strokeBlue: "#4200FF",
-        lightGray: "#CACACA",
-        blackText: "#1A1A1A",
-        blueGray: "#64748B",
+      colors: {
+        primary: "#FF7100",
+        secondary: "#1E1D1D",
+        tertiary: "#4200FF",
+        "tertiary-2": "#64748B",
+        input: "#CACACA",
+        "input-2": "#20056D",
+        label: "#1A1A1A",
         error: "#EE0004",
-        blueGrayComment: "#CBD5E1",
-        textAnimalShelter: "#333333",
-        primaryColor: "#F8800E",
       },
-      color: {
-        primaryColor: "#F8800E",
-        secondaryColor: "#2A907F",
-      },
-      borderColor: {
-        darkBlue: "#20056D",
-        error: "#EE0004",
-        strokeBlue: "#4200FF",
-        borderHome: "#C4C4C4",
-      },
-
       boxShadow: {
-        lightError: " 0px 2px 2px #F79495, 0px 0px 0px 4px #F79495",
-        purpleFocus: "0px 2px 2px #C8B4FF, 0px 0px 0px 4px #C8B4FF",
+        input: " 0px 2px 2px #F79495, 0px 0px 0px 4px #F79495",
+        "input-focus": "0px 2px 2px #C8B4FF, 0px 0px 0px 4px #C8B4FF",
       },
       backgroundColor: {
-        primary: "#F9F4EE",
-        buttonAuth: "#1E1D1D",
         register: "rgba(30, 11, 1, 0.51)",
-        button: "#F8800E",
       },
       maxWidth: {
         auth: "426px",
         registerTitle: "615px",
         registerText: "430px",
         registerComment: "424px",
-        buttonAnimalShelter: "184px",
-        buttonMain: "240px",
-        mainText: "645px",
-        primary: "1440px",
-      },
-      lineHeight: {
-        titleAuth: "72px",
-        titleAnimalShelter: "56px",
-        textMain: "60px",
-      },
-      fontSize: {
-        titleAnimalShelter: "40px",
-        textMain: "45px",
       },
     },
   },
   plugins: [],
-};
+} satisfies Config;

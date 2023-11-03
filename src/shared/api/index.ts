@@ -1,2 +1,2 @@
-export { authApi } from "./auth";
-export { languagesApi } from "./languages";
+export * from "./auth";
+export * from "./languages";
