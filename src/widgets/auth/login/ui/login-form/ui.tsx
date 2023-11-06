@@ -1,34 +1,34 @@
-import { type IFormRegistration } from "@/shared/api/auth/types";
+import { type IFormLogin } from "@/shared/api/auth/types";
 
-import { useSignUp } from "@/shared/queries/auth";
+import { useSignIn } from "@/shared/queries/auth";
 import { Button, ControlledInput, Form, Label } from "@/shared/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { addValidationRegistrationSchema } from "@/shared/lib/validation/validation";
+import Link from "next/link";
+import { addValidationLoginSchema } from "@/shared/lib/validation";
 
-export const RegistrationForm = () => {
+export const LoginForm = () => {
   const [iconPassword, setIconPassword] = useState(false);
-  const handleSwitchIconPassword = () => setIconPassword(!iconPassword);
 
-  const form = useForm<IFormRegistration>({
+  const handleSwitchIconPassword = () => setIconPassword(!iconPassword);
+  const form = useForm<IFormLogin>({
     mode: "all",
-    resolver: zodResolver(addValidationRegistrationSchema),
+    resolver: zodResolver(addValidationLoginSchema),
+    defaultValues: { rememberMe: false, email: "", password: "" },
   });
   const {
     reset,
     formState: { errors },
   } = form;
 
-  const { mutate: signUp } = useSignUp();
-
-  const onSubmit = (data: IFormRegistration) => {
-    signUp(data, {
+  const { mutate } = useSignIn();
+  const onSubmit = (data: IFormLogin) => {
+    mutate(data, {
       onSuccess: () => reset(),
     });
   };
-
   return (
     <Form form={form} onSubmit={onSubmit}>
       <div className="flex flex-col">
@@ -46,7 +46,7 @@ export const RegistrationForm = () => {
           </Label>
           <Label
             isError={!!errors.password?.message}
-            text="Придумайте пароль"
+            text="Пароль"
             className="flex flex-col gap-1.5"
           >
             <ControlledInput
@@ -55,7 +55,6 @@ export const RegistrationForm = () => {
               type={iconPassword ? "password" : "text"}
               error={errors.password?.message}
               endAdornment={
-                // todo: create separate icon component for that purposes, you can use @svgr/webpack or @neodx/svg whatever you prefer
                 <Image
                   src={iconPassword ? "/images/eye.svg" : "/images/eye-off.svg"}
                   alt="eye"
@@ -66,9 +65,22 @@ export const RegistrationForm = () => {
               }
             />
           </Label>
+          <div className="flex justify-between">
+            <Label
+              className="flex flex-row-reverse items-center gap-1.5 focus-within:text-black"
+              text=" Запам’ятати мене"
+            >
+              <div>
+                <ControlledInput name="rememberMe" type="checkbox" />
+              </div>
+            </Label>
+            <Link className="text-tertiary" href="/resetPassword">
+              Забули пароль?
+            </Link>
+          </div>
         </div>
         <Button className="mt-10" type="submit" variant="secondary">
-          Зареєструватись
+          Вхід
         </Button>
       </div>
     </Form>

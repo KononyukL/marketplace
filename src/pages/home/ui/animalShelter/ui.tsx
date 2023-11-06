@@ -1,22 +1,22 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/shared/ui";
 
-const AnimalShelter = () => {
+export const AnimalShelter = () => {
   return (
     <div className="border-borederHome max-w-primary m-auto flex justify-between rounded-lg border-2 border-solid bg-white pb-12 pl-14 pr-14 pt-12 text-black">
       <div className=" flex flex-col justify-center gap-10">
         <div>
-          <h3 className="leading-titleAnimalShelter text-titleAnimalShelter mb-4 font-bold">
+          <h3 className=" mb-4 text-3xl font-bold">
             Маєте притулок для тварин?
           </h3>
-          <p className="text-textAnimalShelter text-lg">
+          <p className="text-lg text-text">
             Реєструйтеся та прилаштуйте улюбленців в добрі руки!
           </p>
         </div>
-        <button className="bg-button max-w-buttonAnimalShelter w-full cursor-pointer rounded-lg pb-4 pt-4 text-white">
+        <Button className="max-w-button">
           <Link href="/registration"> Зареєструватись</Link>
-        </button>
+        </Button>
       </div>
       <div>
         <Image
@@ -29,5 +29,3 @@ const AnimalShelter = () => {
     </div>
   );
 };
-
-export default AnimalShelter;
