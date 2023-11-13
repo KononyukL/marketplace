@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { addValidationLoginSchema } from "@/shared/lib/validation";
+import { loginSchema } from "@/shared/lib/validation";
 
 export const LoginForm = () => {
   const [iconPassword, setIconPassword] = useState(false);
@@ -15,7 +15,7 @@ export const LoginForm = () => {
   const handleSwitchIconPassword = () => setIconPassword(!iconPassword);
   const form = useForm<IFormLogin>({
     mode: "all",
-    resolver: zodResolver(addValidationLoginSchema),
+    resolver: zodResolver(loginSchema),
     defaultValues: { rememberMe: false, email: "", password: "" },
   });
   const {
