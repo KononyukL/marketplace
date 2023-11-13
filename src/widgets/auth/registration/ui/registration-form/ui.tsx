@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { addValidationRegistrationSchema } from "@/shared/lib/validation/validation";
+import { addValidationRegistrationSchema } from "@/shared/lib/validation";
 
 export const RegistrationForm = () => {
   const [iconPassword, setIconPassword] = useState(false);

@@ -1,6 +1,6 @@
 import { cn } from "@/shared/lib/cn";
 
-type ButtonVariants = "primary" | "secondary" | "outline" | "";
+type ButtonVariants = "primary" | "secondary" | "outline";
 
 interface IButton
   extends React.DetailedHTMLProps<

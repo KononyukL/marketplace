@@ -30,12 +30,7 @@ export const Main = () => {
         </div>
       </div>
       <div>
-        <Image
-          src={"/images/goat-image.svg"}
-          alt="Animal"
-          width={600}
-          height={405}
-        />
+        <Image src={"/images/goat.png"} alt="Animal" width={600} height={405} />
       </div>
     </div>
   );
