@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/shared/ui";
+import { ButtonAdvertisement } from "@/shared/ui/buttons/ui/button-advertisement";
 
 export const Main = () => {
   return (
@@ -13,17 +14,7 @@ export const Main = () => {
           всі види тварин
         </h2>
         <div className="flex gap-7">
-          <Button className="max-w-button-2 " variant="primary">
-            <Link className="flex justify-center gap-2" href="#">
-              <Image
-                src={"/images/plus.svg"}
-                alt="Animal"
-                width={24}
-                height={24}
-              />
-              Додати оголошення
-            </Link>
-          </Button>
+          <ButtonAdvertisement />
           <Button className="max-w-button " variant="outline">
             <Link href="/registration">Зареєструватись</Link>
           </Button>
