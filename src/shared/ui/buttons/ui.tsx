@@ -14,10 +14,7 @@ const Button = ({
   ...rest
 }: React.PropsWithChildren<IButton>) => {
   return (
-    <button
-      className={clsx("cursor-pointer  text-blackText ", className)}
-      {...rest}
-    >
+    <button className={clsx("cursor-pointer  ", className)} {...rest}>
       {children}
     </button>
   );
