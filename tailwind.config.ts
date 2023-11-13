@@ -32,6 +32,10 @@ export default {
         button: "200px",
         "button-2": "244px",
         title: "564px",
+        categories: "1090px",
+      },
+      height: {
+        border: "26px",
       },
     },
   },
