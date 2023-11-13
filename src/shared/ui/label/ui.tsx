@@ -12,7 +12,7 @@ export const Label = ({ text, children, className, isError }: ILabel) => {
   return (
     <label
       className={cn(
-        "text-label cursor-pointer",
+        "cursor-pointer text-label",
         className,
         isError && "text-error focus-within:text-error",
         !isError && "focus-within:text-tertiary",
