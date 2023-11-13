@@ -74,7 +74,7 @@ export const LoginForm = () => {
                 <ControlledInput name="rememberMe" type="checkbox" />
               </div>
             </Label>
-            <Link className="text-tertiary" href="/resetPassword">
+            <Link className="text-tertiary" href="/reset-password">
               Забули пароль?
             </Link>
           </div>
