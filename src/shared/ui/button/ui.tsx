@@ -22,10 +22,10 @@ export const Button = ({
 }: React.PropsWithChildren<IButton>) => {
   return (
     <button
-      className={cn("cursor-pointer rounded-md", className, {
+      className={cn("w-full cursor-pointer  rounded-lg", className, {
         "bg-primary font-bold text-white": variant === "primary",
         "bg-secondary": variant === "secondary",
-        "border-secondary text-secondary border bg-white":
+        "border border-secondary bg-white text-secondary":
           variant === "outline",
         "px-6 py-[0.4375rem]": size === "sm",
         "px-5 py-[0.6875rem]": size === "md",

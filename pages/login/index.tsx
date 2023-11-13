@@ -1,4 +1,4 @@
-import Login from "@/pages/login/ui";
+import { Login } from "@/widgets/auth/login/ui";
 
 const LoginPage = () => {
   return <Login />;

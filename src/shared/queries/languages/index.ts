@@ -6,7 +6,7 @@ import type { AxiosError } from "axios";
 import LanguagesService from "@/shared/api/languages";
 
 export function useGetLanguage(): UseQueryResult<ILanguage[], AxiosError> {
-  /* we should use arrow function here because when pass callback, 
+  /* we should use arrow function here because when pass callback,
    it loses its context, leading to potential errors */
   return useQuery([LANGUAGES_KEYS.LANGUAGE], () =>
     LanguagesService.getLanguages(),
