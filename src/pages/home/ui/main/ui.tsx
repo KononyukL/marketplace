@@ -13,6 +13,9 @@ export const Main = () => {
           всі види тварин
         </h2>
         <div className="flex gap-7">
+          {/* TODO: Replace 'max-w-button-2' className with a new size option in the Button component's 'size' prop
+            Implement additional size style within the Button component to maintain styling consistency 
+            and remove direct style/class overrides in usage */}
           <Button className="max-w-button-2 " variant="primary">
             <Link className="flex justify-center gap-2" href="#">
               <Image
@@ -24,6 +27,9 @@ export const Main = () => {
               Додати оголошення
             </Link>
           </Button>
+          {/* TODO: Replace 'max-w-button' className with a new size option in the Button component's 'size' prop
+            Implement additional size style within the Button component to maintain styling consistency 
+          and remove direct style/class overrides in usage */}
           <Button className="max-w-button " variant="outline">
             <Link href="/registration">Зареєструватись</Link>
           </Button>
