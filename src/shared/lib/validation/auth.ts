@@ -1,34 +1,26 @@
+import { ValidationMessage, ValidationParam } from "@/shared/config";
 import { z } from "zod";
 
-export const addValidationLoginSchema = z
+export const registrationSchema = z
   .object({
     email: z
       .string()
-      .email("Неправильний формат електронної адреси")
-      .min(1, { message: "Це поле є обов'язковим" }),
+      .min(ValidationParam.MIN_LENGTH_EMAIL, {
+        message: `${ValidationMessage.REQUIRED}`,
+      })
+      .email(ValidationMessage.INVALID_EMAIL_FORMAT),
     password: z
       .string()
+      .min(ValidationParam.MIN_LENGTH_PASSWORD, {
+        message: `${ValidationMessage.REQUIRED}`,
+      })
       .regex(
         new RegExp("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,})"),
-        "Неправильний формат паролю",
-      )
-      .min(1, { message: "Це поле є обов'язковим" }),
-    rememberMe: z.boolean(),
-  })
-  .required();
-
-export const addValidationRegistrationSchema = z
-  .object({
-    email: z
-      .string()
-      .email("Неправильний формат електронної адреси")
-      .min(1, { message: "Це поле є обов'язковим" }),
-    password: z
-      .string()
-      .regex(
-        new RegExp("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,})"),
-        "Неправильний формат паролю",
-      )
-      .min(1, { message: "Це поле є обов'язковим" }),
+        ValidationMessage.INVALID_PASSWORD_FORMAT,
+      ),
   })
   .required({ email: true, password: true });
+
+export const loginSchema = registrationSchema.extend({
+  rememberMe: z.boolean(),
+});

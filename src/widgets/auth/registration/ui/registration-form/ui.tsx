@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { addValidationRegistrationSchema } from "@/shared/lib/validation/validation";
+import { registrationSchema } from "@/shared/lib/validation";
 
 export const RegistrationForm = () => {
   const [iconPassword, setIconPassword] = useState(false);
@@ -14,7 +14,7 @@ export const RegistrationForm = () => {
 
   const form = useForm<IFormRegistration>({
     mode: "all",
-    resolver: zodResolver(addValidationRegistrationSchema),
+    resolver: zodResolver(registrationSchema),
   });
   const {
     reset,

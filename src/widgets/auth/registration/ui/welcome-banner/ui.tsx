@@ -34,7 +34,7 @@ export const WelcomeBanner = () => {
               />
               <div>
                 <p>Devon Lane</p>
-                <p className="text-tertiary-2 text-xs">Co-Founder, Design.co</p>
+                <p className="text-xs text-tertiary-2">Co-Founder, Design.co</p>
               </div>
             </div>
           </div>
