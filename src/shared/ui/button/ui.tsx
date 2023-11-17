@@ -24,7 +24,7 @@ export const Button = ({
     <button
       className={cn("w-full cursor-pointer  rounded-lg", className, {
         "bg-primary font-bold text-white": variant === "primary",
-        "bg-secondary": variant === "secondary",
+        "bg-secondary text-white": variant === "secondary",
         "border border-secondary bg-white text-secondary":
           variant === "outline",
         "px-6 py-[0.4375rem]": size === "sm",

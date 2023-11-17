@@ -7,4 +7,7 @@ export const paths = {
   languages: {
     get_all: "/v1/languages",
   },
+  categories: {
+    get_all: "/v1/categories/",
+  },
 } as const;

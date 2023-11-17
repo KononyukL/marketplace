@@ -15,6 +15,8 @@ export default {
         error: "#EE0004",
         text: "#434242",
         title: "#101828",
+        "text-2": "#CACFDD",
+        border: "#8E99B533",
       },
       boxShadow: {
         "input-error": "0px 2px 2px #F79495, 0px 0px 0px 4px #F79495",
@@ -32,6 +34,11 @@ export default {
         button: "200px",
         "button-2": "244px",
         title: "564px",
+        categories: "1090px",
+        footer: "985px",
+      },
+      height: {
+        border: "26px",
       },
     },
   },
