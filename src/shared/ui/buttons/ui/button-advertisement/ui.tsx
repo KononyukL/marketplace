@@ -6,7 +6,7 @@ export const ButtonAdvertisement = () => {
   return (
     <Button className="max-w-button-2 " variant="primary">
       <Link className="flex justify-center gap-2" href="#">
-        <Image src={"/images/plus.svg"} alt="Animal" width={24} height={24} />
+        <Image src={"/images/plus.svg"} alt="Plus" width={24} height={24} />
         Додати оголошення
       </Link>
     </Button>

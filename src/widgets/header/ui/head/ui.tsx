@@ -4,7 +4,7 @@ import { Language } from "@/shared/ui";
 
 export const Head = () => {
   return (
-    <div className=" bg-black">
+    <div className="bg-black">
       <div className="m-auto flex max-w-main  justify-between pb-4 pl-14 pr-14 pt-4">
         <Image src={"/images/logo.svg"} alt="Logo" width={86} height={28} />
         <div className="flex gap-11">

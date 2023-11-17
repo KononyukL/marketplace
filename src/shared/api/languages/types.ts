@@ -1,5 +1,5 @@
 export interface ILanguage {
-  langCode: string;
+  lang_code: string;
   name: string;
   enable: boolean;
 }

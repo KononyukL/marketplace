@@ -9,9 +9,9 @@ export const Language = () => {
           ?.map((el, i) => (
             <div
               key={i}
-              className=" h-border flex cursor-pointer  items-center border-r border-r-white p-1 uppercase last:border-transparent hover:text-primary"
+              className=" flex h-border cursor-pointer  items-center border-r border-r-white p-1 uppercase last:border-transparent hover:text-primary"
             >
-              {el.langCode}
+              {el.lang_code}
             </div>
           ))
           .reverse()}

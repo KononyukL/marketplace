@@ -3,7 +3,7 @@ import { Rating } from "react-simple-star-rating";
 
 export const WelcomeBanner = () => {
   return (
-    <div className="relative  shrink grow basis-2/4">
+    <div className="relative  shrink grow basis-2/4 text-white">
       <div className="relative z-10 flex  min-h-screen flex-col gap-y-60 bg-register pb-36 pl-12 pt-24">
         <h2 className="max-w-registerTitle text-6xl font-bold leading-tight">
           Вітаємо на нашому майданчику!
