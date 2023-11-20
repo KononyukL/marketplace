@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/shared/ui";
-import { Categories } from "@/pages/home/ui/main/categiries";
+import { Categories } from "@/pages/home/ui/main/categories";
 
 export const Main = () => {
   return (

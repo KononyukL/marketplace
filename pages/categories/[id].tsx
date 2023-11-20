@@ -1,1 +1,1 @@
-export { Category as default } from "@/pages/catecory";
+export { Category as default } from "@/pages/category";
