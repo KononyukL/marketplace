@@ -38,6 +38,7 @@ export const Main = () => {
             </Button>
           </div>
         </div>
+
         <div>
           <Image
             src={"/images/goat.png"}
