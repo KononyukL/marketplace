@@ -7,6 +7,7 @@ export default {
       colors: {
         primary: "#FF7100",
         secondary: "#1E1D1D",
+        additional: "#2A907F",
         tertiary: "#4200FF",
         "tertiary-2": "#64748B",
         input: "#CACACA",
@@ -16,7 +17,10 @@ export default {
         text: "#434242",
         title: "#101828",
         "text-2": "#CACFDD",
-        border: "#8E99B533",
+        "border-footer": "#8E99B533",
+        "border-2": "#C4C4C4",
+        "text-3": "#757982",
+        "text-4": "#0D71A8",
       },
       boxShadow: {
         "input-error": "0px 2px 2px #F79495, 0px 0px 0px 4px #F79495",
@@ -24,6 +28,11 @@ export default {
       },
       backgroundColor: {
         register: "rgba(30, 11, 1, 0.51)",
+        tags: "rgba(42, 144, 127, 0.19)",
+      },
+      borderRadius: {
+        tags: "20px",
+        "tags-2": "30px",
       },
       maxWidth: {
         main: "1440px",
@@ -36,6 +45,10 @@ export default {
         title: "564px",
         categories: "1090px",
         footer: "985px",
+        advantages: "428px",
+        "advantages-text": "330px",
+        "how-it-work-text": "264px",
+        "how-it-work": "316px",
       },
       height: {
         border: "26px",
