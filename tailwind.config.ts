@@ -47,6 +47,8 @@ export default {
         footer: "985px",
         advantages: "428px",
         "advantages-text": "330px",
+        "how-it-work-text": "264px",
+        "how-it-work": "316px",
       },
       height: {
         border: "26px",

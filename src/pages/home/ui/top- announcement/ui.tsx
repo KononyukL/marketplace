@@ -23,7 +23,7 @@ export const TopAnnouncement = () => {
   return (
     <div className="m-auto max-w-main p-14 text-black">
       <h2 className="mb-12 text-4xl font-medium">Топ оголошення</h2>
-      <div className="flex flex-col gap-[32px]">
+      <div className="flex flex-col gap-8">
         <div className="flex gap-2">
           {allTags?.map((tag) => (
             <ButtonTags

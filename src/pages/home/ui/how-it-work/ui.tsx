@@ -8,13 +8,13 @@ export const HowItWork = () => {
         {dataWork.map((el, i) => (
           <div
             key={i}
-            className="border-border-2 flex w-full max-w-[315px] flex-col rounded-lg border border-solid bg-white px-6 py-8"
+            className="border-border-2 max-w-how-it-work flex w-full flex-col rounded-lg border border-solid bg-white px-6 py-8"
           >
-            <div className="bg-additional mb-4 flex max-w-[30px] justify-center rounded px-4 py-1 text-white">
+            <div className="bg-additional mb-4 flex w-8 justify-center rounded px-4 py-1 text-white">
               {el.id}
             </div>
             <h3 className="mb-2 text-xl font-medium">{el.title}</h3>
-            <p className=" max-w-[263px]">{el.text}</p>
+            <p className="max-w-how-it-work-text">{el.text}</p>
           </div>
         ))}
       </div>
