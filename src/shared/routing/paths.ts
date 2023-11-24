@@ -10,4 +10,7 @@ export const paths = {
   categories: {
     get_all: "/v1/categories/",
   },
+  categoriesFavoriteTags: {
+    get_all: "/v1/categories/favorite-tags/",
+  },
 } as const;
