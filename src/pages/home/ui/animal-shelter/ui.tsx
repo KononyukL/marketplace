@@ -5,7 +5,7 @@ import { Button } from "@/shared/ui";
 export const AnimalShelter = () => {
   return (
     <div className="m-auto max-w-main p-14 text-black">
-      <div className="border-borederHome max-w-primary  flex justify-between rounded-lg border-2 border-solid bg-white pb-12 pl-14 pr-14 pt-12 text-black">
+      <div className="border-borede-2 max-w-primary  flex justify-between rounded-lg border-2 border-solid bg-white pb-12 pl-14 pr-14 pt-12 text-black">
         <div className=" flex flex-col justify-center gap-10">
           <div>
             <h3 className=" mb-4 text-3xl font-bold">
