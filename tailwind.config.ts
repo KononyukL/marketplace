@@ -17,7 +17,7 @@ export default {
         text: "#434242",
         title: "#101828",
         "text-2": "#CACFDD",
-        border: "#8E99B533",
+        "border-footer": "#8E99B533",
         "border-2": "#C4C4C4",
         "text-3": "#757982",
         "text-4": "#0D71A8",
