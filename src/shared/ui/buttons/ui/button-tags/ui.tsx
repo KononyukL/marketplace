@@ -1,12 +1,20 @@
 import { cn } from "@/shared/lib/cn";
-import { className } from "postcss-selector-parser";
 
-interface IButtonTags {
+interface IButtonTags
+  extends React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
   onClick: () => void;
   children: string;
   isActive: boolean;
 }
-export const ButtonTags = ({ onClick, isActive, children }: IButtonTags) => {
+export const ButtonTags = ({
+  onClick,
+  isActive,
+  children,
+  className,
+}: IButtonTags) => {
   return (
     <button
       onClick={onClick}
