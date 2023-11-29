@@ -8,9 +8,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { loginSchema } from "@/shared/lib/validation";
+import { useTranslation } from "next-i18next";
 
 export const LoginForm = () => {
   const [iconPassword, setIconPassword] = useState(false);
+  const { t } = useTranslation("common");
 
   const handleSwitchIconPassword = () => setIconPassword(!iconPassword);
   const form = useForm<IFormLogin>({
@@ -35,23 +37,23 @@ export const LoginForm = () => {
         <div className="flex flex-col gap-6">
           <Label
             isError={!!errors.email?.message}
-            text="Електронна адреса"
+            text={t("auth.email")}
             className="flex flex-col gap-1.5 "
           >
             <ControlledInput
               name="email"
-              placeholder="Електронна адреса"
+              placeholder={t("auth.email")}
               error={errors.email?.message}
             />
           </Label>
           <Label
             isError={!!errors.password?.message}
-            text="Пароль"
+            text={t("auth.password")}
             className="flex flex-col gap-1.5"
           >
             <ControlledInput
               name="password"
-              placeholder="Пароль"
+              placeholder={t("auth.password")}
               type={iconPassword ? "password" : "text"}
               error={errors.password?.message}
               endAdornment={
@@ -68,19 +70,19 @@ export const LoginForm = () => {
           <div className="flex justify-between">
             <Label
               className="flex flex-row-reverse items-center gap-1.5 focus-within:text-black"
-              text=" Запам’ятати мене"
+              text={t("auth.remember-me")}
             >
               <div>
                 <ControlledInput name="rememberMe" type="checkbox" />
               </div>
             </Label>
             <Link className="text-tertiary" href="/reset-password">
-              Забули пароль?
+              {t("auth.forgot-password")}
             </Link>
           </div>
         </div>
         <Button className="mt-10" type="submit" variant="secondary">
-          Вхід
+          {t("auth.login")}
         </Button>
       </div>
     </Form>

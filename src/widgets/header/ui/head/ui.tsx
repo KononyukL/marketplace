@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Language } from "@/shared/ui";
+import { useTranslation } from "next-i18next";
 
 export const Head = () => {
+  const { t } = useTranslation("common");
   return (
     <div className="bg-black">
       <div className="m-auto flex max-w-main  justify-between pb-4 pl-14 pr-14 pt-4">
@@ -16,7 +18,7 @@ export const Head = () => {
                 width={26}
                 height={24}
               />
-              Вхід
+              {t("auth.login")}
             </Link>
           </div>
           <div className="flex gap-4">
