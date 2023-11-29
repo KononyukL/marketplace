@@ -4,7 +4,6 @@ import { Button } from "@/shared/ui";
 import { Categories } from "@/pages/home/ui/main/categories";
 import { useTranslation } from "next-i18next";
 import { ButtonAdvertisement } from "@/shared/ui/buttons/ui/button-advertisement";
-import { useRouter } from "next/router";
 
 export const Main = () => {
   const { t } = useTranslation(["home", "common"]);
