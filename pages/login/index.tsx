@@ -1,5 +1,6 @@
 import { Login } from "@/widgets/auth/login/ui";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { type TGetStaticProps } from "@/shared/config";
 
 const LoginPage = () => {
   return <Login />;
@@ -7,7 +8,7 @@ const LoginPage = () => {
 
 export default LoginPage;
 
-export async function getStaticProps({ locale }: any) {
+export async function getStaticProps({ locale }: TGetStaticProps) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),

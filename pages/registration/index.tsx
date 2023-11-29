@@ -1,5 +1,6 @@
 import { Registration } from "@/widgets/auth/registration/ui";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { type TGetStaticProps } from "@/shared/config";
 
 const RegistrationPage = () => {
   return <Registration />;
@@ -7,7 +8,7 @@ const RegistrationPage = () => {
 
 export default RegistrationPage;
 
-export async function getStaticProps({ locale }: any) {
+export async function getStaticProps({ locale }: TGetStaticProps) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
