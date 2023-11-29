@@ -8,7 +8,7 @@ export const paths = {
     get_all: "/v1/languages",
   },
   categories: {
-    get_all: "/v1/categories/",
+    get_all: "/v1/categories/favorite/",
   },
   categoriesFavoriteTags: {
     get_all: "/v1/categories/favorite-tags/",
