@@ -3,9 +3,12 @@ import { axiosInstance } from "../config";
 import type { ICategories } from "./types";
 
 class CategoriesActions {
-  async getCategories(langCode: string = "ua"): Promise<ICategories[]> {
+  async getCategories(
+    langCode: string,
+    size: number = 7,
+  ): Promise<ICategories[]> {
     const result = await axiosInstance.get<ICategories[]>(
-      paths.categories.get_all + langCode,
+      `${paths.categories.get_all}${langCode}/${size}`,
     );
     return result.data;
   }
