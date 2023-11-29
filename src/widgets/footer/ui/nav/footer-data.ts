@@ -1,21 +1,21 @@
 export const animalMarket = [
-  { title: "Інформація про компанію", link: "/" },
-  { title: "Блог", link: "/" },
-  { title: "Умови користування", link: "/" },
-  { title: "Політика конфідеційності", link: "/" },
-  { title: "Сторінка команди розробників", link: "/" },
+  { title: "footer.animal-market.title-one", link: "/" },
+  { title: "footer.animal-market.title-two", link: "/" },
+  { title: "footer.animal-market.title-three", link: "/" },
+  { title: "footer.animal-market.title-four", link: "/" },
+  { title: "footer.animal-market.title-five", link: "/" },
 ];
 
 export const support = [
-  { title: "Контакти та зворотній звʼязок", link: "/" },
-  { title: "Як продавати й купувати?", link: "/" },
-  { title: "Поради  безпеки на сайті", link: "/" },
+  { title: "footer.support.title-one", link: "/" },
+  { title: "footer.support.title-two", link: "/" },
+  { title: "footer.support.title-three", link: "/" },
   { title: "FAQ", link: "/" },
 ];
 
 export const user = [
-  { title: "Вхід", link: "/login" },
-  { title: "Реєстрація", link: "/registration" },
-  { title: "Створити оголошення", link: "/" },
-  { title: "Мої оголошення", link: "/" },
+  { title: "auth.login", link: "/login" },
+  { title: "auth.register", link: "/registration" },
+  { title: "footer.user.title-three", link: "/" },
+  { title: "footer.user.title-four", link: "/" },
 ];

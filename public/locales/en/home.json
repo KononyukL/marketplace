@@ -1,0 +1,29 @@
+{
+  "main": {
+    "title": "The first Ukrainian marketplace where you can find",
+    "span": "almost",
+    "text-title": "all kinds of animals"
+  },
+  "top": "Top announcement",
+  "all-advantages": "All",
+ "our-advantages": "Our advantages",
+  "advantages": {
+    "title-one": "Choosing an animal online",
+    "title-two": "Large selection of animals",
+    "title-three": "Rating of sellers and buyers",
+    "text-one": "We offer you a pet matching test to help you find the perfect companion for your life or needs. Your pet is waiting to meet you.",
+    "text-two": "We have a wide range of animals for you. From cows, goats, chickens to hamsters, cats, dogs, rodents, lizards.",
+    "text-three": "We believe that the interaction between buyers and sellers should be based on trust and mutual respect. Our rating helps build this trust between them."
+  },
+  "how-it-work": {
+    "title-one": "Registration",
+    "title-two": "Profile",
+    "title-three": "Advertisement",
+    "title-four": "Happy animals",
+    "text-one": "Fill in all the necessary information for registration, you can do it through your Google or Facebook account. Follow our tips.",
+    "text-two": "Choose and customize your profile type - seller or buyer. And start using it for your own needs.",
+    "text-three": "If you're a seller, create and fill out an ad with high quality. Use our tips on how to fill out an ad.",
+    "text-four": "Seller - communicate with the buyer. Find a good owner for your pet. Buyer - communicate with the seller and find an animal."
+
+  }
+}

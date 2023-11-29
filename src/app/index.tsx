@@ -4,6 +4,7 @@ import queryClient from "@/shared/queries";
 import { store } from "@/shared/store/store";
 import { Provider } from "react-redux";
 import { BaseLayout } from "@/widgets/layouts/base-layout/ui";
+import { appWithTranslation } from "next-i18next";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -19,4 +20,4 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default App;
+export default appWithTranslation(App);
