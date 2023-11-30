@@ -1,8 +1,12 @@
 import { useGetCategories } from "@/shared/queries/categories";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Categories = () => {
-  const { data } = useGetCategories();
+  const { locale } = useRouter();
+
+  const { data } = useGetCategories(locale);
+
   return (
     <div>
       <div className="m-auto mb-20 flex max-w-categories  items-center justify-between gap-2 py-3   text-xl font-semibold text-title">

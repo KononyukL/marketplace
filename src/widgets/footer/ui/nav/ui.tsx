@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 export interface ILinkData {
   title: string;
@@ -10,6 +11,8 @@ interface INav {
   data: ILinkData[];
 }
 export const Nav = ({ title, data }: INav) => {
+  const { t } = useTranslation("common");
+
   return (
     <div className="w-full ">
       <h3 className="mb-6 text-xl font-semibold">{title}</h3>
@@ -20,7 +23,7 @@ export const Nav = ({ title, data }: INav) => {
             className="text-text-2 hover:text-primary "
             href={el.link}
           >
-            {el.title}
+            {t(el.title)}
           </Link>
         ))}
       </div>

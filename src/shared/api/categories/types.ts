@@ -1,11 +1,11 @@
 export interface ICategories {
   id: number;
-  langCode: string;
   alias: string;
   title: string;
-  tagTitle: string;
   description: string;
-  parentId: number;
-  availableInTags: boolean;
-  availableInFavorite: boolean;
+  lang_code: string;
+  tag_title: string;
+  parent_id: number;
+  available_in_tags: boolean;
+  available_in_favorite: boolean;
 }

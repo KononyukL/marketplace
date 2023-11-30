@@ -1,17 +1,19 @@
 import Image from "next/image";
 import { Rating } from "react-simple-star-rating";
+import { useTranslation } from "next-i18next";
 
 export const WelcomeBanner = () => {
+  const { t } = useTranslation("common");
+
   return (
     <div className="relative  shrink grow basis-2/4 text-white">
       <div className="relative z-10 flex  min-h-screen flex-col gap-y-60 bg-register pb-36 pl-12 pt-24">
         <h2 className="max-w-registerTitle text-6xl font-bold leading-tight">
-          Вітаємо на нашому майданчику!
+          {t("auth.welcome-banner")}
         </h2>
         <div className="flex flex-col gap-y-24">
           <p className="w-full max-w-registerText text-xl leading-7">
-            У нас можна купити чи продати кота, знайти молочну корову,
-            подарувати кошенят чи придбати песиків у перевіреного заводчика!
+            {t("auth.banner-text")}
           </p>
           <div className=" flex flex-col ">
             <Rating

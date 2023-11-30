@@ -1,0 +1,44 @@
+{
+ "button-advertisement": "Add an advertisement",
+  "auth": {
+    "button-register": "Sign up",
+    "login": "Sign in",
+    "register": "Sign up",
+    "title-login": "Sign in to your account",
+    "email": "Email address",
+    "password": "Password",
+    "create-password": "Create a password",
+    "remember-me": "Remember me",
+    "forgot-password": "Forgot your password?",
+    "account-login": "Have an account?",
+    "account-register": "Don't have an account?",
+    "welcome-banner": "Welcome to our site!",
+    "banner-text": "Here you can buy or sell a cat, find a dairy cow, give kittens or buy dogs from a trusted breeder!"
+  },
+  "menu": {
+   "selection": "Selection of the animal",
+   "articles": "Articles about animals"
+ },
+ "animal-shelter": {
+  "title": "Do you have an animal shelter?",
+  "text": "Register and place your pets in good hands!"
+ },
+ "footer": {
+  "animal-market": {
+    "title-one": "Information about the company",
+    "title-two": "Blog",
+    "title-three": "Terms of use",
+    "title-four": "Privacy policy",
+    "title-five": "Development team page"
+  },
+   "support": {
+     "title-one": "Contacts and feedback",
+     "title-two": "How to sell and buy?",
+     "title-three": "Tips for website security"
+   },
+   "user": {
+     "title-three": "Create an advertisement",
+     "title-four": "My advertisements"
+   }
+ }
+}

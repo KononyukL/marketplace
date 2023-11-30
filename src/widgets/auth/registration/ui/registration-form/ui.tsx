@@ -7,9 +7,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { registrationSchema } from "@/shared/lib/validation";
+import { useTranslation } from "next-i18next";
 
 export const RegistrationForm = () => {
   const [iconPassword, setIconPassword] = useState(false);
+  const { t } = useTranslation("common");
   const handleSwitchIconPassword = () => setIconPassword(!iconPassword);
 
   const form = useForm<IFormRegistration>({
@@ -35,23 +37,23 @@ export const RegistrationForm = () => {
         <div className="flex flex-col gap-6">
           <Label
             isError={!!errors.email?.message}
-            text="Електронна адреса"
+            text={t("auth.email")}
             className="flex flex-col gap-1.5 "
           >
             <ControlledInput
               name="email"
-              placeholder="Електронна адреса"
+              placeholder={t("auth.email")}
               error={errors.email?.message}
             />
           </Label>
           <Label
             isError={!!errors.password?.message}
-            text="Придумайте пароль"
+            text={t("auth.create-password")}
             className="flex flex-col gap-1.5"
           >
             <ControlledInput
               name="password"
-              placeholder="Пароль"
+              placeholder={t("auth.password")}
               type={iconPassword ? "password" : "text"}
               error={errors.password?.message}
               endAdornment={
@@ -68,7 +70,7 @@ export const RegistrationForm = () => {
           </Label>
         </div>
         <Button className="mt-10" type="submit" variant="secondary">
-          Зареєструватись
+          {t("auth.register")}
         </Button>
       </div>
     </Form>
