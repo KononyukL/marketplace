@@ -16,11 +16,8 @@ export const AnimalShelter = () => {
             </h3>
             <p className="text-lg text-text">{t("animal-shelter.text")}</p>
           </div>
-          {/* TODO: Replace 'max-w-button' className with a new size option in the Button component's 'size' prop
-            Implement additional size style within the Button component to maintain styling consistency 
-            and remove direct style/class overrides in usage */}
-          <Button className="max-w-button">
-            <Link href="/registration">{t("button-register")}</Link>
+          <Button size="lg">
+            <Link href="/registration">{t("auth.button-register")}</Link>
           </Button>
         </div>
         <div>
