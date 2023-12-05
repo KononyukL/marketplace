@@ -43,7 +43,7 @@ export const RegistrationForm = () => {
             <ControlledInput
               name="email"
               placeholder={t("auth.email")}
-              error={errors.email?.message}
+              error={t(errors.email?.message as never)}
             />
           </Label>
           <Label
@@ -55,7 +55,7 @@ export const RegistrationForm = () => {
               name="password"
               placeholder={t("auth.password")}
               type={iconPassword ? "password" : "text"}
-              error={errors.password?.message}
+              error={t(errors.password?.message as never)}
               endAdornment={
                 // todo: create separate icon component for that purposes, you can use @svgr/webpack or @neodx/svg whatever you prefer
                 <Image

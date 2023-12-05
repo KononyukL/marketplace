@@ -24,6 +24,10 @@
     "text-two": "Choose and customize your profile type - seller or buyer. And start using it for your own needs.",
     "text-three": "If you're a seller, create and fill out an ad with high quality. Use our tips on how to fill out an ad.",
     "text-four": "Seller - communicate with the buyer. Find a good owner for your pet. Buyer - communicate with the seller and find an animal."
-
+  },
+  "selection-of-articles": "Selection of articles",
+  "articles": {
+    "read": "Read:",
+    "read-more": "Read more"
   }
 }

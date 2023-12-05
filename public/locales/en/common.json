@@ -13,7 +13,10 @@
     "account-login": "Have an account?",
     "account-register": "Don't have an account?",
     "welcome-banner": "Welcome to our site!",
-    "banner-text": "Here you can buy or sell a cat, find a dairy cow, give kittens or buy dogs from a trusted breeder!"
+    "banner-text": "Here you can buy or sell a cat, find a dairy cow, give kittens or buy dogs from a trusted breeder!",
+    "error-email": "Email address format is incorrect",
+    "error-password": "Invalid password format",
+    "error-required": "This field is required"
   },
   "menu": {
    "selection": "Selection of the animal",
