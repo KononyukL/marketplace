@@ -26,7 +26,7 @@ export const Button = ({
         " hover:bg-primary-hover bg-primary font-bold text-white":
           variant === "primary",
         "bg-secondary text-white hover:bg-primary": variant === "secondary",
-        "hover:border-primary-hover hover:text-primary-hover border border-secondary bg-white text-secondary":
+        "hover:border-primary-hover hover:text-primary-hover flex justify-center border border-secondary bg-white text-secondary":
           variant === "outline",
         "max-w-button": size === "sm",
         "max-w-button-2": size === "md",
