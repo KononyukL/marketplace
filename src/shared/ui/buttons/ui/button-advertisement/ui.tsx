@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/shared/ui";
 import { useTranslation } from "next-i18next";
 import { SVGRS } from "@/shared/config";
