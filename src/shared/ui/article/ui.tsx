@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import { dateTimeFormat } from "@/shared/config/convert-string-to-date-time";
 
 interface IArticle {
   date: string;
@@ -14,14 +15,7 @@ interface IArticle {
 export const Article = ({ date, time, title, text }: IArticle) => {
   const { locale } = useRouter();
   const { t } = useTranslation("home");
-  const DateTimeFormat = (time: string) => {
-    const date = new Date(time);
-    const dtf = new Intl.DateTimeFormat(locale, {
-      month: "long",
-      day: "numeric",
-    });
-    return dtf.format(date);
-  };
+
   return (
     <div className="w-full max-w-how-it-work text-black ">
       <div className=" flex  flex-col rounded-lg  bg-white ">
@@ -36,7 +30,7 @@ export const Article = ({ date, time, title, text }: IArticle) => {
         </div>
         <div className=" w-full rounded-b-lg border border-solid border-additional px-4 pb-6 pt-3">
           <div className="mb-2 flex gap-3 text-sm text-text-3">
-            <p>{DateTimeFormat(date)}</p>
+            <p>{dateTimeFormat(date, locale)}</p>
             <p>
               {t("articles.read")} {time} Хв
             </p>

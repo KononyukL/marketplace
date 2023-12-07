@@ -4,7 +4,7 @@ import { type ICategoriesFavoriteTags } from "@/shared/api/categories-favorite-t
 
 class CategoriesFavoriteTagsActions {
   async getCategoriesFavoriteTags(
-    langCode: string = "ua",
+    langCode = "ua",
     size: number = 10,
   ): Promise<ICategoriesFavoriteTags[]> {
     const result = await axiosInstance.get<ICategoriesFavoriteTags[]>(
