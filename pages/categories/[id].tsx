@@ -3,7 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export { Category as default } from "@/pages/category";
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = () => {
   return {
     paths: [],
     fallback: "blocking",
