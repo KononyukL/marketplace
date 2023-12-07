@@ -22,10 +22,7 @@ export const Main = () => {
             </h2>
             <div className="flex gap-7">
               <ButtonAdvertisement />
-              {/* TODO: Replace 'max-w-button' className with a new size option in the Button component's 'size' prop
-            Implement additional size style within the Button component to maintain styling consistency
-          and remove direct style/class overrides in usage */}
-              <Button className="max-w-button " variant="outline">
+              <Button size="md" variant="outline">
                 <Link href="/registration">
                   {t("auth.button-register", { ns: "common" })}
                 </Link>

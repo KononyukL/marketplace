@@ -8,7 +8,7 @@ interface IButton
     HTMLButtonElement
   > {
   variant?: ButtonVariants;
-  size?: "sm" | "md";
+  size?: "sm" | "md" | "lg" | "xl";
   endAdornment?: React.ReactNode;
 }
 
@@ -16,19 +16,22 @@ export const Button = ({
   children,
   variant = "primary",
   endAdornment,
-  size = "md",
+  size,
   className,
   ...rest
 }: React.PropsWithChildren<IButton>) => {
   return (
     <button
-      className={cn("w-full cursor-pointer  rounded-lg", className, {
-        "bg-primary font-bold text-white": variant === "primary",
-        "bg-secondary text-white": variant === "secondary",
-        "border border-secondary bg-white text-secondary":
+      className={cn("w-full cursor-pointer  rounded-lg py-4", className, {
+        " hover:bg-primary-hover bg-primary font-bold text-white":
+          variant === "primary",
+        "bg-secondary text-white hover:bg-primary": variant === "secondary",
+        "hover:border-primary-hover hover:text-primary-hover border border-secondary bg-white text-secondary":
           variant === "outline",
-        "px-6 py-[0.4375rem]": size === "sm",
-        "px-5 py-[0.6875rem]": size === "md",
+        "max-w-button": size === "sm",
+        "max-w-button-2": size === "md",
+        "max-w-button-3": size === "lg",
+        "max-w-button-4": size === "xl",
       })}
       {...rest}
     >

@@ -13,7 +13,7 @@ export const Menu = () => {
       <div className="m-auto flex max-w-main items-center justify-between pb-6 pl-14 pr-14 pt-6 text-title">
         <BurgerMenu />
         <nav className="flex gap-10 font-semibold ">
-          <Link href="#" className="hover:text-primary">
+          <Link href="#" className="hover:text-primary-hover">
             {t("menu.selection")}
           </Link>
           <Link href="#" className="hover:text-primary">

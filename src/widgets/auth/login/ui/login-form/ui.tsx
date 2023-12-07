@@ -43,7 +43,7 @@ export const LoginForm = () => {
             <ControlledInput
               name="email"
               placeholder={t("auth.email")}
-              error={errors.email?.message}
+              error={t(errors.email?.message as never)}
             />
           </Label>
           <Label
@@ -55,7 +55,7 @@ export const LoginForm = () => {
               name="password"
               placeholder={t("auth.password")}
               type={iconPassword ? "password" : "text"}
-              error={errors.password?.message}
+              error={t(errors.password?.message as never)}
               endAdornment={
                 <Image
                   src={iconPassword ? "/images/eye.svg" : "/images/eye-off.svg"}

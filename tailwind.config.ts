@@ -6,6 +6,7 @@ export default {
     extend: {
       colors: {
         primary: "#FF7100",
+        "primary-hover": "rgba(255, 113, 0, 0.80)",
         secondary: "#1E1D1D",
         additional: "#2A907F",
         tertiary: "#4200FF",
@@ -22,6 +23,7 @@ export default {
         "text-3": "#757982",
         "text-4": "#0D71A8",
       },
+
       boxShadow: {
         "input-error": "0px 2px 2px #F79495, 0px 0px 0px 4px #F79495",
         "input-focus": "0px 2px 2px #C8B4FF, 0px 0px 0px 4px #C8B4FF",
@@ -40,8 +42,10 @@ export default {
         registerTitle: "615px",
         registerText: "430px",
         registerComment: "424px",
-        button: "200px",
-        "button-2": "244px",
+        button: "158px",
+        "button-2": "178px",
+        "button-3": "204px",
+        "button-4": "244px",
         title: "564px",
         categories: "1090px",
         footer: "985px",
@@ -49,9 +53,14 @@ export default {
         "advantages-text": "330px",
         "how-it-work-text": "264px",
         "how-it-work": "316px",
+        "article-text": "282px",
+      },
+      minHeight: {
+        article: "150px",
       },
       height: {
         border: "26px",
+        title: "48px",
       },
     },
   },

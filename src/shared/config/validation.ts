@@ -1,7 +1,7 @@
 export const enum ValidationMessage {
-  REQUIRED = "Це поле є обов'язковим",
-  INVALID_EMAIL_FORMAT = "Неправильний формат електронної адреси",
-  INVALID_PASSWORD_FORMAT = "Неправильний формат паролю",
+  REQUIRED = "auth.error-required",
+  INVALID_EMAIL_FORMAT = "auth.error-email",
+  INVALID_PASSWORD_FORMAT = "auth.error-password",
 }
 
 export const enum ValidationParam {
