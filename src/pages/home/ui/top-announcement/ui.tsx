@@ -6,7 +6,7 @@ import { type ICategoriesFavoriteTags } from "@/shared/api/categories-favorite-t
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { Button } from "@/shared/ui";
-import { SVGRS } from "@/shared/config";
+import { Icons } from "@/shared/config";
 
 export const TopAnnouncement = () => {
   const { locale } = useRouter();
@@ -44,7 +44,7 @@ export const TopAnnouncement = () => {
         <Advertisement />
       </div>
       <div className="mt-10 flex justify-center">
-        <Button size="xl" variant="outline" endAdornment={<SVGRS.Plus />}>
+        <Button size="xl" variant="outline" endAdornment={<Icons.Plus />}>
           {t("see-more")}
         </Button>
       </div>
