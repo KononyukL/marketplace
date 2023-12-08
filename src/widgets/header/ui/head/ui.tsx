@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Language } from "@/shared/ui";
 import { useTranslation } from "next-i18next";
-import { SVGRS } from "@/shared/config";
+import { Icons } from "@/shared/config";
 
 export const Head = () => {
   const { t } = useTranslation("common");
@@ -18,13 +18,13 @@ export const Head = () => {
               href="/login"
               className="flex gap-1 text-white hover:text-primary"
             >
-              <SVGRS.User />
+              <Icons.User />
               {t("auth.login")}
             </Link>
           </div>
           <div className="flex  gap-4 ">
-            <SVGRS.Heart className="cursor-pointer text-white hover:text-primary" />
-            <SVGRS.ShoppingIcon className="cursor-pointer text-white hover:text-primary" />
+            <Icons.Heart className="cursor-pointer text-white hover:text-primary" />
+            <Icons.ShoppingIcon className="cursor-pointer text-white hover:text-primary" />
           </div>
           <Language />
         </div>
