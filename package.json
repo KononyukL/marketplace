@@ -34,6 +34,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/eslint": "^8.44.2",
     "@types/node": "^20.6.2",
     "@types/react": "^18.2.22",
@@ -43,6 +44,7 @@
     "autoprefixer": "^10.4.15",
     "eslint": "^8.49.0",
     "eslint-config-next": "^13.4.19",
+    "file-loader": "^6.2.0",
     "husky": "^8.0.3",
     "postcss": "^8.4.29",
     "prettier": "^3.0.3",

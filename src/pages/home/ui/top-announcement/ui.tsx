@@ -5,6 +5,8 @@ import { ButtonTags } from "@/shared/ui/buttons/ui/button-tags";
 import { type ICategoriesFavoriteTags } from "@/shared/api/categories-favorite-tags/types";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import { Button } from "@/shared/ui";
+import { Icons } from "@/shared/config";
 
 export const TopAnnouncement = () => {
   const { locale } = useRouter();
@@ -40,6 +42,11 @@ export const TopAnnouncement = () => {
           ))}
         </div>
         <Advertisement />
+      </div>
+      <div className="mt-10 flex justify-center">
+        <Button size="xl" variant="outline" endAdornment={<Icons.Plus />}>
+          {t("see-more")}
+        </Button>
       </div>
     </div>
   );
