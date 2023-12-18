@@ -12,7 +12,10 @@ export const getStaticProps: GetStaticProps = async ({ locale = "" }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = ({ locales }) => {
-  const paths = locales?.map((locale) => ({ params: { id: "" }, locale }));
+  const paths = locales?.map((locale) => ({
+    params: { id: "" },
+    locale: locale || "",
+  }));
 
   return {
     paths: paths || [],
