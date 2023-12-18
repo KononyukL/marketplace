@@ -5,8 +5,15 @@
     "text-title": "всі види тварин"
   },
   "top": "Топ оголошення",
+  "advertisement": {
+    "gender": "Стать",
+    "age": "Вік",
+    "reviews": "відгуків",
+    "uah": "грн",
+    "top": "ТОП"
+  },
   "see-more": "Дивитись більше",
-  "all-advantages": "Всі",
+  "go-to-catalog": "Перейти до каталогу",
   "our-advantages": "Наші переваги",
   "advantages": {
     "title-one": "Підбір тварини онлайн",
