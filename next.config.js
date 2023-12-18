@@ -2,7 +2,16 @@
 const { i18n } = require("./next-i18next.config");
 const nextConfig = {
   i18n,
-
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "petmarket.s3.eu-north-1.amazonaws.com",
+        port: "",
+        pathname: "/advertisements/images/**",
+      },
+    ],
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,

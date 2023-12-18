@@ -27,6 +27,7 @@ export default {
       boxShadow: {
         "input-error": "0px 2px 2px #F79495, 0px 0px 0px 4px #F79495",
         "input-focus": "0px 2px 2px #C8B4FF, 0px 0px 0px 4px #C8B4FF",
+        box: "0px 0px 60px 0px rgba(137, 137, 137, 0.15);",
       },
       backgroundColor: {
         register: "rgba(30, 11, 1, 0.51)",
@@ -54,6 +55,7 @@ export default {
         "how-it-work-text": "264px",
         "how-it-work": "316px",
         "article-text": "282px",
+        "advertisement-photo": "390px",
       },
       minHeight: {
         article: "150px",
@@ -61,6 +63,10 @@ export default {
       height: {
         border: "26px",
         title: "48px",
+      },
+      maxHeight: {
+        photo: "168px",
+        "photo-2": "390px",
       },
     },
   },
