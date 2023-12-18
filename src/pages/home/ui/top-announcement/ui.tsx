@@ -28,7 +28,7 @@ export const TopAnnouncement = () => {
   };
 
   const onClickFetchNextPage = useCallback(
-    async () => await fetchNextPage(),
+    () => fetchNextPage(),
     [fetchNextPage],
   );
 
@@ -73,6 +73,7 @@ export const TopAnnouncement = () => {
               size="xl"
               variant="outline"
               endAdornment={<Icons.Plus />}
+              //eslint-disable-next-line @typescript-eslint/no-misused-promises
               onClick={onClickFetchNextPage}
             >
               {t("see-more")}
