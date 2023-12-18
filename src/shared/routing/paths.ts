@@ -16,4 +16,7 @@ export const paths = {
   blog: {
     get_all: "/v1/blog/",
   },
+  advertisementsFavorite: {
+    get_all: "/v1/advertisements/favorite/",
+  },
 } as const;
