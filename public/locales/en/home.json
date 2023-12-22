@@ -5,8 +5,15 @@
     "text-title": "all kinds of animals"
   },
   "top": "Top announcement",
+  "advertisement": {
+    "gender": "Gender",
+    "age": "Age",
+    "reviews": "reviews",
+    "uah": "UAH",
+    "top": "TOP"
+  },
   "see-more": "See more",
-  "all-advantages": "All",
+  "go-to-catalog": "Go to the catalog",
  "our-advantages": "Our advantages",
   "advantages": {
     "title-one": "Choosing an animal online",
