@@ -7,9 +7,7 @@ interface ICategories {
   lang_code: string;
 }
 
-interface IComments extends Omit<IEntity, "updated" | "ending" | "lang_code"> {
-  id: number;
-  created: string;
+interface IComments extends Pick<IEntity, "id" | "created"> {
   comment: string;
   status: string;
   post_id: number;
