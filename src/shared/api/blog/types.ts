@@ -1,5 +1,3 @@
-import { type IEntity } from "@/shared/api/types";
-
 interface ICategories {
   id: number;
   title: string;
@@ -7,7 +5,7 @@ interface ICategories {
   lang_code: string;
 }
 
-interface IComments extends Omit<IEntity, "updated" | "ending" | "lang_code"> {
+interface IComments {
   id: number;
   created: string;
   comment: string;
