@@ -14,8 +14,9 @@ export const TopAnnouncement = () => {
   const { locale } = useRouter();
   const { t } = useTranslation("home");
   const { data } = useGetCategoriesFavoriteTags(locale);
+  const defaultData = data?.[0].category_id || 1;
 
-  const [categoryId, setCategoryId] = useState(data?.[0].category_id || 1);
+  const [categoryId, setCategoryId] = useState(defaultData);
 
   const { data: advertisements, fetchNextPage } = useGetAdvertisementsFavorite({
     langCode: locale || DEFAULT_LOCALE,
@@ -32,12 +33,16 @@ export const TopAnnouncement = () => {
     [fetchNextPage],
   );
 
+  if (!advertisements?.pages || !data) {
+    return <div>Content not found</div>;
+  }
+
   return (
     <div className="m-auto max-w-main p-14 text-black">
       <h2 className="mb-12 text-4xl font-medium">{t("top")}</h2>
       <div className="flex flex-col gap-8">
         <div className="flex gap-2">
-          {data?.map((tag) => (
+          {data.map((tag) => (
             <ButtonTags
               onClick={onClick(tag.category_id)}
               key={tag.category_id}
@@ -47,7 +52,7 @@ export const TopAnnouncement = () => {
             </ButtonTags>
           ))}
         </div>
-        {advertisements?.pages.map((page) =>
+        {advertisements.pages.map((page) =>
           page.content.map((el) => (
             <Advertisement
               key={el.id}
@@ -65,28 +70,24 @@ export const TopAnnouncement = () => {
           )),
         )}
       </div>
-      {!!advertisements?.pages && (
-        <div className="mt-10 flex justify-center">
-          {advertisements.pages?.length < 2 &&
-          advertisements.pages[0].totalElements > ANNOUNCEMENT_SIZE ? (
-            <Button
-              size="xl"
-              variant="outline"
-              endAdornment={<Icons.Plus />}
-              //eslint-disable-next-line @typescript-eslint/no-misused-promises
-              onClick={onClickFetchNextPage}
-            >
-              {t("see-more")}
-            </Button>
-          ) : (
-            <Button size="xl" variant="outline">
-              <Link href={`categories/${categoryId}`}>
-                {t("go-to-catalog")}
-              </Link>
-            </Button>
-          )}
-        </div>
-      )}
+      <div className="mt-10 flex justify-center">
+        {advertisements.pages.length < 2 &&
+        advertisements.pages[0].totalElements > ANNOUNCEMENT_SIZE ? (
+          <Button
+            size="xl"
+            variant="outline"
+            endAdornment={<Icons.Plus />}
+            //eslint-disable-next-line @typescript-eslint/no-misused-promises
+            onClick={onClickFetchNextPage}
+          >
+            {t("see-more")}
+          </Button>
+        ) : (
+          <Button size="xl" variant="outline">
+            <Link href={`categories/${categoryId}`}>{t("go-to-catalog")}</Link>
+          </Button>
+        )}
+      </div>
     </div>
   );
 };

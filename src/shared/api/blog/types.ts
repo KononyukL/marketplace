@@ -1,3 +1,5 @@
+import { type IEntity } from "@/shared/api/types";
+
 interface ICategories {
   id: number;
   title: string;
@@ -5,9 +7,7 @@ interface ICategories {
   lang_code: string;
 }
 
-interface IComments {
-  id: number;
-  created: string;
+interface IComments extends Pick<IEntity, "id" | "created"> {
   comment: string;
   status: string;
   post_id: number;

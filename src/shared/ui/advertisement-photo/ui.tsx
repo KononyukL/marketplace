@@ -51,7 +51,7 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
       );
     default:
       return (
-        <div className="justify-cente max-w-advertisement-photo flex flex-col items-center gap-2">
+        <div className="max-w-advertisement-photo flex flex-col items-center justify-center gap-2">
           <div className="max-h-photo relative overflow-hidden rounded-lg">
             <Image src={firstImg.url} alt="foto" width={390} height={168} />
           </div>

@@ -6,7 +6,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "petmarket.s3.eu-north-1.amazonaws.com",
+        hostname: process.env.NEXT_PUBLIC_HOST_NAME,
         port: "",
         pathname: "/advertisements/images/**",
       },

@@ -1,3 +1,5 @@
+import { type IEntity } from "@/shared/api/types";
+
 interface ISort {
   sorted: boolean;
   empty: boolean;
@@ -23,15 +25,6 @@ interface IPageResponseBase {
   last: boolean;
   numberOfElements: number;
   empty: boolean;
-}
-
-interface IAdvertisementBase {
-  id: number;
-  created: string;
-  updated: string;
-  ending: string;
-  status: string;
-  lang_code: string;
 }
 
 interface IAuthor {
@@ -60,7 +53,7 @@ export interface IImage {
   url: string;
 }
 
-interface IAdvertisement extends IAdvertisementBase {
+interface IAdvertisement extends IEntity {
   author: IAuthor;
   alias: string;
   title: string;
