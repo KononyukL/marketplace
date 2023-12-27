@@ -17,11 +17,10 @@ export const Article = ({ date, time, title, text }: IArticle) => {
   const { t } = useTranslation("home");
 
   return (
-    <div className="max-w-how-it-worktext-black shadow-box w-full">
-      <div className=" flex  flex-col rounded-lg  bg-white p-4 ">
+    <div className="max-w-how-it-worktext-black w-full shadow-box">
+      <div className=" flex flex-col rounded-lg  bg-white p-4 ">
         <div>
           <Image
-            className="max-w-fullrounded-b-none h-[177px] w-[283px]"
             src="/images/animal-shelter-image.png"
             alt="foto"
             width={283}
@@ -42,7 +41,7 @@ export const Article = ({ date, time, title, text }: IArticle) => {
           </div>
           <div className="flex flex-col gap-2">
             <h3 className=" h-title font-medium">{title}</h3>
-            <p className="min-h-article max-w-[283px] text-sm">
+            <p className="min-h-article  text-sm">
               {text.length > 150 && text.slice(0, 150) + "..."}
             </p>
             <div className="mr-10 flex items-end justify-end">
