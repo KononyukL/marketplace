@@ -32,7 +32,7 @@ export const Main = () => {
         </div>
       </div>
       <Image
-        src={"/images/main-image.png"}
+        src={"/images/image-main.png"}
         alt="Animal"
         layout="fill"
         className="absolute"

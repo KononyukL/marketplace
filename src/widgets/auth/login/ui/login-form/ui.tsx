@@ -81,7 +81,7 @@ export const LoginForm = () => {
             </Link>
           </div>
         </div>
-        <Button className="mt-10" type="submit" variant="secondary">
+        <Button className="mt-10" type="submit" variant="primary">
           {t("auth.login")}
         </Button>
       </div>

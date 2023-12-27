@@ -1,13 +1,13 @@
 import { paths } from "@/shared/routing";
 import { axiosInstance } from "../config";
-import type { ICategories } from "./types";
+import { type ICategoriesBase } from "@/shared/api/types";
 
 class CategoriesActions {
   async getCategories(
     langCode: string,
     size: number = 7,
-  ): Promise<ICategories[]> {
-    const result = await axiosInstance.get<ICategories[]>(
+  ): Promise<ICategoriesBase[]> {
+    const result = await axiosInstance.get<ICategoriesBase[]>(
       `${paths.categories.get_all}${langCode}/${size}`,
     );
     return result.data;

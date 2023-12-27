@@ -58,7 +58,7 @@ export default {
         "advertisement-photo": "390px",
       },
       minHeight: {
-        article: "150px",
+        article: "100px",
       },
       height: {
         border: "26px",
