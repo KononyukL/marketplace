@@ -8,14 +8,14 @@ export default function Document() {
           rel="icon"
           type="image/x-icon"
           sizes="16x16"
-          href="favicon-dark.ico"
+          href="/favicon-dark.ico"
           media="(prefers-color-scheme: light)"
         />
         <link
           rel="icon"
           type="image/x-icon"
           sizes="16x16"
-          href="favicon.ico"
+          href="/favicon.ico"
           media="(prefers-color-scheme: dark)"
         />
       </Head>

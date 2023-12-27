@@ -28,9 +28,10 @@ export const BurgerMenu = () => {
           <nav className=" flex w-full flex-col flex-wrap gap-4">
             {data?.map((el) => (
               <Link
+                onClick={handleClick}
                 className="text-xl"
                 key={el.id}
-                href={`categories/${el.id}`}
+                href={`/categories/${el.id}`}
               >
                 {el.title}
               </Link>
