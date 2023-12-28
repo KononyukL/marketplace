@@ -5,4 +5,5 @@ module.exports = {
     locales: ["ua", "en"],
     localeDetection: false,
   },
+  localePath: require("path").resolve("./public/locales"),
 };
