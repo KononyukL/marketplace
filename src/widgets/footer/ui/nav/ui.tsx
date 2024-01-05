@@ -20,7 +20,7 @@ export const Nav = ({ title, data }: INav) => {
         {data.map((el, i) => (
           <Link
             key={i}
-            className="text-text-2 hover:text-primary "
+            className="text-text-2 transition-all hover:text-primary"
             href={el.link}
           >
             {t(el.title)}

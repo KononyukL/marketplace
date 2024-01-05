@@ -14,7 +14,7 @@ export const Categories = () => {
           <Link
             href={`categories/${category.id}`}
             key={category.id}
-            className="hover:text-primary-hover underline"
+            className="underline transition-all hover:text-primary-hover"
           >
             {category.title}
           </Link>

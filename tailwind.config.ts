@@ -22,6 +22,7 @@ export default {
         "border-2": "#C4C4C4",
         "text-3": "#757982",
         "text-4": "#0D71A8",
+        "border-auth": "#8D8A8A",
       },
 
       boxShadow: {
@@ -40,8 +41,8 @@ export default {
       maxWidth: {
         main: "1440px",
         auth: "426px",
-        registerTitle: "615px",
-        registerText: "430px",
+        registerTitle: "643px",
+        registerText: "382px",
         registerComment: "424px",
         button: "158px",
         "button-2": "178px",
@@ -67,6 +68,9 @@ export default {
       maxHeight: {
         photo: "168px",
         "photo-2": "390px",
+      },
+      fontSize: {
+        "auth-title": "45px",
       },
     },
   },
