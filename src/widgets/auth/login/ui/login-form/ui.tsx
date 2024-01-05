@@ -1,5 +1,4 @@
 import { type IFormLogin } from "@/shared/api/auth/types";
-
 import { useSignIn } from "@/shared/queries/auth";
 import { Button, ControlledInput, Form, Label } from "@/shared/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,7 +8,6 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { loginSchema } from "@/shared/lib/validation";
 import { useTranslation } from "next-i18next";
-import { ButtonAuth } from "@/shared/ui/buttons/ui/button-auth";
 
 export const LoginForm = () => {
   const [iconPassword, setIconPassword] = useState(false);
