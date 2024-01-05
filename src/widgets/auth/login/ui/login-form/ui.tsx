@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { loginSchema } from "@/shared/lib/validation";
 import { useTranslation } from "next-i18next";
+import { ButtonAuth } from "@/shared/ui/buttons/ui/button-auth";
 
 export const LoginForm = () => {
   const [iconPassword, setIconPassword] = useState(false);
@@ -67,19 +68,22 @@ export const LoginForm = () => {
               }
             />
           </Label>
-          <div className="flex justify-between">
-            <Label
-              className="flex flex-row-reverse items-center gap-1.5 focus-within:text-black"
-              text={t("auth.remember-me")}
-            >
-              <div>
-                <ControlledInput name="rememberMe" type="checkbox" />
-              </div>
-            </Label>
-            <Link className="text-tertiary" href="/reset-password">
-              {t("auth.forgot-password")}
-            </Link>
-          </div>
+        </div>
+        <div className="mt-4 flex justify-between">
+          <Label
+            className="flex flex-row-reverse items-center gap-1.5 focus-within:text-black hover:text-primary"
+            text={t("auth.remember-me")}
+          >
+            <div>
+              <ControlledInput name="rememberMe" type="checkbox" />
+            </div>
+          </Label>
+          <Link
+            className="text-black hover:text-primary"
+            href="/reset-password"
+          >
+            {t("auth.forgot-password")}
+          </Link>
         </div>
         <Button className="mt-10" type="submit" variant="primary">
           {t("auth.login")}
