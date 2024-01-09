@@ -99,10 +99,8 @@ export const Input = forwardRef<HTMLDivElement, InputProps>((props, ref) => {
           disabled={disabled}
           className={cn(
             "placeholder:text-grayText w-full rounded  border  border-input-2 px-2.5 py-2 font-light text-secondary placeholder:font-light focus:border-2 focus:outline-none focus:ring-0  focus-visible:outline-none",
-            error &&
-              "border-2 border-error focus-visible:border-error focus-visible:shadow-input-error ",
-            type !== "checkbox" &&
-              "focus:border-tertiary focus:shadow-input-focus ",
+            error && "border-2 border-error focus-visible:border-error  ",
+            type !== "checkbox" && "focus:border-primary-hover ",
           )}
           name={name}
           placeholder={placeholder}

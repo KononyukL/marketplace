@@ -16,15 +16,15 @@ export const Head = () => {
           <div>
             <Link
               href="/login"
-              className="flex gap-1 text-white hover:text-primary"
+              className="flex gap-1 text-white hover:text-primary hover:transition-all"
             >
               <Icons.User />
               {t("auth.login")}
             </Link>
           </div>
           <div className="flex  gap-4 ">
-            <Icons.Heart className="cursor-pointer text-white hover:text-primary" />
-            <Icons.ShoppingIcon className="cursor-pointer text-white hover:text-primary" />
+            <Icons.Heart className="cursor-pointer text-white hover:text-primary hover:transition-all" />
+            <Icons.ShoppingIcon className="cursor-pointer text-white hover:text-primary hover:transition-all" />
           </div>
           <Language />
         </div>

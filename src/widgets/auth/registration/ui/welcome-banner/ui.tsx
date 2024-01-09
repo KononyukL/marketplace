@@ -6,46 +6,50 @@ export const WelcomeBanner = () => {
   const { t } = useTranslation("common");
 
   return (
-    <div className="relative  shrink grow basis-2/4 text-white">
-      <div className="relative z-10 flex  min-h-screen flex-col gap-y-60 bg-register pb-36 pl-12 pt-20">
-        <h2 className="max-w-registerTitle text-4xl font-bold leading-tight">
-          {t("auth.welcome-banner")}
-        </h2>
-        <div className="flex flex-col gap-y-24">
-          <p className="w-full max-w-registerText text-xl leading-7">
+    <div className="relative shrink grow basis-2/4 text-white">
+      <div className="relative z-10 flex min-h-screen flex-col justify-between bg-register pb-32 pl-8 pt-14">
+        <div>
+          <h2 className="text-auth-title mb-4 font-bold leading-tight">
+            {t("auth.welcome-banner")}
+          </h2>
+          <p className="w-full max-w-registerText text-xl font-medium leading-7">
             {t("auth.banner-text")}
           </p>
+        </div>
+        <div className="flex flex-col ">
           <div className=" flex flex-col ">
-            <Rating
-              SVGstyle={{ display: "inline" }}
-              iconsCount={5}
-              initialValue={5}
-              size={20}
-              readonly={true}
-            />
-            <p className="mt-7 w-full max-w-registerComment">
-              We love Landingfolio! Our designers were using it for their
-              projects, so we already knew what kind of design they want.
-            </p>
             <div className="mt-5 flex gap-3">
               <Image
                 src={"/images/comment-image.svg"}
                 alt="People"
-                width={40}
-                height={40}
+                width={50}
+                height={50}
               />
               <div>
-                <p>Devon Lane</p>
-                <p className="text-xs text-tertiary-2">Co-Founder, Design.co</p>
+                <p>Олексій</p>
+                <Rating
+                  SVGstyle={{ display: "inline" }}
+                  iconsCount={5}
+                  initialValue={5}
+                  size={20}
+                  readonly={true}
+                  fillColor={"#2A907F"}
+                />
               </div>
             </div>
+            <p className="mt-7 w-full max-w-[519px] leading-7">
+              {'"'} {t("auth.comment-text-one")}
+              <br />
+              {t("auth.comment-text-two")}
+              {'"'}
+            </p>
           </div>
         </div>
       </div>
       <Image
-        src={"/images/register-image.png"}
-        alt="Login"
         className="z-0"
+        src={"/images/image-register.png"}
+        alt="Login"
         layout="fill"
         objectFit="cover"
         quality={100}

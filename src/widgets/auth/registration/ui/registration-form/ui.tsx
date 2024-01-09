@@ -1,5 +1,4 @@
 import { type IFormRegistration } from "@/shared/api/auth/types";
-
 import { useSignUp } from "@/shared/queries/auth";
 import { Button, ControlledInput, Form, Label } from "@/shared/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -70,7 +69,7 @@ export const RegistrationForm = () => {
           </Label>
         </div>
         <Button className="mt-10" type="submit" variant="primary">
-          {t("auth.register")}
+          {t("auth.button-register")}
         </Button>
       </div>
     </Form>

@@ -38,7 +38,7 @@ export const Advertisement = ({
   const { t } = useTranslation("home");
 
   return (
-    <div className=" shadow-box flex gap-6 rounded-lg bg-white p-8 text-black">
+    <div className=" flex gap-6 rounded-lg bg-white p-8 text-black shadow-box">
       <AdvertisementPhotos img={img} />
       <div className="flex-1">
         <div className="flex items-start justify-between">
@@ -72,11 +72,10 @@ export const Advertisement = ({
         <div className="mb-4 flex gap-4">
           <p className="text-text-3">
             {t("advertisement.gender")}:
-            <span className="text-black"> {gender} - </span>
+            <span className="text-black"> {gender} </span>
           </p>
           <p className="text-text-3">
-            {t("advertisement.age")}:
-            <span className="text-black">{age} - </span>
+            {t("advertisement.age")}:<span className="text-black">{age} </span>
           </p>
         </div>
         <p className="mb-4 w-full max-w-3xl ">{text}</p>
