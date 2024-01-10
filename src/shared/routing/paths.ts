@@ -22,4 +22,7 @@ export const paths = {
   advertisementsFavorite: {
     get_all: "/v1/advertisements/favorite/",
   },
+  locations: {
+    get_city_by_name: "/v1/cities/byName/",
+  },
 } as const;
