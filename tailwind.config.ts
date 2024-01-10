@@ -17,6 +17,7 @@ export default {
         error: "#EE0004",
         text: "#434242",
         title: "#101828",
+        "title-2": "#fff",
         "text-2": "#CACFDD",
         "border-footer": "#8E99B533",
         "border-2": "#C4C4C4",
@@ -44,6 +45,7 @@ export default {
         registerText: "430px",
         registerComment: "424px",
         button: "158px",
+        "button-1": "119px",
         "button-2": "178px",
         "button-3": "204px",
         "button-4": "244px",
@@ -56,6 +58,7 @@ export default {
         "how-it-work": "316px",
         "article-text": "282px",
         "advertisement-photo": "390px",
+        "test-text": "517px",
       },
       minHeight: {
         article: "100px",

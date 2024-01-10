@@ -14,6 +14,7 @@ interface IArticle {
 
 export const Article = ({ date, time, title, text }: IArticle) => {
   const { locale } = useRouter();
+
   const { t } = useTranslation("home");
 
   return (

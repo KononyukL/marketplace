@@ -8,6 +8,7 @@ import { Footer } from "@/widgets/footer";
 const PATH_WITHOUT_LAYOUT = ["/login", "/registration"];
 
 const robotoFlex = Roboto_Flex({ subsets: ["latin", "cyrillic"] });
+
 export const BaseLayout = ({ children }: PropsWithChildren) => {
   const router = useRouter();
 
