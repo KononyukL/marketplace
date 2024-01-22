@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ReactComponent as Arrow } from "../../../../public/images/arrow.svg";
 import { type ICategoriesBase } from "@/shared/api/types";
+import Image from "next/image";
 
 interface IBreadcrumbs {
   crumbs: string[];
@@ -24,9 +24,12 @@ export const Breadcrumbs = ({ crumbs, categoryItem }: IBreadcrumbs) => {
                   <>
                     {" "}
                     <Link href={"/"}>{"Головна"}</Link>
-                    <span className="h-5 w-5">
-                      <Arrow />
-                    </span>
+                    <Image
+                      src="images/arrow.svg"
+                      alt="arrow"
+                      width={20}
+                      height={20}
+                    />
                   </>
                 )}
               </span>
