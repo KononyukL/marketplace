@@ -1,5 +1,9 @@
 {
   "button-advertisement": "Додати оголошення",
+  "time": {
+    "today": "Сьогодні",
+    "yesterday": "Вчора"
+  },
   "auth": {
     "button-register": "Зареєструватися",
     "login": "Вхід",
