@@ -28,7 +28,8 @@ export default {
       boxShadow: {
         "input-error": "0px 2px 2px #F79495, 0px 0px 0px 4px #F79495",
         "input-focus": "0px 2px 2px #C8B4FF, 0px 0px 0px 4px #C8B4FF",
-        box: "0px 0px 60px 0px rgba(137, 137, 137, 0.15);",
+        box: "0px 0px 60px 0px rgba(137, 137, 137, 0.15)",
+        "button-scroll": " 0px 6px 40px 0px rgba(147, 178, 224, 0.25)",
       },
       backgroundColor: {
         register: "rgba(30, 11, 1, 0.51)",
@@ -67,7 +68,10 @@ export default {
       },
       maxHeight: {
         photo: "168px",
-        "photo-2": "390px",
+        "photo-2": "360px",
+      },
+      fontSize: {
+        "auth-title": "45px",
       },
       fontSize: {
         "auth-title": "45px",

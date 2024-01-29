@@ -8,9 +8,11 @@
   "advertisement": {
     "gender": "Стать",
     "age": "Вік",
-    "reviews": "відгуків",
+    "reviews": "Відгуків",
     "uah": "грн",
-    "top": "ТОП"
+    "top": "ТОП",
+    "shelter": "Притулок",
+    "private-announcement": "Приватне оголошення"
   },
   "all-categories": "Всі категорії",
   "see-more": "Дивитись більше",

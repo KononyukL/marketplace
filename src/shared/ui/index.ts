@@ -4,3 +4,6 @@ export * from "./form";
 export * from "./input";
 export * from "./language";
 export * from "./animal-shelter";
+export * from "./user-avatar";
+export * from "./user-type";
+export * from "./location";

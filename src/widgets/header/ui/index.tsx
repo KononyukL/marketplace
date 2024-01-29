@@ -3,7 +3,7 @@ import { Menu } from "@/widgets/header/ui/menu";
 
 export const Header = () => {
   return (
-    <header>
+    <header id="header">
       <Head />
       <Menu />
     </header>
