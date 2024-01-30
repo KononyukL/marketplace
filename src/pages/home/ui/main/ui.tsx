@@ -9,7 +9,7 @@ export const Main = () => {
   const { t } = useTranslation(["home", "common"]);
 
   return (
-    <div className="relative ">
+    <div className="relative">
       <div className=" relative z-10 m-auto max-w-main px-14 pb-36 pt-4 text-black">
         <Categories />
         <div className="flex items-center border-solid  text-black">

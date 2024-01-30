@@ -31,6 +31,8 @@ interface IAuthor {
   shortName: string;
   rating: number;
   reviews_count: number;
+  user_avatar_url: string;
+  user_type: string;
 }
 
 interface ILocation {
@@ -63,6 +65,7 @@ interface IAdvertisement extends IEntity {
   type: string;
   rating: number;
   attributes: IAttribute[];
+  favorite_attributes: IAttribute[];
   images: IImage[];
 }
 

@@ -15,7 +15,6 @@ export const TopAnnouncement = () => {
   const { t } = useTranslation("home");
   const { data } = useGetCategoriesFavoriteTags(locale);
   const defaultData = data?.[0].category_id || 1;
-
   const [categoryId, setCategoryId] = useState(defaultData);
 
   const { data: advertisements, fetchNextPage } = useGetAdvertisementsFavorite({
@@ -62,10 +61,13 @@ export const TopAnnouncement = () => {
               img={el.images}
               attributes={el.attributes}
               prise={el.price}
-              status={el.status}
+              ending={el.updated}
               text={el.description}
               title={el.title}
               reviewsCount={el.author.reviews_count}
+              favoriteAttributes={el.favorite_attributes}
+              userAvatarUrl={el.author.user_avatar_url}
+              userType={el.author.user_type}
             />
           )),
         )}

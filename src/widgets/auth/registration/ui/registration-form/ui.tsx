@@ -9,7 +9,7 @@ import { registrationSchema } from "@/shared/lib/validation";
 import { useTranslation } from "next-i18next";
 
 export const RegistrationForm = () => {
-  const [iconPassword, setIconPassword] = useState(false);
+  const [iconPassword, setIconPassword] = useState(true);
   const { t } = useTranslation("common");
   const handleSwitchIconPassword = () => setIconPassword(!iconPassword);
 
@@ -58,7 +58,9 @@ export const RegistrationForm = () => {
               endAdornment={
                 // todo: create separate icon component for that purposes, you can use @svgr/webpack or @neodx/svg whatever you prefer
                 <Image
-                  src={iconPassword ? "/images/eye.svg" : "/images/eye-off.svg"}
+                  src={
+                    !iconPassword ? "/images/eye.svg" : "/images/eye-off.svg"
+                  }
                   alt="eye"
                   onClick={handleSwitchIconPassword}
                   width={28}

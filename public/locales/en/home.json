@@ -8,9 +8,11 @@
   "advertisement": {
     "gender": "Gender",
     "age": "Age",
-    "reviews": "reviews",
+    "reviews": "Reviews",
     "uah": "UAH",
-    "top": "TOP"
+    "top": "TOP",
+    "shelter": "Shelter",
+    "private-announcement": "Private announcement"
   },
   "all-categories": "All categories",
   "see-more": "See more",

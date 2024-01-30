@@ -1,5 +1,9 @@
 {
  "button-advertisement": "Add an advertisement",
+  "time": {
+    "today": "Today",
+    "yesterday": "Yesterday"
+  },
   "auth": {
     "button-register": "Sign up",
     "login": "Sign in",

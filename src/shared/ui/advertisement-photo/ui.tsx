@@ -10,7 +10,7 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
 
   if (!img.length) {
     return (
-      <div className="max-w-advertisement-photo flex flex-1 items-center justify-center">
+      <div className="flex max-w-advertisement-photo flex-1 items-center justify-center">
         Not photo
       </div>
     );
@@ -19,7 +19,7 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
   switch (img.length) {
     case 1:
       return (
-        <div className="max-w-advertisement-photo max-h-photo-2 flex items-center justify-center overflow-hidden rounded-lg">
+        <div className="flex h-full max-h-photo-2 max-w-advertisement-photo items-center justify-center overflow-hidden rounded-lg">
           <Image
             className="rounded-lg "
             objectFit="contain"
@@ -51,8 +51,8 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
       );
     default:
       return (
-        <div className="max-w-advertisement-photo flex flex-col items-center justify-center gap-2">
-          <div className="max-h-photo relative overflow-hidden rounded-lg">
+        <div className="flex max-w-advertisement-photo flex-col items-center justify-center gap-2">
+          <div className="relative max-h-photo overflow-hidden rounded-lg">
             <Image src={firstImg.url} alt="foto" width={390} height={168} />
           </div>
           <div className="flex gap-4">

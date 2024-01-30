@@ -10,10 +10,9 @@ import { loginSchema } from "@/shared/lib/validation";
 import { useTranslation } from "next-i18next";
 
 export const LoginForm = () => {
-  const [iconPassword, setIconPassword] = useState(false);
+  const [iconPassword, setIconPassword] = useState(true);
   const { t } = useTranslation("common");
 
-  const handleSwitchIconPassword = () => setIconPassword(!iconPassword);
   const form = useForm<IFormLogin>({
     mode: "all",
     resolver: zodResolver(loginSchema),
@@ -23,6 +22,7 @@ export const LoginForm = () => {
     reset,
     formState: { errors },
   } = form;
+  const handleSwitchIconPassword = () => setIconPassword(!iconPassword);
 
   const { mutate } = useSignIn();
   const onSubmit = (data: IFormLogin) => {
@@ -30,6 +30,7 @@ export const LoginForm = () => {
       onSuccess: () => reset(),
     });
   };
+
   return (
     <Form form={form} onSubmit={onSubmit}>
       <div className="flex flex-col">
@@ -57,7 +58,9 @@ export const LoginForm = () => {
               error={t(errors.password?.message as never)}
               endAdornment={
                 <Image
-                  src={iconPassword ? "/images/eye.svg" : "/images/eye-off.svg"}
+                  src={
+                    !iconPassword ? "/images/eye.svg" : "/images/eye-off.svg"
+                  }
                   alt="eye"
                   onClick={handleSwitchIconPassword}
                   width={28}
