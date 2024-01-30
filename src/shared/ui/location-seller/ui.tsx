@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const Location = ({
+export const LocationSeller = ({
   children,
 }: React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
