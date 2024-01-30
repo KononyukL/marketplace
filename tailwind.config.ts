@@ -73,9 +73,6 @@ export default {
       fontSize: {
         "auth-title": "45px",
       },
-      fontSize: {
-        "auth-title": "45px",
-      },
     },
   },
   plugins: [],

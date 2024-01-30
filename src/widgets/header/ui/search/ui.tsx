@@ -3,6 +3,7 @@ import { Combobox, Transition } from "@headlessui/react";
 import { useGetCitiesByName } from "@/shared/queries/locations";
 import useSaveInURL from "@/shared/hooks/use-save-in-url";
 import { type ICity } from "@/shared/api/locations/types";
+import { Icons } from "@/shared/config";
 
 export const Search = () => {
   const { savedData: savedLocation, onSave } = useSaveInURL<{
@@ -33,15 +34,19 @@ export const Search = () => {
     <div className="relative  max-w-[560px]">
       <Combobox value={savedValue} onChange={handleSave}>
         <div className="relative mt-1 ">
-          <div className="relative flex w-full cursor-default overflow-hidden rounded-[30px] border border-solid border-gray-500 bg-white text-left  focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
+          <Combobox.Button
+            as="div"
+            className="relative flex w-full cursor-default overflow-hidden rounded border border-solid border-gray-500 bg-white pl-4 pr-10 text-left text-text-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"
+          >
+            <Icons.Location className="absolute left-1 top-1.5 text-text-3" />
             <Combobox.Input
-              className=" w-full border-none py-2 pl-5 pr-10 text-sm leading-5 text-gray-900 outline-none  focus:ring-0 "
+              className="ml-2 w-full border-none py-2 text-sm leading-5 outline-none focus:ring-0 "
               displayValue={(item: ICity) => item.name || queryString}
-              placeholder="Я шукаю... "
+              placeholder={`Уся Україна`}
               onChange={onChange}
               autoComplete="off"
             />
-          </div>
+          </Combobox.Button>
           <Transition
             as={Fragment}
             leave="transition ease-in duration-100"
@@ -89,14 +94,6 @@ export const Search = () => {
             </Combobox.Options>
           </Transition>
         </div>
-        {/*<button className="absolute inset-y-0 right-0 flex items-center pr-5 ">*/}
-        {/*  <Image*/}
-        {/*    src={"/images/icon-search.svg"}*/}
-        {/*    alt="Search"*/}
-        {/*    width={24}*/}
-        {/*    height={24}*/}
-        {/*  />*/}
-        {/*</button>*/}
       </Combobox>
     </div>
   );
