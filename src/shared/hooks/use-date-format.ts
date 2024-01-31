@@ -1,15 +1,15 @@
 import { format, isToday, isYesterday, type Locale } from "date-fns";
 import { enGB, uk } from "date-fns/locale";
 import { useTranslation } from "next-i18next";
+import { type TLocales } from "@/shared/config";
 
-const LOCALES_OBJECT: Record<string, Locale> = {
+const LOCALES_OBJECT: Record<TLocales, Locale> = {
   ua: uk,
   en: enGB,
 };
-
 interface IUseDateFormat {
   date: string;
-  locale: string;
+  locale: TLocales;
 }
 
 export const useDateFormat = ({ date, locale }: IUseDateFormat) => {

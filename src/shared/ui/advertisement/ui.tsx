@@ -7,7 +7,8 @@ import { AdvertisementPhotos } from "@/shared/ui/advertisement-photo";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useDateFormat } from "@/shared/hooks/use-date-format";
-import { Location, UserAvatar, UserType } from "@/shared/ui";
+import { LocationSeller, UserAvatar, UserType } from "@/shared/ui";
+import { type TLocales } from "@/shared/config";
 
 interface IAdvertisement {
   img: IImage[];
@@ -42,7 +43,7 @@ export const Advertisement = ({
 }: IAdvertisement) => {
   const { t } = useTranslation("home");
   const { locale = "ua" } = useRouter();
-  const date = useDateFormat({ date: ending, locale });
+  const date = useDateFormat({ date: ending, locale: locale as TLocales });
 
   return (
     <div className=" flex gap-6 rounded-lg bg-white p-8 text-black shadow-box">
@@ -100,10 +101,10 @@ export const Advertisement = ({
           <UserAvatar userAvatarUrl={userAvatarUrl} author={author} />
           <div className="flex flex-col gap-1 ">
             <p className="text-text-3">{author}</p>
-            <Location>
+            <LocationSeller>
               {cityType}
               {city}
-            </Location>
+            </LocationSeller>
           </div>
           <div className="flex flex-col gap-1">
             <UserType userType={userType} />
