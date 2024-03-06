@@ -55,7 +55,7 @@ export interface IImage {
   url: string;
 }
 
-interface IAdvertisement extends IEntity {
+export interface IAdvertisement extends IEntity {
   author: IAuthor;
   alias: string;
   title: string;

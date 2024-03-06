@@ -24,5 +24,10 @@ export const paths = {
   },
   locations: {
     get_city_by_name: "/v1/cities/byName/",
+    get_country_states_by_name: "/v1/countries/",
+    get_states_cities: "/v1/states/",
+  },
+  search: {
+    get_all: "/v1/advertisements/",
   },
 } as const;

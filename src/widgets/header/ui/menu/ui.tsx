@@ -2,8 +2,9 @@ import { BurgerMenu } from "@/widgets/header/ui/burger-menu";
 import Link from "next/link";
 
 import { ButtonAdvertisement } from "@/shared/ui/buttons/ui/button-advertisement";
-import { Search } from "@/widgets/header/ui/search";
+
 import { useTranslation } from "next-i18next";
+import { SearchHeader } from "@/entities/search-header/ui";
 
 export const Menu = () => {
   const { t } = useTranslation("common");
@@ -20,7 +21,7 @@ export const Menu = () => {
             {t("menu.articles")}
           </Link>
         </nav>
-        <Search />
+        <SearchHeader />
         <ButtonAdvertisement />
       </div>
     </div>
