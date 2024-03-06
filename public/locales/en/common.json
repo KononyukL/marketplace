@@ -53,5 +53,15 @@
      "title-three": "Create an advertisement",
      "title-four": "My advertisements"
    }
- }
+ },
+  "search": {
+    "all-states": "All of Ukraine",
+    "all-ads": "all ads",
+    "select-area": "Select an area",
+    "entire-area": "entire area",
+    "back": "Back",
+    "recommendations": "RECOMMENDATIONS",
+    "select-settlement": "Select a settlement",
+    "looking-for": "I'm looking for..."
+  }
 }
