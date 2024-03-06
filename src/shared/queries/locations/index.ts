@@ -1,9 +1,9 @@
 import { useQuery, type UseQueryResult } from "react-query";
-
-import { type ICity } from "@/shared/api/locations/types";
+import { type ICity, type ILocation } from "@/shared/api/locations/types";
 import Locations from "@/shared/api/locations";
 import { useCallback, useState } from "react";
 import useDebounce from "@/shared/hooks/use-debounce";
+import type { AxiosError } from "axios";
 
 export function useGetCitiesByName(
   defaultName = "",
@@ -26,4 +26,20 @@ export function useGetCitiesByName(
   );
 
   return { ...data, searchCitiesByName, queryString: name };
+}
+
+export function useGetCountryStates(
+  id = 1,
+): UseQueryResult<ILocation[], AxiosError> {
+  return useQuery(["country-states", id], () =>
+    Locations.getCountryStatesByName(id),
+  );
+}
+
+export function useGetStatesCities(
+  id: number = 0,
+): UseQueryResult<ICity[], AxiosError> {
+  return useQuery(["states-cities", id], () => Locations.getStatesCities(id), {
+    enabled: !!id,
+  });
 }
