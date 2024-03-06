@@ -3,6 +3,7 @@ import { ReactComponent as Heart } from "../../../public/images/heart.svg";
 import { ReactComponent as ShoppingIcon } from "../../../public/images/icon-shopping.svg";
 import { ReactComponent as Plus } from "../../../public/images/plus.svg";
 import { ReactComponent as Location } from "../../../public/images/location.svg";
+import { ReactComponent as Search } from "../../../public/images/icon-search.svg";
 
 export const Icons = {
   User,
@@ -10,4 +11,5 @@ export const Icons = {
   ShoppingIcon,
   Plus,
   Location,
+  Search,
 };
