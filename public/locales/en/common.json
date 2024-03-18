@@ -62,6 +62,7 @@
     "back": "Back",
     "recommendations": "RECOMMENDATIONS",
     "select-settlement": "Select a settlement",
-    "looking-for": "I'm looking for..."
+    "looking-for": "I'm looking for...",
+    "nothing-found": "Nothing found"
   }
 }

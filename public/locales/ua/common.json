@@ -58,10 +58,11 @@
     "all-states": "Вся Україна",
     "all-ads": "всі оголошення",
     "select-area": "Виберіть область",
-    "entire-area": "вся територія",
+    "entire-area": "вся область",
     "back": "Назад",
     "recommendations": "РЕКОМЕНДАЦІЇ",
-    "select-settlement": "Оберіть населений пункт",
-    "looking-for": "Я шукаю..."
+    "select-settlement": "Виберіть населенний пункт",
+    "looking-for": "Я шукаю...",
+     "nothing-found": "Нічого не знайдено"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "nothing-found-search": {
+    "on-request": "On request",
+    "in": "in",
+    "nothing-found": "nothing found",
+    "text": "Try writing the ad title differently, shorten the query, or switch to a different category",
+    "back-main-page": "Back to the main page",
+    "search-results": "Search results",
+    "found": "We found",
+    "ads": "ads"
+  }
+}
