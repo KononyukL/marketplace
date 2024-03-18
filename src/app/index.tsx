@@ -7,6 +7,7 @@ import { BaseLayout } from "@/widgets/layouts/base-layout/ui";
 import { appWithTranslation } from "next-i18next";
 import NextAdapterApp from "next-query-params/app";
 import { QueryParamProvider } from "use-query-params";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -14,6 +15,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>
           <QueryParamProvider adapter={NextAdapterApp}>
+            <ReactQueryDevtools initialIsOpen={false} />
             <BaseLayout>
               <Component {...pageProps} />
             </BaseLayout>

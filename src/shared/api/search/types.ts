@@ -9,3 +9,12 @@ export interface ICategoriesSearch extends IGetAdvertisementFavoriteProps {
   category: ICategoriesBase;
   advertisements: IAdvertisementFavorite;
 }
+
+export interface ICategoriesResponseFilters {
+  size: number;
+  page: number;
+  searchTerm?: string;
+  categoryId?: number;
+  cityIds?: number[];
+  minPrice?: number;
+}

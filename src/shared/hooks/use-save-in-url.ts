@@ -1,10 +1,7 @@
 import { StringParam, useQueryParams } from "use-query-params";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-interface IUseSaveInURL<T> {
-  savedData?: T;
-  onSave: (data?: T) => void;
-}
+type IUseSaveInURL<T> = [savedData: T | undefined, onSave: (data?: T) => void];
 
 const useSaveInURL = <T>(paramName: string): IUseSaveInURL<T> => {
   const [isError, setIsError] = useState(false);
@@ -37,10 +34,7 @@ const useSaveInURL = <T>(paramName: string): IUseSaveInURL<T> => {
     }
   }, [isError, paramName, setQuery]);
 
-  return {
-    savedData,
-    onSave,
-  };
+  return [savedData, onSave];
 };
 
 export default useSaveInURL;

@@ -3,19 +3,28 @@ import { ButtonDelete } from "@/shared/ui/buttons/ui/button-delete";
 import { useTranslation } from "next-i18next";
 
 interface ISearchCategories {
-  categories: string;
+  onClear: () => void;
+  hideClear?: boolean;
 }
 
-export const SearchCategories = ({ categories }: ISearchCategories) => {
+export const SearchCategories = ({ onClear, hideClear }: ISearchCategories) => {
   const { t } = useTranslation("common");
+
+  const endAdornmentComponent = () => {
+    if (hideClear) {
+      return;
+    }
+
+    return <ButtonDelete onClick={onClear} />;
+  };
+
   return (
-    <div className={`w-2/4 `}>
+    <div className="w-2/4">
       <ControlledInput
-        name="categories"
-        className={`border-none [&>input]:border-transparent [&>input]:p-0 [&>input]:px-4`}
+        name="searchTerm"
+        className={`focus:border-none [&>input]:border-none [&>input]:p-0 [&>input]:px-4 [&input]:border-transparent `}
         placeholder={t("search.looking-for")}
-        defaultValue={categories}
-        endAdornment={<ButtonDelete />}
+        endAdornment={endAdornmentComponent()}
       />
     </div>
   );
