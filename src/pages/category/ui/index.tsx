@@ -1,33 +1,53 @@
 import { useRouter } from "next/router";
 import { useGetCategories } from "@/shared/queries/categories";
 import { useGetCategoriesSearch } from "@/shared/queries/search";
-import { DEFAULT_LOCALE } from "@/shared/queries/constants";
-import { jsonParser } from "@/shared/config";
-import type { IState } from "@/entities/search-header/ui/search-location";
+import { useCategoriesFilters } from "@/shared/queries/search/use-categories-filters";
+import { useMemo } from "react";
+
+import { NothingFoundSearch } from "@/pages/category/ui/nothing-found-search";
+import { SearchResults } from "@/pages/category/ui/search-results";
 
 export const Category = () => {
   const { query } = useRouter();
 
   const { data } = useGetCategories();
 
-  const categoryId = query?.id as string;
-  const search = (query?.categories as string) || "";
-  const location = jsonParser<IState>(query?.location as string) || { id: 0 };
+  const categoryId = query?.id ? Number(query.id) : 0;
 
-  const categoryItem = data?.find((category) => category.id === +categoryId);
+  const defaultFilters = useMemo(() => ({ categoryId }), [categoryId]);
 
-  const { data: categories } = useGetCategoriesSearch(DEFAULT_LOCALE, {
-    size: 12,
-    page: 1,
-    searchTerm: search,
-    cityIds: location.id || 0,
+  const { filters } = useCategoriesFilters({
+    defaultFilters,
   });
 
-  console.log(categories);
+  const categoryItem = data?.find((category) => category.id === categoryId);
+
+  const { data: categories } = useGetCategoriesSearch({ filters });
+
+  const resultSearch = () => {
+    if (!filters.categoryId || !categories?.advertisements.numberOfElements) {
+      return (
+        <NothingFoundSearch
+          searchTerm={filters.searchTerm}
+          locationName={filters.location?.name}
+        />
+      );
+    }
+    if (filters?.searchTerm) {
+      return (
+        <SearchResults
+          adsNumber={categories?.advertisements.numberOfElements}
+          searchTerm={filters?.searchTerm}
+          locationName={filters.location?.name}
+        />
+      );
+    }
+    return ` ${categoryItem?.title}`;
+  };
 
   return (
     <div className="m-auto h-screen max-w-main p-14 text-black">
-      {categoryItem?.title}
+      {resultSearch()}
     </div>
   );
 };
