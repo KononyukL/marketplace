@@ -23,7 +23,7 @@ export const Button = ({
   return (
     <button
       className={cn(
-        "w-full cursor-pointer  rounded-lg py-4 transition-all",
+        "w-full cursor-pointer  rounded-lg py-3 transition-all",
         className,
         {
           " bg-primary font-bold text-white hover:bg-primary-hover":

@@ -7,6 +7,7 @@ export const ButtonDelete = ({ onClick }: IButtonSearch) => {
   return (
     <button type="button">
       <Image
+        className="w-full"
         onClick={onClick}
         src="/images/delete-icon.svg"
         alt="Delete"

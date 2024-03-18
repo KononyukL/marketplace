@@ -61,7 +61,9 @@ export default {
         "how-it-work": "316px",
         "article-text": "282px",
         "advertisement-photo": "390px",
-        search: "560px",
+      },
+      width: {
+        search: "484px",
       },
       minHeight: {
         article: "100px",

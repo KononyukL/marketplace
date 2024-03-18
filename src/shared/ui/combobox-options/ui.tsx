@@ -18,7 +18,7 @@ export const ComboboxOptions = <T,>({
       onClick={onClick}
       disabled={disabled}
       className={({ active }) =>
-        `relative cursor-default select-none px-4 py-2 ${active && "bg-hover"}`
+        `relative  cursor-pointer select-none  ${active && "bg-hover"}`
       }
       value={value}
     >
