@@ -1,16 +1,5 @@
 import { useTranslation } from "react-i18next";
-
-export interface IData {
-  list: string;
-}
-const data: IData[] = [
-  { list: "tips.list.list-one" },
-  { list: "tips.list.list-two" },
-  { list: "tips.list.list-three" },
-  { list: "tips.list.list-four" },
-  { list: "tips.list.list-five" },
-  { list: "tips.list.list-six" },
-];
+import { data } from "./data";
 
 export const TipsComponent = () => {
   const { t } = useTranslation(["support"]);
