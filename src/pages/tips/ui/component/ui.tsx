@@ -19,7 +19,7 @@ export const TipsComponent = () => {
     <>
       <div className="px-[72px] py-8 text-justify">
         <p className="pb-6">{t("tips.paragraphs.start")}</p>
-        <ol className="list-decimal px-5">
+        <ol className="list-decimal pl-5">
           {data.map((el, i) => (
             <li key={i} className="pb-6">
               {t(el.list)}

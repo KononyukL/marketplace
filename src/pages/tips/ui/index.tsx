@@ -14,13 +14,13 @@ export const Tips = () => {
   const titleLink = data.find((title) => asPath === title.link);
 
   const segmentTitle = titleLink?.title as string;
-  console.log(`titleLink`, segmentTitle);
+
   return (
     <>
       <Breadcrumbs
         segments={segments}
         startingTitle={t("menu.start-link")}
-        segmentTitle={segmentTitle}
+        segmentTitle={t(segmentTitle)}
       />
       <SupportPages title={t("footer.support.title-three")}>
         <TipsComponent />
