@@ -8,8 +8,6 @@ import {
 import { Language } from "@/shared/ui";
 
 export const Footer = () => {
-  console.log(user);
-  console.log(support);
   return (
     <footer className=" bg-title text-white">
       <div className="m-auto max-w-main p-14">

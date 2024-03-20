@@ -1,12 +1,12 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import type { GetStaticProps } from "next";
-import { Support } from "@/pages/support";
+import { Tips } from "@/pages/tips";
 
-const SupportPage = () => {
-  return <Support />;
+const TipsPage = () => {
+  return <Tips />;
 };
 
-export default SupportPage;
+export default TipsPage;
 
 export const getStaticProps: GetStaticProps = async ({ locale = "" }) => {
   return {
