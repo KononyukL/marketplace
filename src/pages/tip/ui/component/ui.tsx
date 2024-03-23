@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { data } from "./data";
 
-export const TipsComponent = () => {
+export const TipComponent = () => {
   const { t } = useTranslation(["support"]);
 
   return (
     <>
-      <div className="px-[72px] py-8 text-justify">
+      <div className="px-support py-8 text-justify">
         <p className="pb-6">{t("tips.paragraphs.start")}</p>
         <ol className="list-decimal pl-5">
           {data.map((el, i) => (

@@ -9,7 +9,7 @@ export const animalMarket = [
 export const support = [
   { title: "footer.support.title-one", link: "/" },
   { title: "footer.support.title-two", link: "/" },
-  { title: "footer.support.title-three", link: "/tips" },
+  { title: "footer.support.title-three", link: "/tip" },
   { title: "FAQ", link: "/" },
 ];
 

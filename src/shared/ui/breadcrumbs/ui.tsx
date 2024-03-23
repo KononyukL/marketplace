@@ -33,7 +33,7 @@ export const Breadcrumbs = ({
                   >
                     {segment === "" ? `${startingTitle}` : segmentTitle}
                   </Link>
-                  <span className="mx-[1px]">
+                  <span className="mx-px">
                     <Image
                       src="image/icon-arrow.svg"
                       alt="arrow"

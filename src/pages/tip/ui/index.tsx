@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
-import { TipsComponent } from "./component";
+import { TipComponent } from "./component";
 import { SupportPages } from "@/shared/ui/support-pages";
 import { useRouter } from "next/router";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
 import { support } from "@/widgets/footer/ui/nav/footer-data";
 
-export const Tips = () => {
+export const Tip = () => {
   const { t } = useTranslation(["common"]);
   const { asPath } = useRouter();
   const segments = asPath.split("/");
@@ -23,7 +23,7 @@ export const Tips = () => {
         segmentTitle={t(segmentTitle)}
       />
       <SupportPages title={t("footer.support.title-three")}>
-        <TipsComponent />
+        <TipComponent />
       </SupportPages>
     </>
   );
