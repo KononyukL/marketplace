@@ -41,7 +41,7 @@ export const Category = () => {
         />
       );
     }
-    return `${categoryItem?.title}` || <div>No title</div>;
+    return `${categoryItem?.title}` ?? <div>No title</div>;
   };
 
   return (

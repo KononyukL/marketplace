@@ -31,6 +31,8 @@ export const Search = <T,>({
   stateId,
   onClearLocation,
 }: ISearch<T>) => {
+  const showButton = querystring || stateId;
+
   return (
     <Combobox value={value} onChange={handleSave}>
       {({ open }) => (
@@ -48,7 +50,7 @@ export const Search = <T,>({
               autoComplete="off"
               onFocus={onFocus}
             />
-            {!!(querystring || stateId) && (
+            {!!showButton && (
               <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-black">
                 <ButtonDelete onClick={onClearLocation} />
               </div>
