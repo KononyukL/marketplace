@@ -11,12 +11,15 @@ import {
   useCategoriesFilters,
 } from "@/shared/queries/search/use-categories-filters";
 import React, { useCallback, useEffect } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { searchSchema } from "@/shared/lib/validation/validation";
 
 export const SearchHeader = () => {
   const { filters, onCategoriesSearchChange } = useCategoriesFilters();
 
   const form = useForm<ICategoriesSearch>({
     mode: "all",
+    resolver: zodResolver(searchSchema),
     defaultValues: {
       searchTerm: filters.searchTerm,
       location: filters.location,
