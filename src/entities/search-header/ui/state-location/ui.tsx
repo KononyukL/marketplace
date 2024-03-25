@@ -24,7 +24,7 @@ export const StateLocation = ({ states, onClickState }: IStateLocation) => {
           <p className="mt-2 px-4 text-xs text-black ">
             {t("search.select-area")}
           </p>
-          {states?.map((state) => (
+          {states.map((state) => (
             <ComboboxOptions key={state.id} value={state} disabled>
               <div
                 className="mr-2 flex items-center justify-between px-4 py-2 hover:bg-hover"

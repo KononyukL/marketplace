@@ -42,7 +42,7 @@ export const StateCityLocation = ({
           <p className="mt-2 px-4 text-xs font-semibold text-black ">
             {t("search.select-settlement")}
           </p>
-          {statesCities?.map((stateCity) => (
+          {statesCities.map((stateCity) => (
             <ComboboxOptions key={stateCity.id} value={stateCity}>
               <div className="mr-2 px-4 py-2">
                 <p className="text-black">{stateCity.name}</p>

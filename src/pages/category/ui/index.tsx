@@ -3,7 +3,6 @@ import { useGetCategories } from "@/shared/queries/categories";
 import { useGetCategoriesSearch } from "@/shared/queries/search";
 import { useCategoriesFilters } from "@/shared/queries/search/use-categories-filters";
 import { useMemo } from "react";
-
 import { NothingFoundSearch } from "@/pages/category/ui/nothing-found-search";
 import { SearchResults } from "@/pages/category/ui/search-results";
 
@@ -24,7 +23,7 @@ export const Category = () => {
 
   const { data: categories } = useGetCategoriesSearch({ filters });
 
-  const resultSearch = () => {
+  const renderSearchResults = () => {
     if (!filters.categoryId || !categories?.advertisements.numberOfElements) {
       return (
         <NothingFoundSearch
@@ -42,12 +41,12 @@ export const Category = () => {
         />
       );
     }
-    return ` ${categoryItem?.title}`;
+    return `${categoryItem?.title}` || <div>No title</div>;
   };
 
   return (
     <div className="m-auto h-screen max-w-main p-14 text-black">
-      {resultSearch()}
+      {renderSearchResults()}
     </div>
   );
 };
