@@ -55,6 +55,7 @@ export const TopAnnouncement = () => {
           page.content.map((el) => (
             <Advertisement
               key={el.id}
+              id={el.id}
               city={el.location.city_name}
               author={el.author.shortName}
               cityType={el.location.city_type_short_title}
