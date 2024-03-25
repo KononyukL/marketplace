@@ -1,5 +1,5 @@
 {
- "button-advertisement": "Add an advertisement",
+  "button-advertisement": "Add an advertisement",
   "time": {
     "today": "Today",
     "yesterday": "Yesterday"
@@ -29,29 +29,30 @@
     "error-required": "This field is required"
   },
   "menu": {
-   "selection": "Selection of the animal",
-   "articles": "Articles about animals"
- },
- "animal-shelter": {
-  "title": "Do you have an animal shelter?",
-  "text": "Register and place your pets in good hands!"
- },
- "footer": {
-  "animal-market": {
-    "title-one": "Information about the company",
-    "title-two": "Blog",
-    "title-three": "Terms of use",
-    "title-four": "Privacy policy",
-    "title-five": "Development team page"
+    "selection": "Selection of the animal",
+    "articles": "Articles about animals",
+    "start-link": "Main"
   },
-   "support": {
-     "title-one": "Contacts and feedback",
-     "title-two": "How to sell and buy?",
-     "title-three": "Tips for website security"
-   },
-   "user": {
-     "title-three": "Create an advertisement",
-     "title-four": "My advertisements"
-   }
- }
+  "animal-shelter": {
+    "title": "Do you have an animal shelter?",
+    "text": "Register and place your pets in good hands!"
+  },
+  "footer": {
+    "animal-market": {
+      "title-one": "Information about the company",
+      "title-two": "Blog",
+      "title-three": "Terms of use",
+      "title-four": "Privacy policy",
+      "title-five": "Development team page"
+    },
+    "support": {
+      "title-one": "Contacts and feedback",
+      "title-two": "How to sell and buy?",
+      "title-three": "Tips for website security"
+    },
+    "user": {
+      "title-three": "Create an advertisement",
+      "title-four": "My advertisements"
+    }
+  }
 }

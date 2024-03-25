@@ -8,7 +8,7 @@ const nextConfig = {
         protocol: "https",
         hostname: process.env.NEXT_PUBLIC_HOST_NAME,
         port: "",
-        pathname: "/advertisements/**",
+        pathname: "/**/**",
       },
     ],
   },

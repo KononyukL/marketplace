@@ -58,6 +58,7 @@ export default {
         "how-it-work": "316px",
         "article-text": "282px",
         "advertisement-photo": "390px",
+        support: "874px",
       },
       minHeight: {
         article: "100px",
@@ -72,6 +73,12 @@ export default {
       },
       fontSize: {
         "auth-title": "45px",
+      },
+      margin: {
+        bottom: "248px",
+      },
+      padding: {
+        support: "72px",
       },
     },
   },
