@@ -29,8 +29,9 @@
     "error-required": "Це поле є обов'язковим"
   },
   "menu": {
-    "selection": " Підбір тварини",
-    "articles": "Статті про тварин"
+    "selection": "Підбір тварини",
+    "articles": "Статті про тварин",
+    "start-link": "Головна"
   },
   "animal-shelter": {
     "title": "Маєте притулок для тварин?",

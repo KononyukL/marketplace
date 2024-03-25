@@ -19,7 +19,7 @@ export const Footer = () => {
           </div>
           <Image src={"images/logo.svg"} alt="Logo" width={136} height={44} />
         </div>
-        <div className="border-t-solid border-t-border-footer flex items-start justify-between border-t pt-8">
+        <div className="border-t-solid flex items-start justify-between border-t border-t-border-footer pt-8">
           <p>
             animalmarketplace.com.ua
             <span className="text-text-2">&#169; All rights reserved 2024</span>
