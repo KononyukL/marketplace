@@ -1,5 +1,4 @@
 import { type Config } from "tailwindcss";
-
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -23,8 +22,10 @@ export default {
         "text-3": "#757982",
         "text-4": "#0D71A8",
         "border-auth": "#8D8A8A",
+        disable: "#BBBABA",
+        hover: "#0000000a",
+        active: "#D96000",
       },
-
       boxShadow: {
         "input-error": "0px 2px 2px #F79495, 0px 0px 0px 4px #F79495",
         "input-focus": "0px 2px 2px #C8B4FF, 0px 0px 0px 4px #C8B4FF",
@@ -35,6 +36,7 @@ export default {
         register: "rgba(30, 11, 1, 0.51)",
         tags: "rgba(42, 144, 127, 0.19)",
       },
+
       borderRadius: {
         tags: "20px",
         "tags-2": "30px",
@@ -59,6 +61,9 @@ export default {
         "article-text": "282px",
         "advertisement-photo": "390px",
         support: "874px",
+      },
+      width: {
+        search: "484px",
       },
       minHeight: {
         article: "100px",

@@ -1,4 +1,4 @@
-import {
+import React, {
   type HTMLInputTypeAttribute,
   type ChangeEvent,
   type DetailedHTMLProps,
@@ -51,6 +51,7 @@ export const Input = forwardRef<HTMLDivElement, InputProps>((props, ref) => {
     onKeyDown,
     ...rest
   } = props;
+
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       let value = e.currentTarget.value;
@@ -82,7 +83,7 @@ export const Input = forwardRef<HTMLDivElement, InputProps>((props, ref) => {
       <div
         ref={ref}
         className={cn(
-          "  relative  w-full cursor-default overflow-hidden rounded p-0.5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300",
+          "relative  w-full cursor-default overflow-hidden rounded p-0.5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300",
           className,
         )}
       >
@@ -98,9 +99,9 @@ export const Input = forwardRef<HTMLDivElement, InputProps>((props, ref) => {
           value={valueStr}
           disabled={disabled}
           className={cn(
-            "placeholder:text-grayText w-full rounded  border  border-input-2 px-2.5 py-2 font-light text-secondary placeholder:font-light focus:border-2 focus:outline-none focus:ring-0  focus-visible:outline-none",
-            error && "border-2 border-error focus-visible:border-error  ",
-            type !== "checkbox" && "focus:border-primary-hover ",
+            "placeholder:text-grayText w-full rounded  border  border-input-2 px-2.5 py-2  font-light text-secondary placeholder:font-light focus:border-2   focus:outline-none focus:ring-0  focus-visible:outline-none",
+            error && "border-2 border-error focus-visible:border-error",
+            type !== "checkbox" && "focus:border-primary-hover",
           )}
           name={name}
           placeholder={placeholder}
@@ -137,9 +138,11 @@ export const ControlledInput = (props: ControlledInputProps) => {
     onBlur: controlOnBlur,
     ...restField
   } = field;
+
   const handleOnChange = (value: string | number | boolean) => {
     controlOnChange(value);
   };
+
   return (
     <Input
       onValue={handleOnChange}

@@ -29,30 +29,40 @@
     "error-required": "This field is required"
   },
   "menu": {
-    "selection": "Selection of the animal",
-    "articles": "Articles about animals",
-    "start-link": "Main"
+   "selection": "Selection of the animal",
+   "articles": "Articles about animals"
+ },
+ "animal-shelter": {
+  "title": "Do you have an animal shelter?",
+  "text": "Register and place your pets in good hands!"
+ },
+ "footer": {
+  "animal-market": {
+    "title-one": "Information about the company",
+    "title-two": "Blog",
+    "title-three": "Terms of use",
+    "title-four": "Privacy policy",
+    "title-five": "Development team page"
   },
-  "animal-shelter": {
-    "title": "Do you have an animal shelter?",
-    "text": "Register and place your pets in good hands!"
-  },
-  "footer": {
-    "animal-market": {
-      "title-one": "Information about the company",
-      "title-two": "Blog",
-      "title-three": "Terms of use",
-      "title-four": "Privacy policy",
-      "title-five": "Development team page"
-    },
-    "support": {
-      "title-one": "Contacts and feedback",
-      "title-two": "How to sell and buy?",
-      "title-three": "Tips for website security"
-    },
-    "user": {
-      "title-three": "Create an advertisement",
-      "title-four": "My advertisements"
-    }
+   "support": {
+     "title-one": "Contacts and feedback",
+     "title-two": "How to sell and buy?",
+     "title-three": "Tips for website security"
+   },
+   "user": {
+     "title-three": "Create an advertisement",
+     "title-four": "My advertisements"
+   }
+ },
+  "search": {
+    "all-states": "All of Ukraine",
+    "all-ads": "all ads",
+    "select-area": "Select an area",
+    "entire-area": "entire area",
+    "back": "Back",
+    "recommendations": "RECOMMENDATIONS",
+    "select-settlement": "Select a settlement",
+    "looking-for": "I'm looking for...",
+    "nothing-found": "Nothing found"
   }
 }
