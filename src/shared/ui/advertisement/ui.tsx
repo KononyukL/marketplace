@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { useDateFormat } from "@/shared/hooks/use-date-format";
 import { LocationSeller, UserAvatar, UserType } from "@/shared/ui";
 import { type TLocales } from "@/shared/config";
+import { useRouter as useNavigationRouter } from "next/navigation";
 
 interface IAdvertisement {
   img: IImage[];
@@ -24,6 +25,7 @@ interface IAdvertisement {
   favoriteAttributes: IAttribute[];
   userAvatarUrl: string;
   userType?: string;
+  id: number;
 }
 
 export const Advertisement = ({
@@ -40,13 +42,20 @@ export const Advertisement = ({
   favoriteAttributes,
   userAvatarUrl,
   userType,
+  id,
 }: IAdvertisement) => {
   const { t } = useTranslation("home");
   const { locale = "ua" } = useRouter();
   const date = useDateFormat({ date: ending, locale: locale as TLocales });
+  const router = useNavigationRouter();
+
+  const onClickAdvertisement = () => router.push(`/announcement/${id}`);
 
   return (
-    <div className=" flex gap-6 rounded-lg bg-white p-8 text-black shadow-box">
+    <div
+      onClick={onClickAdvertisement}
+      className="flex cursor-pointer gap-6 rounded-lg bg-white p-8 text-black shadow-box"
+    >
       <AdvertisementPhotos img={img} />
       <div className="flex flex-1 flex-col justify-between">
         <div>
