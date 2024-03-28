@@ -1,1 +1,1 @@
-export const ANNOUNCEMENT_SIZE = 2;
+export const ANNOUNCEMENT_SIZE = 4;

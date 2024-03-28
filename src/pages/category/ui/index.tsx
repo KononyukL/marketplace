@@ -5,6 +5,7 @@ import { useCategoriesFilters } from "@/shared/queries/search/use-categories-fil
 import { useMemo } from "react";
 import { NothingFoundSearch } from "@/pages/category/ui/nothing-found-search";
 import { SearchResults } from "@/pages/category/ui/search-results";
+import { Spinner } from "@/shared/ui/spinner";
 
 export const Category = () => {
   const { query } = useRouter();
@@ -46,7 +47,7 @@ export const Category = () => {
 
   return (
     <div className="m-auto h-screen max-w-main p-14 text-black">
-      {renderSearchResults()}
+      {categories ? renderSearchResults() : <Spinner />}
     </div>
   );
 };

@@ -83,9 +83,7 @@ export const Advertisement = ({
           </div>
           <div className="mb-2 flex gap-6 text-xl font-medium">
             <p>{title}</p>
-            <p>
-              {prise} {t("advertisement.uah")}
-            </p>
+            <p>{prise ? `${prise} ${t("advertisement.uah")}` : ""}</p>
           </div>
           <div className="mb-4 flex gap-4">
             {favoriteAttributes.map((el) => (
@@ -96,7 +94,7 @@ export const Advertisement = ({
             ))}
           </div>
           <p className="mb-4 w-full max-w-3xl ">
-            {text.length > 500 ? text.slice(0, 500) + "..." : text}
+            {text.length > 300 ? text.slice(0, 300) + "..." : text}
           </p>
           <div className="mb-4 flex gap-2 text-additional">
             {attributes.map((el) => (
@@ -109,7 +107,7 @@ export const Advertisement = ({
         <div className="flex items-center  gap-4 ">
           <UserAvatar userAvatarUrl={userAvatarUrl} author={author} />
           <div className="flex flex-col gap-1 ">
-            <p className="text-text-3">{author}</p>
+            <p className="text-text-3">{author ?? "No name"}</p>
             <LocationSeller>
               {cityType}
               {city}

@@ -9,6 +9,7 @@ import { ANNOUNCEMENT_SIZE, Icons } from "@/shared/config";
 import { useGetAdvertisementsFavorite } from "@/shared/queries/advertisements-favorite-tags";
 import { DEFAULT_LOCALE } from "@/shared/queries/constants";
 import Link from "next/link";
+import { Spinner } from "@/shared/ui/spinner";
 
 export const TopAnnouncement = () => {
   const { locale } = useRouter();
@@ -17,7 +18,11 @@ export const TopAnnouncement = () => {
   const defaultData = data?.[0].category_id || 1;
   const [categoryId, setCategoryId] = useState(defaultData);
 
-  const { data: advertisements, fetchNextPage } = useGetAdvertisementsFavorite({
+  const {
+    data: advertisements,
+    fetchNextPage,
+    isLoading,
+  } = useGetAdvertisementsFavorite({
     langCode: locale || DEFAULT_LOCALE,
     categoriesIds: categoryId,
     size: ANNOUNCEMENT_SIZE,
@@ -31,6 +36,14 @@ export const TopAnnouncement = () => {
     () => fetchNextPage(),
     [fetchNextPage],
   );
+
+  if (isLoading) {
+    return (
+      <div className="mt-4">
+        <Spinner />
+      </div>
+    );
+  }
 
   if (!advertisements?.pages || !data) {
     return <div>Content not found</div>;
