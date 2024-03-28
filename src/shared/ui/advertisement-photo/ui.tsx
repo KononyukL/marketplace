@@ -11,7 +11,13 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
   if (!img.length) {
     return (
       <div className="flex max-w-advertisement-photo flex-1 items-center justify-center">
-        Not photo
+        <Image
+          className="rounded-lg"
+          src="/images/image-not-photo.png"
+          alt="foto"
+          width={390}
+          height={360}
+        />
       </div>
     );
   }
@@ -19,9 +25,9 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
   switch (img.length) {
     case 1:
       return (
-        <div className="flex h-full max-h-photo-2 max-w-advertisement-photo items-center justify-center overflow-hidden rounded-lg">
+        <div className="h-image-advertisement flex max-h-photo-2 max-w-advertisement-photo items-center justify-center overflow-hidden rounded-lg bg-disable">
           <Image
-            className="rounded-lg "
+            className=" rounded-lg"
             objectFit="contain"
             src={firstImg.url}
             alt="foto"
@@ -32,16 +38,16 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
       );
     case 2:
       return (
-        <div>
+        <div className="flex  max-w-advertisement-photo flex-col items-center justify-center gap-2 overflow-hidden rounded-lg">
           <Image
-            className="rounded-lg"
+            className="h-image max-w-advertisement-photo rounded-lg object-cover"
             src={firstImg.url}
             alt="foto"
             width={390}
-            height={390}
+            height={400}
           />
           <Image
-            className="rounded-lg"
+            className="h-image max-w-advertisement-photo rounded-lg object-cover"
             src={secondImg.url}
             alt="foto"
             width={390}
@@ -51,24 +57,32 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
       );
     default:
       return (
-        <div className="flex max-w-advertisement-photo flex-col items-center justify-center gap-2">
+        <div className="h-image-advertisement flex max-w-advertisement-photo flex-col items-center justify-center gap-2 ">
           <div className="relative max-h-photo overflow-hidden rounded-lg">
-            <Image src={firstImg.url} alt="foto" width={390} height={168} />
-          </div>
-          <div className="flex gap-4">
             <Image
-              className="max-h-photo flex-1 rounded-lg"
-              src={secondImg.url}
+              className="h-image object-cover "
+              src={firstImg.url}
               alt="foto"
               width={390}
-              height={168}
+              height={158}
+            />
+          </div>
+          <div className="flex gap-4 ">
+            <Image
+              className="max-h-image-2 flex-1 rounded-lg object-cover"
+              src={secondImg.url}
+              objectFit="contain"
+              alt="foto"
+              width={390}
+              height={158}
             />
             <Image
-              className="max-h-photo flex-1 rounded-lg"
+              className="max-h-image-2 flex-1 rounded-lg object-cover"
               src={thirdImg.url}
+              objectFit="contain"
               alt="foto"
               width={390}
-              height={168}
+              height={158}
             />
           </div>
         </div>

@@ -71,10 +71,13 @@ export default {
       height: {
         border: "26px",
         title: "48px",
+        image: "150px",
+        "image-advertisement": "300px",
       },
       maxHeight: {
         photo: "168px",
         "photo-2": "360px",
+        "image-2": "150px",
       },
       fontSize: {
         "auth-title": "45px",

@@ -35,10 +35,10 @@ export const Breadcrumbs = ({
                   </Link>
                   <span className="mx-px">
                     <Image
-                      src="image/icon-arrow.svg"
+                      src="/images/icon-arrow.svg"
                       alt="arrow"
-                      width={24}
-                      height={24}
+                      width={10}
+                      height={10}
                     />
                   </span>
                 </>
