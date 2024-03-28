@@ -107,7 +107,7 @@ export const Advertisement = ({
         <div className="flex items-center  gap-4 ">
           <UserAvatar userAvatarUrl={userAvatarUrl} author={author} />
           <div className="flex flex-col gap-1 ">
-            <p className="text-text-3">{author ? author : "No name"}</p>
+            <p className="text-text-3">{author ?? "No name"}</p>
             <LocationSeller>
               {cityType}
               {city}
