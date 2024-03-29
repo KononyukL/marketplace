@@ -1,4 +1,17 @@
+import { useGetAdvertisement } from "@/shared/queries/advertisement";
+import { DEFAULT_LOCALE } from "@/shared/queries/constants";
+import { useRouter } from "next/router";
+
 export const Announcement = () => {
+  const { locale, query } = useRouter();
+
+  console.log(query.id);
+
+  const { data: advertisement } = useGetAdvertisement({
+    langCode: locale || DEFAULT_LOCALE,
+    id: parseInt(query.id as string),
+  });
+
   return (
     <div className="m-auto max-w-main px-14">
       Breadcrumbs
@@ -12,7 +25,7 @@ export const Announcement = () => {
         </div>
         <div className="w-1/3">
           <div className="mb-8 rounded-lg bg-white p-8">
-            Announcement header
+            {advertisement?.title}
           </div>
           <div className="rounded-lg bg-white p-8">About seller info</div>
         </div>

@@ -19,6 +19,9 @@ export const paths = {
   blog: {
     get_all: "/v1/blog/",
   },
+  advertisement: {
+    get_by_id: "/v1/advertisements/",
+  },
   advertisementsFavorite: {
     get_all: "/v1/advertisements/favorite/",
   },

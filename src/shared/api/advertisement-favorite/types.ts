@@ -27,7 +27,7 @@ interface IPageResponseBase {
   empty: boolean;
 }
 
-interface IAuthor {
+export interface IAuthor {
   shortName: string;
   rating: number;
   reviews_count: number;
