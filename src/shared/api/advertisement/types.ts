@@ -59,7 +59,7 @@ interface IReviews {
   author_id: number;
 }
 
-interface IImageFull extends IImage {
+export interface IImageFull extends IImage {
   advertisement_id: number;
   main_image: boolean;
   url_small: string;

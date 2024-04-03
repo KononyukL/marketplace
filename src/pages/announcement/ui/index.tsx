@@ -1,6 +1,7 @@
 import { useGetAdvertisement } from "@/shared/queries/advertisement";
 import { DEFAULT_LOCALE } from "@/shared/queries/constants";
 import { useRouter } from "next/router";
+import { SliderComponent } from "./slider";
 
 export const Announcement = () => {
   const { locale, query } = useRouter();
@@ -17,15 +18,15 @@ export const Announcement = () => {
       Breadcrumbs
       <div className="mt-8 flex justify-between gap-8">
         <div className="w-2/3">
-          <div className="mb-8 bg-slate-200 p-12 text-center">
-            Here comes slider
+          <SliderComponent images={advertisement?.images ?? []} />
+          <div className="mt-8 rounded-lg bg-white p-8">
+            Announcement main info
           </div>
-          <div className="rounded-lg bg-white p-8">Announcement main info</div>
           <div className="mt-8 rounded-lg bg-white p-8">Tips component</div>
         </div>
         <div className="w-1/3">
           <div className="mb-8 rounded-lg bg-white p-8">
-            {advertisement?.title}
+            Announcement header
           </div>
           <div className="rounded-lg bg-white p-8">About seller info</div>
         </div>
