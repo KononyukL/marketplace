@@ -10,6 +10,7 @@ import { useGetAdvertisementsFavorite } from "@/shared/queries/advertisements-fa
 import { DEFAULT_LOCALE } from "@/shared/queries/constants";
 import Link from "next/link";
 import { Spinner } from "@/shared/ui/spinner";
+import { SkeletonAds } from "@/shared/ui/skeleton-ads";
 
 export const TopAnnouncement = () => {
   const { locale } = useRouter();
@@ -22,6 +23,7 @@ export const TopAnnouncement = () => {
     data: advertisements,
     fetchNextPage,
     isLoading,
+    isFetching,
   } = useGetAdvertisementsFavorite({
     langCode: locale || DEFAULT_LOCALE,
     categoriesIds: categoryId,
@@ -37,16 +39,8 @@ export const TopAnnouncement = () => {
     [fetchNextPage],
   );
 
-  if (isLoading) {
-    return (
-      <div className="mt-4">
-        <Spinner />
-      </div>
-    );
-  }
-
-  if (!advertisements?.pages || !data) {
-    return <div>Content not found</div>;
+  if ((!advertisements?.pages || !data?.length) && !isLoading) {
+    return <div>{"Content not found"}</div>;
   }
 
   return (
@@ -54,7 +48,7 @@ export const TopAnnouncement = () => {
       <h2 className="mb-12 text-4xl font-medium">{t("top")}</h2>
       <div className="flex flex-col gap-8">
         <div className="flex gap-2">
-          {data.map((tag) => (
+          {data?.map((tag) => (
             <ButtonTags
               onClick={onClick(tag.category_id)}
               key={tag.category_id}
@@ -64,39 +58,45 @@ export const TopAnnouncement = () => {
             </ButtonTags>
           ))}
         </div>
-        {advertisements.pages.map((page) =>
-          page.content.map((el) => (
-            <Advertisement
-              key={el.id}
-              id={el.id}
-              city={el.location.city_name}
-              author={el.author.shortName}
-              cityType={el.location.city_type_short_title}
-              img={el.images}
-              attributes={el.attributes}
-              prise={el.price}
-              ending={el.updated}
-              text={el.description}
-              title={el.title}
-              reviewsCount={el.author.reviews_count}
-              favoriteAttributes={el.favorite_attributes}
-              userAvatarUrl={el.author.user_avatar_url}
-              userType={el.author.user_type}
-            />
-          )),
+        {isLoading ? (
+          <SkeletonAds number={4} />
+        ) : (
+          advertisements.pages.map((page) =>
+            page.content.map((el) => (
+              <Advertisement
+                key={el.id}
+                id={el.id}
+                city={el.location.city_name}
+                author={el.author.shortName}
+                cityType={el.location.city_type_short_title}
+                img={el.images}
+                attributes={el.attributes}
+                prise={el.price}
+                ending={el.updated}
+                text={el.description}
+                title={el.title}
+                reviewsCount={el.author.reviews_count}
+                favoriteAttributes={el.favorite_attributes}
+                userAvatarUrl={el.author.user_avatar_url}
+                userType={el.author.user_type}
+              />
+            )),
+          )
         )}
       </div>
       <div className="mt-10 flex justify-center">
-        {advertisements.pages.length < 2 &&
+        {advertisements &&
+        advertisements.pages.length < 2 &&
         advertisements.pages[0].totalElements > ANNOUNCEMENT_SIZE ? (
           <Button
             size="xl"
             variant="outline"
-            endAdornment={<Icons.Plus />}
+            endAdornment={isFetching ? <Spinner /> : <Icons.Plus />}
+            disabled={isFetching}
             //eslint-disable-next-line @typescript-eslint/no-misused-promises
             onClick={onClickFetchNextPage}
           >
-            {t("see-more")}
+            {isFetching ? "" : t("see-more")}
           </Button>
         ) : (
           <Button size="xl" variant="outline">

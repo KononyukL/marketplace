@@ -25,7 +25,7 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
   switch (img.length) {
     case 1:
       return (
-        <div className="h-image-advertisement flex max-h-photo-2 max-w-advertisement-photo items-center justify-center overflow-hidden rounded-lg bg-disable">
+        <div className="flex h-image-advertisement max-h-photo-2 max-w-advertisement-photo items-center justify-center overflow-hidden rounded-lg bg-disable">
           <Image
             className=" rounded-lg"
             objectFit="contain"
@@ -57,7 +57,7 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
       );
     default:
       return (
-        <div className="h-image-advertisement flex max-w-advertisement-photo flex-col items-center justify-center gap-2 ">
+        <div className="flex h-image-advertisement max-w-advertisement-photo flex-col items-center justify-center gap-2 ">
           <div className="relative max-h-photo overflow-hidden rounded-lg">
             <Image
               className="h-image object-cover "
@@ -69,7 +69,7 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
           </div>
           <div className="flex gap-4 ">
             <Image
-              className="max-h-image-2 flex-1 rounded-lg object-cover"
+              className="max-h-image-2 flex-initial rounded-lg object-cover"
               src={secondImg.url}
               objectFit="contain"
               alt="foto"
@@ -77,7 +77,7 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
               height={158}
             />
             <Image
-              className="max-h-image-2 flex-1 rounded-lg object-cover"
+              className="max-h-image-2 flex-initial rounded-lg object-cover"
               src={thirdImg.url}
               objectFit="contain"
               alt="foto"
