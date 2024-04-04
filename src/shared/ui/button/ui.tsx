@@ -8,7 +8,7 @@ interface IButton
     HTMLButtonElement
   > {
   variant?: ButtonVariants;
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "xsm" | "sm" | "md" | "lg" | "xl";
   endAdornment?: React.ReactNode;
 }
 
@@ -31,6 +31,7 @@ export const Button = ({
           "bg-secondary text-white hover:bg-primary": variant === "secondary",
           "flex justify-center border border-secondary bg-white text-secondary hover:border-primary-hover hover:text-primary-hover":
             variant === "outline",
+          "max-w-button-1": size === "xsm",
           "max-w-button": size === "sm",
           "max-w-button-2": size === "md",
           "max-w-button-3": size === "lg",
