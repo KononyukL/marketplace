@@ -4,11 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
 
-interface IHeaderCategories
-  extends React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {
+interface IHeaderCategories {
+  children: React.ReactNode;
   segmentTitle?: string;
 }
 

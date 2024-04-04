@@ -35,12 +35,12 @@ export const Category = () => {
         />
       );
     }
-    if (filters?.searchTerm) {
+    if (filters.searchTerm) {
       return (
         <HeaderCategories segmentTitle={categoryItem?.title}>
           <SearchResults
-            adsNumber={categories?.advertisements.numberOfElements}
-            searchTerm={filters?.searchTerm}
+            adsNumber={categories.advertisements.numberOfElements}
+            searchTerm={filters.searchTerm}
             locationName={filters.location?.name}
           />
         </HeaderCategories>
