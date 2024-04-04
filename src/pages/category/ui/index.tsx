@@ -6,6 +6,8 @@ import { useMemo } from "react";
 import { NothingFoundSearch } from "@/pages/category/ui/nothing-found-search";
 import { SearchResults } from "@/pages/category/ui/search-results";
 import { Spinner } from "@/shared/ui/spinner";
+import { HeaderCategories } from "@/pages/category/ui/header-categories";
+import { AnimalShelter } from "@/shared/ui";
 
 export const Category = () => {
   const { query } = useRouter();
@@ -33,21 +35,32 @@ export const Category = () => {
         />
       );
     }
-    if (filters?.searchTerm) {
+    if (filters.searchTerm) {
       return (
-        <SearchResults
-          adsNumber={categories?.advertisements.numberOfElements}
-          searchTerm={filters?.searchTerm}
-          locationName={filters.location?.name}
-        />
+        <HeaderCategories segmentTitle={categoryItem?.title}>
+          <SearchResults
+            adsNumber={categories.advertisements.numberOfElements}
+            searchTerm={filters.searchTerm}
+            locationName={filters.location?.name}
+          />
+        </HeaderCategories>
       );
     }
-    return `${categoryItem?.title}` ?? <div>No title</div>;
+    return (
+      (
+        <HeaderCategories segmentTitle={categoryItem?.title}>
+          <h3 className="px-14 py-12 text-4xl font-medium">
+            {categoryItem?.title}
+          </h3>
+        </HeaderCategories>
+      ) ?? <div>No title</div>
+    );
   };
 
   return (
-    <div className="m-auto h-screen max-w-main p-14 text-black">
+    <div className="m-auto  max-w-main text-black">
       {categories ? renderSearchResults() : <Spinner />}
+      <AnimalShelter />
     </div>
   );
 };

@@ -48,6 +48,7 @@ export default {
         registerText: "382px",
         registerComment: "424px",
         button: "158px",
+        "button-1": "119px",
         "button-2": "178px",
         "button-3": "204px",
         "button-4": "244px",
@@ -61,6 +62,7 @@ export default {
         "article-text": "282px",
         "advertisement-photo": "390px",
         support: "874px",
+        "categories-header": "517px",
       },
       width: {
         search: "484px",

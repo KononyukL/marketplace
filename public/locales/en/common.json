@@ -30,7 +30,8 @@
   },
   "menu": {
    "selection": "Selection of the animal",
-   "articles": "Articles about animals"
+   "articles": "Articles about animals",
+    "start-link": "Home"
  },
  "animal-shelter": {
   "title": "Do you have an animal shelter?",

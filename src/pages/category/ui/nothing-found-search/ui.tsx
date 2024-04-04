@@ -14,7 +14,7 @@ export const NothingFoundSearch = ({
   const { t } = useTranslation("categories");
 
   return (
-    <div className="h-screen max-w-main text-black">
+    <div className="h-screen max-w-main px-14 py-12 text-black">
       <p className="mb-4 text-4xl font-medium">
         {t("nothing-found-search.on-request")} «{searchTerm}»
         {locationName
