@@ -6,19 +6,19 @@ import { SliderComponent } from "./slider";
 export const Announcement = () => {
   const { locale, query } = useRouter();
 
-  console.log(query.id);
-
   const { data: advertisement } = useGetAdvertisement({
     langCode: locale || DEFAULT_LOCALE,
     id: parseInt(query.id as string),
   });
+
+  const images = advertisement?.images ?? [];
 
   return (
     <div className="m-auto max-w-main px-14">
       Breadcrumbs
       <div className="mt-8 flex justify-between gap-8">
         <div className="w-2/3">
-          <SliderComponent images={advertisement?.images ?? []} />
+          <SliderComponent images={images} />
           <div className="mt-8 rounded-lg bg-white p-8">
             Announcement main info
           </div>
