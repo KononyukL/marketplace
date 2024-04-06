@@ -1,16 +1,14 @@
+export interface ILogin {
+  email: string;
+  password: string;
+}
+
 export interface IAuth {
   email: string;
   accessToken: string;
   refreshToken: string;
 }
 
-export interface IFormLogin {
-  email: string;
-  password: string;
+export interface IFormLogin extends ILogin {
   rememberMe: boolean;
-}
-
-export interface IFormRegistration {
-  email: string;
-  password: string;
 }

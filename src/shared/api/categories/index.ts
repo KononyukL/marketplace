@@ -1,6 +1,7 @@
 import { paths } from "@/shared/routing";
 import { axiosInstance } from "../config";
-import { type ICategoriesBase } from "@/shared/api/types";
+import { type ICategoriesBase } from './types';
+
 
 class CategoriesActions {
   async getCategories(

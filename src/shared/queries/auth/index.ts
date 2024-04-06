@@ -1,9 +1,5 @@
 import { useMutation, type UseMutationResult } from "react-query";
-import type {
-  IAuth,
-  IFormLogin,
-  IFormRegistration,
-} from "@/shared/api/auth/types";
+import type { IAuth, IFormLogin, ILogin } from "@/shared/api/auth/types";
 import { useAppDispatch } from "@/shared/store/hooks";
 
 import { authActions } from "@/shared/store/auth";
@@ -25,11 +21,7 @@ export function useSignIn(): UseMutationResult<IAuth, unknown, IFormLogin> {
   });
 }
 
-export function useSignUp(): UseMutationResult<
-  IAuth,
-  unknown,
-  IFormRegistration
-> {
+export function useSignUp(): UseMutationResult<IAuth, unknown, ILogin> {
   const dispatch = useAppDispatch();
   const router = useRouter();
 

@@ -1,13 +1,16 @@
-import { type IEntity } from "@/shared/api/types";
+import { type BaseCategory } from "../advertisement/types";
+import { type ILocalizableEntity, type IEntity } from "../types";
 
-interface ICategories {
-  id: number;
-  title: string;
-  description: string;
-  lang_code: string;
+interface ICategories extends ILocalizableEntity, BaseCategory {}
+
+interface IBaseBlog {
+  status: string;
+  user_name: string;
+  first_name: string;
+  last_name: string;
 }
 
-interface IComments extends Pick<IEntity, "id" | "created"> {
+interface IComments extends IEntity {
   comment: string;
   status: string;
   post_id: number;
@@ -17,10 +20,7 @@ interface IComments extends Pick<IEntity, "id" | "created"> {
   last_name: string;
 }
 
-export interface IBlog
-  extends ICategories,
-    Omit<IComments, "comment" | "post_id" | "user_id"> {
-  updated: string;
+export interface IBlog extends ICategories, IBaseBlog {
   alias: string;
   categories: ICategories[];
   comments: IComments[];

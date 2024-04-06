@@ -3,56 +3,35 @@ import {
   type IAdvertisement,
   type IAuthor,
 } from "@/shared/api/advertisement-favorite/types";
-import { type ICategoriesBase } from "@/shared/api/types";
+import { type ICategoriesBase } from "../categories/types";
+import { type IActivatableFeature, type ILocalizableEntity } from "../types";
+
+export interface BaseCategory {
+  title: string;
+  description: string;
+}
+
+interface IFeatureOption extends ILocalizableEntity, IActivatableFeature {
+  description: string;
+}
+
+interface IDelivery extends IFeatureOption {}
+interface IPayment extends IFeatureOption {}
+
+interface IBreed extends ILocalizableEntity, BaseCategory {
+  category: BaseCategory;
+}
 
 interface IAuthorDetails extends Omit<IAuthor, "shortName"> {
-  id: number;
   email: string;
   first_name: string;
   last_name: string;
   last_activity: string;
 }
 
-interface IDelivery {
-  id: number;
-  enable: boolean;
-  name: string;
-  description: string;
-  lang_code: string;
-}
-
-interface IPayment {
-  id: number;
-  enable: boolean;
-  name: string;
-  description: string;
-  lang_code: string;
-}
-
-// interface CategoryShort
-//   extends Pick<ICategoriesBase, "id" | "title" | "description" | "lang_code"> {}
-
-type CategoryShort = Pick<
-  ICategoriesBase,
-  "id" | "title" | "description" | "lang_code"
->;
-
-interface IBreed {
-  id: number;
-  title: string;
-  description: string;
-  category: CategoryShort;
-  created: string;
-  updated: string;
-  lang_code: string;
-}
-
-interface IReviews {
-  id: number;
-  created: string;
+interface IReviews extends ILocalizableEntity, Omit<BaseCategory, "title"> {
   type: string;
   value: number;
-  description: string;
   advertisement_id: number;
   author_first_name: string;
   author_last_name: string;

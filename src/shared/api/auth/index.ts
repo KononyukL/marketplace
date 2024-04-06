@@ -1,7 +1,7 @@
 import { paths } from "@/shared/routing";
 import { axiosInstance } from "../config";
 
-import type { IAuth, IFormLogin, IFormRegistration } from "./types";
+import type { IAuth, IFormLogin, ILogin } from "./types";
 
 class AuthActions {
   async login(form: IFormLogin) {
@@ -9,7 +9,7 @@ class AuthActions {
     return result.data;
   }
 
-  async signup(form: IFormRegistration) {
+  async signup(form: ILogin) {
     const result = await axiosInstance.post<IAuth>(paths.auth.register, form);
     return result.data;
   }
