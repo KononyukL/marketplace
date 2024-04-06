@@ -7,7 +7,6 @@ interface ISearch<T> {
   value?: T;
   handleSave: (props: T) => void;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  children: ReactNode;
   icon?: ReactNode;
   placeholder: string;
   onFocus?: () => void;
@@ -30,7 +29,7 @@ export const Search = <T,>({
   disableClose,
   stateId,
   onClearLocation,
-}: ISearch<T>) => {
+}: React.PropsWithChildren<ISearch<T>>) => {
   const showButton = querystring || stateId;
 
   return (
