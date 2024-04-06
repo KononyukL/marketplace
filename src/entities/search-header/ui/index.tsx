@@ -7,12 +7,12 @@ import { useRouter } from "next/router";
 import { SearchCategories } from "@/entities/search-header/ui/search-categories";
 import {
   GLOBAL_SEARCH_KEY,
-  type ICategoriesSearch,
   useCategoriesFilters,
 } from "@/shared/queries/search/use-categories-filters";
 import React, { useCallback, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { searchSchema } from "@/shared/lib/validation/validation";
+import { type ICategoriesSearch } from "@/shared/queries/search/types";
 
 export const SearchHeader = () => {
   const { filters, onCategoriesSearchChange } = useCategoriesFilters();

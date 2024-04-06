@@ -1,9 +1,9 @@
 import { paths } from "@/shared/routing";
 import { axiosInstance } from "../config";
 import { type ICategoriesSearch } from "@/shared/api/search/types";
-import { type ICategoriesSearchFilters } from "@/shared/queries/search/use-categories-filters";
 import { categoriesFilterNormalizers } from "@/shared/api/search/normalizers";
 import { parseParams } from "@/shared/config";
+import { type ICategoriesSearchFilters } from "@/shared/queries/search/types";
 
 class SearchActions {
   async getSearch(

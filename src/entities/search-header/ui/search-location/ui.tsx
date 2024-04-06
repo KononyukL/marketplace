@@ -1,10 +1,5 @@
 import { type ChangeEvent, useCallback, useMemo, useState } from "react";
 import { Combobox } from "@headlessui/react";
-import {
-  useGetCitiesByName,
-  useGetCountryStates,
-  useGetStatesCities,
-} from "@/shared/queries/locations";
 import { type ICity } from "@/shared/api/locations/types";
 import { Icons } from "@/shared/config";
 import { Search } from "@/entities/search-header/ui/search";
@@ -13,6 +8,11 @@ import { useController, useFormContext } from "react-hook-form";
 import { CityLocation } from "@/entities/search-header/ui/city-location";
 import { StateLocation } from "@/entities/search-header/ui/state-location";
 import { StateCityLocation } from "@/entities/search-header/ui/state-city-location";
+import {
+  useGetCitiesByName,
+  useGetCitiesStates,
+  useGetCountryStates,
+} from "./lib";
 
 export interface IState {
   id: number;
@@ -50,7 +50,7 @@ export const SearchLocation = ({
   const onClickState = (state: IState) => () =>
     setState({ id: state.id, name: state.name });
 
-  const { data: statesCities } = useGetStatesCities(state?.id);
+  const { data: statesCities } = useGetCitiesStates(state?.id);
 
   const [focus, setFocus] = useState(false);
 

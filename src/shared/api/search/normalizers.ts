@@ -1,5 +1,5 @@
-import type { ICategoriesSearchFilters } from "@/shared/queries/search/use-categories-filters";
 import { type ICategoriesResponseFilters } from "@/shared/api/search/types";
+import { type ICategoriesSearchFilters } from "@/shared/queries/search/types";
 
 export const categoriesFilterNormalizers = (
   filters: ICategoriesSearchFilters,
