@@ -1,4 +1,4 @@
-import { type IFormRegistration } from "@/shared/api/auth/types";
+import { type ILogin } from "@/shared/api/auth/types";
 import { useSignUp } from "@/shared/queries/auth";
 import { Button, ControlledInput, Form, Label } from "@/shared/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,7 +13,7 @@ export const RegistrationForm = () => {
   const { t } = useTranslation("common");
   const handleSwitchIconPassword = () => setIconPassword(!iconPassword);
 
-  const form = useForm<IFormRegistration>({
+  const form = useForm<ILogin>({
     mode: "all",
     resolver: zodResolver(registrationSchema),
   });
@@ -24,7 +24,7 @@ export const RegistrationForm = () => {
 
   const { mutate: signUp } = useSignUp();
 
-  const onSubmit = (data: IFormRegistration) => {
+  const onSubmit = (data: ILogin) => {
     signUp(data, {
       onSuccess: () => reset(),
     });

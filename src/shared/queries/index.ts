@@ -2,7 +2,7 @@ import { QueryClient } from "react-query";
 
 const MAX_RETRY_COUNT = 3;
 
-const ONE_MINUTE_IN_MS = 60 * 1000; // 60 секунд * 1000 мілісекунд
+const ONE_MINUTE_IN_MS = 60 * 1000;
 const TWENTY_MINUTES_IN_MS = 20 * ONE_MINUTE_IN_MS;
 interface IRequestError {
   response?: {

@@ -1,4 +1,5 @@
-import { type IEntity } from "@/shared/api/types";
+import { type BaseCategory } from "../advertisement/types";
+import { type IEntity, type ILocalizableEntity } from "../types";
 
 interface ISort {
   sorted: boolean;
@@ -27,7 +28,7 @@ interface IPageResponseBase {
   empty: boolean;
 }
 
-export interface IAuthor {
+export interface IAuthor extends IEntity {
   shortName: string;
   rating: number;
   reviews_count: number;
@@ -41,9 +42,8 @@ interface ILocation {
   city_type_short_title: string;
 }
 
-export interface IAttribute {
+export interface IAttribute extends ILocalizableEntity {
   title: string;
-  lang_code: string;
   group_id: number;
   group_title: string;
   attribute_id: number;
@@ -55,11 +55,9 @@ export interface IImage {
   url: string;
 }
 
-export interface IAdvertisement extends IEntity {
+export interface IAdvertisement extends IEntity, BaseCategory {
   author: IAuthor;
   alias: string;
-  title: string;
-  description: string;
   price: number;
   location: ILocation;
   type: string;

@@ -1,4 +1,4 @@
-import { type ICategoriesBase } from "@/shared/api/types";
+import { type ICategoriesBase } from "../categories/types";
 import {
   type IAdvertisementFavorite,
   type IGetAdvertisementFavoriteProps,

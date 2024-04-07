@@ -1,14 +1,17 @@
-import { type ReactNode } from "react";
 import { cn } from "@/shared/lib/cn";
 
 interface ILabel {
   text: string;
   className?: string;
-  children: ReactNode;
   isError?: boolean;
 }
 
-export const Label = ({ text, children, className, isError }: ILabel) => {
+export const Label = ({
+  text,
+  children,
+  className,
+  isError,
+}: React.PropsWithChildren<ILabel>) => {
   return (
     <label
       className={cn(

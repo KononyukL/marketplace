@@ -1,38 +1,13 @@
 import { useCallback, useMemo } from "react";
-import type { IState } from "@/entities/search-header/ui/search-location";
-import useSaveInURL from "@/shared/hooks/use-save-in-url";
-import { type WithRequired } from "@/shared/config";
 import { DEFAULT_PAGE, DEFAULT_SIZE } from "@/shared/queries/constants";
-
-interface ICategoriesDefaultFilters {
-  size?: number;
-  page?: number;
-  categoryId?: number;
-}
-
-export interface ICategoriesSearch {
-  searchTerm: string;
-  location?: IState;
-}
-
-export interface ICategoriesFilters {
-  minPrice?: number;
-}
-
-export interface ICategoriesSearchFilters
-  extends ICategoriesSearch,
-    ICategoriesFilters,
-    WithRequired<ICategoriesDefaultFilters, "page" | "size"> {}
-
-interface CategoriesFiltersResult {
-  filters: ICategoriesSearchFilters;
-  onCategoriesSearchChange: (filters: ICategoriesSearch) => void;
-  onCategoriesFiltersChange: (filters: ICategoriesFilters) => void;
-}
-
-interface ICategoriesFiltersProps {
-  defaultFilters?: ICategoriesDefaultFilters;
-}
+import {
+  type ICategoriesFiltersProps,
+  type CategoriesFiltersResult,
+  type ICategoriesSearch,
+  type ICategoriesFilters,
+  type ICategoriesSearchFilters,
+} from "./types";
+import { useSaveInURL } from "@/shared/hooks";
 
 export const GLOBAL_SEARCH_KEY = "globalSearch";
 export const CATEGORIES_SEARCH_KEY = "categoriesSearch";
@@ -66,7 +41,7 @@ export const useCategoriesFilters = ({
 
   const filters = useMemo<ICategoriesSearchFilters>(
     () => ({
-      ...searchFilters,
+      searchTerm: searchFilters?.searchTerm ?? "",
       ...categoriesFilters,
       size: defaultFilters?.size || DEFAULT_SIZE,
       page: defaultFilters?.page || DEFAULT_PAGE,

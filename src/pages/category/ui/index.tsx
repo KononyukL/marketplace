@@ -2,32 +2,35 @@ import { useRouter } from "next/router";
 import { useGetCategories } from "@/shared/queries/categories";
 import { useGetCategoriesSearch } from "@/shared/queries/search";
 import { useCategoriesFilters } from "@/shared/queries/search/use-categories-filters";
-import { useMemo } from "react";
 import { NothingFoundSearch } from "@/pages/category/ui/nothing-found-search";
 import { SearchResults } from "@/pages/category/ui/search-results";
 import { Spinner } from "@/shared/ui/spinner";
-import { HeaderCategories } from "@/pages/category/ui/header-categories";
+import { CategoryHeader } from "@/pages/category/ui/header-categories";
 import { AnimalShelter } from "@/shared/ui";
+import { useMemo } from "react";
 
 export const Category = () => {
   const { query } = useRouter();
 
-  const { data } = useGetCategories();
+  const categoryId = useMemo(() => Number(query.id) ?? 0, [query.id]);
 
-  const categoryId = query?.id ? Number(query.id) : 0;
+  const { filters } = useCategoriesFilters({});
+  const { data: searchResults } = useGetCategoriesSearch({ filters });
+  const { data: categoriesData } = useGetCategories();
 
-  const defaultFilters = useMemo(() => ({ categoryId }), [categoryId]);
+  const categoryIdToFind = searchResults?.category?.id ?? categoryId;
+  const selectedCategory = categoriesData
+    ? categoriesData.find((category) => category.id === categoryIdToFind)
+    : null;
 
-  const { filters } = useCategoriesFilters({
-    defaultFilters,
-  });
+  const areAdvertisementsAvailable = Boolean(
+    searchResults?.advertisements?.numberOfElements,
+  );
 
-  const categoryItem = data?.find((category) => category.id === categoryId);
-
-  const { data: categories } = useGetCategoriesSearch({ filters });
+  const shouldShowNothingFound = !areAdvertisementsAvailable;
 
   const renderSearchResults = () => {
-    if (!filters.categoryId || !categories?.advertisements.numberOfElements) {
+    if (shouldShowNothingFound) {
       return (
         <NothingFoundSearch
           searchTerm={filters.searchTerm}
@@ -35,31 +38,31 @@ export const Category = () => {
         />
       );
     }
-    if (filters.searchTerm) {
-      return (
-        <HeaderCategories segmentTitle={categoryItem?.title}>
+
+    const hasSearchTerm = Boolean(filters.searchTerm);
+    const hasAdvertisements =
+      searchResults && searchResults.advertisements.numberOfElements > 0;
+
+    return (
+      <CategoryHeader segmentTitle={selectedCategory?.title}>
+        {hasSearchTerm && hasAdvertisements ? (
           <SearchResults
-            adsNumber={categories.advertisements.numberOfElements}
+            adsNumber={searchResults.advertisements.numberOfElements}
             searchTerm={filters.searchTerm}
             locationName={filters.location?.name}
           />
-        </HeaderCategories>
-      );
-    }
-    return (
-      (
-        <HeaderCategories segmentTitle={categoryItem?.title}>
+        ) : (
           <h3 className="px-14 py-12 text-4xl font-medium">
-            {categoryItem?.title}
+            {selectedCategory?.title ?? "General"}
           </h3>
-        </HeaderCategories>
-      ) ?? <div>No title</div>
+        )}
+      </CategoryHeader>
     );
   };
 
   return (
     <div className="m-auto  max-w-main text-black">
-      {categories ? renderSearchResults() : <Spinner />}
+      {searchResults ? renderSearchResults() : <Spinner />}
       <AnimalShelter />
     </div>
   );

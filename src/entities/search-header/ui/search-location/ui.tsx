@@ -1,23 +1,12 @@
-import { type ChangeEvent, useCallback, useMemo, useState } from "react";
 import { Combobox } from "@headlessui/react";
-import {
-  useGetCitiesByName,
-  useGetCountryStates,
-  useGetStatesCities,
-} from "@/shared/queries/locations";
-import { type ICity } from "@/shared/api/locations/types";
-import { Icons } from "@/shared/config";
-import { Search } from "@/entities/search-header/ui/search";
 import { useTranslation } from "next-i18next";
-import { useController, useFormContext } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import { CityLocation } from "@/entities/search-header/ui/city-location";
 import { StateLocation } from "@/entities/search-header/ui/state-location";
 import { StateCityLocation } from "@/entities/search-header/ui/state-city-location";
-
-export interface IState {
-  id: number;
-  name: string;
-}
+import { useLocationData, useLocationState } from "./lib";
+import { type IState } from "@/shared/queries/search/types";
+import { LocationSearchDropdown } from "../location-search-dropdown";
 
 interface ISearchLocation {
   name?: string;
@@ -31,100 +20,73 @@ export const SearchLocation = ({
   onClear,
 }: ISearchLocation) => {
   const { t } = useTranslation("common");
-  const [state, setState] = useState<IState>();
-  const { data, searchCitiesByName, queryString } = useGetCitiesByName(
-    defaultLocation?.name,
-  );
-
   const { control } = useFormContext();
-  const { field } = useController({
+
+  const {
+    selectedState,
+    isInputFocused,
+    handleStateSelection,
+    handleInputFocus,
+  } = useLocationState(defaultLocation);
+
+  const { data, utilityFunctions } = useLocationData({
+    selectedStateId: selectedState?.id,
+    defaultLocation,
+    onClear,
     name,
     control,
-    defaultValue: {},
   });
 
-  const { onChange: controlOnChange, value } = field;
+  const renderLocationOptions = () => {
+    const isStateSelectionAvailable =
+      isInputFocused && (data.queryString !== "" || defaultLocation?.name);
+    const isStateCitySelectionAvailable = !selectedState?.id;
 
-  const { data: states } = useGetCountryStates();
-
-  const onClickState = (state: IState) => () =>
-    setState({ id: state.id, name: state.name });
-
-  const { data: statesCities } = useGetStatesCities(state?.id);
-
-  const [focus, setFocus] = useState(false);
-
-  const onFocus = () => setFocus(true);
-
-  const handleSave = ({ id, name }: ICity) => {
-    setFocus(false);
-    setState({ name: "", id: 0 });
-    searchCitiesByName("");
-    controlOnChange({ id, name });
-  };
-
-  const savedValue = useMemo(
-    () => data?.find((location) => location.id === defaultLocation?.id),
-    [defaultLocation, data],
-  );
-
-  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    searchCitiesByName(event.target.value);
-  };
-
-  const displayValues = () => {
-    if (!state?.id) {
-      return (value.name as string) || queryString;
+    if (isStateSelectionAvailable) {
+      return <CityLocation data={data.cities} />;
+    } else if (isStateCitySelectionAvailable) {
+      return (
+        <StateLocation
+          states={data.states}
+          handleStateSelection={handleStateSelection}
+        />
+      );
+    } else {
+      return (
+        <StateCityLocation
+          handleStateSelection={handleStateSelection}
+          stateName={selectedState.name}
+          stateCities={data.stateCities}
+        />
+      );
     }
-    return "";
   };
 
-  const onClearLocation = useCallback(() => {
-    onClear?.();
-    searchCitiesByName("");
-  }, [onClear, searchCitiesByName]);
-
-  const renderOptions = () => {
-    if (focus && (queryString !== "" || defaultLocation?.name)) {
-      return <CityLocation data={data} />;
-    }
-
-    if (!state?.id) {
-      return <StateLocation states={states} onClickState={onClickState} />;
-    }
-
-    return (
-      <StateCityLocation
-        onClickState={onClickState}
-        stateName={state.name}
-        statesCities={statesCities}
-      />
-    );
-  };
+  const shouldShowNoResultsMessage =
+    data.cities?.length === 0 && data.queryString !== "";
 
   return (
-    <Search
-      displayValue={displayValues}
-      value={savedValue}
-      handleSave={handleSave}
-      onChange={onChange}
+    <LocationSearchDropdown
+      displayValue={utilityFunctions.getDisplayValue}
+      value={data.selectedCity}
+      setSelectedLocation={utilityFunctions.setSelectedLocation}
+      onChange={utilityFunctions.handleInputChange}
       placeholder={t("search.all-states")}
-      icon={<Icons.Location />}
-      onFocus={onFocus}
-      disableClose={!!state?.id}
-      querystring={queryString}
-      stateId={value?.id}
-      onClearLocation={onClearLocation}
+      onFocus={handleInputFocus}
+      forceDropdownOpen={!!selectedState?.id}
+      querystring={data.queryString}
+      stateId={data.fieldValueId}
+      onClearLocation={utilityFunctions.handleClearLocation}
     >
       <Combobox.Options className="absolute z-50 max-h-60 w-full overflow-auto rounded-b-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
-        {data?.length === 0 && queryString !== "" ? (
+        {shouldShowNoResultsMessage ? (
           <div className="relative cursor-default select-none px-4 py-2 text-gray-700">
             {t("search.nothing-found")}
           </div>
         ) : (
-          <div className="py-2">{renderOptions()}</div>
+          <div className="py-2">{renderLocationOptions()}</div>
         )}
       </Combobox.Options>
-    </Search>
+    </LocationSearchDropdown>
   );
 };

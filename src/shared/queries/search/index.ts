@@ -2,7 +2,7 @@ import { useQuery, type UseQueryResult } from "react-query";
 import Search from "@/shared/api/search";
 import { type ICategoriesSearch } from "@/shared/api/search/types";
 import { DEFAULT_LOCALE } from "@/shared/queries/constants";
-import { type ICategoriesSearchFilters } from "@/shared/queries/search/use-categories-filters";
+import { type ICategoriesSearchFilters } from "./types";
 
 export const SEARCH_CATEGORIES_KEY = "search-categories";
 

@@ -7,14 +7,14 @@ import { useRouter } from "next/router";
 import { SearchCategories } from "@/entities/search-header/ui/search-categories";
 import {
   GLOBAL_SEARCH_KEY,
-  type ICategoriesSearch,
   useCategoriesFilters,
 } from "@/shared/queries/search/use-categories-filters";
-import React, { useCallback, useEffect } from "react";
+import { memo, useCallback, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { searchSchema } from "@/shared/lib/validation/validation";
+import { type ICategoriesSearch } from "@/shared/queries/search/types";
 
-export const SearchHeader = () => {
+export const SearchHeader = memo(() => {
   const { filters, onCategoriesSearchChange } = useCategoriesFilters();
 
   const form = useForm<ICategoriesSearch>({
@@ -27,7 +27,7 @@ export const SearchHeader = () => {
   });
   const { setValue, watch } = form;
 
-  const categories = watch("searchTerm");
+  const searchTerm = watch("searchTerm");
   const location = watch("location");
 
   const { refetch } = useGetCategoriesSearch({
@@ -37,24 +37,33 @@ export const SearchHeader = () => {
 
   const router = useRouter();
 
-  useEffect(() => {
-    void (async function () {
-      if (!router.pathname.includes("categories") && filters.searchTerm) {
-        const { data } = await refetch();
+  const redirectToCategoryBySearch = async () => {
+    const isCategoriesPage = router.pathname.includes("categories");
+    const hasSearchTerm = Boolean(filters.searchTerm);
 
-        if (data) {
-          const pathname = `/categories/${
-            data?.category?.id || 0
-          }?${GLOBAL_SEARCH_KEY}=${
-            router.query?.[GLOBAL_SEARCH_KEY] as string
-          }`;
-          void router.push(pathname);
-        }
+    if (!isCategoriesPage && hasSearchTerm) {
+      const { data } = await refetch();
+
+      if (data) {
+        const searchParams = new URLSearchParams(window.location.search);
+        searchParams.append(GLOBAL_SEARCH_KEY, filters.searchTerm);
+        const search = searchParams.toString();
+        const categoryId = data?.category?.id ?? 0;
+
+        const pathname = `/categories/${categoryId}?${search}`;
+        void router.push(pathname);
       }
-    })();
+    }
+  };
 
+  const updateFormWithFilterValues = () => {
     setValue("searchTerm", filters.searchTerm);
     setValue("location", filters.location);
+  };
+
+  useEffect(() => {
+    void redirectToCategoryBySearch();
+    updateFormWithFilterValues();
     // eslint-disable-next-line
   }, [filters.searchTerm, filters.location]);
 
@@ -62,28 +71,36 @@ export const SearchHeader = () => {
     onCategoriesSearchChange(values);
   };
 
-  const onClear = useCallback(() => {
-    setValue("searchTerm", "");
-  }, [setValue]);
+  const clearSearchTerm = useCallback(
+    () => setValue("searchTerm", ""),
+    [setValue],
+  );
+  const clearLocation = useCallback(
+    () => setValue("location", { name: "", id: 0 }),
+    [setValue],
+  );
 
-  const onClearLocation = useCallback(() => {
-    setValue("location", { name: "", id: 0 });
-  }, [setValue]);
+  const isSubmitDisabled = !searchTerm && !filters.searchTerm;
 
   return (
     <div className="flex  justify-center">
       <Form form={form} onSubmit={onSubmit}>
-        <div className="flex  gap-1 ">
+        <div className="flex gap-1">
           <div className="flex w-search items-center rounded border border-solid border-border-2 bg-white">
-            <SearchCategories onClear={onClear} hideClear={!categories} />
+            <SearchCategories
+              onClear={clearSearchTerm}
+              hideClear={!searchTerm}
+            />
             <SearchLocation
               defaultLocation={location}
-              onClear={onClearLocation}
+              onClear={clearLocation}
             />
           </div>
-          <ButtonSearch disabled={!categories && !filters.searchTerm} />
+          <ButtonSearch disabled={isSubmitDisabled} />
         </div>
       </Form>
     </div>
   );
-};
+});
+
+SearchHeader.displayName = "SearchHeader";

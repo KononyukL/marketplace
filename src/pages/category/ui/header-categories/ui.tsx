@@ -4,15 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
 
-interface IHeaderCategories {
-  children: React.ReactNode;
+interface ICategoryHeader {
   segmentTitle?: string;
 }
 
-export const HeaderCategories = ({
+export const CategoryHeader = ({
   segmentTitle,
   children,
-}: IHeaderCategories) => {
+}: React.PropsWithChildren<ICategoryHeader>) => {
   const { t } = useTranslation(["categories", "common"]);
   const segments = ["", ""];
 
@@ -24,7 +23,7 @@ export const HeaderCategories = ({
         segmentTitle={`${t("header.category")} ${segmentTitle}`}
       />
       <div className="relative mx-14 h-64 max-w-main px-8 pb-10 pt-12 text-white">
-        <div className="text-title-2 max-w-categories-header relative z-10 flex flex-col items-start gap-3 break-normal ">
+        <div className="text-title-2 relative z-10 flex max-w-categories-header flex-col items-start gap-3 break-normal ">
           <h3 className="text-[28px] leading-snug">{t("header.title")}</h3>
           <p className="pb-2 text-base leading-relaxed">
             {t("header.text-title")}
