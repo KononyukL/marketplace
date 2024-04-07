@@ -12,14 +12,15 @@ export function useGetCitiesByName(
   queryString: string;
 } {
   const [name, setName] = useState("");
-  const debouncedName = useDebounce<string>(name || defaultName, 500);
+  const debouncedName = useDebounce(name || defaultName, 500);
 
   const searchCitiesByName = useCallback((name: string) => {
     setName(name);
   }, []);
 
+  const queryKey = ["cities-by-name", debouncedName];
   const data = useQuery(
-    ["advertisements-favorite", debouncedName],
+    queryKey,
     () => Locations.getCitiesByName({ name: debouncedName, size }),
     { enabled: !!debouncedName },
   );

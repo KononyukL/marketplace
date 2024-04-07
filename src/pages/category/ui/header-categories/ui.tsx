@@ -4,14 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
 
-interface IHeaderCategories {
+interface ICategoryHeader {
   segmentTitle?: string;
 }
 
-export const HeaderCategories = ({
+export const CategoryHeader = ({
   segmentTitle,
   children,
-}: React.PropsWithChildren<IHeaderCategories>) => {
+}: React.PropsWithChildren<ICategoryHeader>) => {
   const { t } = useTranslation(["categories", "common"]);
   const segments = ["", ""];
 

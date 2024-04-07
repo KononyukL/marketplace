@@ -1,5 +1,4 @@
 import { useCallback, useMemo } from "react";
-import useSaveInURL from "@/shared/hooks/use-save-in-url";
 import { DEFAULT_PAGE, DEFAULT_SIZE } from "@/shared/queries/constants";
 import {
   type ICategoriesFiltersProps,
@@ -8,6 +7,7 @@ import {
   type ICategoriesFilters,
   type ICategoriesSearchFilters,
 } from "./types";
+import { useSaveInURL } from "@/shared/hooks";
 
 export const GLOBAL_SEARCH_KEY = "globalSearch";
 export const CATEGORIES_SEARCH_KEY = "categoriesSearch";
@@ -41,7 +41,7 @@ export const useCategoriesFilters = ({
 
   const filters = useMemo<ICategoriesSearchFilters>(
     () => ({
-      ...searchFilters,
+      searchTerm: searchFilters?.searchTerm ?? "",
       ...categoriesFilters,
       size: defaultFilters?.size || DEFAULT_SIZE,
       page: defaultFilters?.page || DEFAULT_PAGE,

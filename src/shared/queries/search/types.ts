@@ -1,5 +1,9 @@
-import { type IState } from "@/entities/search-header/ui/search-location";
 import { type WithRequired } from "@/shared/config";
+
+export interface IState {
+  id: number;
+  name: string;
+}
 
 export interface ICategoriesDefaultFilters {
   size?: number;

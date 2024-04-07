@@ -1,39 +1,41 @@
 import { type ChangeEvent, Fragment, type ReactNode } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { ButtonDelete } from "@/shared/ui/buttons/ui/button-delete";
+import { Icons } from "@/shared/config";
 
 interface ISearch<T> {
   displayValue: (item: T) => string;
-  value?: T;
-  handleSave: (props: T) => void;
+  value: T | null;
+  setSelectedLocation: (props: T) => void;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   icon?: ReactNode;
   placeholder: string;
   onFocus?: () => void;
-  disableClose?: boolean;
+  forceDropdownOpen?: boolean;
   querystring: string;
   stateId?: number;
   onClearLocation?: () => void;
 }
 
-export const Search = <T,>({
+// todo: probably we can make this component more generalizable
+export const LocationSearchDropdown = <T,>({
   displayValue,
   value,
-  handleSave,
+  setSelectedLocation,
   onChange,
   children,
-  icon,
+  icon = <Icons.Location />,
   placeholder,
   onFocus,
   querystring,
-  disableClose,
+  forceDropdownOpen,
   stateId,
   onClearLocation,
 }: React.PropsWithChildren<ISearch<T>>) => {
   const showButton = querystring || stateId;
 
   return (
-    <Combobox value={value} onChange={handleSave}>
+    <Combobox value={value} onChange={setSelectedLocation}>
       {({ open }) => (
         <div className="relative w-2/4  border-l border-l-border-2 text-text-3">
           <Combobox.Button
@@ -56,7 +58,7 @@ export const Search = <T,>({
             )}
           </Combobox.Button>
           <Transition
-            show={disableClose || open}
+            show={forceDropdownOpen || open}
             as={Fragment}
             leave="transition ease-in duration-100"
             leaveFrom="opacity-100"
