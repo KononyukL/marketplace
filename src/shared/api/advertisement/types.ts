@@ -2,6 +2,7 @@ import {
   type IImage,
   type IAdvertisement,
   type IAuthor,
+  type ILocation,
 } from "@/shared/api/advertisement-favorite/types";
 import { type ICategoriesBase } from "../categories/types";
 import { type IActivatableFeature, type ILocalizableEntity } from "../types";
@@ -27,6 +28,13 @@ interface IAuthorDetails extends Omit<IAuthor, "shortName"> {
   first_name: string;
   last_name: string;
   last_activity: string;
+  complete_orders_count: number;
+}
+
+interface ILocationDetails extends Omit<ILocation, "city_type_short_title"> {
+  latitude: number;
+  longitude: number;
+  state_name: string;
 }
 
 interface IReviews extends ILocalizableEntity, Omit<BaseCategory, "title"> {
@@ -44,8 +52,13 @@ export interface IImageFull extends IImage {
   url_small: string;
 }
 
-export interface IAdvertisementDetails extends Omit<IAdvertisement, "author"> {
+interface IVaccines extends IImageFull {}
+interface IDocuments extends IImageFull {}
+
+export interface IAdvertisementDetails
+  extends Omit<IAdvertisement, "author" | "location"> {
   author: IAuthorDetails;
+  location: ILocationDetails;
   category: ICategoriesBase;
   deliveries: IDelivery[];
   payments: IPayment[];
@@ -53,6 +66,8 @@ export interface IAdvertisementDetails extends Omit<IAdvertisement, "author"> {
   breed: IBreed;
   reviews: IReviews[];
   images: IImageFull[];
+  documents: IDocuments[];
+  vaccines: IVaccines[];
   additional_information: string;
 }
 
