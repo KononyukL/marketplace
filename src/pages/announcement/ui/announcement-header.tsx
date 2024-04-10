@@ -4,6 +4,7 @@ import { ButtonBuy } from "@/shared/ui/buttons/ui/button-buy";
 import { LocationSeller } from "@/shared/ui/location-seller/ui";
 import { type TLocales } from "@/shared/config";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 interface AdvertisementDetailsProps {
   title: string;
@@ -22,6 +23,8 @@ export const AnnouncementHeader = ({
   price,
   quantity,
 }: AdvertisementDetailsProps) => {
+  const { t } = useTranslation("announcement");
+
   const { locale = "ua" } = useRouter();
 
   const formattedDate = useDateFormat({
@@ -32,7 +35,7 @@ export const AnnouncementHeader = ({
   return (
     <div className="mb-8 flex flex-col gap-6 rounded-lg bg-white p-8">
       <div className="flex items-center justify-between text-text-3">
-        {formattedDate}
+        {t("header.published")} {formattedDate}
         <Icons.Heart className="heart-icon cursor-pointer" />
       </div>
       <div className="text-text-3">
@@ -44,9 +47,11 @@ export const AnnouncementHeader = ({
         </LocationSeller>
       </div>
       <p className="text-[16px] text-additional">
-        {quantity > 0 && "В наявності"}
+        {quantity > 0 && t("header.in-stock")}
       </p>
-      <p className="text-[28px] font-bold text-title">{price} грн</p>
+      <p className="text-[28px] font-bold text-title">
+        {price} {t("header.currency")}
+      </p>
       <ButtonBuy />
     </div>
   );
