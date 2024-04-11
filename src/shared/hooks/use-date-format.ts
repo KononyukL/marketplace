@@ -15,7 +15,7 @@ interface IUseDateFormat {
 export const useDateFormat = ({ date, locale }: IUseDateFormat) => {
   const { t } = useTranslation("common");
   const formHour = format(new Date(date), "HH:mm");
-  const form = format(new Date(date), " dd MMMM , hh:mm", {
+  const form = format(new Date(date), " dd MMMM , HH:mm", {
     locale: LOCALES_OBJECT[locale],
   });
   if (isToday(new Date(date))) {
