@@ -1,7 +1,7 @@
 export const animalMarket = [
   { title: "footer.animal-market.title-one", link: "/" },
   { title: "footer.animal-market.title-two", link: "/" },
-  { title: "footer.animal-market.title-three", link: "/" },
+  { title: "footer.animal-market.title-three", link: "/term" },
   { title: "footer.animal-market.title-four", link: "/" },
   { title: "footer.animal-market.title-five", link: "/" },
 ];
