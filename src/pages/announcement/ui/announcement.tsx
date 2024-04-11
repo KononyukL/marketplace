@@ -3,8 +3,10 @@ import { DEFAULT_LOCALE } from "@/shared/queries/constants";
 import { useRouter } from "next/router";
 import { SliderComponent } from "./slider";
 import { AnnouncementHeader } from "./announcement-header";
+import { useTranslation } from "next-i18next";
 
 export const Announcement = () => {
+  const { t } = useTranslation("announcement");
   const { locale, query } = useRouter();
 
   const { data: advertisement } = useGetAdvertisement({
@@ -13,16 +15,10 @@ export const Announcement = () => {
   });
 
   if (!advertisement) {
-    return <div>{"Content not found"}</div>;
+    return (
+      <div className="m-auto max-w-main p-14 text-black">{t("not-found")}</div>
+    );
   }
-
-  // const images = advertisement?.images ?? [];
-  // const title = advertisement?.title ?? "";
-  // const city = advertisement?.location.city_name ?? "";
-  // const price = advertisement?.price ?? 0;
-  // const quantity = advertisement?.quantity ?? 0;
-  // const cityState = advertisement?.location.state_name ?? "";
-  // const ending = advertisement?.updated ?? "";
 
   return (
     <div className="m-auto max-w-main px-14">
