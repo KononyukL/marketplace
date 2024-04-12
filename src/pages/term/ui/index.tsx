@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { SupportPages } from "@/shared/ui/support-pages";
 import { useRouter } from "next/router";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
-import { animalMarket } from "@/widgets/footer/ui/nav/footer-data";
+import { animalMarket as data } from "@/widgets/footer/ui/nav/footer-data";
 import { TermComponent } from "./component";
 
 export const Term = () => {
@@ -11,11 +11,9 @@ export const Term = () => {
   const { asPath } = useRouter();
   const segments = asPath.split("/");
 
-  const data = animalMarket;
-
   const titleLink = data.find((title) => asPath === title.link);
 
-  const segmentTitle = titleLink?.title as string;
+  const segmentTitle = titleLink?.title ?? "";
 
   return (
     <>
