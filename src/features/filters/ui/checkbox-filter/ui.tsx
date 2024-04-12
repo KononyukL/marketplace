@@ -1,11 +1,13 @@
 export interface ICheckboxFilterProps {
-  disabled: false;
-  defaultChecked: false;
+  disabled?: false;
+  defaultChecked?: false;
   id: string;
   label: string;
 }
 
 export const CheckboxFilter = (props: ICheckboxFilterProps) => {
+  const { disabled = false, defaultChecked = false, id, label } = props;
+
   return (
     <div className="flex w-full items-center gap-2">
       <input
@@ -16,6 +18,8 @@ export const CheckboxFilter = (props: ICheckboxFilterProps) => {
         focus:outline-none
       "
         type="checkbox"
+        disabled={disabled}
+        defaultChecked={defaultChecked}
         {...props}
       />
       <svg
@@ -32,9 +36,9 @@ export const CheckboxFilter = (props: ICheckboxFilterProps) => {
       </svg>
       <label
         className="peer-checked:font-medium peer-checked:text-black"
-        htmlFor={props.id}
+        htmlFor={id}
       >
-        {props.label}
+        {label}
       </label>
     </div>
   );
