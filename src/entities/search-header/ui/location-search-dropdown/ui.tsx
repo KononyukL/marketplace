@@ -42,7 +42,7 @@ export const LocationSearchDropdown = <T,>({
             as="div"
             className="relative flex w-full cursor-default overflow-hidden rounded bg-white pl-4 pr-2.5 text-left text-text-3 focus:rounded focus:border focus:border-solid focus:border-gray-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"
           >
-            <div className="flex items-center">{icon}</div>
+            <div className="flex items-center pr-1 text-disable">{icon}</div>
             <Combobox.Input
               className=" w-full border-none py-2 text-sm leading-5 outline-none focus:ring-0 "
               displayValue={displayValue}

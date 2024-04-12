@@ -36,7 +36,7 @@ export interface IAuthor extends IEntity {
   user_type: string;
 }
 
-interface ILocation {
+export interface ILocation {
   city_id: number;
   city_name: string;
   city_type_short_title: string;

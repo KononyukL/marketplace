@@ -1,19 +1,16 @@
-import Image from "next/image";
+import { Icons } from "@/shared/config";
+
+interface ILocationSeller {
+  width?: number;
+}
 
 export const LocationSeller = ({
   children,
-}: React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->) => {
+  width = 16,
+}: React.PropsWithChildren<ILocationSeller>) => {
   return (
-    <div className="flex items-center">
-      <Image
-        src="/images/location-black.svg"
-        alt="Location"
-        width={16}
-        height={16}
-      />
+    <div className="flex items-center gap-1 leading-5">
+      <Icons.Location width={width} viewBox="0 0 16 19" />
       {children}
     </div>
   );

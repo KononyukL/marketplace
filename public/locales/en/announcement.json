@@ -1,0 +1,9 @@
+{
+  "header": {
+    "published": "Published",
+    "in-stock": "In stock",
+    "currency": "uah",
+    "button-buy": "Buy"
+  },
+  "not-found": "Unfortunately, the requested advertisement couldn't be found."
+}
