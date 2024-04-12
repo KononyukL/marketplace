@@ -1,11 +1,11 @@
-export interface ICheckboxPFilter {
-  disabled?: boolean;
-  defaultChecked?: boolean;
+export interface ICheckboxFilterProps {
+  disabled: false;
+  defaultChecked: false;
   id: string;
   label: string;
 }
 
-export const CheckboxFilter = (props: ICheckboxPFilter) => {
+export const CheckboxFilter = (props: ICheckboxFilterProps) => {
   return (
     <div className="flex w-full items-center gap-2">
       <input

@@ -1,14 +1,10 @@
 import { Accordion } from "@/shared/ui/accordion";
 import { useTranslation } from "next-i18next";
-
-const genderArray = [
-  { id: 1, name: "Чоловіча" },
-  { id: 2, name: "Жіноча" },
-  { id: 3, name: "Всі" },
-];
+import { useGenderData } from "@/features/filters/ui/gender/lib";
 
 export const Gender = () => {
   const { t } = useTranslation("categories");
+  const { genderArray } = useGenderData();
 
   return (
     <Accordion title={t("filters-categories.gender")}>

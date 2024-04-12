@@ -8,7 +8,12 @@ interface IAccordion {
   title: string;
 }
 
-export const Accordion = ({ children, size, className, title }: IAccordion) => {
+export const Accordion = ({
+  children,
+  size = "xsm",
+  className,
+  title,
+}: IAccordion) => {
   const [accordionOpen, setAccordionOpen] = useState(false);
   return (
     <div
