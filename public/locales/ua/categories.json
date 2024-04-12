@@ -14,5 +14,19 @@
     "text-title": "Всього за 3 хвилини",
     "button": "Почати",
     "category": "Категорія"
+  },
+  "filters-categories": {
+    "filters": "Фільтри",
+    "gender": "Стать",
+    "breed": "Порода",
+    "price": "Ціна",
+    "age": "Вік",
+    "location": "Місцезнаходження",
+    "features": "Особливості",
+    "show-more": "Показати більше",
+    "enter-location": "Введіть місцезнаходження",
+    "from": "Від:",
+    "to": "До:",
+    "search-breed": "Пошук породи"
   }
 }

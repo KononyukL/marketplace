@@ -8,6 +8,7 @@ import { Spinner } from "@/shared/ui/spinner";
 import { CategoryHeader } from "@/pages/category/ui/header-categories";
 import { AnimalShelter } from "@/shared/ui";
 import { useMemo } from "react";
+import { Filters } from "@/features/filters";
 
 export const Category = () => {
   const { query } = useRouter();
@@ -63,6 +64,7 @@ export const Category = () => {
   return (
     <div className="m-auto  max-w-main text-black">
       {searchResults ? renderSearchResults() : <Spinner />}
+      <Filters />
       <AnimalShelter />
     </div>
   );
