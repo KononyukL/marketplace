@@ -45,7 +45,7 @@ export const Category = () => {
       searchResults && searchResults.advertisements.numberOfElements > 0;
 
     return (
-      <CategoryHeader segmentTitle={selectedCategory?.title}>
+      <CategoryHeader segmentTitle={selectedCategory?.title ?? ""}>
         {hasSearchTerm && hasAdvertisements ? (
           <SearchResults
             adsNumber={searchResults.advertisements.numberOfElements}

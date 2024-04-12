@@ -1,0 +1,39 @@
+{
+  "terms-of-use": {
+    "paragraphs": {
+      "start-one": "Welcome to the “Animal Market” marketplace page! “Animal Market” is a pet project that is not profitable or commercial. The marketplace was created while participating in the Team Challenge project. More information about Team Challenge can be found at https://teamchallenge.io/.",
+      "start-two": "These Terms of Use set forth the terms and conditions that govern your use of our marketplace and services. By accessing or using “Animal Market”, you agree to be bound by and comply with these Terms of Use. If you do not agree to these terms, please refrain from using our platform.",
+      "end-one": "Thank you for being a part of our community!",
+      "end-two": "Sincerely, “Animal Market” team."
+    },
+    "title": {
+      "title-one": "The right to use",
+      "title-two": "Register an account",
+      "title-three": "Use of the Marketplace",
+      "title-four": "Publication of ads",
+      "title-five": "Prohibited actions",
+      "title-six": "Making payments",
+      "title-seven": "Making changes to your account",
+      "title-eight": "Updating the Terms of Use",
+      "title-nine": "Contacting us"
+    },
+    "list": {
+      "list-one": "By using “Animal Market”, you represent that you are at least 18 years of age or have reached the age of majority in your jurisdiction. Users under the age of 18 must have the consent of a parent or legal guardian to use our services.",
+      "list-two": "To access certain features of the Marketplace, you may be required to create an account. You agree to provide accurate, current and complete information during the registration process. You are also responsible for maintaining the confidentiality of your credentials.",
+      "list-three-a": "You agree to use “Animal Market” solely to search for animals and publish ads for the sale of animals.",
+      "list-three-b": "On the Animal Market page, you can post ads, view ads of other users, send and receive messages from other users.",
+      "list-four-a": "Sellers are responsible for providing accurate and up-to-date information in their ads. Buyers are responsible for reviewing the details of the item before making a purchase. ",
+      "list-four-b": "The ad must include the current price. If you are selling a set/set of items, the price must be for the entire set/set of items.",
+      "list-five-a": "“Animal Market” website prohibits any actions that may violate local, regional, national or international laws or regulations. ",
+      "list-five-b": "Users of the site undertake not to take actions that will impede or destroy the operation of the marketplace.",
+      "list-five-c": "It is forbidden to distribute and publish materials that violate the rights of others, including intellectual property rights, terrorist content, as well as discriminatory or racist content.",
+      "list-six-a": "Please note that “Animal Market” does not have the ability to make payments on the site.",
+      "list-six-b": "To make a payment, please use secure online payment methods such as PayPal or other popular payment systems. Avoid cash transactions as they can be risky.",
+      "list-six-c": "“Animal Market” is not responsible for actions performed outside the site (payment, transfer of goods in person, etc.)",
+      "list-seven-a": "You can view and update your account information in the settings.",
+      "list-seven-b": "“Animal Market” reserves the right to terminate or suspend your account at any time for any reason, including violation of these Terms of Use.",
+      "list-eight": "We may update these Terms of Use from time to time. Any changes will be posted on this page and the date of the last update will be changed accordingly.",
+      "list-nine": "If you have any questions or comments about our Terms of Use, please contact us at [contact@email.com]."
+    }
+  }
+}

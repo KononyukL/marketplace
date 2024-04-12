@@ -1,16 +1,17 @@
 import { useTranslation } from "react-i18next";
-import { TipComponent } from "./component";
+
 import { SupportPages } from "@/shared/ui/support-pages";
 import { useRouter } from "next/router";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
-import { supportLinks } from "@/shared/config";
+import { TermComponent } from "./component";
+import { animalMarketLinks } from "@/shared/config";
 
-export const Tip = () => {
+export const Term = () => {
   const { t } = useTranslation(["common"]);
   const { asPath } = useRouter();
   const segments = asPath.split("/");
 
-  const titleLink = supportLinks.find((title) => asPath === title.link);
+  const titleLink = animalMarketLinks.find((title) => asPath === title.link);
 
   const segmentTitle = titleLink?.translationKey ?? "";
 
@@ -21,8 +22,8 @@ export const Tip = () => {
         startingTitle={t("menu.start-link")}
         segmentTitle={t(segmentTitle)}
       />
-      <SupportPages title={t("footer.support.title-three")}>
-        <TipComponent />
+      <SupportPages title={t("footer.animal-market.title-three")}>
+        <TermComponent />
       </SupportPages>
     </>
   );
