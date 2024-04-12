@@ -3,14 +3,14 @@ import { TipComponent } from "./component";
 import { SupportPages } from "@/shared/ui/support-pages";
 import { useRouter } from "next/router";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
-import { support as data } from "@/widgets/footer/ui/nav/footer-data";
+import { support as supportLink } from "@/widgets/footer/ui/nav/footer-data";
 
 export const Tip = () => {
   const { t } = useTranslation(["common"]);
   const { asPath } = useRouter();
   const segments = asPath.split("/");
 
-  const titleLink = data.find((title) => asPath === title.link);
+  const titleLink = supportLink.find((title) => asPath === title.link);
 
   const segmentTitle = titleLink?.title ?? "";
 
