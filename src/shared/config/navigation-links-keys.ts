@@ -1,21 +1,21 @@
 export const animalMarketLinks = [
-  { translationKey: "footer.animalMarket.item1", link: "/" },
-  { translationKey: "footer.animalMarket.item2", link: "/" },
-  { translationKey: "footer.animalMarket.item3", link: "/terms" },
-  { translationKey: "footer.animalMarket.item4", link: "/" },
-  { translationKey: "footer.animalMarket.item5", link: "/" },
+  { translationKey: "footer.animal-market.title-one", link: "/" },
+  { translationKey: "footer.animal-market.title-two", link: "/" },
+  { translationKey: "footer.animal-market.title-three", link: "/term" },
+  { translationKey: "footer.animal-market.title-four", link: "/" },
+  { translationKey: "footer.animal-market.title-five", link: "/" },
 ];
 
 export const supportLinks = [
-  { translationKey: "footer.support.item1", link: "/" },
-  { translationKey: "footer.support.item2", link: "/" },
-  { translationKey: "footer.support.item3", link: "/tips" },
-  { translationKey: "footer.support.faq", link: "/" }, 
+  { translationKey: "footer.support.title-one", link: "/" },
+  { translationKey: "footer.support.title-two", link: "/" },
+  { translationKey: "footer.support.title-three", link: "/tip" },
+  { translationKey: "FAQ", link: "/" },
 ];
 
 export const userLinks = [
   { translationKey: "auth.login", link: "/login" },
   { translationKey: "auth.register", link: "/registration" },
-  { translationKey: "footer.user.item3", link: "/" },
-  { translationKey: "footer.user.item4", link: "/" },
+  { translationKey: "footer.user.title-three", link: "/" },
+  { translationKey: "footer.user.title-four", link: "/" },
 ];
