@@ -108,7 +108,7 @@ export const Advertisement = ({
           <UserAvatar userAvatarUrl={userAvatarUrl} author={author} />
           <div className="flex flex-col gap-1 ">
             <p className="text-text-3">{author ?? "No name"}</p>
-            <LocationSeller>
+            <LocationSeller width={13}>
               {cityType}
               {city}
             </LocationSeller>
