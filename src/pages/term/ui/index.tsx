@@ -3,17 +3,17 @@ import { useTranslation } from "react-i18next";
 import { SupportPages } from "@/shared/ui/support-pages";
 import { useRouter } from "next/router";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
-import { animalMarket as data } from "@/widgets/footer/ui/nav/footer-data";
 import { TermComponent } from "./component";
+import { animalMarketLinks } from "@/shared/config";
 
 export const Term = () => {
   const { t } = useTranslation(["common"]);
   const { asPath } = useRouter();
   const segments = asPath.split("/");
 
-  const titleLink = data.find((title) => asPath === title.link);
+  const titleLink = animalMarketLinks.find((title) => asPath === title.link);
 
-  const segmentTitle = titleLink?.title ?? "";
+  const segmentTitle = titleLink?.translationKey ?? "";
 
   return (
     <>
