@@ -5,7 +5,6 @@ import { LocationSeller } from "@/shared/ui/location-seller/ui";
 import { type TLocales } from "@/shared/config";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import "./announcement-header.css";
 
 interface AdvertisementDetailsProps {
   title: string;
@@ -37,7 +36,7 @@ export const AnnouncementHeader = ({
     <div className="mb-8 flex flex-col gap-6 rounded-lg bg-white p-8">
       <div className="heart-icon-container flex items-center justify-between text-sm text-text-3">
         {t("header.published")} {formattedDate}
-        <Icons.Heart className="cursor-pointer" />
+        <Icons.Heart className="cursor-pointer [&_path]:stroke-[1.5] [&_path]:text-title" />
       </div>
       <div className="text-text-3">
         <h2 className="mb-2 text-[28px] font-medium leading-9 text-title">
@@ -47,9 +46,9 @@ export const AnnouncementHeader = ({
           {city}, {cityState}
         </LocationSeller>
       </div>
-      <p className="text-base text-additional">
-        {quantity > 0 && t("header.in-stock")}
-      </p>
+      {quantity > 0 && (
+        <p className="text-base text-additional">{t("header.in-stock")}</p>
+      )}
       <p className="text-[28px] font-bold leading-9 text-title">
         {price} {t("header.currency")}
       </p>

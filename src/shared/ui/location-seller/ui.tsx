@@ -1,14 +1,16 @@
 import { Icons } from "@/shared/config";
 
-interface ILocationSellerProps {
-  children: React.ReactNode;
+interface ILocationSeller {
   width?: number;
 }
 
-export const LocationSeller = ({ children, width }: ILocationSellerProps) => {
+export const LocationSeller = ({
+  children,
+  width = 16,
+}: React.PropsWithChildren<ILocationSeller>) => {
   return (
     <div className="flex items-center gap-1 leading-5">
-      <Icons.Location width={width ?? 16} viewBox="0 0 16 19" />
+      <Icons.Location width={width} viewBox="0 0 16 19" />
       {children}
     </div>
   );
