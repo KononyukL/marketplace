@@ -2,7 +2,6 @@ import { cn } from "@/shared/lib/cn";
 import { useState } from "react";
 
 interface IAccordion {
-  children: React.ReactNode;
   size?: "xsm" | "sm";
   className?: string;
   title: string;
@@ -13,7 +12,7 @@ export const Accordion = ({
   size = "xsm",
   className,
   title,
-}: IAccordion) => {
+}: React.PropsWithChildren<IAccordion>) => {
   const [accordionOpen, setAccordionOpen] = useState(false);
   return (
     <div
