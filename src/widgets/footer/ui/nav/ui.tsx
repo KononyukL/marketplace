@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 export interface ILinkData {
-  title: string;
+  translationKey: string;
   link: string;
 }
 
@@ -23,7 +23,7 @@ export const Nav = ({ title, data }: INav) => {
             className="text-text-2 transition-all hover:text-primary"
             href={el.link}
           >
-            {t(el.title)}
+            {t(el.translationKey)}
           </Link>
         ))}
       </div>

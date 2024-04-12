@@ -14,5 +14,19 @@
     "text-title": "It takes 3 minutes",
     "button": "Start",
     "category": "Category"
+  },
+  "filters-categories": {
+    "filters": "Filters",
+    "gender": "Gender",
+    "breed": "Breed",
+    "price": "Price",
+    "age": "Age",
+    "location": "Location",
+    "features": "Features",
+    "show-more": "Show more",
+    "enter-location": "Enter the location",
+    "from": "From:",
+    "to": "To:",
+    "search-breed": "Search for a breed"
   }
 }
