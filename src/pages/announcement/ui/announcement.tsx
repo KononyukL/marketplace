@@ -1,9 +1,9 @@
-import { useGetAdvertisement } from "@/shared/queries/advertisement";
 import { DEFAULT_LOCALE } from "@/shared/queries/constants";
 import { useRouter } from "next/router";
 import { SliderComponent } from "./slider";
 import { AnnouncementHeader } from "./announcement-header";
 import { useTranslation } from "next-i18next";
+import { useGetAdvertisement } from "../lib/use-get-advertisement.hook";
 
 export const Announcement = () => {
   const { t } = useTranslation("announcement");
