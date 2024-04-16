@@ -1,30 +1,30 @@
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 
-// import { SupportPages } from "@/shared/ui/support-pages";
-// import { useRouter } from "next/router";
-// import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
-// import { TermComponent } from "./component";
-// import { animalMarketLinks } from "@/shared/config";
+import { SupportPages } from "@/shared/ui/support-pages";
+import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
+import { supportLinks } from "@/shared/config";
+import { FaqComponent } from "./component";
 
 export const Faq = () => {
-  // const { t } = useTranslation(["common"]);
-  // const { asPath } = useRouter();
-  // const segments = asPath.split("/");
+  const { t } = useTranslation(["common"]);
+  const { asPath } = useRouter();
+  const segments = asPath.split("/");
 
-  // const titleLink = animalMarketLinks.find((title) => asPath === title.link);
+  const titleLink = supportLinks.find((title) => asPath === title.link);
 
-  // const segmentTitle = titleLink?.translationKey ?? "";
+  const segmentTitle = titleLink?.translationKey ?? "";
 
   return (
     <>
-      {/* <Breadcrumbs
+      <Breadcrumbs
         segments={segments}
         startingTitle={t("menu.start-link")}
         segmentTitle={t(segmentTitle)}
       />
-      <SupportPages title={t("footer.animal-market.title-three")}>
-        <TermComponent />
-      </SupportPages> */}
+      <SupportPages title={t("footer.support.title-four")}>
+        <FaqComponent />
+      </SupportPages>
     </>
   );
 };
