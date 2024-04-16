@@ -10,7 +10,7 @@ export const supportLinks = [
   { translationKey: "footer.support.title-one", link: "/" },
   { translationKey: "footer.support.title-two", link: "/" },
   { translationKey: "footer.support.title-three", link: "/tip" },
-  { translationKey: "FAQ", link: "/" },
+  { translationKey: "footer.support.title-four", link: "/faq" },
 ];
 
 export const userLinks = [

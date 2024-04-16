@@ -12,5 +12,21 @@
       "list-five": "Measurement and inspection of the animal: Before paying or transferring the animal, meet and measure the animal in person, make sure that it corresponds to the description and photos.",
       "list-six": "Keep records: Keep all correspondence and evidence of the transaction as it may be useful in case of any disputes or problems."
     }
+  },
+  "faq": {
+    "title": {
+      "title-one": "What is “Animal Market”?",
+      "title-two": "How does “Animal Market”  work?",
+      "title-three": "Is the “Animal Market” website intended only for the sale of animals, or is it also possible to adopt an animal?",
+      "title-four": "How do I contact a seller or shelter about a specific listing?",
+      "title-five": "Is there a fee for using “Animal Market” website?"
+    },
+    "list": {
+      "list-one": "“Animal Market” is a marketplace created by a team of enthusiasts while participating in the Team Challenge project. Our mission is to promote responsible adoption and sale of pets by connecting owners and shelters with potential buyers. The goal of the project is to create a convenient platform for finding, buying and selling pets.",
+      "list-two": "Animal owners and shelters can add ads about animals they want to sell or give away for free. Interested users can browse these ads, contact the sellers or shelters, and find a pet for themselves.",
+      "list-three": "Our website is designed for both buying and adopting animals. Animal owners who want to give up their pets can create ads for potential adopters. Shelters can also place ads and showcase animals available for adoption. Our goal is to create an opportunity for animals to find new homes.",
+      "list-four": "To contact a seller or shelter, simply click the “Send Message” button on the listing page. You will then be able to send a direct message to get more information about the animal, ask questions, and discuss the purchase or adoption process.",
+      "list-five": "The “Animal Market” website is not commercial. There are currently no fees for using the site. You can post ads for the sale or adoption of animals for free."
+    }
   }
 }
