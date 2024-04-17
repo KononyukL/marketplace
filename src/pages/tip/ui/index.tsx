@@ -21,7 +21,7 @@ export const Tip = () => {
         startingTitle={t("menu.start-link")}
         segmentTitle={t(segmentTitle)}
       />
-      <SupportPages title={t("footer.support.title-three")}>
+      <SupportPages title={t(segmentTitle)}>
         <TipComponent />
       </SupportPages>
     </>
