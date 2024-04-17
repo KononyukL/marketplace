@@ -40,22 +40,24 @@
   "footer": {
     "animal-market": {
       "title": "Animal Market",
-      "title-one": "Information about the company",
+      "title-one": "About us",
       "title-two": "Blog",
-      "title-three": "Terms of use",
-      "title-four": "Privacy policy",
-      "title-five": "Development team page"
+      "title-three": "Breed knowledge base",
+      "title-four": "Terms of use",
+      "title-five": "Privacy policy"
     },
     "support": {
       "title": "Support",
-      "title-one": "Contacts and feedback",
-      "title-two": "How to sell and buy?",
-      "title-three": "Tips for website security"
+      "title-one": "FAQ",
+      "title-two": "Tips for website security",
+      "title-three": "How to sell and buy?",
+      "title-four": "Contacts and feedback"
     },
     "user": {
       "title": "To the user",
-      "title-three": "Create an advertisement",
-      "title-four": "My advertisements"
+      "title-one": "Personal account",
+      "title-two": "Add an announcement",
+      "title-three": "Saved announcements"
     }
   },
   "search": {
