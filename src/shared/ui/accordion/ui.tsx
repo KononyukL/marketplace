@@ -16,9 +16,13 @@ export const Accordion = ({
   const [accordionOpen, setAccordionOpen] = useState(false);
   return (
     <div
-      className={cn("w-full bg-white py-2 ", className, {
-        "max-w-filter": size === "xsm",
-      })}
+      className={cn(
+        "w-full border-b border-b-text-2 bg-white py-2",
+        className,
+        {
+          "max-w-filter": size === "xsm",
+        },
+      )}
     >
       <button
         onClick={() => setAccordionOpen(!accordionOpen)}
@@ -43,7 +47,7 @@ export const Accordion = ({
         </svg>
       </button>
       <div
-        className={`grid overflow-hidden border-b border-b-text-2 py-3 text-sm text-slate-600 transition-all  duration-300 ease-in-out ${
+        className={`grid overflow-hidden py-3 text-sm text-slate-600 transition-all  duration-300 ease-in-out ${
           accordionOpen
             ? "grid-rows-[1fr] opacity-100"
             : "grid-rows-[0fr] opacity-0"

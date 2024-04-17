@@ -1,8 +1,7 @@
 export const data = [
-  // { list: "tips.list.list-one" },
-  // { list: "tips.list.list-two" },
-  // { list: "tips.list.list-three" },
-  // { list: "tips.list.list-four" },
-  // { list: "tips.list.list-five" },
-  // { list: "tips.list.list-six" },
+  { title: "faq.title.title-one", list: "faq.list.list-one" },
+  { title: "faq.title.title-two", list: "faq.list.list-two" },
+  { title: "faq.title.title-three", list: "faq.list.list-three" },
+  { title: "faq.title.title-four", list: "faq.list.list-four" },
+  { title: "faq.title.title-five", list: "faq.list.list-five" },
 ];
