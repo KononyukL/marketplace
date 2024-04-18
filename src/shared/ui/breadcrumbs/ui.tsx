@@ -15,7 +15,7 @@ export const Breadcrumbs = ({
   let href = "";
   return (
     <>
-      <div className="flex flex-row items-center gap-3  px-14 py-8 text-base font-semibold leading-relaxed text-black">
+      <div className="m-auto flex max-w-main flex-row  items-center gap-3 px-14 py-8 text-base font-semibold leading-relaxed text-black">
         {segments?.map((segment: string, i: number) => {
           href += `/${segment}`;
           const isLastSegment = i === segments.length - 1;
