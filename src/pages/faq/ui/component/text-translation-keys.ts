@@ -1,4 +1,4 @@
-export const data = [
+export const textTranslationKeys = [
   { title: "faq.title.title-one", list: "faq.list.list-one" },
   { title: "faq.title.title-two", list: "faq.list.list-two" },
   { title: "faq.title.title-three", list: "faq.list.list-three" },

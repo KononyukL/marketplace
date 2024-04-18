@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { data } from "./data";
+import { textTranslationKeys } from "./text-translation-keys";
 
 export const TermComponent = () => {
   const { t } = useTranslation(["animalMarket"]);
@@ -10,7 +10,7 @@ export const TermComponent = () => {
         <p className="pb-3">{t("terms-of-use.paragraphs.start-one")}</p>
         <p className="pb-6">{t("terms-of-use.paragraphs.start-two")}</p>
         <ol className="list-decimal pl-5 text-base font-medium">
-          {data.map((el, i) => (
+          {textTranslationKeys.map((el, i) => (
             <li key={i} className="pb-6 ">
               {t(el.title)}
               {el.items && (
