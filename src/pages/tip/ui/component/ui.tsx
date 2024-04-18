@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { data } from "./data";
+import { textTranslationKeys } from "./text-translation-keys";
 
 export const TipComponent = () => {
   const { t } = useTranslation(["support"]);
@@ -9,7 +9,7 @@ export const TipComponent = () => {
       <div className="px-support py-8 text-justify">
         <p className="pb-6">{t("tips.paragraphs.start")}</p>
         <ol className="list-decimal pl-5">
-          {data.map((el, i) => (
+          {textTranslationKeys.map((el, i) => (
             <li key={i} className="pb-6">
               {t(el.list)}
             </li>
