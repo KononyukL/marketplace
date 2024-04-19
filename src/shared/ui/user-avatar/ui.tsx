@@ -25,8 +25,10 @@ export const UserAvatar = ({
           width={64}
           height={64}
         />
-      ) : (
+      ) : author !== null ? (
         author[0].toLocaleUpperCase()
+      ) : (
+        ""
       )}
     </div>
   );
