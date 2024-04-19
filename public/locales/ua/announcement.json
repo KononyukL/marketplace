@@ -3,7 +3,19 @@
     "published": "Опубліковано",
     "in-stock": "В наявності",
     "currency": "грн",
-    "button-buy": "Купити"
+    "contact-button": "Написати продавцю"
+  },
+  "seller-info": {
+    "complete-orders": "Виконані продажі",
+    "last-activity": "У мережі",
+    "speed-response": "Відповідає протягом",
+    "units": "хв.",
+    "seller-contacts": "Контакти продавця",
+    "all-seller-ads": "Усі оголошення продавця",
+    "delivery": "Способи доставки",
+    "payment": "Способи оплати",
+    "cash": "Готівкою",
+    "report": "Поскаржитися на продавця"
   },
   "not-found": "На жаль, дане оголошення не знайдено."
 }
