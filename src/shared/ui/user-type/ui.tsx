@@ -3,8 +3,9 @@ import { useTranslation } from "next-i18next";
 
 interface IUserType {
   userType?: string;
+  className?: string;
 }
-export const UserType = ({ userType }: IUserType) => {
+export const UserType = ({ userType, className }: IUserType) => {
   const { t } = useTranslation("home");
 
   return (
@@ -15,7 +16,7 @@ export const UserType = ({ userType }: IUserType) => {
         width={16}
         height={16}
       />
-      <p className="text-text-4">
+      <p className={className}>
         {userType === "USER"
           ? t("advertisement.private-announcement")
           : t("advertisement.shelter")}
