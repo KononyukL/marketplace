@@ -1,10 +1,10 @@
 import { Icons } from "@/shared/config";
 import { useDateFormat } from "@/shared/hooks/use-date-format";
-import { ButtonBuy } from "@/shared/ui/buttons/ui/button-buy";
 import { LocationSeller } from "@/shared/ui/location-seller/ui";
 import { type TLocales } from "@/shared/config";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import { Button } from "@/shared/ui";
 
 interface AdvertisementDetailsProps {
   title: string;
@@ -52,7 +52,7 @@ export const AnnouncementHeader = ({
       <p className="text-[28px] font-bold leading-9 text-title">
         {price} {t("header.currency")}
       </p>
-      <ButtonBuy />
+      <Button variant="primary">{t("header.contact-button")}</Button>
     </div>
   );
 };
