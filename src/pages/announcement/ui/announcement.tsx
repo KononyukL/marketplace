@@ -4,6 +4,7 @@ import { SliderComponent } from "./slider";
 import { AnnouncementHeader } from "./announcement-header";
 import { useTranslation } from "next-i18next";
 import { useGetAdvertisement } from "../lib/use-get-advertisement.hook";
+import { SellerInfo } from "./seller-info";
 
 export const Announcement = () => {
   const { t } = useTranslation("announcement");
@@ -40,7 +41,19 @@ export const Announcement = () => {
             cityState={advertisement.location.state_name}
             ending={advertisement.updated}
           />
-          <div className="rounded-lg bg-white p-8">About seller info</div>
+          <SellerInfo
+            userType={advertisement.author.user_type}
+            firstName={advertisement.author.first_name}
+            userAvatarUrl={advertisement.author.user_avatar_url}
+            lastName={advertisement.author.last_name}
+            rating={advertisement.author.rating}
+            reviewsCount={advertisement.author.reviews_count}
+            completeOrders={advertisement.author.complete_orders_count}
+            lastActivity={advertisement.author.last_activity}
+            responseSpeed={advertisement.author.response_speed}
+            deliveries={advertisement.deliveries}
+            payments={advertisement.payments}
+          />
         </div>
       </div>
       <div className="mt-20 bg-white p-12 text-center">Seller reviews</div>

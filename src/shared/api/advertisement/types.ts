@@ -16,18 +16,19 @@ interface IFeatureOption extends ILocalizableEntity, IActivatableFeature {
   description: string;
 }
 
-interface IDelivery extends IFeatureOption {}
-interface IPayment extends IFeatureOption {}
+export interface IDelivery extends IFeatureOption {}
+export interface IPayment extends IFeatureOption {}
 
 interface IBreed extends ILocalizableEntity, BaseCategory {
   category: BaseCategory;
 }
 
-interface IAuthorDetails extends Omit<IAuthor, "shortName"> {
+export interface IAuthorDetails extends Omit<IAuthor, "shortName"> {
   email: string;
   first_name: string;
   last_name: string;
   last_activity: string;
+  response_speed: number;
   complete_orders_count: number;
 }
 

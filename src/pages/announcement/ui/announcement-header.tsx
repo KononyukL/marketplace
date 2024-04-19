@@ -35,8 +35,8 @@ export const AnnouncementHeader = ({
   return (
     <div className="mb-8 flex flex-col gap-6 rounded-lg bg-white p-8">
       <div className="heart-icon-container flex items-center justify-between text-sm text-text-3">
-        {t("header.published")} {formattedDate}
-        <Icons.Heart className="cursor-pointer [&_path]:stroke-[1.5] [&_path]:text-title" />
+        {t("header.published")} {formattedDate.toLowerCase()}
+        <Icons.Heart className="[&_path]:stroke-text-title cursor-pointer [&_path]:stroke-[1.5]" />
       </div>
       <div className="text-text-3">
         <h2 className="mb-2 text-[28px] font-medium leading-9 text-title">
