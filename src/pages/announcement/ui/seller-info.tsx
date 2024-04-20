@@ -1,4 +1,7 @@
-import { type IDelivery, IPayment } from "@/shared/api/advertisement/types";
+import {
+  IAdvertisementDetails,
+  type IPayment,
+} from "@/shared/api/advertisement/types";
 import { Icons } from "@/shared/config";
 import { Button, UserAvatar, UserType } from "@/shared/ui";
 import Link from "next/link";
@@ -8,63 +11,53 @@ import { useRouter } from "next/router";
 import { Rating } from "react-simple-star-rating";
 import { useTranslation } from "next-i18next";
 
-interface ISellerProps {
-  userType?: string;
-  userAvatarUrl: string;
-  firstName: string;
-  lastName: string;
-  rating: number;
-  reviewsCount: number;
-  completeOrders: number;
-  lastActivity: string;
-  responseSpeed: number;
-  deliveries: IDelivery[];
-  payments: IPayment[];
-}
+const DEFAULT_SELLER_NAME = "Unnamed seller";
 
 export const SellerInfo = ({
-  userType,
-  userAvatarUrl,
-  firstName,
-  lastName,
-  rating,
-  reviewsCount,
-  completeOrders,
-  lastActivity,
-  responseSpeed,
-  deliveries,
-  payments,
-}: ISellerProps) => {
+  advertisement,
+}: {
+  advertisement: IAdvertisementDetails;
+}) => {
+  const { author, deliveries, payments } = advertisement;
   const { t } = useTranslation("announcement");
 
   const { locale = "ua" } = useRouter();
 
   const formattedDate = useDateFormat({
-    date: lastActivity,
+    date: author.last_activity,
     locale: locale as TLocales,
   });
+
+  const getPaymentIcon = (payment: IPayment) => {
+    if (payment.id === 1) {
+      return <Icons.Cash />;
+    } else if (payment.id === 2) {
+      return <Icons.CreditCard />;
+    }
+    return "";
+  };
 
   return (
     <div className="flex flex-col gap-4 rounded-lg bg-white p-8">
       <UserType
-        userType={userType}
+        userType={author.user_type}
         className="text-xl font-medium text-title"
       />
       <div className="flex flex-row items-center gap-4">
         <UserAvatar
-          userAvatarUrl={userAvatarUrl}
-          author={firstName}
+          userAvatarUrl={author.user_avatar_url}
+          author={author.first_name}
           className="h-16 w-16"
         />
         <div className="text-title">
           <p className="font-medium">
-            {firstName ?? "Unnamed Seller"} {lastName}
+            {author.first_name ?? DEFAULT_SELLER_NAME} {author.last_name}
           </p>
           <div className="inline-flex items-center gap-4 [&_path]:stroke-additional  [&_path]:stroke-[1.5px]">
             <Rating
               SVGstyle={{ display: "inline" }}
               iconsCount={5}
-              initialValue={rating}
+              initialValue={author.rating}
               size={20}
               readonly={true}
               fillColor={"#2A907F"}
@@ -74,7 +67,7 @@ export const SellerInfo = ({
               allowFraction={true}
             />
             <p>
-              {rating} ({reviewsCount})
+              {author.rating} ({author.reviews_count})
             </p>
           </div>
         </div>
@@ -82,7 +75,7 @@ export const SellerInfo = ({
       <ul className="pl-20 text-sm text-text-3 [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:pb-1">
         <li>
           <Icons.ShoppingBag />
-          {t("seller-info.complete-orders")}: {completeOrders}
+          {t("seller-info.complete-orders")}: {author.complete_orders_count}
         </li>
         <li>
           <Icons.ClockIcon /> {t("seller-info.last-activity")}:{" "}
@@ -90,7 +83,7 @@ export const SellerInfo = ({
         </li>
         <li>
           <Icons.CountdownClock />
-          {t("seller-info.speed-response")} {responseSpeed}{" "}
+          {t("seller-info.speed-response")} {author.response_speed}{" "}
           {t("seller-info.units")}
         </li>
       </ul>
@@ -130,11 +123,7 @@ export const SellerInfo = ({
             key={index}
             className="mb-2 mr-2 inline-flex items-center gap-2 rounded-md border border-additional px-4 py-2 text-[16px] leading-[25px] text-additional"
           >
-            {payment.name === t("seller-info.payment") ? (
-              <Icons.Cash />
-            ) : (
-              <Icons.CreditCard />
-            )}
+            {getPaymentIcon(payment)}
             {payment.name}
           </li>
         ))}

@@ -41,19 +41,7 @@ export const Announcement = () => {
             cityState={advertisement.location.state_name}
             ending={advertisement.updated}
           />
-          <SellerInfo
-            userType={advertisement.author.user_type}
-            firstName={advertisement.author.first_name}
-            userAvatarUrl={advertisement.author.user_avatar_url}
-            lastName={advertisement.author.last_name}
-            rating={advertisement.author.rating}
-            reviewsCount={advertisement.author.reviews_count}
-            completeOrders={advertisement.author.complete_orders_count}
-            lastActivity={advertisement.author.last_activity}
-            responseSpeed={advertisement.author.response_speed}
-            deliveries={advertisement.deliveries}
-            payments={advertisement.payments}
-          />
+          <SellerInfo advertisement={advertisement} />
         </div>
       </div>
       <div className="mt-20 bg-white p-12 text-center">Seller reviews</div>
