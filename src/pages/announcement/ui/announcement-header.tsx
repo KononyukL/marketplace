@@ -1,10 +1,10 @@
 import { Icons } from "@/shared/config";
 import { useDateFormat } from "@/shared/hooks/use-date-format";
-import { ButtonBuy } from "@/shared/ui/buttons/ui/button-buy";
 import { LocationSeller } from "@/shared/ui/location-seller/ui";
 import { type TLocales } from "@/shared/config";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import { Button } from "@/shared/ui";
 
 interface AdvertisementDetailsProps {
   title: string;
@@ -35,8 +35,8 @@ export const AnnouncementHeader = ({
   return (
     <div className="mb-8 flex flex-col gap-6 rounded-lg bg-white p-8">
       <div className="heart-icon-container flex items-center justify-between text-sm text-text-3">
-        {t("header.published")} {formattedDate}
-        <Icons.Heart className="cursor-pointer [&_path]:stroke-[1.5] [&_path]:text-title" />
+        {t("header.published")} {formattedDate.toLowerCase()}
+        <Icons.Heart className="[&_path]:stroke-text-title cursor-pointer [&_path]:stroke-[1.5]" />
       </div>
       <div className="text-text-3">
         <h2 className="mb-2 text-[28px] font-medium leading-9 text-title">
@@ -52,7 +52,7 @@ export const AnnouncementHeader = ({
       <p className="text-[28px] font-bold leading-9 text-title">
         {price} {t("header.currency")}
       </p>
-      <ButtonBuy />
+      <Button variant="primary">{t("header.contact-button")}</Button>
     </div>
   );
 };

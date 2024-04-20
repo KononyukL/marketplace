@@ -105,7 +105,11 @@ export const Advertisement = ({
           </div>
         </div>
         <div className="flex items-center  gap-4 ">
-          <UserAvatar userAvatarUrl={userAvatarUrl} author={author} />
+          <UserAvatar
+            userAvatarUrl={userAvatarUrl}
+            author={author}
+            className="h-9 w-9"
+          />
           <div className="flex flex-col gap-1 ">
             <p className="text-text-3">{author ?? "No name"}</p>
             <LocationSeller width={13}>
@@ -114,7 +118,7 @@ export const Advertisement = ({
             </LocationSeller>
           </div>
           <div className="flex flex-col gap-1">
-            <UserType userType={userType} />
+            <UserType userType={userType} className="text-text-4" />
             <p className="text-black">
               {t("advertisement.reviews")}: {reviewsCount}
             </p>

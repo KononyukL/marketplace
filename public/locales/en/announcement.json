@@ -3,7 +3,18 @@
     "published": "Published",
     "in-stock": "In stock",
     "currency": "uah",
-    "button-buy": "Buy"
+    "contact-button": "Contact Seller"
+  },
+  "seller-info": {
+    "complete-orders": "Completed orders",
+    "last-activity": "Last online",
+    "speed-response": "Response time",
+    "units": "min",
+    "seller-contacts": "Seller Contacts",
+    "all-seller-ads": "All Seller Advertisements",
+    "delivery": "Delivery methods",
+    "payment": "Payment methods",
+    "report": "Report a seller"
   },
   "not-found": "Unfortunately, the requested advertisement couldn't be found."
 }
