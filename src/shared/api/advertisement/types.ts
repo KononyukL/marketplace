@@ -19,7 +19,7 @@ interface IFeatureOption extends ILocalizableEntity, IActivatableFeature {
 export interface IDelivery extends IFeatureOption {}
 export interface IPayment extends IFeatureOption {}
 
-interface IBreed extends ILocalizableEntity, BaseCategory {
+export interface IBreed extends ILocalizableEntity, BaseCategory {
   category: BaseCategory;
 }
 
@@ -53,8 +53,8 @@ export interface IImageFull extends IImage {
   url_small: string;
 }
 
-interface IVaccines extends IImageFull {}
-interface IDocuments extends IImageFull {}
+export interface IVaccines extends IImageFull {}
+export interface IDocuments extends IImageFull {}
 
 export interface IAdvertisementDetails
   extends Omit<IAdvertisement, "author" | "location"> {
