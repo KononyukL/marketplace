@@ -1,10 +1,11 @@
 import { DEFAULT_LOCALE } from "@/shared/queries/constants";
 import { useRouter } from "next/router";
-import { SliderComponent } from "./slider";
 import { AnnouncementHeader } from "./announcement-header";
 import { useTranslation } from "next-i18next";
 import { useGetAdvertisement } from "../lib/use-get-advertisement.hook";
 import { SellerInfo } from "./seller-info";
+import { AnnouncementMainInfo } from "./announcement-main-info";
+import { SliderComponent } from "@/shared/ui/slider";
 
 export const Announcement = () => {
   const { t } = useTranslation("announcement");
@@ -27,9 +28,7 @@ export const Announcement = () => {
       <div className="mt-8 flex justify-between gap-8">
         <div className="w-2/3">
           <SliderComponent images={advertisement.images} />
-          <div className="mt-8 rounded-lg bg-white p-8">
-            Announcement main info
-          </div>
+          <AnnouncementMainInfo advertisement={advertisement} />
           <div className="mt-8 rounded-lg bg-white p-8">Tips component</div>
         </div>
         <div className="w-1/3">
