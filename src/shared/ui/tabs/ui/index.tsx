@@ -17,8 +17,8 @@ export const Tabs = ({
             key={index}
             className={
               index === selectedTab
-                ? "border-b-[3px] border-primary px-2 font-medium text-primary"
-                : "px-2  text-title"
+                ? "border-b-[3px] border-primary px-2 pb-1 font-medium text-primary"
+                : "px-2  pb-1 text-title"
             }
           >
             <button onClick={() => setSelectedTab(index)}>
