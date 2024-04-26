@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./slider.css";
 import { Icons } from "@/shared/config";
 import { useImageSlider } from "./lib";
+import { EMPTY_FIELD } from "@/pages/announcement/ui/announcement-main-info";
 
 export const SliderComponent = ({ images }: { images: IImageFull[] }) => {
   const {
@@ -16,7 +17,7 @@ export const SliderComponent = ({ images }: { images: IImageFull[] }) => {
   } = useImageSlider();
 
   if (images.length === 0) {
-    return <div className="h-[400px] text-black">Nothing to show</div>;
+    return <div className="h-[400px] text-black">{EMPTY_FIELD}</div>;
   }
 
   return (
