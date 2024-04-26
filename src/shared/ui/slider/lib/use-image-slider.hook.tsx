@@ -6,11 +6,12 @@ import type Slider from "react-slick";
 const SLIDES_TO_SHOW = 4;
 
 const THUMBNAIL_SLIDER_PROPS = {
+  initialSlide: 0,
   adaptiveHeight: false,
   arrows: false,
   focusOnSelect: true,
   slidesToShow: SLIDES_TO_SHOW,
-  infinite: true,
+  infinite: SLIDES_TO_SHOW > 5,
   variableWidth: true,
 } satisfies Settings;
 
