@@ -7,6 +7,7 @@ import {
   type IDocuments,
   type IVaccines,
 } from "@/shared/api/advertisement/types";
+import { useTranslation } from "next-i18next";
 
 export const DocsandVaccinesTab = ({
   documents,
@@ -15,6 +16,8 @@ export const DocsandVaccinesTab = ({
   documents: IDocuments[];
   vaccines: IVaccines[];
 }) => {
+  const { t } = useTranslation("announcement");
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [docsAndVaccinesActiveTab, setDocsAndVaccinesActiveTab] = useState(0);
 
@@ -32,20 +35,20 @@ export const DocsandVaccinesTab = ({
         onClick={() => openModal(0)}
         className="mb-6 block border-b border-[#444444] font-medium text-[#444444]"
       >
-        Документи
+        {t("main-info.documents")}
       </button>
       <button
         onClick={() => openModal(1)}
         className="block border-b border-[#444444] font-medium text-[#444444]"
       >
-        Вакцини
+        {t("main-info.vaccines")}
       </button>
       <Modal show={isModalOpen} onClose={closeModal}>
         <Tabs activeTab={docsAndVaccinesActiveTab}>
-          <Tab title="Документи">
+          <Tab title={t("main-info.documents")}>
             <SliderComponent images={documents} />
           </Tab>
-          <Tab title="Вакцини">
+          <Tab title={t("main-info.vaccines")}>
             <SliderComponent images={vaccines} />
           </Tab>
         </Tabs>

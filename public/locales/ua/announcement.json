@@ -5,6 +5,14 @@
     "currency": "грн",
     "contact-button": "Написати продавцю"
   },
+  "main-info": {
+    "documents": "Документи",
+    "vaccines": "Вакцини",
+    "characteristics": "Характеристики",
+    "docs-and-vaccines": "Документи та вакцини",
+    "description": "Опис",
+    "additional-info": "Додаткова інформація"
+  },
   "seller-info": {
     "complete-orders": "Виконані продажі",
     "last-activity": "У мережі",

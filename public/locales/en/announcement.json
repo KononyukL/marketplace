@@ -5,6 +5,14 @@
     "currency": "uah",
     "contact-button": "Contact Seller"
   },
+  "main-info": {
+    "documents": "Documents",
+    "vaccines": "Vaccines",
+    "characteristics": "Characteristics",
+    "docs-and-vaccines": "Documents and vaccines",
+    "description": "Description",
+    "additional-info": "Additional information"
+  },
   "seller-info": {
     "complete-orders": "Completed orders",
     "last-activity": "Last online",
