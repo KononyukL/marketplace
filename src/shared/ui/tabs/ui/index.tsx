@@ -1,3 +1,4 @@
+import { cn } from "@/shared/lib/cn";
 import { type ReactElement, useState } from "react";
 
 interface ITabsProps {
@@ -15,11 +16,10 @@ export const Tabs = ({
         {(children as ReactElement[]).map((item: ReactElement, index) => (
           <li
             key={index}
-            className={
-              index === selectedTab
-                ? "border-b-[3px] border-primary px-2 pb-1 font-medium text-primary"
-                : "px-2  pb-1 text-title"
-            }
+            className={cn("px-2 pb-1 font-medium text-title", {
+              "border-b-[3px] border-primary text-primary":
+                index === selectedTab,
+            })}
           >
             <button onClick={() => setSelectedTab(index)}>
               {item.props.title}

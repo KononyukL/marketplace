@@ -9,6 +9,9 @@ import {
 } from "@/shared/api/advertisement/types";
 import { useTranslation } from "next-i18next";
 
+const DOCS_TAB_INDEX = 0;
+const VACCINES_TAB_INDEX = 1;
+
 export const DocsandVaccinesTab = ({
   documents,
   vaccines,
@@ -19,7 +22,8 @@ export const DocsandVaccinesTab = ({
   const { t } = useTranslation("announcement");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [docsAndVaccinesActiveTab, setDocsAndVaccinesActiveTab] = useState(0);
+  const [docsAndVaccinesActiveTab, setDocsAndVaccinesActiveTab] =
+    useState(DOCS_TAB_INDEX);
 
   function openModal(tabIndex: number) {
     setDocsAndVaccinesActiveTab(tabIndex);
@@ -32,13 +36,13 @@ export const DocsandVaccinesTab = ({
   return (
     <>
       <button
-        onClick={() => openModal(0)}
+        onClick={() => openModal(DOCS_TAB_INDEX)}
         className="mb-6 block border-b border-[#444444] font-medium text-[#444444]"
       >
         {t("main-info.documents")}
       </button>
       <button
-        onClick={() => openModal(1)}
+        onClick={() => openModal(VACCINES_TAB_INDEX)}
         className="block border-b border-[#444444] font-medium text-[#444444]"
       >
         {t("main-info.vaccines")}

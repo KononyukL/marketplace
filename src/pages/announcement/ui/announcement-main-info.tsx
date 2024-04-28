@@ -23,29 +23,30 @@ export const AnnouncementMainInfo = ({
     description,
   } = advertisement;
 
+  const characteristics =
+    attributes.length === 0 && favorite_attributes.length === 0 ? (
+      EMPTY_FIELD
+    ) : (
+      <CharacteristicsTab
+        attributes={attributes}
+        favoriteAttributes={favorite_attributes}
+      />
+    );
+
+  const descriptionDetails =
+    description === "" || description === null ? EMPTY_FIELD : description;
+
+  const additionalInfo =
+    additional_information === null || additional_information === ""
+      ? EMPTY_FIELD
+      : additional_information;
+
   return (
     <div className="mt-8 h-[334px] rounded-lg bg-white p-8">
       <Tabs>
-        <Tab title={t("main-info.characteristics")}>
-          {attributes.length === 0 && favorite_attributes.length === 0 ? (
-            EMPTY_FIELD
-          ) : (
-            <CharacteristicsTab
-              attributes={attributes}
-              favoriteAttributes={favorite_attributes}
-            />
-          )}
-        </Tab>
-        <Tab title={t("main-info.description")}>
-          {description === "" || description === null
-            ? EMPTY_FIELD
-            : description}
-        </Tab>
-        <Tab title={t("main-info.additional-info")}>
-          {additional_information === null || additional_information === ""
-            ? EMPTY_FIELD
-            : additional_information}
-        </Tab>
+        <Tab title={t("main-info.characteristics")}>{characteristics}</Tab>
+        <Tab title={t("main-info.description")}>{descriptionDetails}</Tab>
+        <Tab title={t("main-info.additional-info")}>{additionalInfo}</Tab>
         <Tab title={t("main-info.docs-and-vaccines")}>
           <DocsandVaccinesTab documents={documents} vaccines={vaccines} />
         </Tab>
