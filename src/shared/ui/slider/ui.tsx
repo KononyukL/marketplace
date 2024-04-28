@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./slider.css";
 import { Icons } from "@/shared/config";
-import { useImageSlider } from "../lib";
+import { useImageSlider } from "./lib";
+import { EMPTY_FIELD } from "@/pages/announcement/ui/announcement-main-info";
 
 export const SliderComponent = ({ images }: { images: IImageFull[] }) => {
   const {
@@ -14,6 +15,10 @@ export const SliderComponent = ({ images }: { images: IImageFull[] }) => {
     thumbnailSliderRef,
     THUMBNAIL_SLIDER_PROPS,
   } = useImageSlider();
+
+  if (images.length === 0) {
+    return <div className="h-[400px] text-black">{EMPTY_FIELD}</div>;
+  }
 
   return (
     <>
@@ -26,11 +31,11 @@ export const SliderComponent = ({ images }: { images: IImageFull[] }) => {
               alt=""
               width={885}
               height={400}
-              className="max-h-[400px] rounded-lg bg-gray-300 object-contain"
+              className="max-h-[400px] rounded-lg bg-[#EDEEEE] object-contain"
             />
           ))}
         </Slider>
-        <div className="img-count absolute bottom-4 right-4 inline-flex items-center gap-1 rounded-lg px-4 py-2 text-[#FFFEFE]">
+        <div className="img-count absolute bottom-4 right-4 inline-flex items-center gap-1 rounded-lg px-4 py-2 text-title">
           <Icons.Camera />
           {images.length}
         </div>
@@ -46,10 +51,10 @@ export const SliderComponent = ({ images }: { images: IImageFull[] }) => {
           <div key={image.id}>
             <Image
               src={image.url_small}
-              className="h-[120px] rounded-lg object-cover"
+              className="h-[104px] rounded-lg bg-[#edeeee] object-contain"
               alt={`slider-image-${id}`}
-              width={120}
-              height={120}
+              width={152}
+              height={104}
             />
           </div>
         ))}

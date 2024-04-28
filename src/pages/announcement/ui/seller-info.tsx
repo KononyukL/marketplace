@@ -1,5 +1,5 @@
 import {
-  IAdvertisementDetails,
+  type IAdvertisementDetails,
   type IPayment,
 } from "@/shared/api/advertisement/types";
 import { Icons } from "@/shared/config";
