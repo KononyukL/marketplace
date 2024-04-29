@@ -24,5 +24,6 @@
     "payment": "Payment methods",
     "report": "Report a seller"
   },
-  "not-found": "Unfortunately, the requested advertisement couldn't be found."
+  "not-found": "Unfortunately, the requested advertisement couldn't be found.",
+  "breadcrumbs-link": "Catalog"
 }
