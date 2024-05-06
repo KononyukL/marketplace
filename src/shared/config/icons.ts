@@ -15,6 +15,7 @@ import { ReactComponent as CreditCard } from "../../../public/images/creditcard.
 import { ReactComponent as ClockIcon } from "../../../public/images/last-activity-icon.svg";
 import { ReactComponent as ShoppingBag } from "../../../public/images/shopping-bag.svg";
 import { ReactComponent as CountdownClock } from "../../../public/images/countdown-clock.svg";
+import { ReactComponent as ExclamationMark } from "../../../public/images/exclamation-mark.svg";
 
 export const Icons = {
   User,
@@ -34,4 +35,5 @@ export const Icons = {
   ClockIcon,
   ShoppingBag,
   CountdownClock,
+  ExclamationMark,
 };

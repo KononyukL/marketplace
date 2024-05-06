@@ -8,9 +8,10 @@ import { AnnouncementMainInfo } from "./announcement-main-info";
 import { SliderComponent } from "@/shared/ui/slider";
 import { SellerReviews } from "./seller-reviews";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
+import { TipsInfo } from "./tips-info";
 
 export const Announcement = () => {
-  const { t } = useTranslation(["announcement", "common"]);
+  const { t } = useTranslation(["announcement", "common", "support"]);
   const { locale, query } = useRouter();
 
   const { data: advertisement } = useGetAdvertisement({
@@ -39,10 +40,10 @@ export const Announcement = () => {
       />{" "}
       <div className="m-auto max-w-main px-14">
         <div className="flex justify-between gap-8">
-          <div className="w-2/3">
+          <div className="w-2/3 flex-wrap">
             <SliderComponent images={advertisement.images} />
             <AnnouncementMainInfo advertisement={advertisement} />
-            <div className="mt-8 rounded-lg bg-white p-8">Tips component</div>
+            <TipsInfo />
           </div>
           <div className="w-1/3">
             <AnnouncementHeader
