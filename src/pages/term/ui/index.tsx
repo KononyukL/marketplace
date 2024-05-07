@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { SupportPages } from "@/shared/ui/support-pages";
+import { FooterPages } from "@/shared/ui/footer-pages";
 import { useRouter } from "next/router";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
 import { TermComponent } from "./component";
@@ -22,9 +22,9 @@ export const Term = () => {
         startingTitle={t("menu.start-link")}
         segmentTitle={t(segmentTitle)}
       />
-      <SupportPages title={t(segmentTitle)}>
+      <FooterPages title={t(segmentTitle)}>
         <TermComponent />
-      </SupportPages>
+      </FooterPages>
     </>
   );
 };

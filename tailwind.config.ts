@@ -62,7 +62,7 @@ export default {
         "how-it-work": "316px",
         "article-text": "282px",
         "advertisement-photo": "390px",
-        support: "874px",
+        "footer-pages": "874px",
         "categories-header": "517px",
       },
       width: {
@@ -89,7 +89,7 @@ export default {
         bottom: "248px",
       },
       padding: {
-        support: "72px",
+        "footer-pages": "72px",
       },
     },
   },

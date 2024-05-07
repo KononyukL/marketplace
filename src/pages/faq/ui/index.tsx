@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 
-import { SupportPages } from "@/shared/ui/support-pages";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
 import { supportLinks } from "@/shared/config";
 import { FaqComponent } from "./component";
+import { FooterPages } from "@/shared/ui/footer-pages";
 
 export const Faq = () => {
   const { t } = useTranslation(["common"]);
@@ -22,9 +22,9 @@ export const Faq = () => {
         startingTitle={t("menu.start-link")}
         segmentTitle={t(segmentTitle)}
       />
-      <SupportPages title={t(segmentTitle)}>
+      <FooterPages title={t(segmentTitle)}>
         <FaqComponent />
-      </SupportPages>
+      </FooterPages>
     </>
   );
 };
