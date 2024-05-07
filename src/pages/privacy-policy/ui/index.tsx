@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
 
 import { animalMarketLinks } from "@/shared/config";
+import { PolicyComponent } from "./component";
 
 export const PrivacyPolicy = () => {
   const { t } = useTranslation(["common"]);
@@ -23,7 +24,7 @@ export const PrivacyPolicy = () => {
         segmentTitle={t(segmentTitle)}
       />
       <SupportPages title={t(segmentTitle)}>
-        {/* <TermComponent /> */}
+        <PolicyComponent />
       </SupportPages>
     </>
   );
