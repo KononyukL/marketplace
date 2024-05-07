@@ -35,5 +35,51 @@
       "list-eight": "We may update these Terms of Use from time to time. Any changes will be posted on this page and the date of the last update will be changed accordingly.",
       "list-nine": "If you have any questions or comments about our Terms of Use, please contact us at [contact@email.com]."
     }
+  },
+  "privacy-policy": {
+    "paragraphs": {
+      "start": "Last modified 12.02. 2024",
+      "start-one": "Welcome to the “Animal Market” marketplace page! “Animal Market” is a pet project that is not profitable or commercial. The marketplace was created while participating in the Team Challenge project. More information about Team Challenge can be found at https://teamchallenge.io/.",
+      "start-two": "The Animal Market pet project team cares about your personal data and does everything possible to protect it. This Privacy Policy is written to help you understand what personal data is collected, stored and used and what happens to it when you use the marketplace https://staging-animalmarketplace-team.vercel.app/# (hereinafter referred to as the Site).",
+      "end-one": "By using Animal Market, you acknowledge and agree to the terms and conditions described in this Privacy Policy.",
+      "end-two": "Thank you for being part of our community!",
+      "end-three": "Sincerely, the Animal Market team."
+    },
+    "title": {
+      "title-one": "Information we collect:",
+      "title-two": "How we use your information:",
+      "title-three": "Information sharing:",
+      "title-four": "Your choices:",
+      "title-five": "Security of personal data:",
+      "title-six": "Children's privacy:",
+      "title-seven": "Privacy Policy Updates:",
+      "title-eight": "Contacting us:"
+    },
+    "subtitle": {
+      "subtitle-one-a": "Personal information",
+      "subtitle-one-b": "User-generated information",
+      "subtitle-one-c": "Automatically collected information",
+      "subtitle-two-a": "Communication",
+      "subtitle-two-b": "Improvement of services",
+      "subtitle-three": "Information sharing",
+      "subtitle-four-a": "Account settings",
+      "subtitle-four-b": "Manage notifications"
+    },
+    "list": {
+      "list-one-a": "When registering an account, we collect data such as your name, email address, phone number and address of residence for your further comfortable use of the site.",
+      "list-one-b": "User-generated information We collect any information, including text, images, and videos, that you provide to us voluntarily (product announcements, reviews, and comments left on the site).",
+      "list-one-c": "Automatically collected information We also automatically collect data such as your IP address, browser type, device information and usage patterns to improve your user experience and to improve our services.",
+      "list-two-a": "We may use your contact information to communicate with you regarding orders, promotions, and important updates regarding our marketplace.",
+      "list-two-b": "Analyzing user behavior helps us to improve our website, optimize the user experience and personalize content according to your preferences.",
+      "list-three-a": "We may share your information with trusted service providers who help us operate our marketplace and serve you.",
+      "list-three-b": "We may disclose your information if required to do so by law or to protect our rights, comply with legal process, or answer legal questions.",
+      "list-four-a": "You can view and update your account information in the settings.",
+      "list-four-b": "You can manage your notifications and opt-out of receiving promotional emails.",
+      "list-five-a": "The security of your personal data is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure.",
+      "list-five-b": "We try to use reasonable technical and organizational measures to protect your personal data, but we cannot guarantee its absolute security.",
+      "list-six": "Our services are not directed to anyone under the age of 16. If you become aware that a child has provided us with personal information, please contact us and we will take steps to remove such information. ",
+      "list-seven": "We may update this Privacy Policy from time to time. Any changes will be posted on this page and the date of the last update will be changed accordingly.",
+      "list-eight": "If you have any questions or comments about our Privacy Policy or our handling of your personal information, please contact us at [contact@email.com]."
+    }
   }
 }
