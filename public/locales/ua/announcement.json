@@ -25,5 +25,10 @@
     "report": "Поскаржитися на продавця"
   },
   "not-found": "На жаль, дане оголошення не знайдено.",
-  "breadcrumbs-link": "Каталог"
+  "breadcrumbs-link": "Каталог",
+  "tips-info": {
+    "show-less": "згорнути",
+    "show-more": "детальніше",
+    "header": "Поради з безпеки від Animal Market"
+  }
 }
