@@ -11,6 +11,12 @@ export const categoriesFilterNormalizers = (
     cityIds: filters.location?.id ? [filters.location?.id] : undefined,
     categoryId: filters.categoryId,
     minPrice: filters.minPrice,
+    maxPrice: filters.maxPrice,
+    sortOption: filters.sortOption,
+    breedIds: filters.breedIds,
+    attributeIds: filters.attributeIds,
+    ageIds: filters.ageIds,
+    genderIds: filters.genderId,
   };
 
   return Object.fromEntries(

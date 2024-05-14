@@ -33,4 +33,7 @@ export const paths = {
   search: {
     get_all: "/v1/advertisements/",
   },
+  filtersCategory: {
+    get_all: "/v1/filter/",
+  },
 } as const;
