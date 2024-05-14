@@ -6,15 +6,24 @@ import { useGetAdvertisement } from "../lib/use-get-advertisement.hook";
 import { SellerInfo } from "./seller-info";
 import { AnnouncementMainInfo } from "./announcement-main-info";
 import { SliderComponent } from "@/shared/ui/slider";
+import { SellerReviews } from "./seller-reviews";
+import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
+import { TipsInfo } from "./tips-info";
 
 export const Announcement = () => {
-  const { t } = useTranslation("announcement");
+  const { t } = useTranslation(["announcement", "common", "support"]);
   const { locale, query } = useRouter();
 
   const { data: advertisement } = useGetAdvertisement({
     langCode: locale || DEFAULT_LOCALE,
     id: parseInt(query.id as string),
   });
+
+  const segments: string[] = [
+    "",
+    `${t("breadcrumbs-link", { ns: "announcement" })}`,
+    "",
+  ];
 
   if (!advertisement) {
     return (
@@ -23,27 +32,26 @@ export const Announcement = () => {
   }
 
   return (
-    <div className="m-auto max-w-main px-14">
-      Breadcrumbs
-      <div className="mt-8 flex justify-between gap-8">
-        <div className="w-2/3">
-          <SliderComponent images={advertisement.images} />
-          <AnnouncementMainInfo advertisement={advertisement} />
-          <div className="mt-8 rounded-lg bg-white p-8">Tips component</div>
+    <>
+      <Breadcrumbs
+        segments={segments}
+        startingTitle={t("menu.start-link", { ns: "common" })}
+        segmentTitle={advertisement?.title}
+      />{" "}
+      <div className="m-auto max-w-main px-14">
+        <div className="flex justify-between gap-8">
+          <div className="w-2/3 flex-wrap">
+            <SliderComponent images={advertisement.images} />
+            <AnnouncementMainInfo advertisement={advertisement} />
+            <TipsInfo />
+          </div>
+          <div className="w-1/3">
+            <AnnouncementHeader advertisement={advertisement} />
+            <SellerInfo advertisement={advertisement} />
+          </div>
         </div>
-        <div className="w-1/3">
-          <AnnouncementHeader
-            title={advertisement.title}
-            city={advertisement.location.city_name}
-            price={advertisement.price}
-            quantity={advertisement.quantity}
-            cityState={advertisement.location.state_name}
-            ending={advertisement.updated}
-          />
-          <SellerInfo advertisement={advertisement} />
-        </div>
+        <SellerReviews />
       </div>
-      <div className="mt-20 bg-white p-12 text-center">Seller reviews</div>
-    </div>
+    </>
   );
 };

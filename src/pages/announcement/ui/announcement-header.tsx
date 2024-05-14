@@ -5,30 +5,22 @@ import { type TLocales } from "@/shared/config";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { Button } from "@/shared/ui";
-
-interface AdvertisementDetailsProps {
-  title: string;
-  ending: string;
-  city: string;
-  price: number;
-  quantity: number;
-  cityState: string;
-}
+import { IAdvertisementDetails } from "@/shared/api/advertisement/types";
 
 export const AnnouncementHeader = ({
-  title,
-  ending,
-  city,
-  cityState,
-  price,
-  quantity,
-}: AdvertisementDetailsProps) => {
+  advertisement,
+}: {
+  advertisement: IAdvertisementDetails;
+}) => {
+  const { title, location, price, quantity, updated } = advertisement;
+  const { city_name, state_name } = location;
+
   const { t } = useTranslation("announcement");
 
   const { locale = "ua" } = useRouter();
 
   const formattedDate = useDateFormat({
-    date: ending,
+    date: updated,
     locale: locale as TLocales,
   });
 
@@ -43,7 +35,7 @@ export const AnnouncementHeader = ({
           {title}
         </h2>
         <LocationSeller>
-          {city}, {cityState}
+          {city_name}, {state_name}
         </LocationSeller>
       </div>
       {quantity > 0 && (
