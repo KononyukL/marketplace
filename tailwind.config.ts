@@ -66,15 +66,19 @@ export default {
       },
       width: {
         search: "484px",
+        features: "18px",
+        "sort-filter": "160px",
       },
       minHeight: {
         article: "100px",
+        category: "1056px",
       },
       height: {
         border: "26px",
         title: "48px",
         image: "150px",
         "image-advertisement": "300px",
+        features: "18px",
       },
       maxHeight: {
         photo: "168px",

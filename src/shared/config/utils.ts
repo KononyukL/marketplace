@@ -44,8 +44,16 @@ export const parseParams = (params: any) => {
     }
 
     if (isParamTypeObject && isParamTypeArray) {
-      params[key].forEach((element: any) => {
-        options += `${key}=${element}&`;
+      params[key].forEach((element: any, index: number, arr: any[]) => {
+        if (!index) {
+          options += `${key}=${element}`;
+        } else {
+          options += `,${element}`;
+        }
+
+        if (arr.length - 1 === index) {
+          options += `&`;
+        }
       });
     }
   });
