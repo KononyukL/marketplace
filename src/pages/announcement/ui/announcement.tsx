@@ -46,14 +46,7 @@ export const Announcement = () => {
             <TipsInfo />
           </div>
           <div className="w-1/3">
-            <AnnouncementHeader
-              title={advertisement.title}
-              city={advertisement.location.city_name}
-              price={advertisement.price}
-              quantity={advertisement.quantity}
-              cityState={advertisement.location.state_name}
-              ending={advertisement.updated}
-            />
+            <AnnouncementHeader advertisement={advertisement} />
             <SellerInfo advertisement={advertisement} />
           </div>
         </div>
