@@ -69,6 +69,7 @@ export interface IAdvertisementDetails
   images: IImageFull[];
   documents: IDocuments[];
   vaccines: IVaccines[];
+  in_current_user_favorite_list: boolean;
   additional_information: string;
 }
 
