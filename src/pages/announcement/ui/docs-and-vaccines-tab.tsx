@@ -9,9 +9,6 @@ import {
 } from "@/shared/api/advertisement/types";
 import { useTranslation } from "next-i18next";
 
-const DOCS_TAB_INDEX = 0;
-const VACCINES_TAB_INDEX = 1;
-
 export const DocsandVaccinesTab = ({
   documents,
   vaccines,
@@ -22,11 +19,8 @@ export const DocsandVaccinesTab = ({
   const { t } = useTranslation("announcement");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [docsAndVaccinesActiveTab, setDocsAndVaccinesActiveTab] =
-    useState(DOCS_TAB_INDEX);
 
-  function openModal(tabIndex: number) {
-    setDocsAndVaccinesActiveTab(tabIndex);
+  function openModal() {
     setIsModalOpen(true);
   }
 
@@ -36,19 +30,17 @@ export const DocsandVaccinesTab = ({
   return (
     <>
       <button
-        onClick={() => openModal(DOCS_TAB_INDEX)}
+        onClick={() => openModal()}
         className="mb-6 block border-b border-[#444444] font-medium text-[#444444]"
       >
-        {t("main-info.documents")}
+        {t("main-info.docs-and-vaccines")}
       </button>
-      <button
-        onClick={() => openModal(VACCINES_TAB_INDEX)}
-        className="block border-b border-[#444444] font-medium text-[#444444]"
+      <Modal
+        show={isModalOpen}
+        onClose={closeModal}
+        title={t("main-info.docs-and-vaccines")}
       >
-        {t("main-info.vaccines")}
-      </button>
-      <Modal show={isModalOpen} onClose={closeModal}>
-        <Tabs activeTab={docsAndVaccinesActiveTab}>
+        <Tabs>
           <Tab title={t("main-info.documents")}>
             <SliderComponent images={documents} />
           </Tab>
