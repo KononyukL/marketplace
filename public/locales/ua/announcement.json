@@ -3,7 +3,8 @@
     "published": "Опубліковано",
     "in-stock": "В наявності",
     "currency": "грн",
-    "contact-button": "Написати продавцю"
+    "add-to-cart-btn": "Додати у кошик",
+    "contact-seller-btn": "Написати продавцю"
   },
   "main-info": {
     "documents": "Документи",

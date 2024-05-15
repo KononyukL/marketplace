@@ -3,7 +3,8 @@
     "published": "Published",
     "in-stock": "In stock",
     "currency": "uah",
-    "contact-button": "Contact Seller"
+    "add-to-cart-btn": "Add to cart",
+    "contact-seller-btn": "Contact seller"
   },
   "main-info": {
     "documents": "Documents",
