@@ -44,12 +44,12 @@ export const AnnouncementMainInfo = ({
   return (
     <div className="mt-8 h-[334px] rounded-lg bg-white p-8">
       <Tabs>
-        <Tab title={t("main-info.characteristics")}>{characteristics}</Tab>
         <Tab title={t("main-info.description")}>{descriptionDetails}</Tab>
-        <Tab title={t("main-info.additional-info")}>{additionalInfo}</Tab>
+        <Tab title={t("main-info.characteristics")}>{characteristics}</Tab>
         <Tab title={t("main-info.docs-and-vaccines")}>
           <DocsandVaccinesTab documents={documents} vaccines={vaccines} />
         </Tab>
+        <Tab title={t("main-info.additional-info")}>{additionalInfo}</Tab>
       </Tabs>
     </div>
   );
