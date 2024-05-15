@@ -16,6 +16,7 @@ import { ReactComponent as ClockIcon } from "../../../public/images/last-activit
 import { ReactComponent as ShoppingBag } from "../../../public/images/shopping-bag.svg";
 import { ReactComponent as CountdownClock } from "../../../public/images/countdown-clock.svg";
 import { ReactComponent as ExclamationMark } from "../../../public/images/exclamation-mark.svg";
+import { ReactComponent as Cross } from "../../../public/images/cross.svg";
 
 export const Icons = {
   User,
@@ -36,4 +37,5 @@ export const Icons = {
   ShoppingBag,
   CountdownClock,
   ExclamationMark,
+  Cross,
 };
