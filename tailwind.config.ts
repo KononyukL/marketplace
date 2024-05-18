@@ -21,6 +21,7 @@ export default {
         "border-2": "#C4C4C4",
         "text-3": "#757982",
         "text-4": "#0D71A8",
+        "text-5": "#444444",
         "border-auth": "#8D8A8A",
         disable: "#BBBABA",
         hover: "#0000000a",
@@ -61,7 +62,7 @@ export default {
         "how-it-work": "316px",
         "article-text": "282px",
         "advertisement-photo": "390px",
-        support: "874px",
+        "footer-pages": "874px",
         "categories-header": "517px",
       },
       width: {
@@ -88,7 +89,7 @@ export default {
         bottom: "248px",
       },
       padding: {
-        support: "72px",
+        "footer-pages": "72px",
       },
     },
   },

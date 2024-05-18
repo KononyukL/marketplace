@@ -3,7 +3,10 @@ export const animalMarketLinks = [
   { translationKey: "footer.animal-market.title-two", link: "/" },
   { translationKey: "footer.animal-market.title-three", link: "/" },
   { translationKey: "footer.animal-market.title-four", link: "/term" },
-  { translationKey: "footer.animal-market.title-five", link: "/" },
+  {
+    translationKey: "footer.animal-market.title-five",
+    link: "/privacy-policy",
+  },
 ];
 
 export const supportLinks = [

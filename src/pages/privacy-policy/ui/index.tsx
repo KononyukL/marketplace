@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
 
-import { FooterPages } from "@/shared/ui/footer-pages";
 import { useRouter } from "next/router";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
-import { TermComponent } from "./component";
+import { FooterPages } from "@/shared/ui/footer-pages";
 import { animalMarketLinks } from "@/shared/config";
+import { PolicyComponent } from "./component";
 
-export const Term = () => {
+export const PrivacyPolicy = () => {
   const { t } = useTranslation(["common"]);
   const { asPath } = useRouter();
   const segments = asPath.split("/");
@@ -23,7 +23,7 @@ export const Term = () => {
         segmentTitle={t(segmentTitle)}
       />
       <FooterPages title={t(segmentTitle)}>
-        <TermComponent />
+        <PolicyComponent />
       </FooterPages>
     </>
   );

@@ -1,9 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { TipComponent } from "./component";
-import { SupportPages } from "@/shared/ui/support-pages";
+
 import { useRouter } from "next/router";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
 import { supportLinks } from "@/shared/config";
+import { FooterPages } from "@/shared/ui/footer-pages";
 
 export const Tip = () => {
   const { t } = useTranslation(["common"]);
@@ -21,9 +22,9 @@ export const Tip = () => {
         startingTitle={t("menu.start-link")}
         segmentTitle={t(segmentTitle)}
       />
-      <SupportPages title={t(segmentTitle)}>
+      <FooterPages title={t(segmentTitle)}>
         <TipComponent />
-      </SupportPages>
+      </FooterPages>
     </>
   );
 };
