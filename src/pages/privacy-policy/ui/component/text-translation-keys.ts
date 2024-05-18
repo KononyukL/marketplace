@@ -1,8 +1,4 @@
-type ISubcategories =
-  | { subtitle: string; items: string[] }
-  | {
-      items: string[];
-    };
+type ISubcategories = { subtitle?: string; items: string[] };
 
 type ITextKeys = { title: string; subcategories: ISubcategories[] };
 

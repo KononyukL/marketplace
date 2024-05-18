@@ -7,11 +7,8 @@ export const PolicyComponent = () => {
   return (
     <>
       <p className="pb-6 font-medium">{t("privacy-policy.paragraphs.start")}</p>
-      <p className="pb-3">
-        {t("privacy-policy.paragraphs.start-one")}
-        <br />
-        {t("privacy-policy.paragraphs.start-two")}
-      </p>
+      <p className="pb-3">{t("privacy-policy.paragraphs.start-one")}</p>
+      <p>{t("privacy-policy.paragraphs.start-two")}</p>
       <p className="pb-6">{t("privacy-policy.paragraphs.start-three")}</p>
       <div className="list-decimal pb-6 text-base font-medium leading-relaxed text-title">
         {textTranslationKeys.map((el, i) => (
@@ -20,7 +17,7 @@ export const PolicyComponent = () => {
             {el.subcategories &&
               el.subcategories.map((subEl, subI) => (
                 <div key={subI} className="list-disc pt-3 ">
-                  {"subtitle" in subEl && subEl.subtitle && (
+                  {!!subEl.subtitle && (
                     <h4>{`${i + 1}.${subI + 1}. ${t(subEl.subtitle)}`}</h4>
                   )}
                   {subEl.items && (
@@ -39,11 +36,8 @@ export const PolicyComponent = () => {
       </div>
 
       <p className="pb-3">{t("privacy-policy.paragraphs.end-one")}</p>
-      <p>
-        {t("privacy-policy.paragraphs.end-two")}
-        <br />
-        {t("privacy-policy.paragraphs.end-three")}
-      </p>
+      <p>{t("privacy-policy.paragraphs.end-two")}</p>
+      <p>{t("privacy-policy.paragraphs.end-three")}</p>
     </>
   );
 };
