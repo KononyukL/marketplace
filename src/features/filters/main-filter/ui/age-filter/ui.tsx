@@ -5,7 +5,7 @@ import { useControlledCheckboxGroupHook } from "@/shared/ui/controlled-checkbox/
 
 interface IAgeFilter {
   title?: string;
-  attributes?: IAttributes[];
+  attributes: IAttributes[];
 }
 
 export const AgeFilter = ({ attributes, title = "" }: IAgeFilter) => {
@@ -14,7 +14,7 @@ export const AgeFilter = ({ attributes, title = "" }: IAgeFilter) => {
 
   return (
     <Accordion title={title}>
-      {attributes?.map((attribute) => (
+      {attributes.map((attribute) => (
         <div key={attribute.attribute_id} className="py-2.5">
           <ControlledCheckbox
             id={String(attribute.attribute_id)}

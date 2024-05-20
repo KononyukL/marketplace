@@ -15,16 +15,23 @@ export function useCategorySortFilterHook({
   filters,
   onCategoriesFiltersChange,
 }: ISortOptions) {
-  const sortFilter = [
-    { title: "За рейтингом", value: SORT_OPTIONS.RATING_HIGHEST },
-    { title: "Найновіші", value: SORT_OPTIONS.NEWEST },
-    { title: "Найдешевші", value: SORT_OPTIONS.PRICE_LOWEST },
-    { title: "Найдорожчі", value: SORT_OPTIONS.PRICE_HIGHEST },
-  ];
+  const SORT_TITLES = {
+    [SORT_OPTIONS.RATING_HIGHEST]: "За рейтингом",
+    [SORT_OPTIONS.NEWEST]: "Найновіші",
+    [SORT_OPTIONS.PRICE_LOWEST]: "Найдешевші",
+    [SORT_OPTIONS.PRICE_HIGHEST]: "Найдорожчі",
+  };
+
+  const sortFilter = useMemo(() => {
+    return Object.entries(SORT_TITLES).map(([key, value]) => ({
+      title: value,
+      value: key as SORT_OPTIONS,
+    }));
+  }, []);
 
   const sortSelected = useMemo(
     () =>
-      sortFilter.find(({ value }) => value === filters.sortOption) ||
+      sortFilter.find(({ value }) => value === filters.sortOption) ??
       sortFilter[0],
     [filters.sortOption],
   );

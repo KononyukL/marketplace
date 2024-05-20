@@ -56,11 +56,7 @@ export const MainFilter = ({
         <h3 className="mb-8 text-xl">{t("filters-categories.filters")}</h3>
         <Form form={form} onSubmit={() => {}}>
           <div className="flex flex-col items-center">
-            {data?.breeds?.length === 0 ? (
-              ""
-            ) : (
-              <BreedFilter breeds={data?.breeds} />
-            )}
+            {!!data?.breeds?.length && <BreedFilter breeds={data?.breeds} />}
             <PriceFilter
               min_price={filters?.minPrice ?? data?.price_range.min_price}
               max_price={filters?.maxPrice ?? data?.price_range.max_price}

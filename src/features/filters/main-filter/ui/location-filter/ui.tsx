@@ -13,7 +13,7 @@ export interface ILocationFilter {
 export const LocationFilter = ({ cities }: ILocationFilter) => {
   const { t } = useTranslation("categories");
 
-  const { onValue, filterValue, filteredBreed } = useLocationFilter(cities);
+  const { onValue, filterValue, filteredCities } = useLocationFilter(cities);
 
   const { value, ref, onChange, ...restInputProps } =
     useControlledCheckboxGroupHook({ name: "cityIds" });
@@ -33,7 +33,7 @@ export const LocationFilter = ({ cities }: ILocationFilter) => {
             }
           />
         </div>
-        {filteredBreed.map((el) => (
+        {filteredCities.map((el) => (
           <div key={el.id}>
             <div className="py-2.5">
               <ControlledCheckbox

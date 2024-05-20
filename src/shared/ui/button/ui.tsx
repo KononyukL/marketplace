@@ -26,7 +26,7 @@ export const Button = ({
         "w-full cursor-pointer  rounded-lg py-3 transition-all",
         className,
         {
-          " bg-primary font-bold text-white hover:bg-primary-hover":
+          "bg-primary font-bold text-white hover:bg-primary-hover":
             variant === "primary",
           "bg-secondary text-white hover:bg-primary": variant === "secondary",
           "flex justify-center border border-secondary bg-white text-secondary hover:border-primary-hover hover:text-primary-hover":

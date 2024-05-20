@@ -4,6 +4,8 @@ import { useState } from "react";
 import { ControlledCheckbox } from "@/shared/ui";
 import { useControlledCheckboxGroupHook } from "@/shared/ui/controlled-checkbox/lib";
 
+const MAX_VISIBLE_ATTRIBUTES = 5;
+
 export interface IFeaturesFilter {
   title: string;
   attributes: IAttributes[];
@@ -11,47 +13,35 @@ export interface IFeaturesFilter {
 
 export const FeaturesFilter = ({ attributes, title }: IFeaturesFilter) => {
   const [open, setOpen] = useState(false);
-  const onClick = () => {
-    setOpen(!open);
-  };
 
   const { value, ref, onChange, ...restInputProps } =
     useControlledCheckboxGroupHook({ name: "attributeIds" });
 
+  const visibleAttributes = open
+    ? attributes
+    : attributes.slice(0, MAX_VISIBLE_ATTRIBUTES);
+
   return (
     <>
       <Accordion title={title}>
-        {!open
-          ? attributes
-              .map((attribute) => (
-                <div key={attribute.attribute_id} className="py-2.5">
-                  <ControlledCheckbox
-                    id={String(attribute.attribute_id)}
-                    label={attribute.title}
-                    ref={ref}
-                    checked={value?.includes?.(attribute.attribute_id)}
-                    onChange={onChange(attribute.attribute_id)}
-                    {...restInputProps}
-                  />
-                </div>
-              ))
-              .slice(0, 5)
-          : attributes.map((attribute) => (
-              <div key={attribute.attribute_id} className="py-2.5">
-                <ControlledCheckbox
-                  id={String(attribute.attribute_id)}
-                  label={attribute.title}
-                  ref={ref}
-                  checked={value?.includes?.(attribute.attribute_id)}
-                  onChange={onChange(attribute.attribute_id)}
-                  {...restInputProps}
-                />
-              </div>
-            ))}
-        {attributes.length > 5 && (
+        {visibleAttributes.map((attribute) => (
+          <div key={attribute.attribute_id} className="py-2.5">
+            <ControlledCheckbox
+              id={String(attribute.attribute_id)}
+              label={attribute.title}
+              ref={ref}
+              checked={value?.includes?.(attribute.attribute_id)}
+              onChange={onChange(attribute.attribute_id)}
+              {...restInputProps}
+            />
+          </div>
+        ))}
+        {attributes.length > MAX_VISIBLE_ATTRIBUTES && (
           <div
             className="mt-6 cursor-pointer text-xs font-semibold"
-            onClick={onClick}
+            onClick={() => {
+              setOpen(!open);
+            }}
           >
             {!open ? "Показати більше" : "Приховати"}
           </div>

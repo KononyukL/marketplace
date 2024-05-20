@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
+import { cn } from "@/shared/lib/cn";
 
 export interface ISortFilterOption<T> {
   title: string;
@@ -10,23 +11,23 @@ interface ISortFilter<T> {
   options: ISortFilterOption<T>[];
   onChange: (value: ISortFilterOption<T>) => void;
   selected: ISortFilterOption<T>;
+  className?: string;
 }
 
 export const SortFilter = <T,>({
   options,
   onChange,
   selected,
+  className,
 }: ISortFilter<T>) => {
   const [open, setOpen] = useState(false);
-
-  const onOpen = () => setOpen(!open);
 
   return (
     <div className="w-sort-filter">
       <Listbox value={selected} onChange={onChange}>
         <div className="relative mt-1">
           <Listbox.Button
-            onClick={onOpen}
+            onClick={() => setOpen(!open)}
             className="relative  w-full cursor-default rounded border border-border-2 bg-white py-2 pl-3 pr-10 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
           >
             <span className="block truncate text-additional">
@@ -34,9 +35,9 @@ export const SortFilter = <T,>({
             </span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <svg
-                className={`h-4 w-4 transition-transform ${
-                  open ? " transform" : ""
-                }`}
+                className={cn("l h-4 w-4 transition-transform", className, {
+                  transform: open,
+                })}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="none"
