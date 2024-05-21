@@ -1,10 +1,11 @@
 import {
   type ICategoriesFilters,
   type ICategoriesSearchFilters,
-  SORT_OPTIONS,
+  type SORT_OPTIONS,
 } from "@/shared/queries/search/types";
 import { useCallback, useEffect, useMemo } from "react";
 import type { ISortFilterOption } from "@/features/filters/sort-filter";
+import { SORT_TITLES } from "@/shared/config";
 
 interface ISortOptions {
   filters: ICategoriesSearchFilters;
@@ -15,13 +16,6 @@ export function useCategorySortFilterHook({
   filters,
   onCategoriesFiltersChange,
 }: ISortOptions) {
-  const SORT_TITLES = {
-    [SORT_OPTIONS.RATING_HIGHEST]: "За рейтингом",
-    [SORT_OPTIONS.NEWEST]: "Найновіші",
-    [SORT_OPTIONS.PRICE_LOWEST]: "Найдешевші",
-    [SORT_OPTIONS.PRICE_HIGHEST]: "Найдорожчі",
-  };
-
   const sortFilter = useMemo(() => {
     return Object.entries(SORT_TITLES).map(([key, value]) => ({
       title: value,
@@ -29,10 +23,12 @@ export function useCategorySortFilterHook({
     }));
   }, []);
 
+  const defaultSortValue = sortFilter[0];
+
   const sortSelected = useMemo(
     () =>
       sortFilter.find(({ value }) => value === filters.sortOption) ??
-      sortFilter[0],
+      defaultSortValue,
     [filters.sortOption],
   );
 
