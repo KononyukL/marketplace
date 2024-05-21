@@ -48,7 +48,7 @@ export const Modal = ({
                     </Dialog.Title>
                     <button
                       onClick={() => onClose()}
-                      className="rounded-lg  bg-[#FFFEFE] p-2"
+                      className="bg-fill rounded-lg p-2"
                     >
                       <Icons.Cross />
                     </button>
