@@ -27,6 +27,7 @@ export const Accordion = ({
       <button
         onClick={() => setAccordionOpen(!accordionOpen)}
         className="flex w-full items-center justify-between"
+        type="button"
       >
         <span className="pr-2 text-left">{title}</span>
         <svg

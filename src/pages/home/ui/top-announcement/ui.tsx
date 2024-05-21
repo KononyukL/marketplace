@@ -66,6 +66,7 @@ export const TopAnnouncement = () => {
               <Advertisement
                 key={el.id}
                 id={el.id}
+                top={true}
                 city={el.location.city_name}
                 author={el.author.shortName}
                 cityType={el.location.city_type_short_title}

@@ -26,6 +26,7 @@ interface IAdvertisement {
   userAvatarUrl: string;
   userType?: string;
   id: number;
+  top?: boolean;
 }
 
 export const Advertisement = ({
@@ -43,6 +44,7 @@ export const Advertisement = ({
   userAvatarUrl,
   userType,
   id,
+  top,
 }: IAdvertisement) => {
   const { t } = useTranslation("home");
   const { locale = "ua" } = useRouter();
@@ -61,9 +63,11 @@ export const Advertisement = ({
         <div>
           <div className="flex items-start justify-between">
             <div className="flex items-start justify-between gap-4">
-              <p className="bg-primary px-2 py-1 text-xs text-white">
-                {t("advertisement.top")}
-              </p>
+              {top && (
+                <p className="bg-primary px-2 py-1 text-xs text-white">
+                  {t("advertisement.top")}
+                </p>
+              )}
               <div className="mb-5 flex items-center gap-1">
                 <Image
                   src="/images/clock.svg"

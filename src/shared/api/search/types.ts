@@ -3,6 +3,7 @@ import {
   type IAdvertisementFavorite,
   type IGetAdvertisementFavoriteProps,
 } from "@/shared/api/advertisement-favorite/types";
+import { type SORT_OPTIONS } from "@/shared/queries/search/types";
 
 export interface ICategoriesSearch extends IGetAdvertisementFavoriteProps {
   searchTerm: string;
@@ -17,4 +18,10 @@ export interface ICategoriesResponseFilters {
   categoryId?: number;
   cityIds?: number[];
   minPrice?: number;
+  maxPrice?: number;
+  attributeIds?: number[];
+  breedIds?: number[];
+  ageIds?: number[];
+  genderIds?: number;
+  sortOption?: SORT_OPTIONS;
 }

@@ -1,5 +1,15 @@
 import { type WithRequired } from "@/shared/config";
 
+export enum SORT_OPTIONS {
+  RATING_HIGHEST = "RATING_HIGHEST",
+  RATING_LOWEST = "RATING_LOWEST",
+  PRICE_LOWEST = "PRICE_LOWEST",
+  PRICE_HIGHEST = "PRICE_HIGHEST",
+  NEWEST = "NEWEST",
+  OLDEST = "OLDEST",
+  DEFAULT = "DEFAULT",
+}
+
 export interface IState {
   id: number;
   name: string;
@@ -17,7 +27,15 @@ export interface ICategoriesSearch {
 }
 
 export interface ICategoriesFilters {
+  breedIds?: number[];
+  attributeIds?: number[];
+  statesIds?: number[];
+  cityIds?: number[];
+  sortOption?: SORT_OPTIONS;
   minPrice?: number;
+  maxPrice?: number;
+  ageIds?: number[];
+  genderId?: number;
 }
 
 export interface ICategoriesSearchFilters

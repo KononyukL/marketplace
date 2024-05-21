@@ -14,7 +14,7 @@ export const SearchCategories = ({ onClear, hideClear }: ISearchCategories) => {
     <div className="w-2/4">
       <ControlledInput
         name="searchTerm"
-        className={`focus:border-none [&>input]:border-none [&>input]:p-0 [&>input]:px-4 [&input]:border-transparent `}
+        className={` [&>input]:border-none [&>input]:p-0 [&>input]:px-4 `}
         placeholder={t("search.looking-for")}
         endAdornment={!hideClear && <ButtonDelete onClick={onClear} />}
       />

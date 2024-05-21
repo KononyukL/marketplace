@@ -33,6 +33,7 @@ export const SearchHeader = memo(() => {
   const { refetch } = useGetCategoriesSearch({
     filters,
     config: { enabled: false },
+    disabledRefetch: true,
   });
 
   const router = useRouter();

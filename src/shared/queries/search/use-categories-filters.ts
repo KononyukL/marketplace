@@ -39,16 +39,15 @@ export const useCategoriesFilters = ({
     [setCategoriesFilters],
   );
 
-  const filters = useMemo<ICategoriesSearchFilters>(
-    () => ({
-      searchTerm: searchFilters?.searchTerm ?? "",
-      ...categoriesFilters,
+  const filters = useMemo<ICategoriesSearchFilters>(() => {
+    return {
       size: defaultFilters?.size || DEFAULT_SIZE,
       page: defaultFilters?.page || DEFAULT_PAGE,
       categoryId: defaultFilters?.categoryId,
-    }),
-    [defaultFilters, searchFilters, categoriesFilters],
-  );
+      ...categoriesFilters,
+      searchTerm: searchFilters?.searchTerm ?? "",
+    };
+  }, [defaultFilters, searchFilters, categoriesFilters]);
 
   return {
     filters,
