@@ -44,7 +44,10 @@ export const AnnouncementHeader = ({
       <p className="text-[28px] font-bold leading-9 text-title">
         {price} {t("header.currency")}
       </p>
-      <Button variant="primary">{t("header.contact-button")}</Button>
+      <Button variant="primary">{t("header.add-to-cart-btn")}</Button>
+      <Button variant="outline" className="font-medium text-title">
+        {t("header.contact-seller-btn")}
+      </Button>
     </div>
   );
 };

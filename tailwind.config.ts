@@ -26,6 +26,7 @@ export default {
         disable: "#BBBABA",
         hover: "#0000000a",
         active: "#D96000",
+        fill: "#FFFEFE",
       },
       boxShadow: {
         "input-error": "0px 2px 2px #F79495, 0px 0px 0px 4px #F79495",
