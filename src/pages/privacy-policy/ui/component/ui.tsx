@@ -21,7 +21,7 @@ export const PolicyComponent = () => {
                     <h4>{`${i + 1}.${subI + 1}. ${t(subEl.subtitle)}`}</h4>
                   )}
                   {subEl.items && (
-                    <ul className="list-inside list-disc font-normal text-text-5">
+                    <ul className="text-text-secondary list-inside list-disc font-normal">
                       {subEl.items.map((item, itemI) => (
                         <li className="pl-2" key={itemI}>
                           {t(item)}

@@ -21,7 +21,7 @@ export default {
         "border-2": "#C4C4C4",
         "text-3": "#757982",
         "text-4": "#0D71A8",
-        "text-5": "#444444",
+        "text-secondary": "#444444",
         "border-auth": "#8D8A8A",
         disable: "#BBBABA",
         hover: "#0000000a",

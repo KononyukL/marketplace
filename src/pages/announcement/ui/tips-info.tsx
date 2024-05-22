@@ -17,7 +17,7 @@ export const TipsInfo = () => {
       </h3>
       <div
         className={cn(
-          "text-text-5 overflow-hidden border-t border-text-2 px-[72px] py-8",
+          "text-text-secondary overflow-hidden border-t border-text-2 px-[72px] py-8",
           {
             "max-h-[230px]": isCollapsed,
           },
