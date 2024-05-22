@@ -16,7 +16,7 @@ export const TipsInfo = () => {
         {t("tips-info.header")}
       </h3>
       <div
-        className={cn("overflow-hidden border-t border-text-2 text-[#444444]", {
+        className={cn("text-text-5 overflow-hidden border-t border-text-2", {
           "max-h-[230px]": isCollapsed,
         })}
       >

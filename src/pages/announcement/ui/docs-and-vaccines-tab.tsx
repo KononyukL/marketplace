@@ -31,7 +31,7 @@ export const DocsandVaccinesTab = ({
     <>
       <button
         onClick={() => openModal()}
-        className="mb-6 block border-b border-[#444444] font-medium text-[#444444]"
+        className="border-text-5 text-text-5 mb-6 block border-b font-medium"
       >
         {t("main-info.docs-and-vaccines")}
       </button>
