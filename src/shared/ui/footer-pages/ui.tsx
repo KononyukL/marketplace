@@ -11,7 +11,7 @@ export const FooterPages = ({
         <h3 className="text-xl font-medium leading-6 text-title">{title}</h3>
       </div>
 
-      <div className="text-text-5 px-footer-pages py-8 text-justify leading-relaxed">
+      <div className="text-text-secondary px-footer-pages py-8 text-justify leading-relaxed">
         {children}
       </div>
     </div>

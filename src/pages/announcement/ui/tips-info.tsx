@@ -16,9 +16,12 @@ export const TipsInfo = () => {
         {t("tips-info.header")}
       </h3>
       <div
-        className={cn("overflow-hidden border-t border-text-2 text-[#444444]", {
-          "max-h-[230px]": isCollapsed,
-        })}
+        className={cn(
+          "text-text-secondary overflow-hidden border-t border-text-2 px-[72px] py-8",
+          {
+            "max-h-[230px]": isCollapsed,
+          },
+        )}
       >
         <TipComponent />
       </div>
