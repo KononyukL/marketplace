@@ -70,6 +70,7 @@ export default {
         search: "484px",
         features: "18px",
         "sort-filter": "160px",
+        "rating-box": "604px",
       },
       minHeight: {
         article: "100px",
