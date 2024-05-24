@@ -12,6 +12,8 @@ import { MainFilter } from "@/features/filters/main-filter";
 import { SortFilter } from "@/features/filters/sort-filter";
 import { Advertisement } from "@/shared/ui/advertisement";
 import { useCategorySortFilterHook } from "@/pages/category/lib/use-category-sort-filter-hook";
+import { Pagination } from "@/shared/ui/pagination";
+import { PAGE_SIZE_CATEGORIES } from "@/shared/config";
 
 export const Category = () => {
   const { query } = useRouter();
@@ -20,7 +22,10 @@ export const Category = () => {
 
   const defaultFilters = useMemo(() => {
     return {
-      defaultFilters: { categoryId: categoryId || undefined, size: 5 },
+      defaultFilters: {
+        categoryId: categoryId || undefined,
+        size: PAGE_SIZE_CATEGORIES,
+      },
     };
   }, [categoryId]);
 
@@ -127,8 +132,16 @@ export const Category = () => {
               <Spinner />
             )}
           </div>
+          <Pagination
+            totalCount={searchResults?.advertisements.totalElements}
+            currentPage={filters.page}
+            onPageChange={(page) =>
+              onCategoriesFiltersChange({ ...filters, page })
+            }
+          />
         </div>
       </div>
+
       <AnimalShelter />
     </div>
   );
