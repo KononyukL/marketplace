@@ -24,7 +24,7 @@ export const PriceFilter = ({ min_price, max_price }: IPriceFilter) => {
   }, [min_price, max_price, setValue]);
 
   return (
-    <div className="w-full border-b border-b-border-2 ">
+    <div className="mt-8 w-full border-b border-b-border-2 ">
       <h3>{t("filters-categories.price")}</h3>
       <div className="flex py-6">
         <ControlledInput

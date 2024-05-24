@@ -23,7 +23,7 @@ export const FeaturesFilter = ({ attributes, title }: IFeaturesFilter) => {
 
   return (
     <>
-      <Accordion title={title}>
+      <Accordion title={title} className="mt-6">
         {visibleAttributes.map((attribute) => (
           <div key={attribute.attribute_id} className="py-2.5">
             <ControlledCheckbox

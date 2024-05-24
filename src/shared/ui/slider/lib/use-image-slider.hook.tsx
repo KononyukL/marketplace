@@ -54,7 +54,7 @@ const CustomNextArrow = (props: CustomArrowProps) => {
       className={className}
       style={{ ...style, display: "block" }}
     >
-      <Icons.ArrowRight />
+      <Icons.ArrowRight className="text-black" />
     </div>
   );
 };
