@@ -22,6 +22,7 @@ export const paths = {
   advertisement: {
     get_by_id: "/v1/advertisements/",
   },
+
   advertisementsFavorite: {
     get_all: "/v1/advertisements/favorite/",
   },
@@ -35,5 +36,8 @@ export const paths = {
   },
   filtersCategory: {
     get_all: "/v1/filter/",
+  },
+  review: {
+    get_by_user_id: "/v1/users/",
   },
 } as const;

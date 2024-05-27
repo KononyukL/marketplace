@@ -9,6 +9,7 @@ import { SliderComponent } from "@/shared/ui/slider";
 import { SellerReviews } from "./seller-reviews";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
 import { TipsInfo } from "./tips-info";
+import { useGetUserReview } from "../lib/use-get-user-review.hook";
 
 export const Announcement = () => {
   const { t } = useTranslation(["announcement", "common", "support"]);
@@ -17,6 +18,11 @@ export const Announcement = () => {
   const { data: advertisement } = useGetAdvertisement({
     langCode: locale || DEFAULT_LOCALE,
     id: parseInt(query.id as string),
+  });
+
+  const { data: reviews } = useGetUserReview({
+    id: advertisement?.author.id as number,
+    enabled: !!advertisement,
   });
 
   const segments: string[] = [
@@ -29,6 +35,11 @@ export const Announcement = () => {
     return (
       <div className="m-auto max-w-main p-14 text-black">{t("not-found")}</div>
     );
+  }
+
+  // @TODO: Handle no review case in separate component or conditional rendering
+  if (!reviews) {
+    return <div>No review</div>;
   }
 
   return (
@@ -50,7 +61,7 @@ export const Announcement = () => {
             <SellerInfo advertisement={advertisement} />
           </div>
         </div>
-        <SellerReviews />
+        <SellerReviews reviews={reviews} />
       </div>
     </>
   );

@@ -5,7 +5,7 @@ import { type TLocales } from "@/shared/config";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { Button } from "@/shared/ui";
-import { IAdvertisementDetails } from "@/shared/api/advertisement/types";
+import { type IAdvertisementDetails } from "@/shared/api/advertisement/types";
 
 export const AnnouncementHeader = ({
   advertisement,

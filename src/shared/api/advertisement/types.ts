@@ -38,7 +38,9 @@ interface ILocationDetails extends Omit<ILocation, "city_type_short_title"> {
   state_name: string;
 }
 
-interface IReviews extends ILocalizableEntity, Omit<BaseCategory, "title"> {
+export interface IReviews
+  extends ILocalizableEntity,
+    Omit<BaseCategory, "title"> {
   type: string;
   value: number;
   advertisement_id: number;
