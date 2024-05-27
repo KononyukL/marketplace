@@ -7,3 +7,5 @@ export const SORT_TITLES = {
   [SORT_OPTIONS.PRICE_LOWEST]: "Найдешевші",
   [SORT_OPTIONS.PRICE_HIGHEST]: "Найдорожчі",
 };
+
+export const PAGE_SIZE_CATEGORIES = 5;

@@ -31,7 +31,7 @@ export const SliderComponent = ({ images }: { images: IImageFull[] }) => {
               alt=""
               width={885}
               height={400}
-              className="max-h-[400px] rounded-lg bg-[#EDEEEE] object-contain"
+              className="max-h-[400px] rounded-lg bg-[#EDEEEE] object-contain "
             />
           ))}
         </Slider>
@@ -51,7 +51,7 @@ export const SliderComponent = ({ images }: { images: IImageFull[] }) => {
           <div key={image.id}>
             <Image
               src={image.url_small}
-              className="h-[104px] rounded-lg bg-[#edeeee] object-contain"
+              className="h-[104px] rounded-lg bg-[#edeeee] object-contain "
               alt={`slider-image-${id}`}
               width={152}
               height={104}

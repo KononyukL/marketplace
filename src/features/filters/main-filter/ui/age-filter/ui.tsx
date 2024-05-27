@@ -13,7 +13,7 @@ export const AgeFilter = ({ attributes, title = "" }: IAgeFilter) => {
     useControlledCheckboxGroupHook({ name: "ageIds" });
 
   return (
-    <Accordion title={title}>
+    <Accordion title={title} className="mt-6">
       {attributes.map((attribute) => (
         <div key={attribute.attribute_id} className="py-2.5">
           <ControlledCheckbox

@@ -15,7 +15,7 @@ export const Gender = ({ attributes, title = "" }: IGender) => {
   });
 
   return (
-    <Accordion title={title}>
+    <Accordion title={title} className="mt-6">
       {attributes?.map((el) => (
         <RadioButton
           key={el.attribute_id}

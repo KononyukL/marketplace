@@ -20,7 +20,7 @@ export const LocationFilter = ({ cities }: ILocationFilter) => {
 
   return (
     <>
-      <Accordion title={t("filters-categories.location")}>
+      <Accordion title={t("filters-categories.location")} className="mt-6">
         <div>
           <Input
             className="group [&>input]:border-input [&>input]:focus-within:border-additional [&>input]:hover:border-additional"

@@ -26,7 +26,7 @@ export interface ICategoriesSearch {
   location?: IState;
 }
 
-export interface ICategoriesFilters {
+export interface ICategoriesFilters extends ICategoriesDefaultFilters {
   breedIds?: number[];
   attributeIds?: number[];
   statesIds?: number[];
@@ -40,7 +40,7 @@ export interface ICategoriesFilters {
 
 export interface ICategoriesSearchFilters
   extends ICategoriesSearch,
-    ICategoriesFilters,
+    Omit<ICategoriesFilters, "page" | "size">,
     WithRequired<ICategoriesDefaultFilters, "page" | "size"> {}
 
 export interface CategoriesFiltersResult {
