@@ -1,4 +1,4 @@
-import { range } from "@/shared/ui/pagination/lib/range";
+import { generatePaginationRange } from "@/shared/ui/pagination/lib/generatePaginationRange";
 import { useMemo } from "react";
 
 interface IPagination {
@@ -7,6 +7,8 @@ interface IPagination {
   siblingCount: number;
   currentPage: number;
 }
+const ITEM_COUNT = 5;
+const PAGE_COUNT = 2;
 
 export const DOTS = "...";
 export function usePaginationHook({
@@ -17,30 +19,33 @@ export function usePaginationHook({
 }: IPagination) {
   const paginationRange = useMemo(() => {
     const totalPageCount = Math.ceil(totalCount / pageSize);
-    const totalPageNumbers = siblingCount + 5;
+    const totalPageNumbers = siblingCount + ITEM_COUNT;
 
     if (totalPageNumbers >= totalPageCount) {
-      return range(1, totalPageCount);
+      return generatePaginationRange(1, totalPageCount);
     }
     const leftSiblingIndex = Math.max(currentPage - siblingCount, 1);
     const rightSiblingIndex = Math.min(
       currentPage + siblingCount,
       totalPageCount,
     );
-    const shouldShowLeftDots = leftSiblingIndex > 2;
-    const shouldShowRightDots = rightSiblingIndex < totalPageCount - 2;
+    const shouldShowLeftDots = leftSiblingIndex > PAGE_COUNT;
+    const shouldShowRightDots = rightSiblingIndex < totalPageCount - PAGE_COUNT;
 
     const firstPageIndex = 1;
     const lastPageIndex = totalPageCount;
 
     if (!shouldShowLeftDots && shouldShowRightDots) {
-      const leftItemCount = 3 + 2 * siblingCount;
-      const leftRange = range(1, leftItemCount);
+      const leftItemCount = ITEM_COUNT * siblingCount;
+      const leftRange = generatePaginationRange(1, leftItemCount);
 
       return [...leftRange, DOTS, totalPageCount];
     }
     if (shouldShowLeftDots && shouldShowRightDots) {
-      const middleRange = range(leftSiblingIndex, rightSiblingIndex);
+      const middleRange = generatePaginationRange(
+        leftSiblingIndex,
+        rightSiblingIndex,
+      );
       return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex];
     }
 

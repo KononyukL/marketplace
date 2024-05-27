@@ -34,7 +34,7 @@ export const Pagination = ({
     return null;
   }
 
-  const lastPage = +paginationRange[paginationRange.length - 1];
+  const lastPage = Number(paginationRange[paginationRange.length - 1]);
 
   const onNext = () => {
     if (currentPage < lastPage) {
@@ -56,8 +56,8 @@ export const Pagination = ({
   return (
     <>
       <nav className="mt-10 flex justify-center">
-        <ul className="flex h-10 items-center gap-2 text-base">
-          <li
+        <div className="flex h-10 items-center gap-2 text-base">
+          <button
             onClick={onPrevious}
             className={cn(
               "mr-2 flex h-10  items-center justify-center rounded-lg bg-white px-4 leading-tight text-gray-500  shadow-box hover:bg-additional  hover:text-white  dark:border-gray-700 ",
@@ -70,10 +70,10 @@ export const Pagination = ({
                 "text-disable hover:text-disable": disabledPrevious,
               })}
             />
-          </li>
+          </button>
 
           {paginationRange?.map((el) => (
-            <li
+            <button
               key={el}
               onClick={onClickNumberPage(+el)}
               className={cn(
@@ -83,10 +83,10 @@ export const Pagination = ({
               )}
             >
               {el}
-            </li>
+            </button>
           ))}
 
-          <li
+          <button
             onClick={onNext}
             className={cn(
               "ml-2 flex h-10  items-center justify-center rounded-lg bg-white px-4 leading-tight text-gray-500  shadow-box hover:bg-additional  hover:text-white  dark:border-gray-700 ",
@@ -99,8 +99,8 @@ export const Pagination = ({
                 "text-disable hover:text-disable": disabledNext,
               })}
             />
-          </li>
-        </ul>
+          </button>
+        </div>
       </nav>
     </>
   );
