@@ -3,6 +3,7 @@ import { Icons } from "@/shared/config";
 import { cn } from "@/shared/lib/cn";
 import { useState } from "react";
 import { useTranslation } from "next-i18next";
+import "./tips-info.css";
 
 export const TipsInfo = () => {
   const { t } = useTranslation("announcement");
@@ -17,15 +18,15 @@ export const TipsInfo = () => {
       </h3>
       <div
         className={cn(
-          "text-text-secondary overflow-hidden border-t border-text-2 px-[72px] py-8",
+          "overflow-hidden border-t border-text-2 px-footer-pages py-8 text-text-secondary",
           {
-            "max-h-[230px]": isCollapsed,
+            ellipsis: isCollapsed,
           },
         )}
       >
         <TipComponent />
       </div>
-      <div className="pb-8 pr-[72px] text-right">
+      <div className="pb-8 pr-24 text-right">
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="border-b border-title text-center font-medium text-title"
