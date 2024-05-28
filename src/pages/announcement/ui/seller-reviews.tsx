@@ -1,19 +1,12 @@
 import { type IUserReview } from "@/shared/api/user-review/types";
 import { Button } from "@/shared/ui/button/ui";
 import { Rating } from "react-simple-star-rating";
-
-const ratingMapping = [
-  { key: "rating_5", label: "5" },
-  { key: "rating_4", label: "4" },
-  { key: "rating_3", label: "3" },
-  { key: "rating_2", label: "2" },
-  { key: "rating_1", label: "1" },
-];
+import { RatingList } from "./rating-list";
 
 export const SellerReviews = ({ reviews }: { reviews: IUserReview }) => {
   return (
     <div className="mt-20 rounded-lg bg-white p-12">
-      <h2 className="text-header-secondary mb-8 font-medium leading-9 text-title">
+      <h2 className="mb-8 text-header-secondary font-medium leading-9 text-title">
         Відгуки про продавця
       </h2>
       <div className="flex gap-8">
@@ -29,10 +22,10 @@ export const SellerReviews = ({ reviews }: { reviews: IUserReview }) => {
             Залишити відгук
           </Button>
         </div>
-        <div className="py-rating-box flex w-rating-box justify-evenly rounded-lg border border-text-2 px-6 align-middle">
+        <div className="flex w-rating-box justify-evenly rounded-lg border border-text-2 px-6 py-rating-box align-middle">
           <div className="flex flex-col items-center gap-2">
             <p className="text-header-secondary leading-8 text-title">
-              <span className="leading-rating text-rating-number">
+              <span className="text-rating-number leading-rating">
                 {reviews.rating}
               </span>
               /5
@@ -53,29 +46,13 @@ export const SellerReviews = ({ reviews }: { reviews: IUserReview }) => {
               Відгуків за весь час: {reviews.reviews_count}
             </p>
           </div>
-          <ul className="gap flex flex-col">
-            {ratingMapping.map(({ key, label }, index) => (
-              <li key={index} className="flex items-center gap-2 align-middle">
-                <span className="text-text-3">{label}</span>
-                <Rating
-                  iconsCount={1}
-                  size={16}
-                  readonly={true}
-                  emptyColor={"#2A907F"}
-                  SVGstrokeColor={"#2A907F"}
-                  SVGstorkeWidth={1.5}
-                />
-                <hr className="border-border-seconadry w-24 border-text-2" />
-                <span className="text-title">{reviews.rating_list[key]}</span>
-              </li>
-            ))}
-          </ul>
+          <RatingList ratingList={reviews.rating_list} />
         </div>
       </div>
       <div className="flex gap-6">
         {reviews.reviews.map((el) => (
           <div
-            className="h-rating-list w-rating-list mt-16 rounded-lg border border-text-2 p-8"
+            className="mt-16 h-rating-list w-rating-list rounded-lg border border-text-2 p-8"
             key={el.id}
           >
             <div className="flex justify-between">

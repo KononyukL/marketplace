@@ -4,7 +4,7 @@ import {
 } from "../advertisement-favorite/types";
 import { type IAdvertisementDetails } from "../advertisement/types";
 
-interface IRatingList {
+export interface IRatingList {
   [key: string]: number;
 }
 
