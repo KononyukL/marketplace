@@ -26,7 +26,7 @@ export const TipsInfo = () => {
       >
         <TipComponent />
       </div>
-      <div className="pb-8 pr-24 text-right">
+      <div className="pb-8 pr-footer-pages text-right">
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="border-b border-title text-center font-medium text-title"
