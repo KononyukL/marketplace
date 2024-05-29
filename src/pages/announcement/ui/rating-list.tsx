@@ -1,5 +1,5 @@
 import { type IRatingList } from "@/shared/api/user-review/types";
-import { Rating } from "react-simple-star-rating";
+import { RatingStar } from "@/shared/ui/rating-star/ui";
 
 const RATING_MAPPING = [
   { key: "rating_5", label: "5" },
@@ -15,14 +15,7 @@ export const RatingList = ({ ratingList }: { ratingList: IRatingList }) => {
       {RATING_MAPPING.map(({ key, label }, index) => (
         <li key={index} className="flex items-center gap-2 align-middle">
           <span className="text-text-3">{label}</span>
-          <Rating
-            iconsCount={1}
-            size={16}
-            readonly={true}
-            emptyColor={"#2A907F"}
-            SVGstrokeColor={"#2A907F"}
-            SVGstorkeWidth={1.5}
-          />
+          <RatingStar iconsCount={1} size={16} initialValue={1} />
           <hr className="w-24 border-border-seconadry border-text-2" />
           <span className="text-title">{ratingList[key]}</span>
         </li>

@@ -1,7 +1,7 @@
 import { type IUserReview } from "@/shared/api/user-review/types";
 import { Button } from "@/shared/ui/button/ui";
-import { Rating } from "react-simple-star-rating";
 import { RatingList } from "./rating-list";
+import { RatingStar } from "@/shared/ui/rating-star";
 
 export const SellerReviews = ({ reviews }: { reviews: IUserReview }) => {
   return (
@@ -30,18 +30,7 @@ export const SellerReviews = ({ reviews }: { reviews: IUserReview }) => {
               </span>
               /5
             </p>
-            <Rating
-              SVGstyle={{ display: "inline" }}
-              iconsCount={5}
-              initialValue={reviews.rating}
-              size={20}
-              readonly={true}
-              fillColor={"#2A907F"}
-              SVGstrokeColor={"#2A907F"}
-              SVGstorkeWidth={1.5}
-              emptyColor={"#FFFFFF"}
-              allowFraction={true}
-            />
+            <RatingStar initialValue={reviews.rating} />
             <p className="text-text-3">
               Відгуків за весь час: {reviews.reviews_count}
             </p>
@@ -62,18 +51,7 @@ export const SellerReviews = ({ reviews }: { reviews: IUserReview }) => {
                 </h4>
                 <p className="text-text-3">{el.created}</p>
               </div>
-              <Rating
-                SVGstyle={{ display: "inline" }}
-                iconsCount={5}
-                initialValue={el.value}
-                size={20}
-                readonly={true}
-                fillColor={"#2A907F"}
-                SVGstrokeColor={"#2A907F"}
-                SVGstorkeWidth={1.5}
-                emptyColor={"#FFFFFF"}
-                allowFraction={true}
-              />
+              <RatingStar initialValue={el.value} />
             </div>
             <p className="mt-4 text-text-secondary">{el.description}</p>
           </div>
