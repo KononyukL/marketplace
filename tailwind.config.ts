@@ -65,11 +65,14 @@ export default {
         "advertisement-photo": "390px",
         "footer-pages": "874px",
         "categories-header": "517px",
+        "review-text-box": "604px",
       },
       width: {
         search: "484px",
         features: "18px",
         "sort-filter": "160px",
+        "rating-box": "604px",
+        "rating-list": "397px",
       },
       minHeight: {
         article: "100px",
@@ -81,6 +84,7 @@ export default {
         image: "150px",
         "image-advertisement": "300px",
         features: "18px",
+        "rating-list": "210px",
       },
       maxHeight: {
         photo: "168px",
@@ -89,12 +93,21 @@ export default {
       },
       fontSize: {
         "auth-title": "45px",
+        "rating-number": "58px",
+        "header-secondary": "28px",
       },
       margin: {
         bottom: "248px",
       },
       padding: {
         "footer-pages": "72px",
+        "rating-box": "28.5px",
+      },
+      lineHeight: {
+        rating: "68px",
+      },
+      borderWidth: {
+        "border-seconadry": "1.5px",
       },
     },
   },
