@@ -1,5 +1,6 @@
 import { type IRatingList } from "@/shared/api/user-review/types";
 import { RatingStar } from "@/shared/ui/rating-star/ui";
+import { cn } from "@/shared/lib/cn";
 
 const RATING_MAPPING = [
   { key: "rating_5", label: "5" },
@@ -11,12 +12,19 @@ const RATING_MAPPING = [
 
 export const RatingList = ({ ratingList }: { ratingList: IRatingList }) => {
   return (
-    <ul className="gap flex flex-col">
+    <ul className="flex flex-col">
       {RATING_MAPPING.map(({ key, label }, index) => (
         <li key={index} className="flex items-center gap-2 align-middle">
           <span className="text-text-3">{label}</span>
           <RatingStar iconsCount={1} size={16} initialValue={1} />
-          <hr className="w-24 border-border-seconadry border-text-2" />
+          <hr
+            className={
+              "w-24 border-border-secondary " +
+              cn("border-text-2", {
+                "border-additional": ratingList[key] > 0,
+              })
+            }
+          />
           <span className="text-title">{ratingList[key]}</span>
         </li>
       ))}
