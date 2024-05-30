@@ -1,25 +1,38 @@
 import { type IUserReview } from "@/shared/api/user-review/types";
 import { Button } from "@/shared/ui/button/ui";
-import { Rating } from "react-simple-star-rating";
 import { RatingList } from "./rating-list";
+import { RatingStar } from "@/shared/ui/rating-star";
+import { useTranslation } from "next-i18next";
+
+const MAX_STARS_COUNT = 5;
 
 export const SellerReviews = ({ reviews }: { reviews: IUserReview }) => {
+  const { t } = useTranslation("announcement");
+
+  const reviewsTexts =
+    reviews.reviews_count > 0 ? (
+      <>
+        <p>{t("seller-reviews.paragraph-one")}</p>
+        <p>{t("seller-reviews.paragraph-two")}</p>
+        <p>{t("seller-reviews.paragraph-three")}</p>
+      </>
+    ) : (
+      <>
+        <p>{t("seller-reviews.paragraph-one-zero-reviews")}</p>
+        <p>{t("seller-reviews.paragraph-two-zero-reviews")}</p>
+      </>
+    );
+
   return (
     <div className="mt-20 rounded-lg bg-white p-12">
       <h2 className="mb-8 text-header-secondary font-medium leading-9 text-title">
-        Відгуки про продавця
+        {t("seller-reviews.header")}
       </h2>
-      <div className="flex gap-8">
-        <div className="max-w-review-text-box text-text-secondary">
-          <p>Зворотній звязок важливий для нас!</p>
-          <p>
-            Залишити відгук можна ось тут, напишіть ваші враження від
-            спілкування з продавцем. Ваші відгуки допоможуть іншим покупцям
-            здійснити вибір!
-          </p>
-          <p>Всі відгуки проходять перевірку на дійсність.</p>
-          <Button variant="primary" size="md" className="mt-10">
-            Залишити відгук
+      <div className="flex justify-between gap-8">
+        <div className="flex max-w-review-text-box flex-col justify-between text-text-secondary">
+          <div>{reviewsTexts}</div>
+          <Button variant="primary" size="md">
+            {t("seller-reviews.write-review-btn")}
           </Button>
         </div>
         <div className="flex w-rating-box justify-evenly rounded-lg border border-text-2 px-6 py-rating-box align-middle">
@@ -28,22 +41,11 @@ export const SellerReviews = ({ reviews }: { reviews: IUserReview }) => {
               <span className="text-rating-number leading-rating">
                 {reviews.rating}
               </span>
-              /5
+              /{MAX_STARS_COUNT}
             </p>
-            <Rating
-              SVGstyle={{ display: "inline" }}
-              iconsCount={5}
-              initialValue={reviews.rating}
-              size={20}
-              readonly={true}
-              fillColor={"#2A907F"}
-              SVGstrokeColor={"#2A907F"}
-              SVGstorkeWidth={1.5}
-              emptyColor={"#FFFFFF"}
-              allowFraction={true}
-            />
+            <RatingStar initialValue={reviews.rating} />
             <p className="text-text-3">
-              Відгуків за весь час: {reviews.reviews_count}
+              {t("seller-reviews.reviews-count")} {reviews.reviews_count}
             </p>
           </div>
           <RatingList ratingList={reviews.rating_list} />
@@ -62,18 +64,7 @@ export const SellerReviews = ({ reviews }: { reviews: IUserReview }) => {
                 </h4>
                 <p className="text-text-3">{el.created}</p>
               </div>
-              <Rating
-                SVGstyle={{ display: "inline" }}
-                iconsCount={5}
-                initialValue={el.value}
-                size={20}
-                readonly={true}
-                fillColor={"#2A907F"}
-                SVGstrokeColor={"#2A907F"}
-                SVGstorkeWidth={1.5}
-                emptyColor={"#FFFFFF"}
-                allowFraction={true}
-              />
+              <RatingStar initialValue={el.value} />
             </div>
             <p className="mt-4 text-text-secondary">{el.description}</p>
           </div>

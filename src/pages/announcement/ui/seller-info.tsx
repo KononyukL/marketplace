@@ -8,8 +8,8 @@ import Link from "next/link";
 import { useDateFormat } from "@/shared/hooks/use-date-format";
 import { type TLocales } from "@/shared/config";
 import { useRouter } from "next/router";
-import { Rating } from "react-simple-star-rating";
 import { useTranslation } from "next-i18next";
+import { RatingStar } from "@/shared/ui/rating-star";
 
 const DEFAULT_SELLER_NAME = "Unnamed seller";
 
@@ -54,18 +54,7 @@ export const SellerInfo = ({
             {author.first_name ?? DEFAULT_SELLER_NAME} {author.last_name}
           </p>
           <div className="inline-flex items-center gap-4 [&_path]:stroke-additional  [&_path]:stroke-[1.5px]">
-            <Rating
-              SVGstyle={{ display: "inline" }}
-              iconsCount={5}
-              initialValue={author.rating}
-              size={20}
-              readonly={true}
-              fillColor={"#2A907F"}
-              SVGstrokeColor={"#2A907F"}
-              SVGstorkeWidth={1.5}
-              emptyColor={"#FFFFFF"}
-              allowFraction={true}
-            />
+            <RatingStar initialValue={author.rating} />
             <p>
               {author.rating} ({author.reviews_count})
             </p>

@@ -19,11 +19,21 @@
     "last-activity": "Last online",
     "speed-response": "Response time",
     "units": "min",
-    "seller-contacts": "Seller Contacts",
-    "all-seller-ads": "All Seller Advertisements",
+    "seller-contacts": "Seller contacts",
+    "all-seller-ads": "All seller advertisements",
     "delivery": "Delivery methods",
     "payment": "Payment methods",
     "report": "Report a seller"
+  },
+  "seller-reviews": {
+    "header": "Seller reviews",
+    "paragraph-one-zero-reviews": "This seller has no reviews yet. Be the first one to leave a review!",
+    "paragraph-two-zero-reviews": "Your reviews will help other buyers make their choice!",
+    "write-review-btn": "Write a review",
+    "paragraph-one": "Feedback is important to us!",
+    "paragraph-two": "You can leave a review here. Share your impressions of interacting with the seller. Your feedback will help other buyers make their choice!",
+    "paragraph-three": "All reviews are verified for authenticity.",
+    "reviews-count": "All-time reviews:"
   },
   "not-found": "Unfortunately, the requested advertisement couldn't be found.",
   "breadcrumbs-link": "Catalog",

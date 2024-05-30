@@ -107,7 +107,7 @@ export default {
         rating: "68px",
       },
       borderWidth: {
-        "border-seconadry": "1.5px",
+        "border-secondary": "1.5px",
       },
     },
   },
