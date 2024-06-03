@@ -23,9 +23,9 @@ export const SortFilter = <T,>({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-sort-filter">
+    <div className="w-sort-filter ml-auto">
       <Listbox value={selected} onChange={onChange}>
-        <div className="relative mt-1">
+        <div className="relative ">
           <Listbox.Button
             onClick={() => setOpen(!open)}
             className="relative  w-full cursor-default rounded border border-border-2 bg-white py-2 pl-3 pr-10 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
