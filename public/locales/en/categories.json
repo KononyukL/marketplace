@@ -28,5 +28,6 @@
     "from": "From:",
     "to": "To:",
     "search-breed": "Search for a breed"
-  }
+  },
+  "reset-filters": "reset filters"
 }

@@ -46,7 +46,7 @@ export interface ICategoriesSearchFilters
 export interface CategoriesFiltersResult {
   filters: ICategoriesSearchFilters;
   onCategoriesSearchChange: (filters: ICategoriesSearch) => void;
-  onCategoriesFiltersChange: (filters: ICategoriesFilters) => void;
+  onCategoriesFiltersChange: (filters: ICategoriesFilters | null) => void;
 }
 
 export interface ICategoriesFiltersProps {
