@@ -17,7 +17,7 @@ export const ControlledCheckbox = forwardRef<
   HTMLInputElement,
   ICheckboxFilterProps
 >(function CheckboxFilter(props, ref) {
-  const { label, type = "checkbox", id, ...restProps } = props;
+  const { label, name, type = "checkbox", id, ...restProps } = props;
 
   return (
     <div className="flex w-full items-center gap-2">
@@ -30,7 +30,7 @@ export const ControlledCheckbox = forwardRef<
         focus:outline-none
       "
         type={type}
-        id={id}
+        id={`${name}${id}`}
         ref={ref}
         {...restProps}
       />
@@ -47,7 +47,7 @@ export const ControlledCheckbox = forwardRef<
         <polyline points="20 6 9 17 4 12"></polyline>
       </svg>
       <label
-        htmlFor={id}
+        htmlFor={`${name}${id}`}
         className="ml-[8px] cursor-pointer  hover:font-medium peer-checked:font-medium peer-checked:text-black"
       >
         {label}

@@ -7,13 +7,17 @@ import { SearchResults } from "@/pages/category/ui/search-results";
 import { Spinner } from "@/shared/ui/spinner";
 import { CategoryHeader } from "@/pages/category/ui/header-categories";
 import { AnimalShelter } from "@/shared/ui";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { MainFilter } from "@/features/filters/main-filter";
 import { SortFilter } from "@/features/filters/sort-filter";
 import { Advertisement } from "@/shared/ui/advertisement";
 import { useCategorySortFilterHook } from "@/pages/category/lib/use-category-sort-filter-hook";
 import { Pagination } from "@/shared/ui/pagination";
 import { PAGE_SIZE_CATEGORIES } from "@/shared/config";
+import { ButtonResetFilters } from "@/shared/ui/buttons/ui/button-reset-filters";
+import { type ICategoriesFilters } from "@/shared/queries/search/types";
+import { useForm, useWatch } from "react-hook-form";
+import { Form } from "@/shared/ui";
 
 export const Category = () => {
   const { query } = useRouter();
@@ -31,6 +35,25 @@ export const Category = () => {
 
   const { filters, onCategoriesFiltersChange } =
     useCategoriesFilters(defaultFilters);
+
+  const form = useForm<ICategoriesFilters>({
+    mode: "all",
+    defaultValues: {
+      breedIds: filters.breedIds,
+      ageIds: filters.ageIds,
+      attributeIds: filters.attributeIds,
+      cityIds: filters.cityIds,
+    },
+  });
+  const { control, reset } = form;
+
+  const values = useWatch({ control });
+
+  const hasFilters = Object.values(values).some(Boolean);
+
+  useEffect(() => {
+    onMainFilterChange(values);
+  }, [values]);
 
   const { data: searchResults, isFetching } = useGetCategoriesSearch({
     filters,
@@ -92,15 +115,21 @@ export const Category = () => {
       {searchResults ? renderSearchResults() : <Spinner />}
       <div className="flex gap-8">
         {!shouldShowNothingFound && (
-          <MainFilter
-            categoryId={categoryIdToFind}
-            onMainFilterChange={onMainFilterChange}
-            filters={filters}
-          />
+          <Form form={form} onSubmit={() => {}}>
+            <MainFilter categoryId={categoryIdToFind} filters={filters} />
+          </Form>
         )}
-        <div className="flex-1 py-14 pr-14">
-          <div className="mb-8 flex items-center justify-between">
-            <div></div>
+        <div className=" flex-1 py-14 pr-14 ">
+          <div className="mb-20 flex justify-between gap-4">
+            {hasFilters && (
+              <ButtonResetFilters
+                onClick={() => {
+                  onCategoriesFiltersChange(null);
+                  reset();
+                }}
+              />
+            )}
+
             <SortFilter
               options={sortFilter}
               onChange={onSortChange}

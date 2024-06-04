@@ -33,7 +33,7 @@ export const useCategoriesFilters = ({
   );
 
   const onCategoriesFiltersChange = useCallback(
-    (filters: ICategoriesFilters) => {
+    (filters: ICategoriesFilters | null) => {
       setCategoriesFilters(filters);
     },
     [setCategoriesFilters],

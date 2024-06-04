@@ -27,6 +27,8 @@ export default {
         hover: "#0000000a",
         active: "#D96000",
         fill: "#FFFEFE",
+        "button-filter": "#FF8D8F",
+        "hover-filter": "rgba(255, 84, 87, 0.9)",
       },
       boxShadow: {
         "input-error": "0px 2px 2px #F79495, 0px 0px 0px 4px #F79495",
