@@ -10,6 +10,13 @@ interface IBaseBlog {
   last_name: string;
 }
 
+export interface IAttributes {
+  id: number;
+  title: string;
+  lang_code: string;
+  sort_value: number;
+}
+
 interface IComments extends IEntity {
   comment: string;
   status: string;
@@ -22,8 +29,10 @@ interface IComments extends IEntity {
 
 export interface IBlog extends ICategories, IBaseBlog {
   alias: string;
+  attributes: IAttributes[];
   categories: ICategories[];
   comments: IComments[];
+  preview_url: string;
   short_text: string;
   reading_minutes: number;
 }

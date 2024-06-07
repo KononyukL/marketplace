@@ -68,6 +68,7 @@ export default {
         "footer-pages": "874px",
         "categories-header": "517px",
         "review-text-box": "604px",
+        article: "284px",
       },
       width: {
         search: "484px",
