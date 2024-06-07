@@ -120,7 +120,7 @@ export const Category = () => {
           </Form>
         )}
         <div className=" flex-1 py-14 pr-14 ">
-          <div className="mb-20 flex justify-between gap-4">
+          <div className="mb-8 flex justify-between gap-4">
             {hasFilters && (
               <ButtonResetFilters
                 onClick={() => {

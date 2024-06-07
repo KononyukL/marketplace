@@ -5,7 +5,7 @@ import { ButtonTags } from "@/shared/ui/buttons/ui/button-tags";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { Button } from "@/shared/ui";
-import { ANNOUNCEMENT_SIZE, Icons } from "@/shared/config";
+import { ANNOUNCEMENT_SIZE } from "@/shared/config";
 import { useGetAdvertisementsFavorite } from "@/shared/queries/advertisements-favorite-tags";
 import { DEFAULT_LOCALE } from "@/shared/queries/constants";
 import Link from "next/link";
@@ -92,7 +92,7 @@ export const TopAnnouncement = () => {
           <Button
             size="xl"
             variant="outline"
-            endAdornment={isFetching ? <Spinner /> : <Icons.Plus />}
+            endAdornment={isFetching ? <Spinner /> : ""}
             disabled={isFetching}
             //eslint-disable-next-line @typescript-eslint/no-misused-promises
             onClick={onClickFetchNextPage}

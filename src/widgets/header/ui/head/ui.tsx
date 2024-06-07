@@ -7,7 +7,7 @@ import { Icons } from "@/shared/config";
 export const Head = () => {
   const { t } = useTranslation("common");
   return (
-    <div className="bg-title">
+    <div className="relative z-[99] bg-title ">
       <div className="m-auto flex max-w-main  justify-between pb-4 pl-14 pr-14 pt-4">
         <Link href="/">
           <Image src={"/images/logo.svg"} alt="Logo" width={86} height={28} />
