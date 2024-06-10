@@ -1,15 +1,12 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
+import { useToggleHook } from "@/shared/hooks/use-toggle-hook";
 
 export function useOpenBurgerMenuHook() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const handleClick = useCallback(() => {
-    setIsOpen((prev) => !prev);
-  }, []);
+  const [open, onToggleOpen, setIsOpen] = useToggleHook();
 
   const handleClose = useCallback(() => {
     setIsOpen(false);
   }, []);
 
-  return { isOpen, handleClick, handleClose };
+  return { isOpen: open, handleClick: onToggleOpen, handleClose };
 }

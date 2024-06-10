@@ -92,7 +92,7 @@ export const TopAnnouncement = () => {
           <Button
             size="xl"
             variant="outline"
-            endAdornment={isFetching ? <Spinner /> : ""}
+            endAdornment={isFetching ? <Spinner /> : <></>}
             disabled={isFetching}
             //eslint-disable-next-line @typescript-eslint/no-misused-promises
             onClick={onClickFetchNextPage}
