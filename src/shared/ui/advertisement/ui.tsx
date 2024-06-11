@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   type IAttribute,
   type IImage,
@@ -10,6 +9,7 @@ import { useDateFormat } from "@/shared/hooks/use-date-format";
 import { LocationSeller, UserAvatar, UserType } from "@/shared/ui";
 import { type TLocales } from "@/shared/config";
 import { useRouter as useNavigationRouter } from "next/navigation";
+import { TemplateCard } from "../template-card/ui";
 
 interface IAdvertisement {
   img: IImage[];
@@ -60,54 +60,16 @@ export const Advertisement = ({
     >
       <AdvertisementPhotos img={img} />
       <div className="flex flex-1 flex-col justify-between">
-        <div>
-          <div className="flex items-start justify-between">
-            <div className="flex items-start justify-between gap-4">
-              {top && (
-                <p className="bg-primary px-2 py-1 text-xs text-white">
-                  {t("advertisement.top")}
-                </p>
-              )}
-              <div className="mb-5 flex items-center gap-1">
-                <Image
-                  src="/images/clock.svg"
-                  alt="Clock"
-                  width={16}
-                  height={16}
-                />
-                <p className="text-text-3">{date}</p>
-              </div>
-            </div>
-            <Image
-              src="/images/heart-black.svg"
-              alt="Heart"
-              width={28}
-              height={28}
-            />
-          </div>
-          <div className="mb-2 flex gap-6 text-xl font-medium">
-            <p>{title}</p>
-            <p>{prise ? `${prise} ${t("advertisement.uah")}` : ""}</p>
-          </div>
-          <div className="mb-4 flex gap-4">
-            {favoriteAttributes.map((el) => (
-              <p key={el.attribute_id} className="text-text-3">
-                {el.group_title}:
-                <span className="text-black"> {el.title} </span>
-              </p>
-            ))}
-          </div>
-          <p className="mb-4 w-full max-w-3xl ">
-            {text.length > 300 ? text.slice(0, 300) + "..." : text}
-          </p>
-          <div className="mb-4 flex gap-2 text-additional">
-            {attributes.map((el) => (
-              <p key={el.attribute_id} className="rounded-tags-2 bg-tags px-2">
-                {el.title}
-              </p>
-            ))}
-          </div>
-        </div>
+        <TemplateCard
+          top={top}
+          date={date}
+          title={title}
+          prise={prise}
+          favoriteAttributes={favoriteAttributes}
+          text={text}
+          attributes={attributes}
+          size="lg"
+        />
         <div className="flex items-center  gap-4 ">
           <UserAvatar
             userAvatarUrl={userAvatarUrl}
