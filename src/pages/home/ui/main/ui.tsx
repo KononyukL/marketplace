@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/shared/ui";
-import { Categories } from "@/pages/home/ui/main/categories";
 import { useTranslation } from "next-i18next";
 import { ButtonAdvertisement } from "@/shared/ui/buttons/ui/button-advertisement";
 
@@ -9,11 +8,10 @@ export const Main = () => {
   const { t } = useTranslation(["home", "common"]);
 
   return (
-    <div className="relative">
+    <div className="relative py-3 ">
       <div className=" relative z-10 m-auto max-w-main px-14 pb-36 pt-4 text-black">
-        <Categories />
-        <div className="flex items-center border-solid  text-black">
-          <div className=" flex flex-col justify-center gap-10">
+        <div className="mt-20 flex items-center border-solid  text-black">
+          <div className=" flex flex-col justify-center  gap-10">
             <h2 className=" mb-4 w-full  max-w-title text-5xl font-medium leading-snug text-title">
               {t("main.title")}
               <span className="text-primary"> {t("main.span")} </span>

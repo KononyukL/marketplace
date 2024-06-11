@@ -19,12 +19,13 @@ export const SelectionArticles = () => {
         {data
           ?.map((el) => (
             <Article
-              img={el.alias}
+              img={el.preview_url}
               key={el.id}
               date={el.created}
               time={el.reading_minutes}
               title={el.title}
               text={el.description}
+              attributes={el.attributes}
             />
           ))
           .slice(0, 4)}
