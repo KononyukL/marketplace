@@ -22,9 +22,8 @@ export const BaseLayout = ({ children }: PropsWithChildren) => {
     <div className={robotoFlex.className}>
       <Header />
       <main>{children}</main>
-
-      <ButtonScroll />
       <Footer />
+      <ButtonScroll />
     </div>
   );
 };

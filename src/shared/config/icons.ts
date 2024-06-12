@@ -18,6 +18,7 @@ import { ReactComponent as CountdownClock } from "../../../public/images/countdo
 import { ReactComponent as ExclamationMark } from "../../../public/images/exclamation-mark.svg";
 import { ReactComponent as Cross } from "../../../public/images/cross.svg";
 import { ReactComponent as CameraSmall } from "../../../public/images/camera-small.svg";
+import { ReactComponent as ArrowUp } from "../../../public/images/arrow-up.svg";
 
 export const Icons = {
   User,
@@ -40,4 +41,5 @@ export const Icons = {
   CountdownClock,
   ExclamationMark,
   Cross,
+  ArrowUp,
 };

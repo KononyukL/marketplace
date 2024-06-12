@@ -105,6 +105,7 @@ export default {
       padding: {
         "footer-pages": "72px",
         "rating-box": "28.5px",
+        "button-scroll": "68px",
       },
       lineHeight: {
         rating: "68px",
