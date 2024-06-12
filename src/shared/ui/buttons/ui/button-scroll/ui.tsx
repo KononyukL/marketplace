@@ -1,27 +1,21 @@
-import Image from "next/image";
+import { Icons } from "@/shared/config";
+import { useScrollToTop } from "@/shared/ui/buttons/ui/button-scroll/lib";
 
 export const ButtonScroll = () => {
-  const scrollToHash = (element_id: string) => {
-    const element = document.getElementById(element_id);
-    element?.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-      inline: "nearest",
-    });
-  };
+  const { isVisible, scrollToTop } = useScrollToTop();
+
   return (
-    <div className="m-auto flex max-w-main  justify-end  px-14 pb-20 pt-10">
-      <button
-        onClick={() => scrollToHash("header")}
-        className="shadow-button-scroll rounded-lg bg-white p-2"
-      >
-        <Image
-          src="/images/arrow-up.svg"
-          alt="Arrow up"
-          width={24}
-          height={24}
-        />
-      </button>
-    </div>
+    <>
+      {isVisible && (
+        <div className="px-button-scroll fixed bottom-32 right-32">
+          <button
+            onClick={scrollToTop}
+            className="rounded-lg bg-primary p-2 shadow-button-scroll"
+          >
+            <Icons.ArrowUp className="text-white" />
+          </button>
+        </div>
+      )}
+    </>
   );
 };
