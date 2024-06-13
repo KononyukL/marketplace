@@ -7,7 +7,7 @@ export const ButtonScroll = () => {
   return (
     <>
       {isVisible && (
-        <div className="px-button-scroll fixed bottom-32 right-32">
+        <div className="fixed -right-1 bottom-32 px-5">
           <button
             onClick={scrollToTop}
             className="rounded-lg bg-primary p-2 shadow-button-scroll"
