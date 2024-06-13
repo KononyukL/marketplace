@@ -6,8 +6,21 @@ export const TermComponent = () => {
 
   return (
     <>
-      <p className="pb-3">{t("terms-of-use.paragraphs.start-one")}</p>
-      <p className="pb-6">{t("terms-of-use.paragraphs.start-two")}</p>
+      <p>{t("terms-of-use.paragraphs.start-one")}</p>
+      <p className="pb-3">
+        {t("terms-of-use.paragraphs.start-two")}
+        <span>
+          <a
+            href="https://teamchallenge.io"
+            className="underline hover:text-primary-hover focus:text-primary"
+          >
+            https://teamchallenge.io/.
+          </a>
+        </span>
+      </p>
+
+      <p className="pb-6">{t("terms-of-use.paragraphs.start-three")}</p>
+      {/* <link href="https://teamchallenge.io/" /> */}
       <ol className="list-decimal pl-5 text-base font-medium">
         {textTranslationKeys.map((el, i) => (
           <li key={i} className="pb-6 ">
