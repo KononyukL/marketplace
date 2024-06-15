@@ -5,7 +5,7 @@ import { useTranslation } from "next-i18next";
 export const Advantages = () => {
   const { t } = useTranslation("home");
   return (
-    <div className="m-auto max-w-main p-14 text-black">
+    <div className="m-auto mb-32 max-w-main px-14 text-black">
       <h2 className="mb-12 text-4xl font-medium">{t("our-advantages")}</h2>
       <div className=" flex  justify-between gap-2">
         {dataAdvantages.map((el) => (

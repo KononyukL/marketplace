@@ -44,7 +44,7 @@ export const TopAnnouncement = () => {
   }
 
   return (
-    <div className="m-auto max-w-main p-14 text-black">
+    <div className="m-auto mb-32 max-w-main px-14 text-black">
       <h2 className="mb-12 text-4xl font-medium">{t("top")}</h2>
       <div className="flex flex-col gap-8">
         <div className="flex gap-2">

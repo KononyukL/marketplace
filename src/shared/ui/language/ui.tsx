@@ -13,6 +13,7 @@ export const Language = ({
   const handleLocaleChange = (locale: string) => () => {
     void router.push(router.route, router.asPath, {
       locale,
+      scroll: false,
     });
   };
 

@@ -7,7 +7,7 @@ export const AnimalShelter = () => {
   const { t } = useTranslation("common");
 
   return (
-    <div className="m-auto mb-48 max-w-main p-14 ">
+    <div className="m-auto mb-32 max-w-main px-14 ">
       <div className="relative  shrink grow   text-white">
         <div className=" max-w-primary relative z-10 flex justify-between px-16 py-16 text-white">
           <div className="flex flex-col justify-center gap-10">
