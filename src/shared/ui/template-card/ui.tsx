@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import { cn } from "@/shared/lib/cn";
 import { type IAttribute } from "@/shared/api/advertisement-favorite/types";
+import { type SyntheticEvent } from "react";
 
 interface IDivTags
   extends React.DetailedHTMLProps<
@@ -30,6 +31,10 @@ export const TemplateCard = ({
   className,
 }: React.PropsWithChildren<IDivTags>) => {
   const { t } = useTranslation("home");
+
+  const stopPropagation = (event: SyntheticEvent) => {
+    event.stopPropagation();
+  };
 
   return (
     <div className="mb-4">
@@ -91,6 +96,7 @@ export const TemplateCard = ({
         ))}
       </div>
       <p
+        onClick={stopPropagation}
         className={cn("text-base", className, {
           "mb-3 line-clamp-2 text-text-3": size === "sm",
           "mb-4 line-clamp-3 text-text-secondary": size === "lg",
