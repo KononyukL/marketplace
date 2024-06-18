@@ -85,7 +85,7 @@ export const Advertisement = ({
           </div>
           <div className="flex flex-col gap-1">
             <UserType userType={userType} className="text-text-4" />
-            <p className="text-black">
+            <p className="text-text-3">
               {t("advertisement.reviews")}: {reviewsCount}
             </p>
           </div>

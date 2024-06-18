@@ -62,54 +62,47 @@ export const TemplateCard = ({
           height={28}
         />
       </div>
-      <div
-        className={cn("flex text-xl font-medium text-title", className, {
-          "mb-4 flex-col gap-2": size === "sm",
-          "mb-2 gap-6": size === "lg",
-        })}
-      >
-        <p
-          className={cn("flex-shrink", className, {
-            "text-base": size === "sm",
+      <div className={cn(className, { "pr-6": size === "lg" })}>
+        <div className="mb-4 flex flex-col gap-1 text-xl font-medium text-title">
+          <p
+            className={cn("flex-shrink truncate", className, {
+              "text-base": size === "sm",
+            })}
+          >
+            {title}
+          </p>
+          <p className="flex-none font-semibold">
+            {prise ? `${prise} ${t("advertisement.uah")}` : ""}
+          </p>
+        </div>
+        <div
+          className={cn("flex gap-4 text-base", className, {
+            "mb-2": size === "sm",
+            "mb-4": size === "lg",
           })}
         >
-          {title}
-        </p>
+          {favoriteAttributes?.map((el) => (
+            <p key={el.attribute_id} className="text-text-3">
+              {el.group_title}:<span className="text-title"> {el.title} </span>
+            </p>
+          ))}
+        </div>
         <p
-          className={cn("flex-none", className, {
-            "font-semibold": size === "sm",
+          onClick={stopPropagation}
+          className={cn("text-base text-text-3", className, {
+            "mb-3 line-clamp-2": size === "sm",
+            "mb-4 line-clamp-3": size === "lg",
           })}
         >
-          {prise ? `${prise} ${t("advertisement.uah")}` : ""}
+          {text}
         </p>
-      </div>
-      <div
-        className={cn("flex gap-4 text-base", className, {
-          "mb-2": size === "sm",
-          "mb-4": size === "lg",
-        })}
-      >
-        {favoriteAttributes?.map((el) => (
-          <p key={el.attribute_id} className="text-text-3">
-            {el.group_title}:<span className="text-title"> {el.title} </span>
-          </p>
-        ))}
-      </div>
-      <p
-        onClick={stopPropagation}
-        className={cn("text-base", className, {
-          "mb-3 line-clamp-2 text-text-3": size === "sm",
-          "mb-4 line-clamp-3 text-text-secondary": size === "lg",
-        })}
-      >
-        {text}
-      </p>
-      <div className="flex gap-2 text-additional">
-        {attributes.map((el) => (
-          <p key={el.attribute_id} className="rounded-tags-2 bg-tags px-2">
-            {el.title.toLowerCase()}
-          </p>
-        ))}
+        <div className="flex gap-2 text-additional">
+          {attributes.map((el) => (
+            <p key={el.attribute_id} className="rounded-tags-2 bg-tags px-2">
+              {el.title.toLowerCase()}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );
