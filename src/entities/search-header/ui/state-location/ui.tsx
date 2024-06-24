@@ -24,13 +24,13 @@ export const StateLocation = ({
     <>
       <div className="px-4">
         <h3 className="text-black">{t("search.all-states")}</h3>
-        <p className="text-xs text-text-3">{t("search.all-ads")}</p>
+        <p className="text-gray-8 text-xs">{t("search.all-ads")}</p>
       </div>
       <p className="mt-2 px-4 text-xs text-black ">{t("search.select-area")}</p>
       {states.map((state) => (
         <ComboboxOptions key={state.id} value={state} disabled>
           <div
-            className="mr-2 flex items-center justify-between px-4 py-2 hover:bg-hover"
+            className="hover:bg-dark-1 mr-2 flex items-center justify-between px-4 py-2"
             onClick={handleStateSelection(state)}
           >
             <p className="text-black">{state.name}</p>

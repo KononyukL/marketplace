@@ -11,7 +11,7 @@ export const Advantages = () => {
         {dataAdvantages.map((el) => (
           <div
             key={el.id}
-            className="flex w-full max-w-advantages flex-col  gap-4 rounded-lg border border-solid border-border-2 bg-white p-8"
+            className="border-gray-4 flex w-full max-w-advantages  flex-col gap-4 rounded-lg border border-solid bg-white p-8"
           >
             <Image src={el.image} alt={el.title} width={44} height={44} />
             <h3 className="text-xl font-medium">{t(el.title)}</h3>

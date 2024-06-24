@@ -24,7 +24,7 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
   }
 
   return (
-    <div className="relative flex h-image-advertisement max-h-photo-2 max-w-advertisement-photo items-center justify-center overflow-hidden rounded bg-disable">
+    <div className="bg-gray-5 relative flex h-image-advertisement max-h-photo-2 max-w-advertisement-photo items-center justify-center overflow-hidden rounded">
       <Image
         className="rounded"
         objectFit="contain"
@@ -33,7 +33,7 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
         width={390}
         height={360}
       />
-      <div className="img-count absolute bottom-1 right-1 inline-flex w-[60px] items-center justify-center gap-2 rounded bg-white p-2 text-title">
+      <div className="img-count absolute bottom-1 right-1 inline-flex w-[60px] items-center justify-center gap-2 rounded bg-white p-2 text-primary">
         <Icons.CameraSmall />
         {img.length}
       </div>

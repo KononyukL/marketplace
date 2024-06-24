@@ -33,7 +33,7 @@ export const BurgerMenu = () => {
             {data?.map((el) => (
               <Link
                 onClick={handleClick}
-                className="px-10 py-3 text-xl hover:bg-tags hover:text-additional"
+                className="hover:text-teal-0 hover:bg-teal-4 px-10 py-3 text-xl"
                 key={el.id}
                 href={`/categories/${el.id}`}
               >

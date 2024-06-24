@@ -28,10 +28,10 @@ export const Language = ({
               onClick={handleLocaleChange(el.lang_code)}
               key={el.name}
               className={cn(
-                " flex h-border cursor-pointer items-center  border-r border-r-white p-1 uppercase last:border-transparent hover:text-primary ",
+                " flex h-border cursor-pointer items-center  border-r border-r-white p-1 uppercase last:border-transparent hover:text-secondary ",
                 className,
                 {
-                  "text-primary": router.locale === el.lang_code,
+                  "text-secondary": router.locale === el.lang_code,
                 },
               )}
             >

@@ -29,7 +29,7 @@ export const Breadcrumbs = ({
                   {" "}
                   <Link
                     href={href}
-                    className="text-text-3 transition-all hover:text-primary"
+                    className="text-gray-8 transition-all hover:text-secondary"
                   >
                     {segment === "" ? `${startingTitle}` : segment}
                   </Link>

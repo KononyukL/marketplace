@@ -37,12 +37,12 @@ export const LocationSearchDropdown = <T,>({
   return (
     <Combobox value={value} onChange={setSelectedLocation}>
       {({ open }) => (
-        <div className="relative w-2/4  border-l border-l-border-2 text-text-3">
+        <div className="border-l-gray-4 text-gray-8  relative w-2/4 border-l">
           <Combobox.Button
             as="div"
-            className="relative flex w-full cursor-default overflow-hidden rounded bg-white pl-4 pr-2.5 text-left text-text-3 focus:rounded focus:border focus:border-solid focus:border-gray-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"
+            className="text-gray-8 relative flex w-full cursor-default overflow-hidden rounded bg-white pl-4 pr-2.5 text-left focus:rounded focus:border focus:border-solid focus:border-gray-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"
           >
-            <div className="flex items-center pr-1 text-disable">{icon}</div>
+            <div className="text-gray-5 flex items-center pr-1">{icon}</div>
             <Combobox.Input
               className=" w-full border-none py-2 text-sm leading-5 outline-none focus:ring-0 "
               displayValue={displayValue}

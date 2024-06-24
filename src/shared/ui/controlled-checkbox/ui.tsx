@@ -25,8 +25,8 @@ export const ControlledCheckbox = forwardRef<
         className="
         disabled:border-steel-400
         disabled:bg-steel-400
-        peer  peer relative  h-features w-features shrink-0 cursor-pointer appearance-none
-        rounded-sm border-2 border-border-2 bg-white transition-all duration-300 checked:border-0  checked:bg-additional hover:border-additional
+        checked:bg-teal-0  hover:border-teal-0 border-gray-4  peer peer relative h-features w-features
+        shrink-0 cursor-pointer appearance-none rounded-sm border-2 bg-white transition-all  duration-300 checked:border-0
         focus:outline-none
       "
         type={type}

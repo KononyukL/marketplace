@@ -11,9 +11,9 @@ export const HowItWork = () => {
         {dataWork.map((el) => (
           <div
             key={el.id}
-            className="flex w-full max-w-how-it-work flex-col rounded-lg border border-solid border-border-2 bg-white px-6 py-8"
+            className="border-gray-4 flex w-full max-w-how-it-work flex-col rounded-lg border border-solid bg-white px-6 py-8"
           >
-            <div className="mb-4 flex w-8 justify-center rounded bg-additional px-4 py-1 text-white">
+            <div className="bg-teal-0 mb-4 flex w-8 justify-center rounded px-4 py-1 text-white">
               {el.id}
             </div>
             <h3 className="mb-2 text-xl font-medium">{t(el.title)}</h3>

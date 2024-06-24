@@ -19,10 +19,10 @@ export const ButtonTags = ({
     <button
       onClick={onClick}
       className={cn(
-        "rounded-tags border-additional hover:bg-additional border border-solid bg-white px-4 py-1 text-sm text-black hover:text-white",
+        "border-teal-0 hover:bg-teal-0 rounded-tags border border-solid bg-white px-4 py-1 text-sm text-black hover:text-white",
         className,
         {
-          "bg-additional text-white ": isActive,
+          "bg-teal-0 text-white ": isActive,
         },
       )}
     >

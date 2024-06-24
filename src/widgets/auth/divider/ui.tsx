@@ -5,9 +5,9 @@ export const Divider = () => {
 
   return (
     <div className="my-8 flex items-center gap-5 ">
-      <div className="border-b-border-auth w-full border border-solid"></div>
-      <p className="text-border-auth">{t("auth.or")}</p>
-      <div className="border-b-border-auth w-full border border-solid"></div>
+      <div className="border-b-gray-7 w-full border border-solid"></div>
+      <p className="text-gray-7">{t("auth.or")}</p>
+      <div className="border-b-gray-7 w-full border border-solid"></div>
     </div>
   );
 };

@@ -60,14 +60,14 @@ export const Pagination = ({
           <button
             onClick={onPrevious}
             className={cn(
-              "mr-2 flex h-10  items-center justify-center rounded-lg bg-white px-4 leading-tight text-gray-500  shadow-box hover:bg-additional  hover:text-white  dark:border-gray-700 ",
+              "hover:bg-teal-0 mr-2 flex  h-10 items-center justify-center rounded-lg bg-white px-4 leading-tight  text-gray-500 shadow-box  hover:text-white  dark:border-gray-700 ",
               className,
-              { "text-disable hover:bg-white ": disabledPrevious },
+              { "text-gray-5 hover:bg-white ": disabledPrevious },
             )}
           >
             <Icons.ArrowRight
               className={cn("h-4 w-4 rotate-180 hover:text-white", className, {
-                "text-disable hover:text-disable": disabledPrevious,
+                "text-gray-5 hover:text-gray-5": disabledPrevious,
               })}
             />
           </button>
@@ -77,9 +77,9 @@ export const Pagination = ({
               key={el}
               onClick={onClickNumberPage(+el)}
               className={cn(
-                "flex h-10 items-center justify-center rounded-lg bg-white  px-4 leading-tight text-gray-500 shadow-box hover:bg-additional hover:text-white dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white",
+                "hover:bg-teal-0 flex h-10 items-center justify-center rounded-lg  bg-white px-4 leading-tight text-gray-500 shadow-box hover:text-white dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white",
                 className,
-                { "bg-additional text-white": currentPage === el },
+                { "bg-teal-0 text-white": currentPage === el },
               )}
             >
               {el}
@@ -89,14 +89,14 @@ export const Pagination = ({
           <button
             onClick={onNext}
             className={cn(
-              "ml-2 flex h-10  items-center justify-center rounded-lg bg-white px-4 leading-tight text-gray-500  shadow-box hover:bg-additional  hover:text-white  dark:border-gray-700 ",
+              "hover:bg-teal-0 ml-2 flex  h-10 items-center justify-center rounded-lg bg-white px-4 leading-tight  text-gray-500 shadow-box  hover:text-white  dark:border-gray-700 ",
               className,
-              { "text-disable hover:bg-white ": disabledNext },
+              { "text-gray-5 hover:bg-white ": disabledNext },
             )}
           >
             <Icons.ArrowRight
               className={cn("h-4 w-4  hover:text-white", className, {
-                "text-disable hover:text-disable": disabledNext,
+                "text-gray-5 hover:text-gray-5": disabledNext,
               })}
             />
           </button>

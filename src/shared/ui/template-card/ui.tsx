@@ -46,13 +46,13 @@ export const TemplateCard = ({
       >
         <div className="flex items-start justify-between gap-4">
           {top && (
-            <p className="rounded bg-primary px-2 py-1 text-xs text-white">
+            <p className="rounded bg-secondary px-2 py-1 text-xs text-white">
               {t("advertisement.top")}
             </p>
           )}
           <div className="flex items-center gap-1">
             <Image src="/images/clock.svg" alt="Clock" width={16} height={16} />
-            <p className="text-text-3">{date}</p>
+            <p className="text-gray-8">{date}</p>
           </div>
         </div>
         <Image
@@ -63,7 +63,7 @@ export const TemplateCard = ({
         />
       </div>
       <div className={cn(className, { "pr-6": size === "lg" })}>
-        <div className="mb-4 flex flex-col gap-1 text-xl font-medium text-title">
+        <div className="mb-4 flex flex-col gap-1 text-xl font-medium text-primary">
           <p
             className={cn("flex-shrink truncate", className, {
               "text-base": size === "sm",
@@ -82,23 +82,24 @@ export const TemplateCard = ({
           })}
         >
           {favoriteAttributes?.map((el) => (
-            <p key={el.attribute_id} className="text-text-3">
-              {el.group_title}:<span className="text-title"> {el.title} </span>
+            <p key={el.attribute_id} className="text-gray-8">
+              {el.group_title}:
+              <span className="text-primary"> {el.title} </span>
             </p>
           ))}
         </div>
         <p
           onClick={stopPropagation}
-          className={cn("text-base text-text-3", className, {
+          className={cn("text-gray-8 text-base", className, {
             "mb-3 line-clamp-2": size === "sm",
             "mb-4 line-clamp-3": size === "lg",
           })}
         >
           {text}
         </p>
-        <div className="flex gap-2 text-additional">
+        <div className="text-teal-0 flex gap-2">
           {attributes.map((el) => (
-            <p key={el.attribute_id} className="rounded-tags-2 bg-tags px-2">
+            <p key={el.attribute_id} className="bg-teal-4 rounded-tags-2 px-2">
               {el.title.toLowerCase()}
             </p>
           ))}

@@ -12,9 +12,9 @@ export const Main = () => {
       <div className="relative z-10 m-auto max-w-main px-14 pb-36 pt-4 text-black">
         <div className="mt-20 flex items-center border-solid  text-black">
           <div className=" flex flex-col justify-center  gap-10">
-            <h2 className=" mb-4 w-full  max-w-title text-5xl font-medium leading-snug text-title">
+            <h2 className=" mb-4 w-full  max-w-title text-5xl font-medium leading-snug text-primary">
               {t("main.title")}
-              <span className="text-primary"> {t("main.span")} </span>
+              <span className="text-secondary"> {t("main.span")} </span>
               <br />
               {t("main.text-title")}
             </h2>

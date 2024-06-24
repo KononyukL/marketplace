@@ -15,10 +15,10 @@ export const Label = ({
   return (
     <label
       className={cn(
-        "cursor-pointer text-label",
+        "text-dark-4 cursor-pointer",
         className,
         isError && "text-error focus-within:text-error",
-        !isError && "focus-within:text-primary-hover",
+        !isError && "focus-within:text-secondary-light",
       )}
     >
       {text}

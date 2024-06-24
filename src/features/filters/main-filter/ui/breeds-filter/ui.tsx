@@ -22,14 +22,12 @@ export const BreedFilter = ({ breeds }: IBreedFilter) => {
     <>
       <Accordion title={t("filters-categories.breed")}>
         <Input
-          className="group [&>input]:border-border-2 [&>input]:focus-within:border-additional  [&>input]:hover:border-additional"
+          className="[&>input]:hover:border-teal-0 [&>input]:focus-within:border-teal-0 [&>input]:border-gray-4  group"
           name="breed"
           placeholder={t("filters-categories.search-breed")}
           onValue={onValue}
           value={filterValue}
-          endAdornment={
-            <Icons.Search className="group-hover:text-additional" />
-          }
+          endAdornment={<Icons.Search className="group-hover:text-teal-0" />}
         />
         {filteredBreed.map((el) => (
           <div key={el.id}>

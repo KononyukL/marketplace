@@ -43,12 +43,12 @@ export const Modal = ({
               >
                 <Dialog.Panel className="w-full max-w-[60%] transform overflow-hidden rounded-lg bg-[#FFFEFE] p-6 text-left align-middle shadow-xl transition-all">
                   <div className="flex items-center justify-between pb-6">
-                    <Dialog.Title className="text-[28px] font-medium leading-9 text-title">
+                    <Dialog.Title className="text-[28px] font-medium leading-9 text-primary">
                       {title}
                     </Dialog.Title>
                     <button
                       onClick={() => onClose()}
-                      className="bg-fill rounded-lg p-2"
+                      className="bg-gray-0 rounded-lg p-2"
                     >
                       <Icons.Cross />
                     </button>

@@ -23,14 +23,12 @@ export const LocationFilter = ({ cities }: ILocationFilter) => {
       <Accordion title={t("filters-categories.location")} className="mt-6">
         <div>
           <Input
-            className="group [&>input]:border-input [&>input]:focus-within:border-additional [&>input]:hover:border-additional"
+            className="[&>input]:hover:border-teal-0 [&>input]:focus-within:border-teal-0 group [&>input]:border-gray-3"
             name="breed"
             placeholder={t("filters-categories.enter-location")}
             onValue={onValue}
             value={filterValue}
-            endAdornment={
-              <Icons.Search className="group-hover:text-additional" />
-            }
+            endAdornment={<Icons.Search className="group-hover:text-teal-0" />}
           />
         </div>
         {filteredCities.map((el) => (

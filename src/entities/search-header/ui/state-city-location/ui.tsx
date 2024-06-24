@@ -39,7 +39,7 @@ export const StateCityLocation = ({
       </div>
       <div className="px-4">
         <h3 className="text-black">{stateName}</h3>
-        <p className="text-xs text-text-3">{t("search.entire-area")}</p>
+        <p className="text-gray-8 text-xs">{t("search.entire-area")}</p>
       </div>
       <p className="mt-2 px-4 text-xs font-semibold text-black ">
         {t("search.select-settlement")}
@@ -48,7 +48,7 @@ export const StateCityLocation = ({
         <ComboboxOptions key={stateCity.id} value={stateCity}>
           <div className="mr-2 px-4 py-2">
             <p className="text-black">{stateCity.name}</p>
-            <p className="text-text-3 ">{stateCity.city_type_title}</p>
+            <p className="text-gray-8 ">{stateCity.city_type_title}</p>
           </div>
         </ComboboxOptions>
       ))}

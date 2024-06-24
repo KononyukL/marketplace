@@ -9,12 +9,12 @@ export const Categories = () => {
 
   return (
     <div>
-      <div className="m-auto mb-20 flex max-w-categories  items-center justify-between gap-2 py-3   text-xl font-semibold text-title">
+      <div className="m-auto mb-20 flex max-w-categories  items-center justify-between gap-2 py-3   text-xl font-semibold text-primary">
         {data?.map((category) => (
           <Link
             href={`categories/${category.id}`}
             key={category.id}
-            className="underline transition-all hover:text-primary-hover"
+            className="hover:text-secondary-light underline transition-all"
           >
             {category.title}
           </Link>

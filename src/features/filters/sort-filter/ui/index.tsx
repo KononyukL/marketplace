@@ -23,16 +23,14 @@ export const SortFilter = <T,>({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-sort-filter ml-auto">
+    <div className="ml-auto w-sort-filter">
       <Listbox value={selected} onChange={onChange}>
         <div className="relative ">
           <Listbox.Button
             onClick={() => setOpen(!open)}
-            className="relative  w-full cursor-default rounded border border-border-2 bg-white py-2 pl-3 pr-10 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
+            className="border-gray-4  relative w-full cursor-default rounded border bg-white py-2 pl-3 pr-10 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
           >
-            <span className="block truncate text-additional">
-              {selected.title}
-            </span>
+            <span className="text-teal-0 block truncate">{selected.title}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <svg
                 className={cn("l h-4 w-4 transition-transform", className, {
@@ -64,7 +62,7 @@ export const SortFilter = <T,>({
                   key={i}
                   className={({ active }) =>
                     `relative cursor-default select-none px-3 py-1 ${
-                      active ? "bg-tags text-additional" : "text-gray-900"
+                      active ? "text-teal-0 bg-teal-4" : "text-gray-900"
                     }`
                   }
                   value={el}

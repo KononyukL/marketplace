@@ -12,7 +12,7 @@ export const TermComponent = () => {
         <span>
           <a
             href="https://teamchallenge.io"
-            className="underline hover:text-primary-hover focus:text-primary"
+            className="underline hover:text-secondary-light focus:text-secondary"
           >
             https://teamchallenge.io/.
           </a>

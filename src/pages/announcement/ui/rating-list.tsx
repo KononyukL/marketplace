@@ -15,17 +15,17 @@ export const RatingList = ({ ratingList }: { ratingList: IRatingList }) => {
     <ul className="flex flex-col">
       {RATING_MAPPING.map(({ key, label }, index) => (
         <li key={index} className="flex items-center gap-2 align-middle">
-          <span className="text-text-3">{label}</span>
+          <span className="text-gray-8">{label}</span>
           <RatingStar iconsCount={1} size={16} initialValue={1} />
           <hr
             className={
               "w-24 border-border-secondary " +
-              cn("border-text-2", {
-                "border-additional": ratingList[key] > 0,
+              cn("border-gray-2", {
+                "border-teal-0": ratingList[key] > 0,
               })
             }
           />
-          <span className="text-title">{ratingList[key]}</span>
+          <span className="text-primary">{ratingList[key]}</span>
         </li>
       ))}
     </ul>

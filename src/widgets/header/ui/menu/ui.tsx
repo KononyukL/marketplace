@@ -11,13 +11,13 @@ export const Menu = () => {
 
   return (
     <div>
-      <div className="m-auto flex max-w-main items-center justify-between pb-6 pl-14 pr-14 pt-6 text-title">
+      <div className="m-auto flex max-w-main items-center justify-between pb-6 pl-14 pr-14 pt-6 text-primary">
         <BurgerMenu />
         <nav className="flex gap-10 font-semibold ">
-          <Link href="#" className="hover:text-primary-hover">
+          <Link href="#" className="hover:text-secondary-light">
             {t("menu.selection")}
           </Link>
-          <Link href="#" className="hover:text-primary">
+          <Link href="#" className="hover:text-secondary">
             {t("menu.articles")}
           </Link>
         </nav>

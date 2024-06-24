@@ -12,12 +12,12 @@ export const Tabs = ({
   const [selectedTab, setSelectedTab] = useState(activeTab ?? 0);
   return (
     <div>
-      <ul className="flex gap-8 border-b border-text-2 font-medium">
+      <ul className="border-gray-2 flex gap-8 border-b font-medium">
         {(children as ReactElement[]).map((item: ReactElement, index) => (
           <li
             key={index}
-            className={cn("px-2 pb-1 font-medium text-title", {
-              "border-b-[3px] border-primary text-primary":
+            className={cn("px-2 pb-1 font-medium text-primary", {
+              "border-b-[3px] border-secondary text-secondary":
                 index === selectedTab,
             })}
           >

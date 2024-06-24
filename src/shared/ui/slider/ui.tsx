@@ -35,7 +35,7 @@ export const SliderComponent = ({ images }: { images: IImageFull[] }) => {
             />
           ))}
         </Slider>
-        <div className="img-count absolute bottom-4 right-4 inline-flex items-center gap-1 rounded-lg px-4 py-2 text-title">
+        <div className="img-count absolute bottom-4 right-4 inline-flex items-center gap-1 rounded-lg px-4 py-2 text-primary">
           <Icons.Camera />
           {images.length}
         </div>

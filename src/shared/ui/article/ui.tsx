@@ -37,11 +37,11 @@ export const Article = ({
               height={177}
             />
           ) : (
-            <div className="h-44 max-w-article rounded bg-disable"></div>
+            <div className="bg-gray-5 h-44 max-w-article rounded"></div>
           )}
         </div>
         <div className=" mt-3 w-full ">
-          <div className="mb-2  flex gap-3 text-sm text-text-3">
+          <div className="text-gray-8  mb-2 flex gap-3 text-sm">
             <p>{formHour}</p>
             <p>
               {t("articles.read")} {time} Хв
@@ -51,14 +51,14 @@ export const Article = ({
             <h3 className="font-medium">
               {title.length > 15 && text.slice(0, 30) + "..."}
             </h3>
-            <p className="min-h-article text-sm  text-text-3">
+            <p className="text-gray-8 min-h-article  text-sm">
               {text.length > 150 && text.slice(0, 140) + "..."}
             </p>
           </div>
-          <div className="mb-2  flex h-6 gap-2 text-additional">
+          <div className="text-teal-0  mb-2 flex h-6 gap-2">
             {attributes &&
               attributes?.map((el) => (
-                <p key={el.id} className="rounded-tags-2 bg-tags px-2">
+                <p key={el.id} className="bg-teal-4 rounded-tags-2 px-2">
                   {el.title}
                 </p>
               ))}

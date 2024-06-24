@@ -77,15 +77,15 @@ export const Advertisement = ({
             className="h-9 w-9"
           />
           <div className="flex flex-col gap-1 ">
-            <p className="text-text-3">{author ?? "No name"}</p>
+            <p className="text-gray-8">{author ?? "No name"}</p>
             <LocationSeller width={13}>
               {cityType}
               {city}
             </LocationSeller>
           </div>
           <div className="flex flex-col gap-1">
-            <UserType userType={userType} className="text-text-4" />
-            <p className="text-text-3">
+            <UserType userType={userType} className="text-blue-0" />
+            <p className="text-gray-8">
               {t("advertisement.reviews")}: {reviewsCount}
             </p>
           </div>

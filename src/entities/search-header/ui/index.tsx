@@ -87,7 +87,7 @@ export const SearchHeader = memo(() => {
     <div className="flex  justify-center">
       <Form form={form} onSubmit={onSubmit}>
         <div className="flex gap-1">
-          <div className="flex w-search items-center rounded border border-solid border-border-2 bg-white">
+          <div className="border-gray-4 flex w-search items-center rounded border border-solid bg-white">
             <SearchCategories
               onClear={clearSearchTerm}
               hideClear={!searchTerm}

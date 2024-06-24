@@ -4,41 +4,56 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#FF7100",
-        "primary-hover": "rgba(255, 113, 0, 0.80)",
-        secondary: "#1E1D1D",
-        additional: "#2A907F",
-        tertiary: "#4200FF",
-        "tertiary-2": "#64748B",
-        input: "#CACACA",
-        "input-2": "#20056D",
-        label: "#1A1A1A",
+        "primary-light": "#10182880", //rgba(16, 24, 40, 0.5)
+        primary: "#101828",
+
+        "secondary-light": "#FF7100cc", // rgba(255, 113, 0, 0.80)
+        secondary: "#FF7100",
+        "secondary-dark": "#D96000", // #ff7100, rgba(0, 0, 0, 0.15);
+
+        "teal-0": "#2A907F", //additional
+        "teal-1": "#2a907fe6", //rgba(42, 144, 127, 0.9)
+        "teal-2": "#247a6c", // #2a907f, rgba(0, 0, 0, 0.15);
+        "teal-3": "#2a907fb3", // rgba(42,144, 127, 0,7)
+        "teal-4": "#2a907f30", // rgba(42, 144, 127, 0.19) tags
+
+        "blue-0": "#0D71A8", //text-4
+        "blue-1": "#4200FF", //tertiary
+        "blue-2": "#20056D", //input-2
+
+        "pink-0": "#F79495",
+        "pink-1": "#FF8D8F",
+        "pink-2": "#ff5457e6", // rgba(255, 84, 87, 0.9)
+        "pink-3": "#d9474a", // #ff5457, rgba(0, 0, 0, 0.15)
         error: "#EE0004",
-        text: "#434242",
-        title: "#101828",
-        "text-2": "#CACFDD",
-        "border-footer": "#8E99B533",
-        "border-2": "#C4C4C4",
-        "text-3": "#757982",
-        "text-4": "#0D71A8",
-        "text-secondary": "#444444",
-        "border-auth": "#8D8A8A",
-        disable: "#BBBABA",
-        hover: "#0000000a",
-        active: "#D96000",
-        fill: "#FFFEFE",
-        "button-filter": "#FF8D8F",
-        "hover-filter": "rgba(255, 84, 87, 0.9)",
+
+        "gray-0": "#FFFEFE", //fill
+        "gray-1": "#edeeee",
+        "gray-2": "#CACFDD", //text-2
+        "gray-3": "#CACACA", //input
+        "gray-4": "#C4C4C4", //border-2
+        "gray-5": "#BBBABA", //disable
+        "gray-6": "#C8B4FF",
+        "gray-7": "#8D8A8A", //border-auth
+        "gray-8": "#757982", //text-3
+        "gray-9": "#64748B", //tertiary-2
+        "gray-10": "#93b2e040", //button-scroll rgba(147, 178, 224, 0.25)
+        "gray-11": "#434242", //text
+        "gray-12": "#444444", //text-secondary
+        "gray-13": "#8E99B533", //border-footer
+        "gray-14": "#89898926", //rgba(137, 137, 137, 0.15)
+
+        "dark-0": "#00000026", //"rgba(0, 0, 0, 0,15)" tags
+        "dark-1": "#0000000a", //hover
+        "dark-2": "#1e0b0182", // register
+        "dark-3": "#1E1D1D", //secondary
+        "dark-4": "#1A1A1A", //label
       },
       boxShadow: {
         "input-error": "0px 2px 2px #F79495, 0px 0px 0px 4px #F79495",
         "input-focus": "0px 2px 2px #C8B4FF, 0px 0px 0px 4px #C8B4FF",
         box: "0px 0px 60px 0px rgba(137, 137, 137, 0.15)",
         "button-scroll": " 0px 6px 40px 0px rgba(147, 178, 224, 0.25)",
-      },
-      backgroundColor: {
-        register: "rgba(30, 11, 1, 0.51)",
-        tags: "rgba(42, 144, 127, 0.19)",
       },
 
       borderRadius: {

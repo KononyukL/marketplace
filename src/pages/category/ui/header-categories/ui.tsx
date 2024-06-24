@@ -23,12 +23,16 @@ export const CategoryHeader = ({
         segmentTitle={`${t("header.category")} ${segmentTitle}`}
       />
       <div className="relative mx-14 h-64 max-w-main px-8 pb-10 pt-12 text-white">
-        <div className="text-title-2 relative z-10 flex max-w-categories-header flex-col items-start gap-3 break-normal ">
+        <div className="text-gray-0 relative z-10 flex max-w-categories-header flex-col items-start gap-3 break-normal ">
           <h3 className="text-[28px] leading-snug">{t("header.title")}</h3>
           <p className="pb-2 text-base leading-relaxed">
             {t("header.text-title")}
           </p>
-          <Button size="xsm" variant="outline" className="px-8 py-2 text-title">
+          <Button
+            size="xsm"
+            variant="outline"
+            className="px-8 py-2 text-primary"
+          >
             <Link href="#">{t("header.button")}</Link>
           </Button>
         </div>

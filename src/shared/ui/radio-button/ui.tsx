@@ -23,13 +23,13 @@ export const RadioButton = ({ options, onChange, value }: IRadioButton) => {
             <input
               name="type"
               type="radio"
-              className="before:content[''] hover:before:opacity-1 peer relative  h-5 w-5 cursor-pointer appearance-none rounded-full border-2 border-border-2 text-additional transition-all  duration-300 before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-additional checked:before:bg-additional hover:border-additional"
+              className="before:content[''] hover:before:opacity-1 text-teal-0 checked:border-teal-0  checked:before:bg-teal-0 hover:border-teal-0 border-gray-4 peer relative h-5 w-5 cursor-pointer appearance-none  rounded-full border-2 transition-all duration-300 before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity"
               id={`${option.value}`}
               onChange={handleChange}
               value={option.value}
               checked={value === option.value}
             />
-            <span className="pointer-events-none absolute left-[10px] top-2/4 -translate-x-2/4 -translate-y-2/4 text-additional opacity-0 transition-opacity peer-checked:opacity-100">
+            <span className="text-teal-0 pointer-events-none absolute left-[10px] top-2/4 -translate-x-2/4 -translate-y-2/4 opacity-0 transition-opacity peer-checked:opacity-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-3.5 w-3.5"
