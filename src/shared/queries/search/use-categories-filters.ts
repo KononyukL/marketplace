@@ -46,6 +46,7 @@ export const useCategoriesFilters = ({
       categoryId: defaultFilters?.categoryId,
       ...categoriesFilters,
       searchTerm: searchFilters?.searchTerm ?? "",
+      location: searchFilters?.location,
     };
   }, [defaultFilters, searchFilters, categoriesFilters]);
 

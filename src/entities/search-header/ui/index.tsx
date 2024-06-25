@@ -2,10 +2,11 @@ import { SearchLocation } from "@/entities/search-header/ui/search-location";
 import { Form } from "@/shared/ui";
 import { useForm } from "react-hook-form";
 import { ButtonSearch } from "@/shared/ui/buttons/ui/button-search";
-import { useGetCategoriesSearch } from "@/shared/queries/search";
+import { useCategoriesSearch } from "@/shared/queries/search";
 import { useRouter } from "next/router";
 import { SearchCategories } from "@/entities/search-header/ui/search-categories";
 import {
+  CATEGORIES_SEARCH_KEY,
   GLOBAL_SEARCH_KEY,
   useCategoriesFilters,
 } from "@/shared/queries/search/use-categories-filters";
@@ -30,30 +31,30 @@ export const SearchHeader = memo(() => {
   const searchTerm = watch("searchTerm");
   const location = watch("location");
 
-  const { refetch } = useGetCategoriesSearch({
-    filters,
-    config: { enabled: false },
-    disabledRefetch: true,
-  });
+  const { mutate: searchCategories, isLoading } = useCategoriesSearch();
 
   const router = useRouter();
 
-  const redirectToCategoryBySearch = async () => {
-    const isCategoriesPage = router.pathname.includes("categories");
+  const redirectToCategoryBySearch = () => {
     const hasSearchTerm = Boolean(filters.searchTerm);
 
-    if (!isCategoriesPage && hasSearchTerm) {
-      const { data } = await refetch();
+    if (hasSearchTerm) {
+      const { searchTerm, location, size, page } = filters;
 
-      if (data) {
-        const searchParams = new URLSearchParams(window.location.search);
-        searchParams.append(GLOBAL_SEARCH_KEY, filters.searchTerm);
-        const search = searchParams.toString();
-        const categoryId = data?.category?.id ?? 0;
-
-        const pathname = `/categories/${categoryId}?${search}`;
-        void router.push(pathname);
-      }
+      searchCategories(
+        { filters: { searchTerm, location, size, page } },
+        {
+          onSuccess: (data) => {
+            const searchParams = new URLSearchParams(window.location.search);
+            searchParams.delete(CATEGORIES_SEARCH_KEY);
+            searchParams.append(GLOBAL_SEARCH_KEY, filters.searchTerm);
+            const search = searchParams.toString();
+            const categoryId = data?.category?.id ?? 0;
+            const pathname = `/categories/${categoryId}?${search}`;
+            void router.replace(pathname);
+          },
+        },
+      );
     }
   };
 
@@ -81,7 +82,7 @@ export const SearchHeader = memo(() => {
     [setValue],
   );
 
-  const isSubmitDisabled = !searchTerm && !filters.searchTerm;
+  const isSubmitDisabled = (!searchTerm && !filters.searchTerm) || isLoading;
 
   return (
     <div className="flex  justify-center">
