@@ -58,7 +58,6 @@ export const Category = () => {
   const { data: searchResults, isFetching } = useGetCategoriesSearch({
     filters,
   });
-
   const { data: categoriesData } = useGetCategories();
 
   const { sortSelected, sortFilter, onSortChange, onMainFilterChange } =
@@ -111,7 +110,7 @@ export const Category = () => {
   };
 
   return (
-    <div className="min-h-category  m-auto max-w-main text-black">
+    <div className="m-auto  min-h-category max-w-main text-black">
       {searchResults ? renderSearchResults() : <Spinner />}
       <div className="flex gap-8">
         {!shouldShowNothingFound && (
@@ -170,7 +169,6 @@ export const Category = () => {
           />
         </div>
       </div>
-
       <AnimalShelter />
     </div>
   );

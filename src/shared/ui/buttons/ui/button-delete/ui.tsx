@@ -1,14 +1,14 @@
 import Image from "next/image";
+import React from "react";
 
 interface IButtonSearch {
-  onClick?: () => void;
+  onClick?: (e: React.SyntheticEvent) => void;
 }
 export const ButtonDelete = ({ onClick }: IButtonSearch) => {
   return (
-    <button type="button">
+    <button type="button" onClick={onClick}>
       <Image
         className="w-full"
-        onClick={onClick}
         src="/images/delete-icon.svg"
         alt="Delete"
         width={27}

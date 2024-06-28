@@ -1,9 +1,13 @@
 import { paths } from "@/shared/routing";
 import { axiosInstance } from "../config";
-import { type ICategoriesSearch } from "@/shared/api/search/types";
+import {
+  type ICategoriesSearch,
+  type ISearchData,
+} from "@/shared/api/search/types";
 import { categoriesFilterNormalizers } from "@/shared/api/search/normalizers";
-import { parseParams } from "@/shared/config";
+import { convertCases, parseParams } from "@/shared/config";
 import { type ICategoriesSearchFilters } from "@/shared/queries/search/types";
+import { DEFAULT_LOCALE } from "@/shared/queries/constants";
 
 class SearchActions {
   async getSearch(
@@ -18,6 +22,19 @@ class SearchActions {
         params: normalizedFilters,
         paramsSerializer: (params) => parseParams(params),
       },
+    );
+    return result.data;
+  }
+
+  async search({
+    langCode = DEFAULT_LOCALE,
+    filters,
+  }: ISearchData): Promise<ICategoriesSearch> {
+    const normalizedFilters = categoriesFilterNormalizers(filters);
+
+    const result = await axiosInstance.post<ICategoriesSearch>(
+      `${paths.search.get_all}${langCode}/search`,
+      convertCases("snakeCase", normalizedFilters),
     );
     return result.data;
   }

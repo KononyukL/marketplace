@@ -1,6 +1,14 @@
-import { useQuery, type UseQueryResult } from "react-query";
+import {
+  useMutation,
+  type UseMutationResult,
+  useQuery,
+  type UseQueryResult,
+} from "react-query";
 import Search from "@/shared/api/search";
-import { type ICategoriesSearch } from "@/shared/api/search/types";
+import {
+  type ICategoriesSearch,
+  type ISearchData,
+} from "@/shared/api/search/types";
 import { DEFAULT_LOCALE } from "@/shared/queries/constants";
 import { type ICategoriesSearchFilters } from "./types";
 import { useEffect } from "react";
@@ -37,4 +45,17 @@ export function useGetCategoriesSearch({
   }, [filters, disabledRefetch]);
 
   return query;
+}
+
+export function useCategoriesSearch(): UseMutationResult<
+  ICategoriesSearch,
+  unknown,
+  ISearchData
+> {
+  return useMutation(Search.search.bind(Search), {
+    onError: (error: Error) => {
+      // TODO: replace console.log with a user-friendly notification using notistack
+      console.log(error.message);
+    },
+  });
 }

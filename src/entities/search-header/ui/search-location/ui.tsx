@@ -35,6 +35,7 @@ export const SearchLocation = ({
     onClear,
     name,
     control,
+    handleStateSelection,
   });
 
   const renderLocationOptions = () => {

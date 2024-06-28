@@ -8,7 +8,7 @@ export const useLocationState = (defaultLocation?: IState) => {
   const [isInputFocused, setInputFocus] = useState(false);
 
   const handleStateSelection = useCallback(
-    (state: IState) => () => {
+    (state: IState | null) => () => {
       setSelectedState(state);
     },
     [],

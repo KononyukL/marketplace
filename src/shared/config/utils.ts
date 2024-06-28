@@ -60,3 +60,39 @@ export const parseParams = (params: any) => {
 
   return options ? options.slice(0, -1) : options;
 };
+
+type caseTypes = "snakeCase" | "camelCase";
+
+export const getSnakeCase = (text?: string): string =>
+  text
+    ? text
+        .split(/(?=[A-Z])/)
+        .join("_")
+        .toLowerCase()
+    : "";
+export const getCamelCase = (text?: string): string =>
+  text
+    ? text
+        .toLowerCase()
+        .replace(/([-_][a-z])/g, (group) =>
+          group.toUpperCase().replace("_", ""),
+        )
+    : "";
+
+export const convertCases = <T>(
+  type: caseTypes,
+  data = {},
+): Record<string, T> => {
+  const updated = Object.entries(data).map(([key, value]) => {
+    const updatedKey =
+      type === "snakeCase" ? getSnakeCase(key) : getCamelCase(key);
+    if (Array.isArray(value) && value[0] instanceof Object) {
+      return [updatedKey, value.map((item) => convertCases(type, item))];
+    }
+    if (value instanceof Object && !Array.isArray(value)) {
+      return [updatedKey, convertCases(type, value)];
+    }
+    return [updatedKey, value];
+  });
+  return Object.fromEntries(updated);
+};

@@ -1,4 +1,4 @@
-import { type ChangeEvent, Fragment, type ReactNode } from "react";
+import React, { type ChangeEvent, Fragment, type ReactNode } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { ButtonDelete } from "@/shared/ui/buttons/ui/button-delete";
 import { Icons } from "@/shared/config";
@@ -14,7 +14,7 @@ interface ISearch<T> {
   forceDropdownOpen?: boolean;
   querystring: string;
   stateId?: number;
-  onClearLocation?: () => void;
+  onClearLocation?: (e: React.SyntheticEvent) => void;
 }
 
 // todo: probably we can make this component more generalizable

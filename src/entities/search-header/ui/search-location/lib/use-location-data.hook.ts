@@ -10,6 +10,7 @@ interface useLocationDataProps {
   name: string;
   control: Control;
   onClear?: () => void;
+  handleStateSelection: (state: IState | null) => () => void;
 }
 
 export const useLocationData = ({
@@ -18,6 +19,7 @@ export const useLocationData = ({
   name,
   onClear,
   control,
+  handleStateSelection,
 }: useLocationDataProps) => {
   const {
     data: cities,
@@ -39,6 +41,7 @@ export const useLocationData = ({
   const setSelectedLocation = ({ id, name }: ICity) => {
     searchCitiesByName("");
     onFieldChange({ id, name });
+    handleStateSelection(null)();
   };
 
   const getDisplayValue = () => {
@@ -48,16 +51,26 @@ export const useLocationData = ({
     return "";
   };
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    searchCitiesByName(event.target.value);
-  };
+  const handleClearLocation = useCallback(
+    (e?: React.SyntheticEvent) => {
+      e?.stopPropagation();
 
-  const handleClearLocation = useCallback(() => {
-    if (onClear) {
-      onClear();
+      if (onClear) {
+        onClear();
+      }
+      searchCitiesByName("");
+    },
+    [onClear, searchCitiesByName],
+  );
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    searchCitiesByName(value);
+
+    if (!value) {
+      handleClearLocation();
     }
-    searchCitiesByName("");
-  }, [onClear, searchCitiesByName]);
+  };
 
   return {
     data: {
