@@ -5,8 +5,8 @@ import {
   combineReducers,
 } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
-import storage from "redux-persist/lib/storage";
 import { authReducer, authSliceName } from "./auth";
+import storage from "./storage";
 
 const rootReducer = combineReducers({ [authSliceName]: authReducer });
 const persistedReducer = persistReducer(
