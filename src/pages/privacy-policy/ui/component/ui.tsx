@@ -8,8 +8,29 @@ export const PolicyComponent = () => {
     <>
       <p className="pb-6 font-medium">{t("privacy-policy.paragraphs.start")}</p>
       <p className="pb-3">{t("privacy-policy.paragraphs.start-one")}</p>
-      <p>{t("privacy-policy.paragraphs.start-two")}</p>
-      <p className="pb-6">{t("privacy-policy.paragraphs.start-three")}</p>
+      <p>
+        {t("privacy-policy.paragraphs.start-two")}{" "}
+        <span>
+          <a
+            href="https://teamchallenge.io"
+            className="underline hover:text-secondary-light focus:text-secondary"
+          >
+            https://teamchallenge.io/.
+          </a>
+        </span>
+      </p>
+      <p className="pb-6">
+        {t("privacy-policy.paragraphs.start-three")}
+        <span>
+          <a
+            href="https://staging-animalmarketplace-team.vercel.app"
+            className="underline hover:text-secondary-light focus:text-secondary"
+          >
+            https://staging-animalmarketplace-team.vercel.app/#
+          </a>{" "}
+          {t("privacy-policy.paragraphs.start-four")}
+        </span>
+      </p>
       <div className="list-decimal pb-6 text-base font-medium leading-relaxed text-primary">
         {textTranslationKeys.map((el, i) => (
           <div key={i}>
@@ -21,7 +42,7 @@ export const PolicyComponent = () => {
                     <h4>{`${i + 1}.${subI + 1}. ${t(subEl.subtitle)}`}</h4>
                   )}
                   {subEl.items && (
-                    <ul className="text-gray-12 list-inside list-disc font-normal">
+                    <ul className="list-inside list-disc font-normal text-gray-12">
                       {subEl.items.map((item, itemI) => (
                         <li className="pl-2" key={itemI}>
                           {t(item)}

@@ -90,16 +90,19 @@ export const TemplateCard = ({
         </div>
         <p
           onClick={stopPropagation}
-          className={cn("text-gray-8 text-base", className, {
+          className={cn("text-base text-gray-8", className, {
             "mb-3 line-clamp-2": size === "sm",
             "mb-4 line-clamp-3": size === "lg",
           })}
         >
           {text}
         </p>
-        <div className="text-teal-0 flex gap-2">
+        <div className="flex gap-2 text-teal-0 ">
           {attributes.map((el) => (
-            <p key={el.attribute_id} className="bg-teal-4 rounded-tags-2 px-2">
+            <p
+              key={el.attribute_id}
+              className="rounded-tags-2 bg-teal-0 px-2 backdrop-opacity-95"
+            >
               {el.title.toLowerCase()}
             </p>
           ))}
