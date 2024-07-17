@@ -39,10 +39,11 @@
   },
   "privacy-policy": {
     "paragraphs": {
-      "start": "Last modified 12.02. 2024",
+      "start": "Last modified 12.02.2024",
       "start-one": "Welcome to the “Animal Market” marketplace page!",
-      "start-two": "“Animal Market” is a pet project that is not profitable or commercial. The marketplace was created while participating in the Team Challenge project. More information about Team Challenge can be found at https://teamchallenge.io/.",
-      "start-three": "The Animal Market pet project team cares about your personal data and does everything possible to protect it. This Privacy Policy is written to help you understand what personal data is collected, stored and used and what happens to it when you use the marketplace https://staging-animalmarketplace-team.vercel.app/# (hereinafter referred to as the Site).",
+      "start-two": "“Animal Market” is a pet project that is not profitable or commercial. The marketplace was created while participating in the Team Challenge project. More information about Team Challenge can be found at - ",
+      "start-three": "The Animal Market pet project team cares about your personal data and does everything possible to protect it. This Privacy Policy is written to help you understand what personal data is collected, stored and used and what happens to it when you use the marketplace ",
+      "start-four": "(here in after referred to as the Site).",
       "end-one": "By using Animal Market, you acknowledge and agree to the terms and conditions described in this Privacy Policy.",
       "end-two": "Thank you for being part of our community!",
       "end-three": "Sincerely, the Animal Market team."
@@ -63,14 +64,14 @@
       "subtitle-one-c": "Automatically collected information",
       "subtitle-two-a": "Communication",
       "subtitle-two-b": "Improvement of services",
-      "subtitle-three": "Information sharing",
+      "subtitle-three": "Third party service providers",
       "subtitle-four-a": "Account settings",
       "subtitle-four-b": "Manage notifications"
     },
     "list": {
       "list-one-a": "When registering an account, we collect data such as your name, email address, phone number and address of residence for your further comfortable use of the site.",
-      "list-one-b": "User-generated information We collect any information, including text, images, and videos, that you provide to us voluntarily (product announcements, reviews, and comments left on the site).",
-      "list-one-c": "Automatically collected information We also automatically collect data such as your IP address, browser type, device information and usage patterns to improve your user experience and to improve our services.",
+      "list-one-b": "We collect any information, including text, images, and videos, that you provide to us voluntarily (product announcements, reviews, and comments left on the site).",
+      "list-one-c": "We also automatically collect data such as your IP address, browser type, device information and usage patterns to improve your user experience and to improve our services.",
       "list-two-a": "We may use your contact information to communicate with you regarding orders, promotions, and important updates regarding our marketplace.",
       "list-two-b": "Analyzing user behavior helps us to improve our website, optimize the user experience and personalize content according to your preferences.",
       "list-three-a": "We may share your information with trusted service providers who help us operate our marketplace and serve you.",

@@ -8,9 +8,30 @@ export const PolicyComponent = () => {
     <>
       <p className="pb-6 font-medium">{t("privacy-policy.paragraphs.start")}</p>
       <p className="pb-3">{t("privacy-policy.paragraphs.start-one")}</p>
-      <p>{t("privacy-policy.paragraphs.start-two")}</p>
-      <p className="pb-6">{t("privacy-policy.paragraphs.start-three")}</p>
-      <div className="list-decimal pb-6 text-base font-medium leading-relaxed text-title">
+      <p>
+        {t("privacy-policy.paragraphs.start-two")}{" "}
+        <span>
+          <a
+            href="https://teamchallenge.io"
+            className="hover:text-primary-hover underline focus:text-primary"
+          >
+            https://teamchallenge.io/.
+          </a>
+        </span>
+      </p>
+      <p className="pb-6">
+        {t("privacy-policy.paragraphs.start-three")}
+        <span>
+          <a
+            href="https://staging-animalmarketplace-team.vercel.app"
+            className="hover:text-primary-hover underline focus:text-primary"
+          >
+            https://staging-animalmarketplace-team.vercel.app/#
+          </a>{" "}
+          {t("privacy-policy.paragraphs.start-four")}
+        </span>
+      </p>
+      <div className="text-title list-decimal pb-6 text-base font-medium leading-relaxed">
         {textTranslationKeys.map((el, i) => (
           <div key={i}>
             <h3 className="pt-6 ">{`${i + 1}. ${t(el.title)}`}</h3>
