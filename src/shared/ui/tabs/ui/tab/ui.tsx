@@ -4,5 +4,5 @@ export interface ITabProps {
 }
 
 export const Tab = ({ children }: React.PropsWithChildren<ITabProps>) => {
-  return <div className="text-text-secondary mt-6">{children}</div>;
+  return <div className="text-gray-12 mt-6">{children}</div>;
 };

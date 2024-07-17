@@ -8,7 +8,7 @@ export const Footer = () => {
   const { t } = useTranslation(["common"]);
 
   return (
-    <footer className=" bg-title text-white">
+    <footer className=" bg-primary text-white">
       <div className="m-auto max-w-main p-14">
         <div className="mb-12 flex items-start justify-between">
           <div className="flex w-full max-w-footer justify-between gap-5">
@@ -21,10 +21,10 @@ export const Footer = () => {
           </div>
           <Image src={"images/logo.svg"} alt="Logo" width={136} height={44} />
         </div>
-        <div className="border-t-solid flex items-start justify-between border-t border-t-border-footer pt-8">
+        <div className="border-t-solid border-t-gray-13 flex items-start justify-between border-t pt-8">
           <p>
             animalmarketplace.com.ua
-            <span className="text-text-2">
+            <span className="text-gray-2">
               &#169;2024 animalmarketplace.com.ua. All rights reserved
             </span>
           </p>

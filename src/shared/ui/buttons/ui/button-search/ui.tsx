@@ -8,7 +8,7 @@ export const ButtonSearch = ({ disabled, onClick }: IButtonSearch) => {
   return (
     <button
       onClick={onClick}
-      className=" enabled:active:bg-active flex  cursor-pointer  items-center justify-center rounded bg-white px-2.5 shadow-button-scroll  enabled:hover:bg-primary-hover enabled:hover:text-white disabled:border disabled:border-border-2 disabled:text-disable "
+      className=" disabled:border-gray-4 disabled:text-gray-5  flex  cursor-pointer items-center justify-center rounded bg-white px-2.5  shadow-button-scroll enabled:hover:bg-secondary-light enabled:hover:text-white enabled:active:bg-secondary-dark disabled:border "
       disabled={disabled}
     >
       <Icons.Search />

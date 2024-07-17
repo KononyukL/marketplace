@@ -13,7 +13,7 @@ export const UserAvatar = ({
   return (
     <div
       className={
-        "flex flex-shrink-0 items-center justify-center rounded-full bg-additional text-white " +
+        "bg-teal-0 flex flex-shrink-0 items-center justify-center rounded-full text-white " +
         className
       }
     >

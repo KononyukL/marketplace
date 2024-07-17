@@ -7,9 +7,9 @@ export const WelcomeBanner = () => {
 
   return (
     <div className="relative shrink grow basis-2/4 text-white">
-      <div className="relative z-10 flex min-h-screen flex-col justify-between bg-register pb-32 pl-8 pt-14">
+      <div className="bg-dark-2 relative z-10 flex min-h-screen flex-col justify-between pb-32 pl-8 pt-14">
         <div>
-          <h2 className="text-auth-title mb-4 font-bold leading-tight">
+          <h2 className="mb-4 text-auth-title font-bold leading-tight">
             {t("auth.welcome-banner")}
           </h2>
           <p className="w-full max-w-registerText text-xl font-medium leading-7">

@@ -22,7 +22,7 @@ export const CityLocation = ({ data }: ICityLocation) => {
         <ComboboxOptions key={city.id} value={city}>
           <div className="group px-4 py-2">
             <p>{city.name}</p>
-            <div className="text-text-3 group-hover:text-black">
+            <div className="text-gray-8 group-hover:text-black">
               <p>
                 {city.city_type_title}, {city.state_name},
               </p>

@@ -24,17 +24,17 @@ export const PriceFilter = ({ min_price, max_price }: IPriceFilter) => {
   }, [min_price, max_price, setValue]);
 
   return (
-    <div className="mt-8 w-full border-b border-b-border-2 ">
+    <div className="border-b-gray-4 mt-8 w-full border-b ">
       <h3>{t("filters-categories.price")}</h3>
       <div className="flex py-6">
         <ControlledInput
           startAdornment={<div>{t("filters-categories.from")}</div>}
-          className="[&>input]:border-input [&>input]:pl-10 [&>input]:focus-within:border-additional [&>input]:hover:border-additional"
+          className="[&>input]:hover:border-teal-0 [&>input]:focus-within:border-teal-0 [&>input]:border-gray-3 [&>input]:pl-10"
           name="minPrice"
         />
         <ControlledInput
           startAdornment={<div>{t("filters-categories.to")}</div>}
-          className="[&>input]:border-input [&>input]:pl-10 [&>input]:focus-within:border-additional [&>input]:hover:border-additional"
+          className="[&>input]:focus-within:border-teal-0 [&>input]:hover:border-teal-0 [&>input]:border-gray-3 [&>input]:pl-10"
           name="maxPrice"
         />
       </div>

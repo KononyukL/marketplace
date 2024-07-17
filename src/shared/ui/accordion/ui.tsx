@@ -17,7 +17,7 @@ export const Accordion = ({
   return (
     <div
       className={cn(
-        "w-full border-b border-b-text-2 bg-white py-2 ",
+        "border-b-gray-2 w-full border-b bg-white py-2 ",
         className,
         {
           "max-w-filter": size === "xsm",

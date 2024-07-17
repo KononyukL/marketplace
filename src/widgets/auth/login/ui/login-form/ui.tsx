@@ -72,7 +72,7 @@ export const LoginForm = () => {
         </div>
         <div className="mt-4 flex justify-between">
           <Label
-            className="flex flex-row-reverse items-center gap-1.5 focus-within:text-black hover:text-primary"
+            className="flex flex-row-reverse items-center gap-1.5 focus-within:text-black hover:text-secondary"
             text={t("auth.remember-me")}
           >
             <div>
@@ -80,7 +80,7 @@ export const LoginForm = () => {
             </div>
           </Label>
           <Link
-            className="text-black hover:text-primary"
+            className="text-black hover:text-secondary"
             href="/reset-password"
           >
             {t("auth.forgot-password")}

@@ -26,12 +26,12 @@ export const AnnouncementHeader = ({
 
   return (
     <div className="mb-8 flex flex-col gap-6 rounded-lg bg-white p-8">
-      <div className="heart-icon-container flex items-center justify-between text-sm text-text-3">
+      <div className="heart-icon-container text-gray-8 flex items-center justify-between text-sm">
         {t("header.published")} {formattedDate.toLowerCase()}
         <Icons.Heart className="[&_path]:stroke-text-title cursor-pointer [&_path]:stroke-[1.5]" />
       </div>
-      <div className="text-text-3">
-        <h2 className="mb-2 text-[28px] font-medium leading-9 text-title">
+      <div className="text-gray-8">
+        <h2 className="mb-2 text-[28px] font-medium leading-9 text-primary">
           {title}
         </h2>
         <LocationSeller>
@@ -39,13 +39,13 @@ export const AnnouncementHeader = ({
         </LocationSeller>
       </div>
       {quantity > 0 && (
-        <p className="text-base text-additional">{t("header.in-stock")}</p>
+        <p className="text-teal-0 text-base">{t("header.in-stock")}</p>
       )}
-      <p className="text-[28px] font-bold leading-9 text-title">
+      <p className="text-[28px] font-bold leading-9 text-primary">
         {price} {t("header.currency")}
       </p>
       <Button variant="primary">{t("header.add-to-cart-btn")}</Button>
-      <Button variant="outline" className="font-medium text-title">
+      <Button variant="outline" className="font-medium text-primary">
         {t("header.contact-seller-btn")}
       </Button>
     </div>

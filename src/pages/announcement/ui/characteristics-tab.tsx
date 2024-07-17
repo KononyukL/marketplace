@@ -12,8 +12,8 @@ export const CharacteristicsTab = ({
       <tbody>
         {[...attributes, ...favoriteAttributes].map((el, index) => (
           <tr key={index}>
-            <td className="text-text-3">{el.group_title}</td>
-            <td className="text-title">{el.title}</td>
+            <td className="text-gray-8">{el.group_title}</td>
+            <td className="text-primary">{el.title}</td>
           </tr>
         ))}
       </tbody>
