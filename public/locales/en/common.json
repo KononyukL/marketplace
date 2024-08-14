@@ -8,8 +8,8 @@
     "button-register": "Sign up",
     "login": "Sign in",
     "register": "Sign up",
-    "auth-facebook": "Continue via Facebook",
-    "auth-google": "Continue via Google",
+    "auth-facebook": "Continue with Facebook",
+    "auth-google": "Continue with Google",
     "or": "or",
     "title-login": "Sign in to your account",
     "comment-text-one": "I highly recommend Animal Market as a great place to find a pet. I was looking for a dog for myself. On the website, I received a lot of necessary and useful information about each dog I was interested in. Also, communication with the dog owners was easy and friendly.",
@@ -26,7 +26,8 @@
     "banner-text": "Here you can sell a cat, cow, chickens or buy or donate animals from a trusted shelter and kennel!",
     "error-email": "Email address format is incorrect",
     "error-password": "Invalid password format",
-    "error-required": "This field is required"
+    "error-required": "This field is required",
+    "your-profile": "Your profile"
   },
   "menu": {
     "selection": "Selection of the animal",
