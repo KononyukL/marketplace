@@ -17,14 +17,14 @@ export const Login = () => {
         <div className="m-auto w-full max-w-auth">
           <Link href="/">
             <Image
-              className="m-auto mb-12"
+              className="mb-[70px]"
               src="/images/logo-auth.svg"
               alt="Logo"
-              width={142}
+              width={124}
               height={48}
             />
           </Link>
-          <h2 className="mb-10 text-center text-4xl font-bold text-black">
+          <h2 className="mb-8  text-3xl font-medium text-black">
             {t("auth.title-login")}
           </h2>
           <LoginForm />

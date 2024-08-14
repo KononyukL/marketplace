@@ -24,6 +24,7 @@ export default {
         "text-secondary": "#444444",
         "border-auth": "#8D8A8A",
         disable: "#BBBABA",
+        "button-disable": "#EDEEEE",
         hover: "#0000000a",
         active: "#D96000",
         fill: "#FFFEFE",

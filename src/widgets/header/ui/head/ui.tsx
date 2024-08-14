@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Language } from "@/shared/ui";
-import { useTranslation } from "next-i18next";
 import { Icons } from "@/shared/config";
+import { AuthProfile } from "@/widgets/header/ui/auth-profile";
 
 export const Head = () => {
-  const { t } = useTranslation("common");
   return (
     <div className="relative z-[99] bg-title ">
       <div className="m-auto flex max-w-main  justify-between pb-4 pl-14 pr-14 pt-4">
@@ -14,13 +13,7 @@ export const Head = () => {
         </Link>
         <div className="flex gap-11 ">
           <div>
-            <Link
-              href="/login"
-              className="flex gap-1 text-white hover:text-primary hover:transition-all"
-            >
-              <Icons.User />
-              {t("auth.login")}
-            </Link>
+            <AuthProfile />
           </div>
           <div className="flex  gap-4 ">
             <Icons.Heart className="cursor-pointer text-white hover:text-primary hover:transition-all" />
