@@ -19,7 +19,7 @@ export const RegistrationForm = () => {
   });
   const {
     reset,
-    formState: { errors },
+    formState: { errors, isDirty, isValid },
   } = form;
 
   const { mutate: signUp } = useSignUp();
@@ -70,7 +70,12 @@ export const RegistrationForm = () => {
             />
           </Label>
         </div>
-        <Button className="mt-10" type="submit" variant="primary">
+        <Button
+          className="mt-10"
+          type="submit"
+          variant={isDirty && isValid ? "primary" : "disabled"}
+          disabled={!isDirty ?? !isValid}
+        >
           {t("auth.button-register")}
         </Button>
       </div>

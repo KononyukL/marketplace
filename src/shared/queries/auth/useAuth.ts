@@ -1,5 +1,5 @@
-import { selectAuth } from "@/shared/store/auth";
-import { useAppSelector } from "@/shared/store/hooks";
+import { authActions, selectAuth } from "@/shared/store/auth";
+import { useAppDispatch, useAppSelector } from "@/shared/store/hooks";
 import { axiosInstance } from "@/shared/api/config";
 import axios, { type AxiosError, type InternalAxiosRequestConfig } from "axios";
 import { SESSION_CONFIG, readJWTData } from "@/shared/config";
@@ -21,6 +21,8 @@ export const useAuth = () => {
   const router = useRouter();
   const retry = useRef<boolean>(false);
 
+  const dispatch = useAppDispatch();
+
   const requestInterceptor = async (config: InternalAxiosRequestConfig) => {
     const isRefresh = config?.url?.includes("refresh");
 
@@ -32,6 +34,7 @@ export const useAuth = () => {
       if (!isValidToken) {
         if (!auth.refreshToken) {
           //TODO add logout in future
+          dispatch(authActions.clearAuth());
           void router.push("/login");
         }
 
@@ -59,6 +62,7 @@ export const useAuth = () => {
           !auth?.refreshToken
         ) {
           //TODO add logout in future
+          dispatch(authActions.clearAuth());
           void router.push("/login");
         } else if (error.config) {
           retry.current = true;

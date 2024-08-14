@@ -20,8 +20,9 @@ export const LoginForm = () => {
   });
   const {
     reset,
-    formState: { errors },
+    formState: { errors, isDirty, isValid },
   } = form;
+
   const handleSwitchIconPassword = () => setIconPassword(!iconPassword);
 
   const { mutate } = useSignIn();
@@ -86,7 +87,12 @@ export const LoginForm = () => {
             {t("auth.forgot-password")}
           </Link>
         </div>
-        <Button className="mt-10" type="submit" variant="primary">
+        <Button
+          className="mt-10"
+          type="submit"
+          variant={isDirty && isValid ? "primary" : "disabled"}
+          disabled={!isDirty ?? !isValid}
+        >
           {t("auth.login")}
         </Button>
       </div>
