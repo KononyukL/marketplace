@@ -22,7 +22,7 @@ export const PrivacyPolicy = () => {
         startingTitle={t("menu.start-link")}
         segmentTitle={t(segmentTitle)}
       />
-      <FooterPages title={t(segmentTitle)}>
+      <FooterPages title={t(segmentTitle)} variant="primary">
         <PolicyComponent />
       </FooterPages>
     </>

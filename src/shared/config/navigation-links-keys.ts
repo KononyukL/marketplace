@@ -1,5 +1,5 @@
 export const animalMarketLinks = [
-  { translationKey: "footer.animal-market.title-one", link: "/" },
+  { translationKey: "footer.animal-market.title-one", link: "/about-us" },
   { translationKey: "footer.animal-market.title-two", link: "/" },
   { translationKey: "footer.animal-market.title-three", link: "/" },
   { translationKey: "footer.animal-market.title-four", link: "/term" },

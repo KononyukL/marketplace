@@ -22,7 +22,7 @@ export const Term = () => {
         startingTitle={t("menu.start-link")}
         segmentTitle={t(segmentTitle)}
       />
-      <FooterPages title={t(segmentTitle)}>
+      <FooterPages title={t(segmentTitle)} variant="primary">
         <TermComponent />
       </FooterPages>
     </>
