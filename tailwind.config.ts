@@ -66,6 +66,7 @@ export default {
         "article-text": "282px",
         "advertisement-photo": "390px",
         "footer-pages": "874px",
+        "footer-pages-secondary": "948px",
         "categories-header": "517px",
         "review-text-box": "604px",
         article: "284px",

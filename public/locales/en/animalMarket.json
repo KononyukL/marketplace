@@ -1,4 +1,32 @@
 {
+  "about-us": {
+    "title": {
+      "title-one": "Meet our team, the maestros behind creating “Animal Market”.",
+      "title-two-a": "We are part of ",
+      "title-two-b": " where you can find a team to work on pet projects. "
+    },
+    "name": {
+      "pm": "Serhii Tkhoruk",
+      "qa": {
+        "mentor": "Ангеліна Дрех",
+        "engineer-a": "Tetiana Zakharova",
+        "engineer-b": "Maxym Korniiets"
+      },
+      "designer": {
+        "mentor": "Nataliia Kucher",
+        "designer-a": "Maria Pohranychna",
+        "designer-b": "Sofiіa Lazebna",
+        "designer-c": "Polina Kiiashko"
+      },
+      "developer": {
+        "front-end-a": "Liliia Kononiuk",
+        "front-end-b": "Alla Zuko",
+        "front-end-c": "Olha Ponomarova",
+        "java-a": "Andrii Haponov",
+        "java-b": "Bohdan Koval"
+      }
+    }
+  },
   "terms-of-use": {
     "paragraphs": {
       "start-one": "Welcome to the “Animal Market” marketplace page!",

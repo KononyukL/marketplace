@@ -41,7 +41,7 @@ export const TemplateCard = ({
       <div
         className={cn("flex items-center justify-between", className, {
           "mb-2": size === "sm",
-          "mb-4": size === "lg",
+          "m-4": size === "lg",
         })}
       >
         <div className="flex items-start justify-between gap-4">
