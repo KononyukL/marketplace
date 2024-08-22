@@ -1,6 +1,6 @@
 import { cn } from "@/shared/lib/cn";
 
-type ButtonVariants = "primary" | "secondary" | "outline";
+type ButtonVariants = "primary" | "secondary" | "outline" | "disabled";
 
 interface IButton
   extends React.DetailedHTMLProps<
@@ -23,13 +23,14 @@ export const Button = ({
   return (
     <button
       className={cn(
-        "w-full cursor-pointer  rounded-lg py-3 transition-all",
+        "w-full cursor-pointer  rounded-lg py-3 transition-all ",
         className,
         {
           "bg-primary font-bold text-white hover:bg-primary-hover":
             variant === "primary",
           "bg-secondary text-white hover:bg-primary": variant === "secondary",
-          "flex justify-center border border-secondary bg-white text-secondary hover:border-primary-hover hover:text-primary-hover":
+          "bg-button-disable border-0  text-disable": variant === "disabled",
+          "flex justify-center border border-text-3 bg-white text-secondary hover:border-primary-hover hover:text-primary-hover":
             variant === "outline",
           "max-w-button-1": size === "xsm",
           "max-w-button": size === "sm",

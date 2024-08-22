@@ -17,14 +17,14 @@ export const Registration = () => {
         <div className="m-auto w-full max-w-auth">
           <Link href="/">
             <Image
-              className="m-auto mb-16"
+              className="mb-16 mb-[90px]"
               src="/images/logo-auth.svg"
               alt="Logo"
-              width={142}
+              width={124}
               height={48}
             />
           </Link>
-          <h2 className="mb-10 text-center text-4xl font-bold text-black">
+          <h2 className="mb-8  text-3xl font-medium text-black">
             {t("auth.register")}
           </h2>
           <RegistrationForm />
