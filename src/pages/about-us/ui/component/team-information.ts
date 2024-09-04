@@ -167,7 +167,7 @@ export const teamInformationKeys: ITeamKeys[] = [
   },
   {
     title: "about-us.name.qa.engineer-b",
-    position: "Java Developer",
+    position: "QA Engineer",
     image: "/images/team/Korniiets.jpg",
     items: [
       {

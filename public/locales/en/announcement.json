@@ -41,5 +41,8 @@
     "show-less": "show less",
     "show-more": "show more",
     "header": "Website security tips from Animal Market"
+  },
+  "reviewed-ads": {
+    "header": "Reviewed ads"
   }
 }

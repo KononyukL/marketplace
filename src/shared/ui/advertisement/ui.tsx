@@ -10,6 +10,7 @@ import { LocationSeller, UserAvatar, UserType } from "@/shared/ui";
 import { type TLocales } from "@/shared/config";
 import { useRouter as useNavigationRouter } from "next/navigation";
 import { TemplateCard } from "../template-card/ui";
+import { useLocalStorage } from "@/shared/hooks/use-localStorage-state";
 
 interface IAdvertisement {
   img: IImage[];
@@ -51,11 +52,23 @@ export const Advertisement = ({
   const date = useDateFormat({ date: ending, locale: locale as TLocales });
   const router = useNavigationRouter();
 
-  const onClickAdvertisement = () => router.push(`/announcement/${id}`);
+  const [reviewedId, setReviewedId] = useLocalStorage<number[]>(
+    "reviewed-ads-id",
+    [],
+  );
+
+  const onClickAdvertisement = (id: number) => {
+    const oldId = reviewedId.some((el) => el === id);
+    router.push(`/announcement/${id}`);
+    if (!oldId) setReviewedId((reviewedId) => [...reviewedId, id]);
+    router.push(`/announcement/${id}`);
+  };
 
   return (
     <div
-      onClick={onClickAdvertisement}
+      onClick={() => {
+        onClickAdvertisement(id);
+      }}
       className="flex cursor-pointer gap-6 rounded-lg bg-white p-8 text-black shadow-box"
     >
       <AdvertisementPhotos img={img} />

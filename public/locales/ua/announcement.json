@@ -41,5 +41,8 @@
     "show-less": "згорнути",
     "show-more": "детальніше",
     "header": "Поради з безпеки від Animal Market"
+  },
+  "reviewed-ads": {
+    "header": "Переглянуті оголошення"
   }
 }
