@@ -7,9 +7,10 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useDateFormat } from "@/shared/hooks/use-date-format";
 import { LocationSeller, UserAvatar, UserType } from "@/shared/ui";
-import { type TLocales } from "@/shared/config";
+import { REVIEWED_ADS_KEY_LS, type TLocales } from "@/shared/config";
 import { useRouter as useNavigationRouter } from "next/navigation";
 import { TemplateCard } from "../template-card/ui";
+import { useLocalStorage } from "@/shared/hooks/use-localStorage-state";
 
 interface IAdvertisement {
   img: IImage[];
@@ -28,6 +29,11 @@ interface IAdvertisement {
   id: number;
   top?: boolean;
 }
+
+type ReviewedAd = {
+  id: number;
+  timestamp: number; 
+};
 
 export const Advertisement = ({
   img,
@@ -51,11 +57,38 @@ export const Advertisement = ({
   const date = useDateFormat({ date: ending, locale: locale as TLocales });
   const router = useNavigationRouter();
 
-  const onClickAdvertisement = () => router.push(`/announcement/${id}`);
+  const [reviewedAds, setReviewedAds] = useLocalStorage<ReviewedAd[]>(
+    REVIEWED_ADS_KEY_LS,
+    [],
+  );
+
+  const onClickAdvertisement = (id: number) => {
+    const currentTime = Date.now();
+
+    const adAlreadyReviewed = reviewedAds.some((el) => el.id === id);
+
+    if (!adAlreadyReviewed) {
+      setReviewedAds((reviewedAds) => {
+        const updatedAds = [...reviewedAds, { id, timestamp: currentTime }];
+
+        if (updatedAds.length > 100) {
+          const sortedAds = updatedAds.sort(
+            (a, b) => b.timestamp - a.timestamp,
+          );
+          return sortedAds.slice(0, 100);
+        }
+
+        return updatedAds;
+      });
+    }
+    router.push(`/announcement/${id}`);
+  };
 
   return (
     <div
-      onClick={onClickAdvertisement}
+      onClick={() => {
+        onClickAdvertisement(id);
+      }}
       className="flex cursor-pointer gap-6 rounded-lg bg-white p-8 text-black shadow-box"
     >
       <AdvertisementPhotos img={img} />

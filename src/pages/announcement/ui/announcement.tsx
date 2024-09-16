@@ -10,6 +10,7 @@ import { SellerReviews } from "./seller-reviews";
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs";
 import { TipsInfo } from "./tips-info";
 import { useGetUserReview } from "../lib/use-get-user-review.hook";
+import { ReviewedAnnouncement } from "./reviewed-announcement";
 
 export const Announcement = () => {
   const { t } = useTranslation(["announcement", "common", "support"]);
@@ -62,6 +63,7 @@ export const Announcement = () => {
           </div>
         </div>
         <SellerReviews reviews={reviews} />
+        <ReviewedAnnouncement />
       </div>
     </>
   );
