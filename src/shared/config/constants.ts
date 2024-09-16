@@ -9,3 +9,6 @@ export const SORT_TITLES = {
 };
 
 export const PAGE_SIZE_CATEGORIES = 5;
+
+
+export const REVIEWED_ADS_KEY_LS = 'reviewed-ads'
