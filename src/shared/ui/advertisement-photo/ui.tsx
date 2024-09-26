@@ -11,7 +11,7 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
 
   if (!img.length) {
     return (
-      <div className="flex max-w-advertisement-photo flex-1 items-center justify-center">
+      <div className="w-advertisement-photo flex items-center justify-center">
         <Image
           className="rounded"
           src="/images/image-not-photo.png"
@@ -24,10 +24,9 @@ export const AdvertisementPhotos = ({ img }: IAdvertisementPhotos) => {
   }
 
   return (
-    <div className="relative flex h-image-advertisement max-w-advertisement-photo items-center justify-center overflow-hidden rounded bg-disable">
+    <div className="w-advertisement-photo relative flex h-image-advertisement items-center justify-center overflow-hidden rounded bg-disable">
       <Image
-        className="h-full rounded"
-        objectFit="contain"
+        className="h- h-full rounded object-cover object-top"
         src={firstImg.url}
         alt="foto"
         width={390}
