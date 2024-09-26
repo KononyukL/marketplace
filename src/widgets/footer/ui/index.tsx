@@ -23,7 +23,7 @@ export const Footer = () => {
         </div>
         <div className="border-t-solid flex items-start justify-between border-t border-t-border-footer pt-8">
           <p>
-            animalmarketplace.com.ua
+            <span>animalmarketplace.com.ua </span>
             <span className="text-text-2">
               &#169;2024 animalmarketplace.com.ua. All rights reserved
             </span>
