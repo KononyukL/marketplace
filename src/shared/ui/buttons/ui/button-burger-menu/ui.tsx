@@ -10,7 +10,7 @@ export const ButtonBurgerMenu = ({
     <button
       onClick={handleClick}
       type="button"
-      className={`z-10 flex h-7 w-7 cursor-pointer flex-col flex-wrap justify-around`}
+      className={`z-10 flex h-7 w-7  cursor-pointer flex-col flex-wrap justify-around sm:mx-5 md:mx-0`}
     >
       <div
         className={`block h-[0.25rem] w-7 origin-[1px] bg-black transition-all ${

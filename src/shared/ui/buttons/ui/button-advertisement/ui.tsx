@@ -6,8 +6,8 @@ import { Icons } from "@/shared/config";
 export const ButtonAdvertisement = () => {
   const { t } = useTranslation("common");
   return (
-    <Button size="xl" variant="primary">
-      <Link className="flex justify-center gap-2 text-white" href="#">
+    <Button size="xl" variant="primary" className=" sm:mt-4 md:mt-0">
+      <Link className="flex justify-center gap-2 text-white " href="#">
         <Icons.Plus />
         {t("button-advertisement")}
       </Link>

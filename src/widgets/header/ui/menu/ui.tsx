@@ -11,16 +11,19 @@ export const Menu = () => {
 
   return (
     <div>
-      <div className="m-auto flex max-w-main items-center justify-between pb-6 pl-14 pr-14 pt-6 text-title">
-        <BurgerMenu />
-        <nav className="flex gap-10 font-semibold ">
-          <Link href="#" className="hover:text-primary-hover">
-            {t("menu.selection")}
-          </Link>
-          <Link href="#" className="hover:text-primary">
-            {t("menu.articles")}
-          </Link>
-        </nav>
+      <div className="m-auto flex  max-w-main md:flex-row items-center justify-between pb-6 pl-14 pr-14 pt-6 text-title sm:flex-col">
+        <div className="flex flex-row  sm:my-6 md:my-0">
+          <BurgerMenu />
+          <nav className="flex gap-10 font-semibold ">
+            <Link href="#" className="hover:text-primary-hover">
+              {t("menu.selection")}
+            </Link>
+            <Link href="#" className="hover:text-primary">
+              {t("menu.articles")}
+            </Link>
+          </nav>
+        </div>
+
         <SearchHeader />
         <ButtonAdvertisement />
       </div>
