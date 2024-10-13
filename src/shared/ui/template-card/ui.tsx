@@ -41,7 +41,7 @@ export const TemplateCard = ({
       <div
         className={cn("flex items-center justify-between", className, {
           "mb-2": size === "sm",
-          "m-4": size === "lg",
+          "mb-3": size === "lg",
         })}
       >
         <div className="flex items-start justify-between gap-4">
@@ -77,8 +77,8 @@ export const TemplateCard = ({
         </div>
         <div
           className={cn("flex gap-4 text-base", className, {
-            "mb-2": size === "sm",
-            "mb-4": size === "lg",
+            "mb-3": size === "sm",
+            "mb-2": size === "lg",
           })}
         >
           {favoriteAttributes?.map((el) => (
@@ -89,9 +89,9 @@ export const TemplateCard = ({
         </div>
         <p
           onClick={stopPropagation}
-          className={cn("text-base text-text-3", className, {
-            "mb-3 line-clamp-2": size === "sm",
-            "mb-4 line-clamp-3": size === "lg",
+          className={cn("line-clamp-2 text-base  text-text-3", className, {
+            "mb-3": size === "sm",
+            "mb-4": size === "lg",
           })}
         >
           {text}
