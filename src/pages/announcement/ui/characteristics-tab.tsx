@@ -8,13 +8,13 @@ export const CharacteristicsTab = ({
   attributes: IAttribute[];
 }) => {
   return (
-   <>
-    {[...attributes, ...favoriteAttributes].map((el, index) => (
-      <div key={index} className="grid grid-cols-6 pb-3 last:pb-0">
-        <span className="text-text-3">{el.group_title}</span>
+ <div className="flex flex-col gap-3 flex-wrap max-h-[150px]">
+  {[...attributes, ...favoriteAttributes].map((el, index) => (
+    <div key={index} className="w-1/3 flex">
+        <span className="text-text-3 w-[50%]">{el.group_title}</span>
         <span className="text-title">{el.title}</span>
       </div>
-    ))}
-  </>
+  ))}
+</div>
   );
 };
