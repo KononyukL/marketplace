@@ -8,10 +8,10 @@ export const CharacteristicsTab = ({
   attributes: IAttribute[];
 }) => {
   return (
- <div className="flex flex-col gap-3 flex-wrap max-h-[150px]">
+ <div className="flex flex-col gap-3 flex-wrap max-h-[200px]">
   {[...attributes, ...favoriteAttributes].map((el, index) => (
-    <div key={index} className="w-1/3 flex">
-        <span className="text-text-3 w-[50%]">{el.group_title}</span>
+    <div key={index} className="w-[50%] flex">
+        <span className="text-text-3 w-[35%]">{el.group_title}</span>
         <span className="text-title">{el.title}</span>
       </div>
   ))}
