@@ -42,7 +42,7 @@ export const AnnouncementMainInfo = ({
       : additional_information;
 
   return (
-    <div className="mt-8 rounded-lg bg-white p-8">
+    <div className="mt-8 min-h-tab rounded-lg bg-white p-8">
       <Tabs>
         <Tab title={t("main-info.description")}>{descriptionDetails}</Tab>
         <Tab title={t("main-info.characteristics")}>{characteristics}</Tab>
