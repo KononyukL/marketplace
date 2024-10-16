@@ -82,6 +82,7 @@ export default {
       minHeight: {
         article: "100px",
         category: "1056px",
+        tab: "238px",
       },
       height: {
         border: "26px",
@@ -95,6 +96,7 @@ export default {
         photo: "168px",
         "photo-2": "360px",
         "image-2": "150px",
+        characteristics: "120px"
       },
       fontSize: {
         "auth-title": "45px",
