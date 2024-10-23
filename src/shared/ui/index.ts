@@ -7,4 +7,5 @@ export * from "./animal-shelter";
 export * from "./user-avatar";
 export * from "./user-type";
 export * from "./location-seller";
-export  * from './controlled-checkbox'
+export * from "./controlled-checkbox";
+export * from "./error-boundary";
