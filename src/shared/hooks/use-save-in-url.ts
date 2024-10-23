@@ -45,8 +45,7 @@ export const useSaveInURL = <T extends JSONCompatible<T>>(
   const savedData = useMemo(() => {
     if (query[paramName] != null) {
       try {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        const parsedData = JSON.parse(query[paramName]!);
+        const parsedData = JSON.parse(query[paramName]);
         if (parsedData && typeof parsedData === "object") {
           return parsedData as T;
         }

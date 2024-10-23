@@ -35,7 +35,7 @@ export const useAuth = () => {
         if (!auth.refreshToken) {
           //TODO add logout in future
           dispatch(authActions.clearAuth());
-          void router.push("/login");
+          router.push("/login");
         }
 
         const { accessToken } = await refreshToken({});
@@ -63,7 +63,7 @@ export const useAuth = () => {
         ) {
           //TODO add logout in future
           dispatch(authActions.clearAuth());
-          void router.push("/login");
+          router.push("/login");
         } else if (error.config) {
           retry.current = true;
 

@@ -13,7 +13,7 @@ export function useSignIn(): UseMutationResult<IAuth, unknown, IFormLogin> {
   return useMutation(AuthService.login.bind(AuthService), {
     onSuccess: (data) => {
       dispatch(authActions.addAuth(data));
-      void router.push("/");
+      router.push("/");
     },
     onError: (error: Error) => {
       console.log(error.message);
@@ -28,7 +28,7 @@ export function useSignUp(): UseMutationResult<IAuth, unknown, ILogin> {
   return useMutation(AuthService.signup.bind(AuthService), {
     onSuccess: (data) => {
       dispatch(authActions.addAuth(data));
-      void router.push("/");
+      router.push("/");
     },
     onError: (error: Error) => {
       // TODO: replace console.log with a user-friendly notification using notistack

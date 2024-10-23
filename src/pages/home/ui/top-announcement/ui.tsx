@@ -72,7 +72,7 @@ export const TopAnnouncement = () => {
                 cityType={el.location.city_type_short_title}
                 img={el.images}
                 attributes={el.attributes}
-                prise={el.price}
+                price={el.price}
                 ending={el.updated}
                 text={el.description}
                 title={el.title}

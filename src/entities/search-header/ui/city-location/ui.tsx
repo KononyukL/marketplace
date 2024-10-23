@@ -6,13 +6,22 @@ import { Spinner } from "@/shared/ui/spinner";
 
 interface ICityLocation {
   data?: ICity[];
+  isLoading?: boolean;
 }
 
-export const CityLocation = ({ data }: ICityLocation) => {
+export const CityLocation = ({ data, isLoading }: ICityLocation) => {
   const { t } = useTranslation("common");
 
-  if (!data) {
+  if (isLoading) {
     return <Spinner />;
+  }
+
+  if (!data || data.length === 0) {
+    return (
+      <div className="relative cursor-default select-none px-4 py-2 text-gray-700">
+        {t("search.nothing-found")}
+      </div>
+    );
   }
 
   return (

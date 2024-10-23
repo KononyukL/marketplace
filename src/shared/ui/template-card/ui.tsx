@@ -12,7 +12,7 @@ interface IDivTags
   top?: boolean;
   date: string;
   title: string;
-  prise: number;
+  price: number;
   text: string;
   favoriteAttributes: IAttribute[];
   attributes: IAttribute[];
@@ -26,7 +26,7 @@ export const TemplateCard = ({
   title,
   favoriteAttributes,
   attributes,
-  prise,
+  price,
   text,
   className,
 }: React.PropsWithChildren<IDivTags>) => {
@@ -72,7 +72,7 @@ export const TemplateCard = ({
             {title}
           </p>
           <p className="flex-none font-semibold">
-            {prise ? `${prise} ${t("advertisement.uah")}` : ""}
+            {price ? `${price} ${t("advertisement.uah")}` : ""}
           </p>
         </div>
         <div

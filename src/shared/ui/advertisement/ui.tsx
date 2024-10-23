@@ -16,7 +16,7 @@ interface IAdvertisement {
   img: IImage[];
   ending: string;
   title: string;
-  prise: number;
+  price: number;
   text: string;
   author: string;
   city: string;
@@ -32,7 +32,7 @@ interface IAdvertisement {
 
 type ReviewedAd = {
   id: number;
-  timestamp: number; 
+  timestamp: number;
 };
 
 export const Advertisement = ({
@@ -42,7 +42,7 @@ export const Advertisement = ({
   cityType,
   author,
   text,
-  prise,
+  price,
   title,
   reviewsCount,
   attributes,
@@ -97,7 +97,7 @@ export const Advertisement = ({
           top={top}
           date={date}
           title={title}
-          prise={prise}
+          price={price}
           favoriteAttributes={favoriteAttributes}
           text={text}
           attributes={attributes}

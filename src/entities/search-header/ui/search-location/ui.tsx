@@ -29,7 +29,7 @@ export const SearchLocation = ({
     handleInputFocus,
   } = useLocationState(defaultLocation);
 
-  const { data, utilityFunctions } = useLocationData({
+  const { data, utilityFunctions, isLoading } = useLocationData({
     selectedStateId: selectedState?.id,
     defaultLocation,
     onClear,
@@ -44,12 +44,13 @@ export const SearchLocation = ({
     const isStateCitySelectionAvailable = !selectedState?.id;
 
     if (isStateSelectionAvailable) {
-      return <CityLocation data={data.cities} />;
+      return <CityLocation data={data.cities} isLoading={isLoading.cities} />;
     } else if (isStateCitySelectionAvailable) {
       return (
         <StateLocation
           states={data.states}
           handleStateSelection={handleStateSelection}
+          isLoading={isLoading.states}
         />
       );
     } else {
@@ -58,6 +59,7 @@ export const SearchLocation = ({
           handleStateSelection={handleStateSelection}
           stateName={selectedState.name}
           stateCities={data.stateCities}
+          isLoading={isLoading.stateCities}
         />
       );
     }
@@ -65,6 +67,9 @@ export const SearchLocation = ({
 
   const shouldShowNoResultsMessage =
     data.cities?.length === 0 && data.queryString !== "";
+
+  const isLoadingData =
+    isLoading.cities || isLoading.states || isLoading.stateCities;
 
   return (
     <LocationSearchDropdown
@@ -80,7 +85,7 @@ export const SearchLocation = ({
       onClearLocation={utilityFunctions.handleClearLocation}
     >
       <Combobox.Options className="absolute z-50 max-h-60 w-full overflow-auto rounded-b-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
-        {shouldShowNoResultsMessage ? (
+        {shouldShowNoResultsMessage && !isLoadingData ? (
           <div className="relative cursor-default select-none px-4 py-2 text-gray-700">
             {t("search.nothing-found")}
           </div>

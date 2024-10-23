@@ -8,16 +8,26 @@ import { type IState } from "@/shared/queries/search/types";
 interface IStateLocation {
   states?: ILocation[];
   handleStateSelection: (state: IState) => () => void;
+  isLoading?: boolean;
 }
 
 export const StateLocation = ({
   states,
   handleStateSelection,
+  isLoading,
 }: IStateLocation) => {
   const { t } = useTranslation("common");
 
-  if (!states) {
+  if (isLoading) {
     return <Spinner />;
+  }
+
+  if (!states || states.length === 0) {
+    return (
+      <div className="relative cursor-default select-none px-4 py-2 text-gray-700">
+        {t("search.nothing-found")}
+      </div>
+    );
   }
 
   return (

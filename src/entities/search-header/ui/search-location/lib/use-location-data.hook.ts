@@ -25,10 +25,12 @@ export const useLocationData = ({
     data: cities,
     searchCitiesByName,
     queryString,
+    isLoading: isLoadingCities,
   } = useGetCitiesByName(defaultLocation?.name);
 
-  const { data: states } = useGetCountryStates();
-  const { data: stateCities } = useGetCitiesStates(selectedStateId);
+  const { data: states, isLoading: isLoadingStates } = useGetCountryStates();
+  const { data: stateCities, isLoading: isLoadingStateCities } =
+    useGetCitiesStates(selectedStateId);
 
   const { field } = useController({ name, control, defaultValue: {} });
   const { onChange: onFieldChange, value: fieldValue } = field;
@@ -80,6 +82,11 @@ export const useLocationData = ({
       queryString,
       selectedCity,
       fieldValueId: fieldValue.id,
+    },
+    isLoading: {
+      cities: isLoadingCities,
+      states: isLoadingStates,
+      stateCities: isLoadingStateCities,
     },
     utilityFunctions: {
       setSelectedLocation,

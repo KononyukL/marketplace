@@ -9,17 +9,27 @@ interface IStateCityLocation {
   stateCities?: ICity[];
   handleStateSelection: ({ id, name }: IState) => () => void;
   stateName: string;
+  isLoading?: boolean;
 }
 
 export const StateCityLocation = ({
   stateCities,
   handleStateSelection,
   stateName,
+  isLoading,
 }: IStateCityLocation) => {
   const { t } = useTranslation("common");
 
-  if (!stateCities) {
+  if (isLoading) {
     return <Spinner />;
+  }
+
+  if (!stateCities || stateCities.length === 0) {
+    return (
+      <div className="relative cursor-default select-none px-4 py-2 text-gray-700">
+        {t("search.nothing-found")}
+      </div>
+    );
   }
 
   return (
