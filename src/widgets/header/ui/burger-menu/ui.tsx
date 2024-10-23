@@ -29,7 +29,7 @@ export const BurgerMenu = () => {
               <ButtonBurgerMenu handleClick={handleClick} isOpen={isOpen} />
             </div>
           </div>
-          <nav className=" flex w-full flex-col flex-wrap gap-4">
+          <nav className="flex w-full flex-col flex-wrap gap-4">
             {data?.map((el) => (
               <Link
                 onClick={handleClick}
