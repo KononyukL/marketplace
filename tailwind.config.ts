@@ -83,6 +83,7 @@ export default {
         article: "100px",
         category: "1056px",
         tab: "238px",
+        textarea: '160px'
       },
       height: {
         border: "26px",

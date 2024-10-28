@@ -6,12 +6,14 @@ interface IModal {
   onClose: () => void;
   show: boolean;
   title: string;
+  userName?: string;
 }
 
 export const Modal = ({
   children,
   onClose,
   show,
+  userName,
   title,
 }: React.PropsWithChildren<IModal>) => {
   return (
@@ -44,11 +46,11 @@ export const Modal = ({
                 <Dialog.Panel className="w-full max-w-[60%] transform overflow-hidden rounded-lg bg-[#FFFEFE] p-6 text-left align-middle shadow-xl transition-all">
                   <div className="flex items-center justify-between pb-6">
                     <Dialog.Title className="text-[28px] font-medium leading-9 text-title">
-                      {title}
+                      {title} {userName}
                     </Dialog.Title>
                     <button
                       onClick={() => onClose()}
-                      className="bg-fill rounded-lg p-2"
+                      className="rounded-lg bg-fill p-2"
                     >
                       <Icons.Cross />
                     </button>

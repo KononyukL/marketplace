@@ -44,5 +44,18 @@
   },
   "reviewed-ads": {
     "header": "Reviewed ads"
+  },
+  "modal-to-contact": {
+    "title": "Write to the seller",
+    "text-one": "Here you can ask questions to the seller, arrange a purchase and delivery.",
+    "text-two": "Chat with the seller is available in your account.",
+    "textarea-placeholder": "Message text ...",
+    "button-name": "Send",
+    "button-sending": "Sending...",
+    "label-text": "Your message",
+
+    "title-success": "Message sent!",
+    "text-success": "You can view the chat with the seller in your personal account.",
+    "button-success": "Go to chat"
   }
 }

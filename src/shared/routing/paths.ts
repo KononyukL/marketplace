@@ -40,4 +40,7 @@ export const paths = {
   review: {
     get_by_user_id: "/v1/users/",
   },
+  sendMessageSeller: {
+    message: "/v1/messages/",
+  },
 } as const;
