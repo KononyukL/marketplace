@@ -3,10 +3,13 @@ import { paths } from "@/shared/routing";
 import { axiosInstance } from "../config";
 
 class SendMessageActions {
-  async postMessage(text: string, recipientId: number): Promise<ISendMessageResponse> {
+  async postMessage(
+    text: string,
+    recipientId: number,
+  ): Promise<ISendMessageResponse> {
     const result = await axiosInstance.post<ISendMessageResponse>(
       paths.sendMessageSeller.message,
-      { text, recipientId }
+      { text, recipient_id: recipientId },
     );
     return result.data;
   }
