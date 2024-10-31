@@ -38,8 +38,11 @@ export const useSearchRedirection = () => {
 
       const categoryId = data?.category?.id ?? 0;
       const pathname = `/categories/${categoryId}`;
-
-      router.push(`${pathname}${query}`);
+      console.log(`${pathname}${query}`);
+      router.push({
+        pathname,
+        query,
+      });
     },
     [router, filters.location, filters.searchTerm],
   );

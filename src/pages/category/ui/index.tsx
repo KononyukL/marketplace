@@ -9,6 +9,7 @@ export const Category = () => {
     categoryIdToFind,
     filters,
     onCategoriesFiltersChange,
+    resetCategoriesFilters,
     form,
     hasFilters,
     reset,
@@ -23,7 +24,7 @@ export const Category = () => {
   } = useCategoryData();
 
   const onResetFilters = () => {
-    onCategoriesFiltersChange(null);
+    resetCategoriesFilters();
     reset();
   };
 

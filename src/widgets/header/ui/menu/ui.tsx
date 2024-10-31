@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ButtonAdvertisement } from "@/shared/ui/buttons/ui/button-advertisement";
 
 import { useTranslation } from "next-i18next";
-import { SearchHeader } from "@/entities/search-header/ui";
+import { SearchHeader } from "@/entities/search-header/ui/search-header";
 
 export const Menu = () => {
   const { t } = useTranslation("common");

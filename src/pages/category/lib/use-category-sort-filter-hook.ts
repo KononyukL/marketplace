@@ -1,11 +1,15 @@
+import { type ISortFilterOption } from "@/features/filters/sort-filter";
+import { SORT_TITLES } from "@/shared/config";
+import {
+  DEFAULT_PAGE_NUMBER,
+  DEFAULT_PAGE_SIZE,
+} from "@/shared/queries/constants";
 import {
   type ICategoriesFilters,
   type ICategoriesSearchFilters,
   type SORT_OPTIONS,
 } from "@/shared/queries/search/types";
 import { useCallback, useEffect, useMemo } from "react";
-import type { ISortFilterOption } from "@/features/filters/sort-filter";
-import { SORT_TITLES } from "@/shared/config";
 
 interface ISortOptions {
   filters: ICategoriesSearchFilters;
@@ -29,28 +33,32 @@ export function useCategorySortFilterHook({
     () =>
       sortFilter.find(({ value }) => value === filters.sortOption) ??
       defaultSortValue,
-    [filters.sortOption],
+    [filters.sortOption, defaultSortValue, sortFilter],
   );
 
   const onSortChange = useCallback(
     (value: ISortFilterOption<SORT_OPTIONS>) => {
-      onCategoriesFiltersChange({ ...filters, sortOption: value.value });
+      onCategoriesFiltersChange({
+        sortOption: value.value,
+        page: DEFAULT_PAGE_NUMBER,
+        size: DEFAULT_PAGE_SIZE,
+      });
     },
-    [onCategoriesFiltersChange, filters],
+    [onCategoriesFiltersChange],
   );
 
   const onMainFilterChange = useCallback(
     (mainFilters: ICategoriesFilters) => {
-      onCategoriesFiltersChange({ ...filters, ...mainFilters });
+      onCategoriesFiltersChange(mainFilters);
     },
-    [onCategoriesFiltersChange, filters],
+    [onCategoriesFiltersChange],
   );
 
   useEffect(() => {
     if (!filters.sortOption) {
       onSortChange(sortFilter[0]);
     }
-  }, [filters, onSortChange]);
+  }, [filters, onSortChange, sortFilter]);
 
   return { sortSelected, sortFilter, onSortChange, onMainFilterChange };
 }

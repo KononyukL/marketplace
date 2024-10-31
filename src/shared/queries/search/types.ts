@@ -1,4 +1,4 @@
-import { type WithRequired } from "@/shared/config";
+import { type PaginationType } from "@/shared/config";
 
 export enum SORT_OPTIONS {
   RATING_HIGHEST = "RATING_HIGHEST",
@@ -15,18 +15,20 @@ export interface IState {
   name: string;
 }
 
-export interface ICategoriesDefaultFilters {
-  size?: number;
-  page?: number;
-  categoryId?: number;
-}
-
 export interface ICategoriesSearch {
   searchTerm: string;
   location?: IState;
 }
 
-export interface ICategoriesFilters extends ICategoriesDefaultFilters {
+export interface ICategoriesDefaultFilters extends ICategoriesSearch {
+  size?: number;
+  page?: number;
+  categoryId?: number;
+}
+
+export interface ICategoriesFilters
+  extends PaginationType,
+    Partial<ICategoriesSearch> {
   breedIds?: number[];
   attributeIds?: number[];
   statesIds?: number[];
@@ -36,18 +38,13 @@ export interface ICategoriesFilters extends ICategoriesDefaultFilters {
   maxPrice?: number;
   ageIds?: number[];
   genderId?: number;
+  categoryId?: number;
 }
-
 export interface ICategoriesSearchFilters
-  extends ICategoriesSearch,
-    Omit<ICategoriesFilters, "page" | "size">,
-    WithRequired<ICategoriesDefaultFilters, "page" | "size"> {}
+  extends PaginationType,
+    ICategoriesFilters {}
 
-export interface CategoriesFiltersResult {
-  filters: ICategoriesSearchFilters;
-  onCategoriesSearchChange: (filters: ICategoriesSearch) => void;
-  onCategoriesFiltersChange: (filters: ICategoriesFilters | null) => void;
-}
+export interface ICategoriesSearchPageable extends ICategoriesSearchFilters {}
 
 export interface ICategoriesFiltersProps {
   defaultFilters?: ICategoriesDefaultFilters;

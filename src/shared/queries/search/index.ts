@@ -32,7 +32,10 @@ export function useGetCategoriesSearch({
   const query = useQuery(
     [SEARCH_CATEGORIES_KEY, filters],
     () => Search.getSearch(locale, filters),
-    { ...config, enabled: Boolean(filters), keepPreviousData: true },
+    {
+      ...config,
+      enabled: Boolean(filters.searchTerm || filters.location?.name),
+    },
   );
 
   return query;

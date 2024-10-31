@@ -1,20 +1,30 @@
-import { useCallback, useEffect } from "react";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useCallback, useEffect } from "react";
+import { type SubmitHandler, useForm } from "react-hook-form";
 
 import { searchSchema } from "@/shared/lib/validation/validation";
+import {
+  DEFAULT_PAGE_NUMBER,
+  DEFAULT_PAGE_SIZE,
+} from "@/shared/queries/constants";
+import { type ICategoriesSearchPageable } from "@/shared/queries/search/types";
 import { useCategoriesFilters } from "@/shared/queries/search/use-categories-filters";
-import { type ICategoriesSearch } from "@/shared/queries/search/types";
 
 export const useSearchForm = () => {
-  const { filters } = useCategoriesFilters();
+  const { filters, onCategoriesFiltersChange } = useCategoriesFilters();
 
-  const form = useForm<ICategoriesSearch>({
+  const form = useForm<ICategoriesSearchPageable>({
     mode: "all",
     resolver: zodResolver(searchSchema),
     defaultValues: {
-      searchTerm: filters.searchTerm,
-      location: filters.location,
+      searchTerm: filters?.searchTerm || "",
+      location: {
+        id: filters.location?.id || 0,
+        name: filters.location?.name || "",
+      },
+      size: filters.size || DEFAULT_PAGE_SIZE,
+      page: filters.page || DEFAULT_PAGE_NUMBER,
+      categoryId: filters?.categoryId,
     },
   });
 
@@ -23,21 +33,45 @@ export const useSearchForm = () => {
   const location = watch("location");
 
   const updateFormWithFilterValues = useCallback(() => {
-    setValue("searchTerm", filters.searchTerm);
-    setValue("location", filters.location);
+    setValue("searchTerm", filters?.searchTerm || "");
+    setValue("location", {
+      id: filters.location?.id || 0,
+      name: filters.location?.name || "",
+    });
+    setValue("size", filters.size || DEFAULT_PAGE_SIZE);
+    setValue("page", filters.page || DEFAULT_PAGE_NUMBER);
+    setValue("categoryId", filters?.categoryId);
   }, [filters, setValue]);
 
   useEffect(() => {
     updateFormWithFilterValues();
-  }, [filters.searchTerm, filters.location, updateFormWithFilterValues]);
+  }, [filters, updateFormWithFilterValues]);
 
   const clearSearchTerm = useCallback(() => {
     setValue("searchTerm", "");
   }, [setValue]);
 
   const clearLocation = useCallback(() => {
-    setValue("location", { name: "", id: 0 });
+    setValue("location", { id: 0, name: "" });
   }, [setValue]);
+
+  const onSubmit: SubmitHandler<ICategoriesSearchPageable> = useCallback(
+    (values) => {
+      const sanitizedLocation = {
+        id: values.location?.id ?? 0,
+        name: values.location?.name ?? "",
+      };
+      console.log(values, "values in on submit handler");
+      onCategoriesFiltersChange({
+        searchTerm: values?.searchTerm || "",
+        location: sanitizedLocation,
+        size: values.size || DEFAULT_PAGE_SIZE,
+        page: values.page || DEFAULT_PAGE_NUMBER,
+        categoryId: values?.categoryId,
+      });
+    },
+    [onCategoriesFiltersChange],
+  );
 
   return {
     form,
@@ -46,5 +80,6 @@ export const useSearchForm = () => {
     setValue,
     clearSearchTerm,
     clearLocation,
+    onSubmit,
   };
 };

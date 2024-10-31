@@ -1,58 +1,73 @@
-import { useCallback, useMemo } from "react";
-import { DEFAULT_PAGE, DEFAULT_SIZE } from "@/shared/queries/constants";
 import {
-  type ICategoriesFiltersProps,
-  type CategoriesFiltersResult,
-  type ICategoriesSearch,
+  DEFAULT_PAGE_SIZE,
+  DEFAULT_PAGE_NUMBER,
+} from "@/shared/queries/constants";
+import { useCallback, useMemo, useState } from "react";
+import {
   type ICategoriesFilters,
+  type ICategoriesFiltersProps,
   type ICategoriesSearchFilters,
 } from "./types";
-import { useSaveInURL } from "@/shared/hooks";
+import { deepEqual } from "@/shared/lib/deep-equal/deep-equal";
 
 export const GLOBAL_SEARCH_KEY = "globalSearch";
 export const CATEGORIES_SEARCH_KEY = "categoriesSearch";
 
 export const useCategoriesFilters = ({
   defaultFilters,
-}: ICategoriesFiltersProps = {}): CategoriesFiltersResult => {
-  const [
-    searchFilters = {
+}: ICategoriesFiltersProps = {}) => {
+  const initialFilters = useMemo(
+    () => ({
       searchTerm: "",
-    },
-    setSearchFilters,
-  ] = useSaveInURL<ICategoriesSearch>(GLOBAL_SEARCH_KEY);
-
-  const [categoriesFilters, setCategoriesFilters] =
-    useSaveInURL<ICategoriesFilters>(CATEGORIES_SEARCH_KEY);
-
-  const onCategoriesSearchChange = useCallback(
-    (filters: ICategoriesSearch) => {
-      setSearchFilters(filters);
-    },
-    [setSearchFilters],
+      location: { name: "", id: 0 },
+      size: DEFAULT_PAGE_SIZE,
+      page: DEFAULT_PAGE_NUMBER,
+      categoryId: undefined,
+    }),
+    [],
   );
 
+  const [categoriesFilters, setCategoriesFilters] =
+    useState<ICategoriesFilters>({
+      searchTerm: defaultFilters?.searchTerm || "",
+      location: defaultFilters?.location || { name: "", id: 0 },
+      size: defaultFilters?.size || DEFAULT_PAGE_SIZE,
+      page: defaultFilters?.page || DEFAULT_PAGE_NUMBER,
+      categoryId: defaultFilters?.categoryId,
+    });
+
   const onCategoriesFiltersChange = useCallback(
-    (filters: ICategoriesFilters | null) => {
-      setCategoriesFilters(filters);
+    (newFilters: Partial<ICategoriesFilters>) => {
+      setCategoriesFilters((prev) => {
+        const updatedFilters = { ...prev, ...newFilters };
+
+        if (!deepEqual(prev, updatedFilters)) {
+          return updatedFilters;
+        }
+
+        return prev;
+      });
     },
     [setCategoriesFilters],
   );
 
+  const resetCategoriesFilters = useCallback(() => {
+    setCategoriesFilters(initialFilters);
+  }, [initialFilters]);
+
   const filters = useMemo<ICategoriesSearchFilters>(() => {
     return {
-      size: defaultFilters?.size || DEFAULT_SIZE,
-      page: defaultFilters?.page || DEFAULT_PAGE,
-      categoryId: defaultFilters?.categoryId,
-      ...categoriesFilters,
-      searchTerm: searchFilters?.searchTerm ?? "",
-      location: searchFilters?.location,
+      size: categoriesFilters.size,
+      page: categoriesFilters.page,
+      categoryId: categoriesFilters.categoryId,
+      searchTerm: categoriesFilters.searchTerm || "",
+      location: categoriesFilters.location,
     };
-  }, [defaultFilters, searchFilters, categoriesFilters]);
+  }, [categoriesFilters]);
 
   return {
     filters,
-    onCategoriesSearchChange,
     onCategoriesFiltersChange,
+    resetCategoriesFilters,
   };
 };

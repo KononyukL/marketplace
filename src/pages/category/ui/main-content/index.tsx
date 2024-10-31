@@ -46,6 +46,7 @@ export const MainContent: React.FC<MainContentProps> = ({
   onPageChange,
   shouldShowNothingFound,
 }) => {
+  console.log(advertisements, "advertisements?");
   return (
     <div className="flex gap-8">
       {!shouldShowNothingFound && (
