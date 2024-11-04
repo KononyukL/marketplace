@@ -37,9 +37,11 @@ export const AnnouncementMainInfo = ({
     description === "" || description === null ? EMPTY_FIELD : description;
 
   const additionalInfo =
-    additional_information === null || additional_information === ""
-      ? EMPTY_FIELD
-      : additional_information;
+    additional_information === null || additional_information === "" ? (
+      <div className="text-text-3">{t("main-info.empty-field")}</div>
+    ) : (
+      additional_information
+    );
 
   return (
     <div className="mt-8 min-h-tab rounded-lg bg-white p-8">
@@ -47,7 +49,11 @@ export const AnnouncementMainInfo = ({
         <Tab title={t("main-info.description")}>{descriptionDetails}</Tab>
         <Tab title={t("main-info.characteristics")}>{characteristics}</Tab>
         <Tab title={t("main-info.docs-and-vaccines")}>
-          <DocsandVaccinesTab documents={documents} vaccines={vaccines} />
+          {documents.length === 0 && vaccines.length === 0 ? (
+            <div className="text-text-3">{t("main-info.empty-field")}</div>
+          ) : (
+            <DocsandVaccinesTab documents={documents} vaccines={vaccines} />
+          )}
         </Tab>
         <Tab title={t("main-info.additional-info")}>{additionalInfo}</Tab>
       </Tabs>
