@@ -10,6 +10,12 @@ const nextConfig = {
         port: "",
         pathname: "/**/**",
       },
+      {
+        protocol: "https",
+        hostname: process.env.NEXT_PUBLIC_SECOND_HOST_NAME,
+        port: "",
+        pathname: "/**/**",
+      },
     ],
   },
   webpack: (config) => {
