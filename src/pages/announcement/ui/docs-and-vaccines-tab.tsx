@@ -27,13 +27,14 @@ export const DocsandVaccinesTab = ({
   function closeModal() {
     setIsModalOpen(false);
   }
+
   return (
     <>
       <button
         onClick={() => openModal()}
-        className="border-text-secondary text-text-secondary mb-6 block border-b font-medium"
+        className="hover:text-primary-hover mb-6 block font-medium text-primary"
       >
-        {t("main-info.docs-and-vaccines")}
+        {t("main-info.open-images")}
       </button>
       <Modal
         show={isModalOpen}
