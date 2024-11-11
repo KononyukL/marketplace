@@ -12,6 +12,7 @@ interface IModalContactSeller {
   isOpen: boolean;
   title: string;
   userName: string;
+  userId: number | null;
 }
 
 export const AnnouncementModalContactSeller = ({
@@ -19,6 +20,7 @@ export const AnnouncementModalContactSeller = ({
   closeModal,
   title,
   userName,
+  userId,
 }: React.PropsWithChildren<IModalContactSeller>) => {
   const { t } = useTranslation("announcement");
 
@@ -26,7 +28,6 @@ export const AnnouncementModalContactSeller = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [recipientId, ] = useState<number | null>(1);
 
   const postMessageMutation = usePostMessage();
 
@@ -35,14 +36,15 @@ export const AnnouncementModalContactSeller = ({
     setLoading(true);
     setError(null);
 
-    if (!textareaValue || recipientId === null) {
+    if (!textareaValue || userId === null) {
       setLoading(false);
       setError("Text cannot be empty");
       return;
     }
     
-    postMessageMutation.mutate({ text: textareaValue, recipientId }, {
+    postMessageMutation.mutate({ text: textareaValue, recipientId: userId }, {
       onSuccess: () => {
+        closeModal();
         setIsModalOpen(true);
         setTextareaValue("");
       },
@@ -115,7 +117,7 @@ export const AnnouncementModalContactSeller = ({
         </div>
         <Link
           className="block w-full max-w-button-2 cursor-pointer rounded-lg bg-primary py-3 text-center font-bold text-white transition-all hover:bg-primary-hover"
-          href="sm"
+          href="#"
         >
           {t("modal-to-contact.button-success")}
         </Link>

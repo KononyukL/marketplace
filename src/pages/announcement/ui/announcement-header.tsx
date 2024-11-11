@@ -15,7 +15,7 @@ export const AnnouncementHeader = ({
   advertisement: IAdvertisementDetails;
 }) => {
   const { title, location, author, price, quantity, updated } = advertisement;
-  const { first_name } = author;
+  const { first_name, id } = author;
   const { city_name, state_name } = location;
 
   const { t } = useTranslation("announcement");
@@ -64,6 +64,7 @@ export const AnnouncementHeader = ({
           closeModal={() => setIsModalOpen(false)}
           title={t("modal-to-contact.title")}
           userName={first_name}
+          userId={id}
         />
       </div>
     </>

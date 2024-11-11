@@ -41,6 +41,6 @@ export const paths = {
     get_by_user_id: "/v1/users/",
   },
   sendMessageSeller: {
-    message: "/v1/messages/",
+    message: "/v1/messages",
   },
 } as const;
