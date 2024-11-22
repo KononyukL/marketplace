@@ -21,10 +21,17 @@ export const SortFilter = <T,>({
   className,
 }: ISortFilter<T>) => {
   const [open, setOpen] = useState(false);
+  console.log(open);
 
   return (
-    <div className="w-sort-filter ml-auto">
-      <Listbox value={selected} onChange={onChange}>
+    <div className="ml-auto w-sort-filter">
+      <Listbox
+        value={selected}
+        onChange={(value) => {
+          onChange(value);
+          setOpen(false);
+        }}
+      >
         <div className="relative ">
           <Listbox.Button
             onClick={() => setOpen(!open)}
@@ -57,6 +64,7 @@ export const SortFilter = <T,>({
             leave="transition ease-in duration-100"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
+            show={open}
           >
             <Listbox.Options className="absolute max-h-60 w-full overflow-auto  bg-white  text-base  ring-1 ring-black/5 focus:outline-none sm:text-sm">
               {options.map((el, i) => (

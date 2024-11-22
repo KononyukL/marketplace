@@ -65,7 +65,7 @@ export default {
         "how-it-work-text": "264px",
         "how-it-work": "316px",
         "article-text": "282px",
-        "advertisement-photo": "390px",
+        // "advertisement-photo": "390px",
         "footer-pages": "874px",
         "footer-pages-secondary": "948px",
         "categories-header": "517px",
@@ -78,6 +78,7 @@ export default {
         "sort-filter": "160px",
         "rating-box": "604px",
         "rating-list": "397px",
+        "advertisement-photo": "390px",
       },
       minHeight: {
         article: "100px",
