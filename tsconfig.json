@@ -30,6 +30,6 @@
     "**/*.cjs",
     "**/*.mjs",
     ".next/types/**/*.ts"
-  ],
+, "src/pages/404.tsx"  ],
   "exclude": ["node_modules"]
 }

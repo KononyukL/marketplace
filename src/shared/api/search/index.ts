@@ -20,7 +20,6 @@ class SearchActions {
       `${paths.search.get_all}${langCode}/search`,
       {
         params: normalizedFilters,
-        paramsSerializer: (params) => parseParams(params),
       },
     );
     return result.data;
